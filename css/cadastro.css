@@ -1,3 +1,27 @@
-.paragrafo{
-    background-color: #000;
+.container{
+    background-color: var(--escuro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.formulario_login_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario_input{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--claro3);
+    height: 60vh;
+    padding: 3.125rem;
+    border-radius: 1.25rem 0.625rem;
+    box-shadow: 0 0.625rem 0.625rem 0 #00000086;
+}
+
+.titulo_login{
+    color: var(--claro);
+    font-size: 2.5rem;
 }
