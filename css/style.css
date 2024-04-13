@@ -340,13 +340,22 @@ width: 100%;
 .cont_input{
     display: flex;
     flex-direction: column;
-
     background-color: var(--claro3);
     padding: 50px;
     height: 80%;
 
     border-radius: 20px 10px 20px 10px;
     box-shadow: 0 10px 10px 0 #00000086; 
+}
+
+.cont_input_esquerda{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--claro3);
+    padding: 50px;
+    height: 80%;
+    border-radius: 20px 10px 20px 10px;
+    box-shadow: 0 10px 10px 0 #00000086;
 }
 
 .cont_botoes{
@@ -387,7 +396,6 @@ width: 100%;
     border-radius: 30px;
     padding: 20px;
     margin: 20px;
-
     font-size: 20px;
 }
 .imagem{
@@ -400,15 +408,14 @@ width: 100%;
 .alinhamento_input{
     height: 100%;
     width: 100%;
-
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    background-color: #000000;
 }
 .notif_cont{
     display: flex;
     flex-direction: row;
-
     margin: 5%;
 }
 .cadastro2, .login2{
@@ -429,12 +436,15 @@ width: 100%;
 .perfil{
     display: flex;
     flex-direction: column;
-    margin-bottom: 30%;
+    background-color: var(--claro3);
+    padding: 50px;
+    height: 65vh;
+    border-radius: 20px 10px 20px 10px;
+    box-shadow: 0 10px 10px 0 #00000086;
     
 }
 .cad_pedido{
     font-size: 16px;
-    margin: 5%;
     color: var(--escuro2);
 
 }
