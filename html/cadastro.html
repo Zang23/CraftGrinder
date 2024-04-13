@@ -8,46 +8,47 @@
         <title>Cadastro</title>
     </head>
     <body>
-        
-        <div class="cadastro_container">
+        <form action="" method="post">
 
-            <div class="formulario_cadastro_container">
+            <div class="cadastro_container">
+           
+                <div class="formulario_cadastro_container">
+            
+                    <div class="formulario_input_container">
+                    
+                        <p class="formulario_cadastro">Cadastro</p>
 
-                <div class="formulario_input_container">
+                        <input class="formulario_input" placeholder="Digite seu email"  type="text">
 
-                    <p class="formulario_cadastro">Cadastro</p>
+                        <input class="formulario_input" placeholder="Digite sua senha"  type="text">
 
-                    <input class="formulario_input" placeholder="Digite seu email"  type="text">
+                        <input class="formulario_input" placeholder="Confirme sua senha"  type="text">
 
-                    <input class="formulario_input" placeholder="Digite sua senha"  type="text">
+                        <input class="formulario_input" placeholder="Escolha seu nome de usuário"  type="text">
 
-                    <input class="formulario_input" placeholder="Confirme sua senha"  type="text">
-
-                    <input class="formulario_input" placeholder="Escolha seu nome de usuário"  type="text">
-
-                    <div class="formulario_notificacao">
-                        <input type="checkbox">
-                        <p>Deseja receber notificações?</p>
+                        <div class="formulario_notificacao">
+                            <input type="checkbox">
+                            <p>Deseja receber notificações?</p>
+                        </div>
                     </div>
 
                 </div>
+                
+                <div class="cadastro_perfil_container">
+                        
+                    <p>Escolha sua foto de perfil</p>
 
-            </div>
-            
-            <div class="cadastro_perfil_container">
-                    
-                <p>Escolha sua foto de perfil</p>
+                    <div class="cadastro_perfil_foto">
+                        <img class="perfil_imagem" src="../img/fotoperfil.png" alt="">
+                    </div>
 
-                <div class="cadastro_perfil_foto">
-                    <img class="perfil_imagem" src="../img/fotoperfil.png" alt="">
+                    <button class="cadastro_perfil_botao">Cadastrar</button> 
+                    <a href="login.html" class="sublinhado">Já tenho uma conta</a>
+
                 </div>
-
-                <button class="cadastro_perfil_botao">Cadastrar</button> 
-                <a href="login.html" class="sublinhado">Já tenho uma conta</a>
+            
 
             </div>
-
-        </div>
-
+        </form>
     </body>
 </html>
