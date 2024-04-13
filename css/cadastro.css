@@ -11,7 +11,7 @@
     flex-direction: column;
 }
 
-.formulario_input{
+.formulario_conteudo{
     display: flex;
     flex-direction: column;
     background-color: var(--claro3);
@@ -19,9 +19,48 @@
     padding: 3.125rem;
     border-radius: 1.25rem 0.625rem;
     box-shadow: 0 0.625rem 0.625rem 0 #00000086;
+    gap: 2rem;
 }
 
-.titulo_login{
+.formulario_titulo{
     color: var(--claro);
     font-size: 2.5rem;
+}
+
+.formulario_input{
+    border-style: none;
+    border-radius: 1.375rem;
+    padding: 1rem;
+}
+
+.formulario_esqueceu{
+    font-size: 0.80rem;
+    text-decoration: underline;
+    color: var(--escuro2);
+}
+
+.formulario_botoes_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formulario_botao_cadastrar{
+    padding: 0.35rem;
+    color: var(--claro);
+}
+
+.formulario_botao_entrar{
+    background-color: var(--claro);
+    border: none;
+    border-radius: 2rem;
+    padding: 0.75rem 1rem;
+    font-size: 1.25rem;
+}
+
+.logo_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
 }
