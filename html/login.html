@@ -11,15 +11,15 @@
         
         <div class="login_container">
 
-            <div class="formulario_login_container">
+            <form action="../php/login.php" method="post" class="formulario_login_container">
         
                 <div class="formulario_conteudo">
 
                     <p class="formulario_titulo">Login</p>
 
-                    <input class="formulario_input" placeholder="Nome de Usuário ou Email"  type="text">
+                    <input class="formulario_input" placeholder="Nome de Usuário ou Email"  type="text" name="nome_email">
                     
-                    <input class="formulario_input" placeholder="Senha"  type="text">
+                    <input class="formulario_input" placeholder="Senha"  type="text" name="senha">
 
                     <a class="formulario_esqueceu" href="">Esqueceu a senha?</a>
 
@@ -30,7 +30,7 @@
 
                 </div>
                 
-            </div>
+            </form>
 
             <div class="logo_container">
                 <p class="titulo">CraftGrinder</p>

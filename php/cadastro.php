@@ -11,8 +11,7 @@ if(isset($email)){
     $sql_code = $pdo->prepare("INSERT INTO tbclientes VALUES (null,?,?,?)");
     $sql_code->execute([$_POST['email'], $_POST['senha'], $_POST['user']]);
 
-
-    echo "feito com sucesso";
+    header('location: ../html/index.html');
 }
 
 ?>
