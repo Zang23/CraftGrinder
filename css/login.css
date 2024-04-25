@@ -44,11 +44,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 5rem;
 }
 
 .formulario_botao_cadastrar{
     padding: 0.35rem;
     color: var(--claro);
+    border-radius: 12px;
+}
+.formulario_botao_cadastrar:hover{
+    background-color: #c2c2b5;
+    transition: 0.2s;
 }
 
 .formulario_botao_entrar{
