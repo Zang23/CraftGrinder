@@ -71,9 +71,7 @@
 }
 /*teste*/
 
-body{
-    background-color: var(--fundo);
-}
+
 .fundo{
     background-color: var(--escuro);
 }
@@ -128,6 +126,12 @@ header{
     z-index: 1; 
     box-shadow: 0 10px 10px 0 #00000086;
 }
+
+.cabecalhototal.sticky{
+    position: fixed;
+    animation: slideDown 0.5s ease-out;
+}
+
 .cabecalho{/*parte de cima*/
     list-style-type: none; 
     margin: 0%;
@@ -136,10 +140,7 @@ header{
 
     background-color: var(--escuro);
 }
-.cabecalhototal.sticky{
-    position: fixed;
-    animation: slideDown 0.5s ease-out;
-}
+
 @keyframes slideDown{
     from{
         transform: translateY(-100%);
