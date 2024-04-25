@@ -7,7 +7,7 @@
     top: 0;
     width: 100%;
     z-index: 1; 
-    box-shadow: 0 10px 10px 0 #00000086;
+    box-shadow: 0 0.625rem 0.625rem 0 var(--shadowBox);
 }
 
 .cabecalho_container.sticky{
@@ -55,4 +55,115 @@
     border-radius: 1.25rem;
     padding: 0.75rem 2rem;
     background-color: var(--claro);
+}
+
+.cabecalho_inferior_container{
+    width: 100%;
+    background-color: var(--claro);
+}
+
+.cabecalho_inferior_nav{
+    color: var(--texto);
+}
+
+.cabecalho_inferior_nav:hover{
+    background-color: var(--navbarHover);
+    transition: 0.2s;
+    transform: scale(1.1, 1.1);
+}
+
+.navbar_titulo{
+    margin: 3%;
+    
+}
+
+.navbar_titulo_premium{
+    text-align: center;
+}
+
+.navbar_titulo, .navbar_titulo_premium{
+    color: var(--texto);
+}
+
+/*------------------------------PRINCIPAL-----------------------------------*/
+
+.conteudo_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+.conteudo_container:last-child{
+    margin-bottom: 0;
+}
+
+.conteudo_atualizacoes{
+    background-color: var(--claro3);
+    height: 25rem;
+    width: 80%;
+    margin: 3%;
+    border-radius: 1.25rem 0.625rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo_tabela{
+    width: 80%;
+}
+
+.conteudo_cards_container{
+    width: 5rem;
+    height: 25rem;
+    background-color: var(--claro3);
+    border-radius: 1.25rem 0.625rem;
+}
+
+.conteudo_cards_container:not(.final):hover, .conteudo_cards_item_container:not(.final):hover{
+    transition: 0.2s;
+    transform: scale(1.1, 1.1);
+    background-color: var(--fundoCards);
+    box-shadow: 0 0 1.5625rem var(--shadowBox);
+}
+
+.conteudo_imagem{
+    width: 100%;
+    height: 12.5rem;
+}
+
+.conteudo_lermais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.conteudo_cards_item_container{
+    width: 5rem;
+    height: 18.75rem;
+    background-color: var(--claro3);
+    border-radius: 1.25rem 0.625rem;
+}
+
+.conteudo_premium{
+    background-color: var(--escuro);
+    height: 25rem;
+    width: 80%;
+    margin: 3%;
+
+    margin-bottom: 10%;
+    border-radius: 1.25rem 0.625rem;
+}
+
+.conteudo_sobrenos{
+    background-color: var(--escuro);
+    height: 25rem;
+    width: 100%;
+}
+
+.sobrenos_container{
+    margin: 3%
 }
