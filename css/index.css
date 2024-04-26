@@ -47,7 +47,11 @@
     border-style: none;
     border-radius: 1.25rem;
     padding: 0.75rem 2rem;
-    background-color: var(--escuro2);
+    background-color: #4f663d;
+}
+.cabecalho_cadastro:hover{
+    background-color: #415333;
+    transition: 0.2s;
 }
 
 .cabecalho_entrar{
@@ -55,6 +59,10 @@
     border-radius: 1.25rem;
     padding: 0.75rem 2rem;
     background-color: var(--claro);
+}
+.cabecalho_entrar:hover{
+    background-color: #966400;
+    transition: 0.2s;
 }
 
 .cabecalho_inferior_container{
