@@ -2,6 +2,70 @@
     background-color: var(--fundo);
 }
 
+
+.cabecalho_container{
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1; 
+    box-shadow: 0 0.625rem 0.625rem 0 var(--shadowBox);
+}
+
+.cabecalho_container.sticky{
+    position: fixed;
+    animation: slideDown 0.5s ease-out;
+}
+
+.cabecalho_superior_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--escuro);
+    height: 12vh;
+}
+
+.cabecalho_superior_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 31%;
+    margin-right: 3%;
+}
+
+.cabecalho_titulo{
+    font-size: 40px;
+    float: left;
+    color: var(--texto);
+}
+
+.cabecalho_pesquisar{
+    border-style: none;
+    border-radius: 1.25rem;
+    padding: 0.75rem 1rem;
+}
+
+.cabecalho_cadastro{
+    border-style: none;
+    border-radius: 1.25rem;
+    padding: 0.75rem 2rem;
+    background-color: #4f663d;
+}
+.cabecalho_cadastro:hover{
+    background-color: #415333;
+    transition: 0.2s;
+}
+
+.cabecalho_entrar{
+    border-style: none;
+    border-radius: 1.25rem;
+    padding: 0.75rem 2rem;
+    background-color: var(--claro);
+}
+.cabecalho_entrar:hover{
+    background-color: #966400;
+    transition: 0.2s;
+}
+
 .cabecalho_inferior_container{
     width: 100%;
     background-color: var(--claro);
