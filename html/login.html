@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Login</title>
-</head>
-<body>
-
-<div class="fundo">
-<div class="conteudo_tudo login2">
-
-    <div class="cont_esquerda">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Login</title> 
+    </head>
+    <body>
         
+        <div class="login_container">
 
-        <div class="cont_input">
-            <p class="titulo login">Login</p>
+            <form action="../php/login.php" method="post" class="formulario_login_container">
+        
+                <div class="formulario_conteudo">
 
-            <input placeholder="Nome de Usuário ou Email" class="caixa_texto_grande" type="text">
-            
-            <input placeholder="Senha" class="caixa_texto_grande" type="text">
+                    <p class="formulario_titulo">Login</p>
 
-            <p><a class="sublinhado" href="">Esqueceu a senha?</a></p>
+                    <input class="formulario_input" placeholder="Nome de Usuário ou Email"  type="text" name="nome_email">
+                    
+                    <input class="formulario_input" placeholder="Senha"  type="text" name="senha">
 
-        <div class="cont_botoes">
-            <div class="botao_cadastro">
-                <p><a  class="cad" href="cadastro.html">Cadastrar-se</a></p>
+                    <a class="formulario_esqueceu" href="">Esqueceu a senha?</a>
+
+                    <div class="formulario_botoes_container">
+                        <a  class="formulario_botao_cadastrar" href="cadastro.html">Cadastrar-se</a>
+                        <button class="formulario_botao_entrar" type="submit">Entrar</button>
+                    </div>
+
+                </div>
+                
+            </form>
+
+            <div class="logo_container">
+                <p class="titulo">CraftGrinder</p>
             </div>
-            <div class="botao_entrar">
-                <button class="botao" type="submit">Entrar</button> 
-            </div>
-        </div>
 
-        </div>
-    </div>
-
-    <div class="cont_direita">
-        <p class="titulo">CraftGrinder</p>
-    </div>
-
-</div>
-</div>
-                                                                                                
-</body>
+        </div>                                                                                    
+    </body>
 </html>

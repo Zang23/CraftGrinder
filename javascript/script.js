@@ -1,4 +1,4 @@
-const header = document.querySelector(".cabecalhototal");
+const header = document.querySelector(".cabecalho_container");
 const toggleClass = "sticky";
 
 window.addEventListener("scroll", () => {

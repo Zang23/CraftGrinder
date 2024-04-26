@@ -15,7 +15,9 @@
     --claro3: #d5d5c8;
     --fundo: #979797;
     --preto: #000000;
-
+    --shadowBox: #00000086;
+    --navbarHover: #966400;
+    --fundoCards: #acac98;
 }
 
 
@@ -71,10 +73,10 @@
     display: flex;
 }
 /*teste*/
-
-body{
+.index_fundo{
     background-color: var(--fundo);
 }
+
 .fundo{
     background-color: var(--escuro);
 }
@@ -108,12 +110,9 @@ header{
     color: var(--texto);
 }
 
-.titulo2, .titulo3{
+.titulo3{
     margin: 3%;
     color: var(--texto);
-}
-.titulo2{
-    margin-top: 15%;
 }
 .titulo4{
     text-align: center;
@@ -126,12 +125,18 @@ header{
 
 
 .cabecalhototal{
-    position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 1; 
     box-shadow: 0 10px 10px 0 #00000086;
 }
+
+.cabecalhototal.sticky{
+    position: fixed;
+    animation: slideDown 0.5s ease-out;
+}
+
 .cabecalho{/*parte de cima*/
     list-style-type: none; 
     margin: 0%;
@@ -140,10 +145,7 @@ header{
 
     background-color: var(--escuro);
 }
-.cabecalhototal.sticky{
-    position: fixed;
-    animation: slideDown 0.5s ease-out;
-}
+
 @keyframes slideDown{
     from{
         transform: translateY(-100%);
@@ -341,13 +343,22 @@ width: 100%;
 .cont_input{
     display: flex;
     flex-direction: column;
-
     background-color: var(--claro3);
     padding: 50px;
     height: 80%;
 
     border-radius: 20px 10px 20px 10px;
     box-shadow: 0 10px 10px 0 #00000086; 
+}
+
+.cont_input_esquerda{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--claro3);
+    padding: 50px;
+    height: 80%;
+    border-radius: 20px 10px 20px 10px;
+    box-shadow: 0 10px 10px 0 #00000086;
 }
 
 .cont_botoes{
@@ -364,13 +375,7 @@ width: 100%;
 
     color: var(--claro);
 }
-.cad{
-    padding: 5px;
-}
-.cad:hover{
-    background-color: #c2c2b5;
-    transition: 0.2s;
-}
+
 .sublinhado{
     margin-top: 5%;
     font-size: 12px;
@@ -388,7 +393,6 @@ width: 100%;
     border-radius: 30px;
     padding: 20px;
     margin: 20px;
-
     font-size: 20px;
 }
 .imagem{
@@ -401,15 +405,14 @@ width: 100%;
 .alinhamento_input{
     height: 100%;
     width: 100%;
-
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    background-color: #000000;
 }
 .notif_cont{
     display: flex;
     flex-direction: row;
-
     margin: 5%;
 }
 .cadastro2, .login2{
@@ -430,12 +433,15 @@ width: 100%;
 .perfil{
     display: flex;
     flex-direction: column;
-    margin-bottom: 30%;
+    background-color: var(--claro3);
+    padding: 50px;
+    height: 65vh;
+    border-radius: 20px 10px 20px 10px;
+    box-shadow: 0 10px 10px 0 #00000086;
     
 }
 .cad_pedido{
     font-size: 16px;
-    margin: 5%;
     color: var(--escuro2);
 
 }
@@ -445,61 +451,3 @@ width: 100%;
     justify-content: center;
     
 }
-
-/*conteudo ler mais*/
-.conteudo_lermais{
-    top: 0;
-    display: flex;
-    flex-flow: row wrap;
-    
-}
-.lermais_tudo{
-    display: flex;
-    flex-direction: row;
-
-}
-.titulo_lermais{
-    margin: 7% 0 2% 2%;
-    color: var(--texto);
-}
-.lermais{
-    width: 300px;
-    text-align: center;
-    margin: 2%;
-}
-
-.lateral{
-    background-color: var(--claro2);
-    width: 50%;
-    border-left: solid 5px var(--claro);
-    overflow-x: hidden;
-    box-shadow: 0 10px 20px 0 #00000086;
-
-    position: sticky;
-    top: 0;
-    height: 780px;
-}
-.cont_lateral{
-    margin-top: 50%;
-    
-}
-.cont_lateral p{
-    margin-left: 10%;
-    font-size: 24px;
-}
-.lateral_select{
-    display: flex;
-    flex-direction: column;
-    margin: 10%;
-}
-.selects{
-    margin-top: 10%;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-
-
-
-
