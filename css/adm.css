@@ -2,16 +2,25 @@
    display: flex;
 }
 
+.sidebar_titulo{
+    font-size: 30px;
+    color: var(--texto);
+}
 .barra_lateral{
     background-color: var(--claro2);
-    width: 16%;
-    border-left: solid 5px var(--claro);
+    width: 20%;
+    border-right: solid 5px var(--claro);
     overflow-x: hidden;
     box-shadow: 0 0.625rem 1.25rem 0 #00000086;
     position: sticky;
     top: 0;
-    height: 780px;
+    height: 650px;
     padding-top: 2rem;
+}
+.lateral_options a{
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #000;
 }
 
 .container_central{
@@ -23,7 +32,7 @@
 }
 
 .titulo_central{
-    font-size: 40px;
+    font-size: 30px;
     margin: 2rem;
     color: var(--texto);
 }
@@ -35,15 +44,17 @@
 }
 .diretor_pag p{
     font-size: 20px;
-    color: var(--texto);
+    margin-bottom: 5%;
 }
+
 table{
-    border: solid;
     border-collapse: collapse;
 }
- 
 td, th{
-    border: solid;
+    border: solid 0.5px;
     padding: 10px 30px;
+}
+thead{
+    background-color: var(--claro);
 }
 
