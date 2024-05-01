@@ -1,6 +1,49 @@
+.adm_container{
+   display: flex;
+}
 
 .barra_lateral{
     background-color: var(--claro2);
-    width: 20rem;
+    width: 16%;
+    border-left: solid 5px var(--claro);
+    overflow-x: hidden;
+    box-shadow: 0 0.625rem 1.25rem 0 #00000086;
+    position: sticky;
     top: 0;
+    height: 780px;
+    padding-top: 2rem;
 }
+
+.container_central{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo_central{
+    font-size: 40px;
+    margin: 2rem;
+    color: var(--texto);
+}
+.diretor_pag{
+    background-color: var(--claro2);
+    padding: 5rem;
+    border-radius: 1.25rem 0.625rem;
+    box-shadow: 0 0 1.5625rem var(--shadowBox);
+}
+.diretor_pag p{
+    font-size: 20px;
+    color: var(--texto);
+}
+table{
+    border: solid;
+    border-collapse: collapse;
+}
+ 
+td, th{
+    border: solid;
+    padding: 10px 30px;
+}
+
