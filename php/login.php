@@ -12,6 +12,7 @@ $nome_email = $_POST['nome_email'];
 $senha = $_POST['senha'];
 
 foreach($usuarios as $usuario){
+
     if(strstr($nome_email, '@gmail.com')){
         $email = $nome_email;
 
