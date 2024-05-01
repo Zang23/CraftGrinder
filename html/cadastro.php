@@ -40,6 +40,10 @@
                                 <label class="formulario_input_erro">Esse nome de usuario já existe</label> <?php
                             }
 
+                            if(isset($_GET['emailErro'])){?>
+                                <label class="formulario_input_erro">Esse email ja está sendo utilizado</label> <?php
+                            }
+
                         ?>
                         </div>
                         
