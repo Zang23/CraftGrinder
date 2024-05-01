@@ -27,6 +27,20 @@
 .formulario_input_container{
     gap: 2rem;
 }
+
+.formulario_input_erro_container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formulario_input_erro{
+    color: red;
+    text-decoration: underline;
+    margin-left: 2%;
+}
+
+
 .content_criar_conta{
     display: flex;
     flex-direction: column;
@@ -42,6 +56,7 @@
     border-style: none;
     border-radius: 1.375rem;
     padding: 1rem;
+    width: 90%;
 }
 .formulario_notificacao{
     display: flex;
