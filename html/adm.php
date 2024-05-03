@@ -1,7 +1,7 @@
 
 <?php
 
-require_once 'conexao.php';
+require '../php/conexao.php';
 
 
 ?>
@@ -36,7 +36,7 @@ require_once 'conexao.php';
 
             <div class="lateral_options">
 
-                <a href=""><p>Inserir nova Farm</p></a>
+                <a href="farmCadastro.html"><p>Inserir nova Farm</p></a>
                 <a href=""><p>Inserir nova Máquina</p></a>
                 <a href=""><p>Inserir nova Item</p></a>
                 <a href=""><p>Inserir novo Guia</p></a>
@@ -53,7 +53,7 @@ require_once 'conexao.php';
     <div class="container_central">
 
         <div class="alinhamento_titulo_central">
-            <p class="titulo_central">Página do Diretor</p>
+            <p class="titulo_central">Tabela de Artigos</p>
         </div>
         
         <div class="diretor_pag">
@@ -67,11 +67,22 @@ require_once 'conexao.php';
                             <th>Tipo</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody>  
+                    <?php
+
+                        $sql_code = "SELECT nomeArtigo, tipoArtigo FROM tbartigo";
+                        $prepare = $pdo->prepare($sql_code);
+                        $count = $prepare->execute();
+                        $artigos = $prepare->fetchAll();
+
+                        foreach($artigos as $artigo){?>
                         <tr>
-                            <td>exemplo</td>
-                            <td>exemplo</td>
-                        </tr>
+                            <td><?= $artigo['nomeArtigo'] ?></td>
+                            <td><?= $artigo['tipoArtigo'] ?></td>
+                        </tr><?php
+                        }
+                        
+                    ?>
                     </tbody>
                 </table>
                 </div>
