@@ -30,6 +30,8 @@
 
                         <div class="formulario_input_erro_container">
                             <input class="formulario_input" placeholder="Escolha seu nome de usuário"  type="text" name="user" required>
+
+                        
                         
                         <?php
                             if (isset($_GET['senhaErro'])){?>

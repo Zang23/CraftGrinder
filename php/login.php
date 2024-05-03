@@ -2,7 +2,7 @@
 
 require 'conexao.php';
 
-$sql_code = "SELECT email, senha, nome_usuario FROM tbclientes";
+$sql_code = "SELECT emailCliente, senhaCliente, nicknameCliente FROM tbclientes";
 $prepare = $pdo->prepare($sql_code);
 $count = $prepare->execute();
 
@@ -16,15 +16,15 @@ foreach($usuarios as $usuario){
     if(strstr($nome_email, '@gmail.com')){
         $email = $nome_email;
 
-        if($email == $usuario['email'] and $senha == $usuario['senha']){
+        if($email == $usuario['emailCliente'] and $senha == $usuario['senhaCliente']){
             header('location: ../html/index.html');
         }else{
             echo "Um erro ocorreu";
         }    
-    }else if(strlen($nome_email) <= 5){
+    }else{
         $nickname = $nome_email;
 
-        if($nickname == $usuario['nome_usuario'] and $senha == $usuario['senha']){
+        if($nickname == $usuario['nicknameCliente'] and $senha == $usuario['senhaCliente']){
             header('location: ../html/index.html');
         }else{
             echo "Erro aconteceu"; 

@@ -1,14 +1,14 @@
 <?php
 
 
-require 'conexao.php';
+require_once 'conexao.php';
 
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 $senhaConfirmada = $_POST['senha_confirmada'];
 $user = $_POST['user'];
 
-$code_sql = "SELECT nome_usuario, email FROM tbclientes";
+$code_sql = "SELECT nicknameCliente, emailCliente FROM tbclientes";
 $prepare = $pdo->prepare($code_sql);
 $count = $prepare->execute();
 $usuarios = $prepare->fetchAll();
@@ -17,7 +17,7 @@ $usuarioCorreto = true;
 $emailCorreto = true;
 
 foreach($usuarios as $usuario){
-    if( $user == $usuario['nome_usuario']){
+    if( $user == $usuario['nicknameCliente']){
         $usuarioCorreto = false;
         header('location: ../html/cadastro.php?userErro');
         break;
@@ -25,7 +25,7 @@ foreach($usuarios as $usuario){
 }
 
 foreach($usuarios as $usuario){
-    if( $email == $usuario['email']){
+    if( $email == $usuario['emailCliente']){
         $emailCorreto = false;
         header('location: ../html/cadastro.php?emailErro');
         break;
