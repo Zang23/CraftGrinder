@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <select id="selectTipoFormulario" ">
+        <option value="atualizacao">Atualizacao</option>
+        <option value="farm">Farm</option>
+        <option value="item">Item</option>
+        <option value="guia">Guia</option>
+        <option value="maquina">Máquina</option>
+    </select>
+
+    <div id="formularioAtualizacao" style="display: none">
+        <form action="../../php/scriptArtigo.php" method="post" >
+            <input type="text" name="nomeAtualizacao" placeholder="Insira o nome da atualizacao">
+            <textarea name="descAtualizacao" placeholder="Insira a descricao completa da atualizacao"></textarea>
+            <input type="text" name="imagemAtualizacao" placeholder="insira a URL da imagem da Atualizacao">
+            <input type="text" name="tipoArtigo" value="Atualizacao" style="display: none;">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div id="formularioFarm" style="display: none">
+        <form action="../../php/scriptArtigo.php" method="post" >
+            <input type="text" name="nomeFarm" placeholder="Insira o nome da Farm">
+            <input type="text" name="miniDescFarm" placeholder="Insira uma breve descricao sobre a farm">
+            <textarea name="descFarm" placeholder="Insira a descricao completa da farm"></textarea>
+            <input type="text" name="imagemFarm" placeholder="insira a URL da imagem da farm">
+            <input type="text" name="tipoArtigo" value="Farm" style="display: none;">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div id="formularioGuia" style="display: none">
+        <form action="../../php/scriptArtigo.php" method="post" >
+            <input type="text" name="nomeGuia" placeholder="Insira o nome do guia">
+            <input type="text" name="miniDescGuia" placeholder="Insira uma breve descricao sobre o guia">
+            <textarea name="descGuia" placeholder="Insira a descricao completa do guia"></textarea>
+            <input type="text" name="imagemGuia" placeholder="insira a URL da imagem do guia">
+            <input type="text" name="tipoArtigo" value="Guia" style="display: none;">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div id="formularioMaquina"  style="display: none">
+        <form action="../../php/scriptArtigo.php" method="post">
+            <input type="text" name="nomeMaquina" placeholder="Insira o nome da Máquina">
+            <input type="text" name="miniDescMaquina" placeholder="Insira uma breve descricao sobre a Máquina">
+            <textarea name="descMaquina" placeholder="Insira a descricao completa da Máquina"></textarea>
+            <input type="text" name="imagemMaquina" placeholder="insira a URL da imagem da Máquina">
+            <input type="text" name="tipoArtigo" value="Maquina" style="display: none;">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div id="formularioItem" style="display: none">
+        <form action="../../php/scriptArtigo.php" method="post" >
+            <input type="text" name="nomeItem" placeholder="Insira o nome do Item">
+            <input type="text" name="miniDescItem" placeholder="Insira uma breve descricao sobre o Item">
+            <textarea name="descItem" placeholder="Insira a descricao completa do Item"></textarea>
+            <input type="text" name="imagemItem" placeholder="insira a URL da imagem do Item">
+            <input type="text" name="tipoArtigo" value="Item" style="display: none;">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+
+    <script src="../../javascript/selectFormulario.js"></script>
+</body>
+</html>
