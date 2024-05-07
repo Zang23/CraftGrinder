@@ -8,7 +8,7 @@
 
 .formulario_login_container{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     width: 30%;
 }
 
@@ -63,6 +63,10 @@
     border-radius: 2rem;
     padding: 0.75rem 1rem;
     font-size: 1.25rem;
+}
+.formulario_botao_entrar:hover{
+    background-color: #966400;
+    transition: 0.2s;
 }
 
 .logo_container{
