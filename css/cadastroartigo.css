@@ -1,0 +1,17 @@
+.titulo_edicao{
+    font-size: 32px;
+    color: var(--texto);
+}
+.selector_content{
+    background-color: var(--claro2);
+    padding: 1.75rem;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content_centro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
