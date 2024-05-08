@@ -79,9 +79,6 @@ require '../../php/conexao.php';
                         $count2 = $prepare2->execute();
                         $farms = $prepare2->fetchAll();
 
-                        foreach($farms as $farm){
-                            
-                        }
 
                         $sql_code3 = "SELECT * FROM tbmaquina";
                         $prepare3 = $pdo->prepare($sql_code3);
@@ -104,56 +101,64 @@ require '../../php/conexao.php';
                             $pdo->exec("DELETE FROM tbartigo WHERE idArtigo = $id");
 
                             if($_GET['tipo'] == "Farm"){
-                                echo " A farm tambem foi de vala";
-                                
+                                $nome = $_GET['nome'];
+                                $pdo->exec("DELETE FROM tbfarm WHERE nomeFarm = '$nome'");
+                                echo $_GET['tipo'] . " Deletado com sucesso";
                             }
 
                             if($_GET['tipo'] == "Maquina"){
-                                $tipoArtigo = "tipo" . $_GET['tipo'];
-                                $pdo->exec("DELETE FROM tbmaquina WHERE tipoMaquina = $tipoArtigo");
-                                echo " A Maquina tambem foi de vala";
+                                $nome = $_GET['nome'];
+                                $pdo->exec("DELETE FROM tbmaquina WHERE nomeMaquina = '$nome'");
+                                echo $_GET['tipo'] . " Deletado com sucesso";
                             }
 
                             if($_GET['tipo'] == "Guia"){
-                                $tipoArtigo = "tipo" . $_GET['tipo'];
-                                $pdo->exec("DELETE FROM tbguia WHERE tipoGuia = $tipoArtigo");
-                                echo " O guia tambem foi de vala";
+                                $nome = $_GET['nome'];
+                                $pdo->exec("DELETE FROM tbguia WHERE nomeGuia = '$nome'");
+                                echo $_GET['tipo'] . " Deletado com sucesso";
                             }
 
                             if($_GET['tipo'] == "Item"){
-                                $tipoArtigo = "tipo" . $_GET['tipo'];
-                                $pdo->exec("DELETE FROM tbitem WHERE tipoItem = $tipoArtigo");
-                                echo " O Item tambem foi de vala";
+                                $nome = $_GET['nome'];
+                                $pdo->exec("DELETE FROM tbitem WHERE nomeItem = '$nome'");
+                                echo $_GET['tipo'] . " Deletado com sucesso";
                             }
 
                             if($_GET['tipo'] == "Atualizacao"){
-                                $tipoArtigo = "tipo" . $_GET['tipo'];
-                                $pdo->exec("DELETE FROM tbatualizacao WHERE tipoAtualizacao = $tipoArtigo");
-                                echo " A atualizacao tambem foi de vala";
+                                $nome = $_GET['nome'];
+                                $pdo->exec("DELETE FROM tbatualizacao WHERE nomeAtualizacao = '$nome'");
+                                echo $_GET['tipo'] . " Deletado com sucesso";
                             }
                         }
+
+                        
 
                         if(isset($_GET['editar'])){
                             echo "O id foi detectado ";
 
                             if($_GET['tipo'] == "Farm") {
-                                echo "Farm editada";
+                                $nome = $_GET['nome'];
+                                echo $nome;
                             }
 
                             if($_GET['tipo'] == "Maquina") {
-                                echo "Maquina editada";
+                                $nome = $_GET['nome'];
+                                echo $nome;
                             }
 
                             if($_GET['tipo'] == "Guia") {
-                                echo "Guia editado";
+                                $nome = $_GET['nome'];
+                                echo $nome;
                             }
 
                             if($_GET['tipo'] == "Item") {
-                                echo "Item editado";
+                                $nome = $_GET['nome'];
+                                echo $nome;
                             }
 
                             if($_GET['tipo'] == "Atualizacao") {
-                                echo "Atualizacao editada";
+                                $nome = $_GET['nome'];
+                                echo $nome;
                             }
                         }
 
@@ -163,8 +168,8 @@ require '../../php/conexao.php';
                         <tr>
                             <td><?= $artigo['nomeArtigo'] ?></td>
                             <td><?= $artigo['tipoArtigo'] ?></td>
-                            <td> <a href="?editar=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
-                            <td> <a href="?delete=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>"><span class="material-symbols-outlined">delete</span></a></td>
+                            <td> <a href="?editar=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>&nome=<?=$artigo['nomeArtigo']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
+                            <td> <a href="?delete=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>&nome=<?=$artigo['nomeArtigo']?>"><span class="material-symbols-outlined">delete</span></a></td>
                         </tr><?php
                         }
                         
