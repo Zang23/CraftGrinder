@@ -3,18 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/cadastroartigo.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="index_fundo">
 
+    <header class="cabecalho_container">
 
-    <select id="selectTipoFormulario">
-        <option value="atualizacao" >Atualizacao</option>
-        <option value="farm" selected   >Farm</option>
-        <option value="item">Item</option>
-        <option value="guia">Guia</option>
-        <option value="maquina">Máquina</option>
-    </select>
+        <div class="cabecalho_superior_container">
+            <a href="../index.html"><p class="cabecalho_titulo">CraftGrinder</p></a>
+        </div>
+        
+    </header>
+
+    <p class="titulo_edicao">Escolha o conteúdo de edição</p>
+
+    <div></div>
+
+    <div class="content_centro">
+        <div class="selector_content">
+            <select id="selectTipoFormulario">
+                <option value="atualizacao">Atualizacao</option>
+                <option value="farm">Farm</option>
+                <option value="item">Item</option>
+                <option value="guia">Guia</option>
+                <option value="maquina">Máquina</option>
+            </select>
+        </div>
+    </div>
 
     <div id="formularioAtualizacao" style="display: none"> <!-- style="display: none na hora que for estilizar passar para o css -->
         <form action="../../php/scriptArtigo.php" method="post" >
@@ -69,6 +87,7 @@
             <button type="submit">Enviar</button>
         </form>
     </div>
+</div>
 
 
     <script src="../../javascript/selectFormulario.js"></script>
