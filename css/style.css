@@ -5,6 +5,7 @@
     font-weight: lighter;
     text-decoration: none;
     scroll-behavior: smooth;
+    
 }
 :root{
     --texto: #ffffff;
@@ -83,55 +84,15 @@
 a{
     color: var(--texto);
 }
-/*fixando o head
-header{
-    position: sticky;
-    top: 0;
-    width: 100%;
-}*/
 
-.titulo_alinhamento{
-    list-style-type: none;
-    margin: 0%;
-    padding: 0%;
-    overflow: hidden;
-    width: 100%;
-}
-.titulo{
-    font-size: 40px;
-    float: left;
-    color: var(--texto);
-}
-.cad, .login{
-    color: var(--claro);
-}
-.index{
-    margin: 5%;
-    color: var(--texto);
-}
-
-.titulo3{
-    margin: 3%;
-    color: var(--texto);
-}
-.titulo4{
-    text-align: center;
-    color: var(--texto);
-}
-.titulo5{
-    margin-bottom: 3%;
-    color: var(--texto);
-}
-
-
+/*cabecalho*/
 .cabecalho_container{
-    position: sticky;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 1; 
     box-shadow: 0 0.625rem 0.625rem 0 var(--shadowBox);
 }
-
 
 .cabecalho_container.sticky{
     position: fixed;
@@ -170,7 +131,11 @@ header{
     border-style: none;
     border-radius: 1.25rem;
     padding: 0.75rem 2rem;
-    background-color: var(--fundoCards);
+    background-color: #4f663d;
+}
+.cabecalho_cadastro:hover{
+    background-color: #415333;
+    transition: 0.2s;
 }
 
 .cabecalho_entrar{
@@ -178,6 +143,33 @@ header{
     border-radius: 1.25rem;
     padding: 0.75rem 2rem;
     background-color: var(--claro);
+}
+.cabecalho_entrar:hover{
+    background-color: #966400;
+    transition: 0.2s;
+}
+
+.cabecalho_inferior_container{
+    width: 100%;
+    background-color: var(--claro);
+}
+
+.cabecalho_inferior_nav{
+    color: var(--texto);
+}
+
+.cabecalho_inferior_nav:hover{
+    background-color: var(--navbarHover);
+    transition: 0.2s;
+    transform: scale(1.1, 1.1);
+}
+
+.navbar_titulo_premium{
+    text-align: center;
+}
+
+.navbar_titulo, .navbar_titulo_premium{
+    color: var(--texto);
 }
 
 .navbar_titulo{
@@ -194,38 +186,13 @@ header{
     }
 }
 
-.cabecalho2{ /*parte debaixo*/
-    width: 100%;
-
-    background-color: var(--claro);
-}
-.elemento{
-    color: var(--texto);
-}
-.elemento:hover, .entrar:hover, .botao:hover{
-    background-color: #966400;
-    transition: 0.2s;
-}
-.elemento:hover{
-    transition: .2s;
-    transform: scale(1.1, 1.1);
-}
-
-.cadastro:hover{
-    background-color: #3f5131;
-    transition: 0.2s;
-}
-
-
-li{
-    display: inline;
-    
-}
 p{
-    /*display: block;*/
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/**/
+
 .esquerda{
     float: left;
 }

@@ -62,8 +62,6 @@ require '../../php/conexao.php';
                         <tr>
                             <th>Nome</th>
                             <th>Tipo</th>
-                            <th>Editar</th>
-                            <th>Deletar</th>
                         </tr>
                     </thead>
                     <tbody>  
