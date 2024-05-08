@@ -1,7 +1,7 @@
 
 <?php
 
-require '../php/conexao.php';
+require '../../php/conexao.php';
 
 
 ?>
@@ -12,8 +12,8 @@ require '../php/conexao.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/adm.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/adm.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -36,14 +36,10 @@ require '../php/conexao.php';
 
             <div class="lateral_options">
 
-                <a href="farmCadastro.html"><p>Inserir nova Farm</p></a>
-                <a href=""><p>Inserir nova Máquina</p></a>
-                <a href=""><p>Inserir nova Item</p></a>
-                <a href=""><p>Inserir novo Guia</p></a>
-                <a href=""><p>Inserir nova Atualização  </p></a>
-                <a href=""><p>Editar cursos</p></a>
+                <a href="cadastroArtigo.html"><p>Inserir novo Artigo</p></a>
+                <a href=""><p>Editar Artigo</p></a>
                 <a href=""><p>Sair</p></a>
-                <a href=""><p>Inserir novo Artigo</p></a>
+               
 
             </div>
         </div>
