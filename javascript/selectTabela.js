@@ -9,4 +9,7 @@ document.getElementById('selectTabela').addEventListener('change', function(){
 
     document.getElementById('tabela' + selecionado.charAt(0).toUpperCase() + selecionado.slice(1)).style.display="block";
     
-})
+});
+
+
+

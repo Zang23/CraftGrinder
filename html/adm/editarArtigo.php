@@ -1,5 +1,7 @@
 <?php
     require '../../php/conexao.php';
+
+    
 ?>
 
 
@@ -9,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/adm.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Document</title>
 </head>
 <body>
@@ -28,22 +31,39 @@
                     <th>Mini Descricao</th>
                     <th>Descrição Completa</th>
                     <th>Caminho Imagem</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
 
+                $code_sql = "SELECT * FROM tbArtigo";
+                $prepare = $pdo->prepare($code_sql);
+                $count = $prepare->execute();
+
                 $sql_code = "SELECT * FROM tbfarm";
                 $prepare = $pdo->prepare($sql_code);
                 $count = $prepare->execute();
                 $artigos = $prepare->fetchAll();
+
+                if(isset($_GET['editar'])){
+                    $id = (int)$_GET['editar'];
+                    echo "O . $id . foi editado";
+                }
+
                 
-                foreach($artigos as $artigo){?>
+                
+                foreach($artigos as $artigo){
+                    
+                    ?>
                     <tr>
                         <th><?= $artigo['nomeFarm'] ?></th>
                         <th><?= $artigo['miniDescFarm'] ?></th>
                         <th><?= $artigo['descFarm'] ?></th>
                         <th><?= $artigo['imagemFarm'] ?></th>
+                        <td> <a href="?editar=<?=$artigo['idFarm']?>&tipo=<?=$artigo['tipoFarm']?>" data-action="editar"><span class="material-symbols-outlined">edit_note</span></a></td>
+                        <td> <a href="?delete=<?=$artigo['idFarm']?>&tipo=<?=$artigo['tipoFarm']?>"><span class="material-symbols-outlined">delete</span></a></td>
                     </tr>
                     <?php
                 }
@@ -61,6 +81,8 @@
                     <th>Mini Descricao</th>
                     <th>Descrição Completa</th>
                     <th>Caminho Imagem</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
                 </tr>
             </thead>
             <tbody>
@@ -94,6 +116,8 @@
                     <th>Mini Descricao</th>
                     <th>Descrição Completa</th>
                     <th>Caminho Imagem</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
                 </tr>
             </thead>
             <tbody>
@@ -128,6 +152,8 @@
                     <th>Mini Descricao</th>
                     <th>Descrição Completa</th>
                     <th>Caminho Imagem</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
                 </tr>
             </thead>
             <tbody>
@@ -161,6 +187,8 @@
                     <th>Mini Descricao</th>
                     <th>Descrição Completa</th>
                     <th>Caminho Imagem</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
                 </tr>
             </thead>
             <tbody>
