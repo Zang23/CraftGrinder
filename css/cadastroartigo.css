@@ -1,3 +1,7 @@
+.cadastro_art_container{
+    display: flex;
+}
+
 .titulo_edicao{
     font-size: 32px;
     color: var(--texto);
