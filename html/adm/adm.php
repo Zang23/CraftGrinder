@@ -37,7 +37,7 @@ require '../../php/conexao.php';
             <div class="lateral_options">
 
                 <a href="cadastroArtigo.html"><p>Inserir novo Artigo</p></a>
-                <a href=""><p>Editar Artigo</p></a>
+                <a href="editarArtigo.php"><p>Editar Artigo</p></a>
                 <a href=""><p>Sair</p></a>
                
 
@@ -61,6 +61,8 @@ require '../../php/conexao.php';
                         <tr>
                             <th>Nome</th>
                             <th>Tipo</th>
+                            <th>Editar</th>
+                            <th>Deletar</th>
                         </tr>
                     </thead>
                     <tbody>  

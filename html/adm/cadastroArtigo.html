@@ -8,15 +8,15 @@
 <body>
 
 
-    <select id="selectTipoFormulario" ">
-        <option value="atualizacao">Atualizacao</option>
-        <option value="farm">Farm</option>
+    <select id="selectTipoFormulario">
+        <option value="atualizacao" >Atualizacao</option>
+        <option value="farm" selected   >Farm</option>
         <option value="item">Item</option>
         <option value="guia">Guia</option>
         <option value="maquina">Máquina</option>
     </select>
 
-    <div id="formularioAtualizacao" style="display: none">
+    <div id="formularioAtualizacao" style="display: none"> <!-- style="display: none na hora que for estilizar passar para o css -->
         <form action="../../php/scriptArtigo.php" method="post" >
             <input type="text" name="nomeAtualizacao" placeholder="Insira o nome da atualizacao">
             <textarea name="descAtualizacao" placeholder="Insira a descricao completa da atualizacao"></textarea>
