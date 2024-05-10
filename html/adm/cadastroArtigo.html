@@ -45,11 +45,14 @@
         <div class="content_opcao_cadastro">
 
         <div id="formularioAtualizacao" class="opcao_content"> <!-- style="display: none na hora que for estilizar passar para o css -->
-            <form action="../../php/scriptArtigo.php" method="post">
+            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
                 <div class="content_opcao_align c">
                     <input type="text" name="nomeAtualizacao" placeholder="Insira o nome da atualizacao">
                     <textarea name="descAtualizacao" class="descricao att" placeholder="Insira a descricao completa da atualizacao"></textarea>
-                    <input type="text" name="imagemAtualizacao" placeholder="insira a URL da imagem da Atualizacao">
+                    <label for="uploudFile" class="input_file">
+                        Enviar Arquivos
+                    </label>
+                    <input type="file" name="imagemAtualizacao" id="uploudFile" style="display: none;">
                     <input type="text" name="tipoArtigo" value="Atualizacao" style="display: none;">
                     <div class="content_button_enviar">
                         <button type="submit" class="button_enviar">Enviar</button>
@@ -59,12 +62,15 @@
         </div>
 
         <div id="formularioFarm" class="opcao_content">
-            <form action="../../php/scriptArtigo.php" method="post">
+            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
             <div class="content_opcao_align r">
                 <div class="opcao_align">
                     <input type="text" name="nomeFarm" placeholder="Insira o nome da Farm">
                     <input type="text" name="miniDescFarm" placeholder="Insira uma breve descricao sobre a farm">
-                    <input type="text" name="imagemFarm" placeholder="insira a URL da imagem (../img/nomeDaFarm)">
+                    <label for="uploudFile" class="input_file" >
+                        Escolher Arquivo
+                    </label>
+                    <input type="file" id="uploudFile" name="imagemFarm" style="display: none;"">
                     <input type="text" name="tipoArtigo" value="Farm" style="display: none;">
                 </div>
                     <div class="descricao_align">
@@ -78,12 +84,15 @@
         </div>
 
         <div id="formularioGuia" class="opcao_content">
-            <form action="../../php/scriptArtigo.php" method="post" >
+            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data" >
             <div class="content_opcao_align r">
                 <div class="opcao_align">
                     <input type="text" name="nomeGuia" placeholder="Insira o nome do guia">
                     <input type="text" name="miniDescGuia" placeholder="Insira uma breve descricao sobre o guia">
-                    <input type="text" name="imagemGuia" placeholder="insira a URL da imagem do guia">
+                    <label for="uploudFile" class="input_file">
+                        Enviar Arquivo
+                    </label>
+                    <input type="file" name="imagemGuia" id="uploudFile" style="display: none;">
                     <input type="text" name="tipoArtigo" value="Guia" style="display: none;">
                 </div>
                     <div class="descricao_align">
@@ -97,12 +106,15 @@
         </div>
 
         <div id="formularioMaquina" class="opcao_content">
-            <form action="../../php/scriptArtigo.php" method="post">
+            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
             <div class="content_opcao_align r">
                 <div class="opcao_align">
                     <input type="text" name="nomeMaquina" placeholder="Insira o nome da Máquina">
                     <input type="text" name="miniDescMaquina" placeholder="Insira uma breve descricao sobre a Máquina">
-                    <input type="text" name="imagemMaquina" placeholder="insira a URL da imagem da Máquina">
+                    <label for="uploudFile" class="input_file">
+                        Enviar arquivo
+                    </label>
+                    <input type="file" name="imagemMaquina" id="uploudFile" style="display: none;">
                     <input type="text" name="tipoArtigo" value="Maquina" style="display: none;">
                 </div>
                     <div class="descricao_align">
@@ -117,12 +129,15 @@
         </div>
 
         <div id="formularioItem" class="opcao_content">
-            <form action="../../php/scriptArtigo.php" method="post" >
+            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data" >
             <div class="content_opcao_align r">
                 <div class="opcao_align">
                     <input type="text" name="nomeItem" placeholder="Insira o nome do Item">
                     <input type="text" name="miniDescItem" placeholder="Insira uma breve descricao sobre o Item">
-                    <input type="text" name="imagemItem" placeholder="insira a URL da imagem do Item">
+                    <label for="inputId" class="input_file">
+                        Enviar Arquivo
+                    </label>
+                    <input type="file" name="imagemItem" id="inputId" style="display: none;" >
                     <input type="text" name="tipoArtigo" value="Item" style="display: none;">
                 </div>
                     <div class="descricao_align">
