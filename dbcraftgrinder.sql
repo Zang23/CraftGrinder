@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07/05/2024 às 11:46
+-- Tempo de geração: 10/05/2024 às 10:32
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -38,11 +38,14 @@ CREATE TABLE `tbartigo` (
 --
 
 INSERT INTO `tbartigo` (`idArtigo`, `nomeArtigo`, `tipoArtigo`) VALUES
-(11, 'Farm de Esqueleto', 'Farm'),
-(12, 'Adicao do novo Martelo roubado', 'Atualizacao'),
-(13, 'Espada de diamante', 'Item'),
-(14, 'como domesticar um gato', 'Guia'),
-(15, 'Fornalha Industrial', 'Maquina');
+(37, 'Farm de Ferro', 'Farm'),
+(38, 'Farm de Esqueleto', 'Farm'),
+(39, 'Como domesticar um lobo', 'Guia'),
+(40, 'Fornalha Industrial', 'Maquina'),
+(46, 'Atualizacao 1.20.1', 'Atualizacao'),
+(48, 'Espada de Netherite', 'Item'),
+(49, 'calça de ferro', 'Item'),
+(50, 'Arco', 'Item');
 
 -- --------------------------------------------------------
 
@@ -54,16 +57,10 @@ CREATE TABLE `tbatualizacao` (
   `idAtualizacao` int(11) NOT NULL,
   `nomeAtualizacao` varchar(80) NOT NULL,
   `descAtualizacao` longtext DEFAULT NULL,
+  `tipoAtualizacao` varchar(25) DEFAULT NULL,
   `imagemAtualizacao` varchar(250) DEFAULT NULL,
-  `tipoAtualizacao` varchar(25) DEFAULT NULL
+  `caminhoImagemAtualizacao` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `tbatualizacao`
---
-
-INSERT INTO `tbatualizacao` (`idAtualizacao`, `nomeAtualizacao`, `descAtualizacao`, `imagemAtualizacao`, `tipoAtualizacao`) VALUES
-(2, 'Adicao do novo Martelo roubado', 'Aquela descricao mt fodinha', 'loik', 'Atualizacao');
 
 -- --------------------------------------------------------
 
@@ -89,16 +86,10 @@ CREATE TABLE `tbfarm` (
   `nomeFarm` varchar(80) NOT NULL,
   `descFarm` longtext DEFAULT NULL,
   `miniDescFarm` varchar(250) DEFAULT NULL,
+  `tipoFarm` varchar(25) DEFAULT NULL,
   `imagemFarm` varchar(250) DEFAULT NULL,
-  `tipoFarm` varchar(25) DEFAULT NULL
+  `caminhoImagemFarm` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `tbfarm`
---
-
-INSERT INTO `tbfarm` (`idFarm`, `nomeFarm`, `descFarm`, `miniDescFarm`, `imagemFarm`, `tipoFarm`) VALUES
-(27, 'Farm de Esqueleto', 'Aquela descricao toda la tlgd', 'Mecanismo simples para conseguir ossos e xp no minecraft!', 'kkkk', 'Farm');
 
 -- --------------------------------------------------------
 
@@ -111,16 +102,10 @@ CREATE TABLE `tbguia` (
   `nomeGuia` varchar(80) NOT NULL,
   `descGuia` longtext DEFAULT NULL,
   `miniDescGuia` varchar(250) DEFAULT NULL,
+  `tipoGuia` varchar(25) DEFAULT NULL,
   `imagemGuia` varchar(250) DEFAULT NULL,
-  `tipoGuia` varchar(25) DEFAULT NULL
+  `caminhoImagemGuia` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `tbguia`
---
-
-INSERT INTO `tbguia` (`idGuia`, `nomeGuia`, `descGuia`, `miniDescGuia`, `imagemGuia`, `tipoGuia`) VALUES
-(1, 'como domesticar um gato', 'FAZOL', 'As selvas sao os ambientes que tem mais gatos', 'kkkk', 'Guia');
 
 -- --------------------------------------------------------
 
@@ -133,16 +118,10 @@ CREATE TABLE `tbitem` (
   `nomeItem` varchar(80) DEFAULT NULL,
   `descItem` longtext DEFAULT NULL,
   `miniDescItem` varchar(250) DEFAULT NULL,
+  `tipoItem` varchar(25) DEFAULT NULL,
   `imagemItem` varchar(250) DEFAULT NULL,
-  `tipoItem` varchar(25) DEFAULT NULL
+  `caminhoImagemItem` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `tbitem`
---
-
-INSERT INTO `tbitem` (`idItem`, `nomeItem`, `descItem`, `miniDescItem`, `imagemItem`, `tipoItem`) VALUES
-(1, 'Espada de diamante', 'feita com 2 diamantes e um graveto', 'A espada mais forte que pode ser craftada no overworld', 'KKKK', 'Item');
 
 -- --------------------------------------------------------
 
@@ -155,16 +134,10 @@ CREATE TABLE `tbmaquina` (
   `nomeMaquina` varchar(80) DEFAULT NULL,
   `descMaquina` longtext DEFAULT NULL,
   `miniDescMaquina` varchar(250) DEFAULT NULL,
+  `tipoMaquina` varchar(25) DEFAULT NULL,
   `imagemMaquina` varchar(250) DEFAULT NULL,
-  `tipoMaquina` varchar(25) DEFAULT NULL
+  `caminhoImagemMaquina` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `tbmaquina`
---
-
-INSERT INTO `tbmaquina` (`idMaquina`, `nomeMaquina`, `descMaquina`, `miniDescMaquina`, `imagemMaquina`, `tipoMaquina`) VALUES
-(1, 'Fornalha Industrial', 'ad', 'fornalhas', 'kewk', 'Maquina');
 
 --
 -- Índices para tabelas despejadas
@@ -220,13 +193,13 @@ ALTER TABLE `tbmaquina`
 -- AUTO_INCREMENT de tabela `tbartigo`
 --
 ALTER TABLE `tbartigo`
-  MODIFY `idArtigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idArtigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de tabela `tbatualizacao`
 --
 ALTER TABLE `tbatualizacao`
-  MODIFY `idAtualizacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idAtualizacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tbclientes`
@@ -238,25 +211,25 @@ ALTER TABLE `tbclientes`
 -- AUTO_INCREMENT de tabela `tbfarm`
 --
 ALTER TABLE `tbfarm`
-  MODIFY `idFarm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idFarm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de tabela `tbguia`
 --
 ALTER TABLE `tbguia`
-  MODIFY `idGuia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idGuia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tbitem`
 --
 ALTER TABLE `tbitem`
-  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `tbmaquina`
 --
 ALTER TABLE `tbmaquina`
-  MODIFY `idMaquina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idMaquina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
