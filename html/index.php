@@ -62,7 +62,6 @@
             <table class="conteudo_tabela">
                 <tr>
 
-                    <th class="conteudo_cards_container">
                     <?php
 
                     $farm_code = "SELECT idFarm FROM tbfarm";
@@ -77,6 +76,7 @@
 
                         if($contador < $numRepeticoes)
                         {
+                            echo " <th class='conteudo_cards_container'>";
                             mostraFarm($farm['idFarm']);
                             $contador++;
                         }else{
@@ -87,19 +87,6 @@
                     ?>
                     </th>
 
-                    <th class="conteudo_cards_container">
-                        <div class="conteudo_titulo">
-                        <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                        </div>
-                        <p>exemplo</p>
-                    </th>
-
-                    <th class="conteudo_cards_container">
-                        <div class="conteudo_titulo">
-                        <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                        </div>
-                        <p>exemplo</p>
-                    </th>
 
                     <th class="conteudo_cards_container final">
                         <a  href="ler_mais/farms.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
