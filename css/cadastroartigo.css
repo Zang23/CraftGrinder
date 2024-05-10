@@ -1,9 +1,12 @@
 .index_fundo{
-    position: fixed;
+    height: 750px;
+}
+.cabecalho_container_cadArt{
+    position: sticky;
     top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    width: 100%;
+    z-index: 1; 
+    box-shadow: 0 0.625rem 0.625rem 0 var(--shadowBox);
 }
 .cadastro_art_align{
     display: flex;
