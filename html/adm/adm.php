@@ -2,7 +2,7 @@
 <?php
 
 require '../../php/conexao.php';
-
+require '../../php/funcoes.php';
 
 ?>
 
@@ -69,12 +69,15 @@ require '../../php/conexao.php';
                     <tbody>  
                     <?php
 
+
                         $sql_code1 = "SELECT * FROM tbartigo";
                         $prepare1 = $pdo->prepare($sql_code1);
                         $count1 = $prepare1->execute();
                         $artigos = $prepare1->fetchAll();
 
-                        $sql_code2 = "SELECT * FROM tbfarm";
+                        
+
+                        $sql_code2 = "SELECT * FROM tbfarm  ";
                         $prepare2 = $pdo->prepare($sql_code2);
                         $count2 = $prepare2->execute();
                         $farms = $prepare2->fetchAll();
@@ -101,31 +104,41 @@ require '../../php/conexao.php';
                             $pdo->exec("DELETE FROM tbartigo WHERE idArtigo = $id");
 
                             if($_GET['tipo'] == "Farm"){
-                                $nome = $_GET['nome'];
+                                $nome = $_GET['nome']; 
+                                $novoCaminho = "../" . getCaminhoFarm($nome);       
+                                unlink($novoCaminho);
                                 $pdo->exec("DELETE FROM tbfarm WHERE nomeFarm = '$nome'");
-                                echo $_GET['tipo'] . " Deletado com sucesso";
+                                echo $_GET['tipo'] . " " .  $_GET['delete'] . " Deletado com sucesso";
                             }
 
                             if($_GET['tipo'] == "Maquina"){
                                 $nome = $_GET['nome'];
+                                $novoCaminho = "../" . getCaminhoMaquina($nome);       
+                                unlink($novoCaminho);
                                 $pdo->exec("DELETE FROM tbmaquina WHERE nomeMaquina = '$nome'");
                                 echo $_GET['tipo'] . " Deletado com sucesso";
                             }
 
                             if($_GET['tipo'] == "Guia"){
                                 $nome = $_GET['nome'];
+                                $novoCaminho = "../" . getCaminhoGuia($nome);       
+                                unlink($novoCaminho);
                                 $pdo->exec("DELETE FROM tbguia WHERE nomeGuia = '$nome'");
                                 echo $_GET['tipo'] . " Deletado com sucesso";
                             }
 
                             if($_GET['tipo'] == "Item"){
                                 $nome = $_GET['nome'];
+                                $novoCaminho = "../" . getCaminhoItem($nome);       
+                                unlink($novoCaminho);
                                 $pdo->exec("DELETE FROM tbitem WHERE nomeItem = '$nome'");
                                 echo $_GET['tipo'] . " Deletado com sucesso";
                             }
 
                             if($_GET['tipo'] == "Atualizacao"){
                                 $nome = $_GET['nome'];
+                                $novoCaminho = "../" . getCaminhoAtualizacao($nome);       
+                                unlink($novoCaminho);
                                 $pdo->exec("DELETE FROM tbatualizacao WHERE nomeAtualizacao = '$nome'");
                                 echo $_GET['tipo'] . " Deletado com sucesso";
                             }

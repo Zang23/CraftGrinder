@@ -31,6 +31,10 @@ if($tipoArtigo == "Farm"){
 
         $caminhoImagem = $pasta . $novoNomeArquivo . "." . $extensao;
         $verificado = move_uploaded_file($arquivo['tmp_name'], $caminhoImagem);
+
+        function getCaminhoImagem(){
+            return $caminhoImagem;
+        }
         
         if($verificado){
             $nome = $_POST['nomeFarm'];
