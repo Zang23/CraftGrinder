@@ -40,9 +40,6 @@
         echo $tipo . " ID:" . $id . " Foi deletado com sucesso"; 
 
     }
-
-
-
     
 
 ?>
