@@ -24,13 +24,24 @@
         $prepare = $pdo->prepare($sql_code);
         $count = $prepare->execute();
         $artigos = $prepare->fetchAll();
-
         $caminhoCerto = "caminhoImagem" . $tipo;
 
         foreach($artigos as $artigo){
             return $artigo[$caminhoCerto];
         }
     }
+
+    function deletaArtigo(string $tipo, string $nome, int $id){
+        require '../../php/conexao.php';
+
+        $novoCaminho = "../" . getCaminhoArtigo($nome, $tipo);
+        unlink($novoCaminho);
+        $pdo->exec("DELETE FROM tb$tipo WHERE nome$tipo = '$nome'");
+        echo $tipo . " ID:" . $id . " Foi deletado com sucesso"; 
+
+    }
+
+
 
     
 

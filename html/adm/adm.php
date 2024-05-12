@@ -3,7 +3,7 @@
 
 require '../../php/conexao.php';
 require '../../php/funcoes.php';
-
+//error_reporting(E_ERROR | E_PARSE);
 
 ?>
 
@@ -102,52 +102,25 @@ require '../../php/funcoes.php';
                             $pdo->exec("DELETE FROM tbartigo WHERE idArtigo = $id");
 
                             if($_GET['tipo'] == "Farm"){
-                                $nome = $_GET['nome'];
-                                $tipo = $_GET['tipo'];
-                                $novoCaminho = "../" . getCaminhoArtigo($nome, $tipo);         
-                                unlink($novoCaminho);
-                                $pdo->exec("DELETE FROM tbfarm WHERE nomeFarm = '$nome'");
-                                echo $_GET['tipo'] . " " .  $_GET['delete'] . " Deletado com sucesso";
+                                deletaArtigo($_GET['tipo'], $_GET['nome'], $id);
                             }
 
                             if($_GET['tipo'] == "Maquina"){
-                                $nome = $_GET['nome'];
-                                $tipo = $_GET['tipo'];
-                                $novoCaminho = "../" . getCaminhoArtigo($nome, $tipo);       
-                                unlink($novoCaminho);
-                                $pdo->exec("DELETE FROM tbmaquina WHERE nomeMaquina = '$nome'");
-                                echo $_GET['tipo'] . " Deletado com sucesso";
+                               deletaArtigo($_GET['tipo'], $_GET['nome'], $id);
                             }
 
                             if($_GET['tipo'] == "Guia"){
-                                $nome = $_GET['nome'];
-                                $tipo = $_GET['tipo'];
-                                $novoCaminho = "../" . getCaminhoArtigo($nome, $tipo);       
-                                unlink($novoCaminho);
-                                $pdo->exec("DELETE FROM tbguia WHERE nomeGuia = '$nome'");
-                                echo $_GET['tipo'] . " Deletado com sucesso";
+                                deletaArtigo($_GET['tipo'], $_GET['nome'], $id);;
                             }
 
                             if($_GET['tipo'] == "Item"){
-                                $nome = $_GET['nome'];
-                                $tipo = $_GET['tipo'];
-                                $novoCaminho = "../" . getCaminhoArtigo($nome, $tipo);       
-                                unlink($novoCaminho);
-                                $pdo->exec("DELETE FROM tbitem WHERE nomeItem = '$nome'");
-                                echo $_GET['tipo'] . " Deletado com sucesso";
+                                deletaArtigo($_GET['tipo'], $_GET['nome'], $id);
                             }
 
                             if($_GET['tipo'] == "Atualizacao"){
-                                $nome = $_GET['nome'];
-                                $tipo = $_GET['tipo'];
-                                $novoCaminho = "../" . getCaminhoArtigo($nome, $tipo);       
-                                unlink($novoCaminho);
-                                $pdo->exec("DELETE FROM tbatualizacao WHERE nomeAtualizacao = '$nome'");
-                                echo $_GET['tipo'] . " Deletado com sucesso";
+                                deletaArtigo($_GET['tipo'], $_GET['nome'], $id);
                             }
                         }
-
-                        
 
                         if(isset($_GET['editar'])){
                             echo "O id foi detectado ";
@@ -178,15 +151,14 @@ require '../../php/funcoes.php';
                             }
                         }
 
-                        foreach($artigos as $artigo){
-                            
-                        ?>
-                        <tr>
-                            <td><?= $artigo['nomeArtigo'] ?></td>
-                            <td><?= $artigo['tipoArtigo'] ?></td>
-                            <td> <a href="?editar=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>&nome=<?=$artigo['nomeArtigo']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
-                            <td> <a href="?delete=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>&nome=<?=$artigo['nomeArtigo']?>"><span class="material-symbols-outlined">delete</span></a></td>
-                        </tr><?php
+                        foreach($artigos as $artigo){ ?>
+                            <tr>
+                                <td><?= $artigo['nomeArtigo'] ?></td>
+                                <td><?= $artigo['tipoArtigo'] ?></td>
+                                <td> <a href="?editar=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>&nome=<?=$artigo['nomeArtigo']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
+                                <td> <a href="?delete=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>&nome=<?=$artigo['nomeArtigo']?>"><span class="material-symbols-outlined">delete</span></a></td>
+                            </tr>
+                        <?php
                         }
                         
                     ?>
