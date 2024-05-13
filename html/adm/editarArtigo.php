@@ -10,11 +10,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/adm.css">
+    <link rel="stylesheet" href="../../css/cadastroartigo.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Document</title>
 </head>
 <body>
+<div class="index_fundo">
+
+    <header class="cabecalho_container_cadArt">
+
+        <div class="cabecalho_superior_container">
+            <a href="../index.html"><p class="cabecalho_titulo">CraftGrinder</p></a>
+        </div>
+        
+    </header>
+
+    <div class="container_titulo_edicao">
+        <p class="titulo_edicao">Escolha o conteúdo que será editado</p>
+        <div class="titulo_edicao_button_div">
+            <a class="titulo_edicao_button" href="../adm/adm.php">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </a>
+        </div>
+    </div>
+
     <select id="selectTabela">
         <option value="farm">Farm</option>
         <option value="atualizacao">Atualizacao</option>
@@ -300,6 +320,7 @@
             </tbody>
         </table>
     </div>
+</div>
 
     <script src="../../javascript/selectTabela.js"></script>
 </body>

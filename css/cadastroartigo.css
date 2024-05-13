@@ -27,8 +27,14 @@
 }
 
 .titulo_edicao_button_div{
-    width: 100%;
-    margin-left: 4%;
+    background-color: var(--claro2);
+    width: 5px;
+    border-right: solid var(--claro);
+    margin-left: 2%;
+}
+.titulo_edicao_button_div:hover{
+    width: 15%;
+    transition: 1s;
 }
 
 .titulo_edicao_button{
@@ -36,7 +42,6 @@
     padding: 0.45rem 2rem;
     color: #000;
     border-radius: 0.75rem;
-    background-color: var(--claro);
 
 }
 
