@@ -1,0 +1,9 @@
+thead, th, tr{
+    border: solid 1px;
+    padding: 5px;
+}
+.opcao_content_alinhamento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
