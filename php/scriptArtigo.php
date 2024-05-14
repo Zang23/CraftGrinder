@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
 <?php
 
 require_once 'conexao.php';
@@ -92,9 +103,11 @@ if($tipoArtigo == "Guia"){
         
             $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
             $code_sql->execute([$nome, $tipoArtigo]);?>
-        
+
+
             <a href="../html/adm/cadastroArtigo.html"><button>Adicionar mais um artigo</button></a>
-            <a href="../html/adm/adm.php"><button>Voltar a tela de Admin</button></a><?php
+            <a href="../html/adm/adm.php"><button>Voltar a tela de Admin</button></a>
+            <?php
         }
     }
 }

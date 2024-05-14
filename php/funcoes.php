@@ -40,6 +40,17 @@
         echo $tipo . " ID:" . $id . " Foi deletado com sucesso"; 
 
     }
+
+    function voltaAdm(){?>
+    
+    <div class="container_retorno">
+        <a href="../html/adm/cadastroArtigo.html"><button>Adicionar mais um artigo</button></a>
+        <a href="../html/adm/adm.php"><button>Voltar a tela de Admin</button></a>
+    </div>
+
+
+    <?php
+    }
     
 
 ?>
