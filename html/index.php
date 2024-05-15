@@ -19,7 +19,7 @@
 
 <div class="index_container">
 
-    <header class="cabecalho_container">
+    <header class="cabecalho_container r">
 
     <div class="cabecalho_superior_container">
         <p class="cabecalho_titulo">CraftGrinder</p>

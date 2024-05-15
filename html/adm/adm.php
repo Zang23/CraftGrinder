@@ -21,7 +21,7 @@ require '../../php/funcoes.php';
 <body>
     <div class="index_fundo">
 
-    <header class="cabecalho_container">
+    <header class="cabecalho_container s">
 
         <div class="cabecalho_superior_container">
             <a href="index.html"><p class="cabecalho_titulo">CraftGrinder</p></a>
