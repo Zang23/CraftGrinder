@@ -3,7 +3,7 @@
 
 require '../../php/conexao.php';
 require '../../php/funcoes.php';
-//error_reporting(E_ERROR | E_PARSE);
+error_reporting(E_ERROR | E_PARSE);
 
 ?>
 

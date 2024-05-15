@@ -42,14 +42,86 @@
     }
 
     function voltaAdm(){?>
-    
-    <div class="container_retorno">
-        <a href="../html/adm/cadastroArtigo.html"><button>Adicionar mais um artigo</button></a>
-        <a href="../html/adm/adm.php"><button>Voltar a tela de Admin</button></a>
-    </div>
-
-
+        <div class="container">
+            <div class="container_retorno">
+                <h1 class="retorno_titulo">O que deseja Fazer?</h1>
+                <div class="container_clareamento">
+                    <a href="../html/adm/cadastroArtigo.html"><button class="clareamento">Adicionar mais um artigo</button></a>
+                    <a href="../html/adm/adm.php"><button class="clareamento">Voltar a tela de Admin</button></a>
+                </div>
+            </div>
+        </div>
     <?php
+    }
+
+    function setArtigo(string $tipo){
+        require 'conexao.php';
+
+        $imagemArtigo = "imagem" . $tipo;
+        if(isset($_FILES[$imagemArtigo])){
+
+            $arquivo = $_FILES[$imagemArtigo];
+
+            if($arquivo['error']){
+                die("Houve um erro ao enviar sua imagem");
+            }
+    
+            if($arquivo['size'] > 2097152){
+                die("Sua imagem é muito pesada, o tamanho máximo suportado é de 2MB");
+            }
+
+            
+            if($tipo == "Atualizacao"){
+                $pasta = "../img/atualizacoes/";
+            }else if($tipo == "Item"){
+                $pasta = "../img/itens/";
+            }else{
+                $pasta = "../img/" . strtolower($tipo) . "s/";
+            }
+
+
+            $nomeArquivo = $arquivo['name'];
+            $novoNomeArquivo = uniqid();
+            $extensao = strtolower(pathinfo($nomeArquivo,PATHINFO_EXTENSION ));
+
+            if($extensao != "jpg" && $extensao != "png"){
+                die("Tipo de arquivo não aceito");
+            }
+    
+            $caminhoImagem = $pasta . $novoNomeArquivo . "." . $extensao;
+            $verificado = move_uploaded_file($arquivo['tmp_name'], $caminhoImagem);
+
+            if($verificado){
+                $nomeTemp = "nome" . $tipo;
+                $descTemp = "desc" . $tipo;
+                $bdPersonalizado = strtolower($tipo);
+
+                if($tipo != "Atualizacao"){
+                    $miniDescTemp = "miniDesc" . $tipo;
+                    $minidesc = $_POST[$miniDescTemp];
+                }
+
+                $nome = $_POST[$nomeTemp];
+                $desc = $_POST[$descTemp];
+
+                if($tipo == "Atualizacao"){
+                    $sql_code = $pdo->prepare("INSERT INTO tb$bdPersonalizado VALUES (null,?,?,?,?,?)");
+                    $sql_code->execute([$nome, $desc, $tipo, $nomeArquivo, $caminhoImagem]);
+
+                    $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
+                    $code_sql->execute([$nome, $tipo]);
+                }else{
+                    $sql_code = $pdo->prepare("INSERT INTO tb$bdPersonalizado VALUES (null,?,?,?,?,?,?)");
+                    $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo, $caminhoImagem]);
+        
+                    $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
+                    $code_sql->execute([$nome, $tipo]);
+                }
+                
+                voltaAdm();
+                
+            }
+        }
     }
     
 
