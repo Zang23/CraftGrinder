@@ -1,9 +1,19 @@
-thead, th, tr{
-    border: solid 1px;
-    padding: 5px;
-}
 .opcao_content_alinhamento{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+thead, th, tr{
+    padding: 1rem 2rem;
+    border: solid 2.5px var(--claro2);
+}
+thead{
+    background-color: var(--claro3);
+}
+tbody{
+    background-color: #fff;
+}
+table{
+    border-collapse: collapse;
 }

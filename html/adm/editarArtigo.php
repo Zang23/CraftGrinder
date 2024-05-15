@@ -45,8 +45,8 @@
         <div class="content_align_selector">
             <div class="selector_content">
                 <select id="selectTabela">
-                    <option value="farm">Farm</option>
                     <option value="atualizacao">Atualizacao</option>
+                    <option value="farm">Farm</option>
                     <option value="guia">Guia</option>
                     <option value="maquina">Máquina</option>
                     <option value="item">Item</option>
@@ -59,6 +59,61 @@
     <div class="content_align_cadastro">
 
         <div class="content_opcao_cadastro">
+
+        <div id="tabelaAtualizacao" class="opcao_content">
+        <div class="opcao_content_alinhamento">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Mini Descricao</th>
+                        <th>Caminho Imagem</th>
+                        <th>Editar</th>
+                        <th>Deletar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+
+                        $code_sql = "SELECT * FROM tbArtigo";
+                        $prepare = $pdo->prepare($code_sql);
+                        $count = $prepare->execute();
+
+                        $sql_code = "SELECT * FROM tbatualizacao";
+                        $prepare = $pdo->prepare($sql_code);
+                        $count = $prepare->execute();
+                        $artigos = $prepare->fetchAll();
+
+                        if(isset($_GET['editar'])){
+                            $id = (int)$_GET['editar'];
+                            echo "O . $id . foi editado";
+                        }
+
+                        if(isset($_GET['delete'])){
+                            $id = (int)$_GET['delete'];
+                            $nome = $_GET['nome'];
+
+                            $pdo->exec("DELETE FROM tbatualizacao WHERE idAtualizacao = $id");
+                            $pdo->exec("DELETE FROM tbartigo WHERE nomeArtigo = '$nome'");
+                            
+                        }
+                    
+                    foreach($artigos as $artigo){?>
+                        <tr>
+                            <th><?= $artigo['nomeAtualizacao'] ?></th>
+                            <th><?= $artigo['descAtualizacao'] ?></th>
+                            <th><?= $artigo['imagemAtualizacao'] ?></th>
+                            <td> <a href="?editar=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
+                            <td> <a href="?delete=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined">delete</span></a></td>
+                        </tr>
+                        <?php
+                    }
+
+                    ?>
+                </tbody>
+            </table>
+        </div>
+        </div>
 
         <div id="tabelaFarm" class="opcao_content">
 
@@ -123,6 +178,8 @@
         </div>
 
         <div id="tabelaGuia" class="opcao_content">
+
+        <div class="opcao_content_alinhamento">
             <table>
                 <thead>
                     <tr>
@@ -176,8 +233,11 @@
                 </tbody>
             </table>
         </div>
+        </div>
 
         <div id="tabelaMaquina" class="opcao_content">
+
+        <div class="opcao_content_alinhamento">
             <table>
                 <thead>
                     <tr>
@@ -232,8 +292,10 @@
                 </tbody>
             </table>
         </div>
+        </div>
 
         <div id="tabelaItem" class="opcao_content">
+        <div class="opcao_content_alinhamento">
             <table>
                 <thead>
                     <tr>
@@ -287,58 +349,8 @@
                 </tbody>
             </table>
         </div>
+        </div>
 
-        <div id="tabelaAtualizacao" class="opcao_content">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Mini Descricao</th>
-                        <th>Caminho Imagem</th>
-                        <th>Editar</th>
-                        <th>Deletar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-
-                        $code_sql = "SELECT * FROM tbArtigo";
-                        $prepare = $pdo->prepare($code_sql);
-                        $count = $prepare->execute();
-
-                        $sql_code = "SELECT * FROM tbatualizacao";
-                        $prepare = $pdo->prepare($sql_code);
-                        $count = $prepare->execute();
-                        $artigos = $prepare->fetchAll();
-
-                        if(isset($_GET['editar'])){
-                            $id = (int)$_GET['editar'];
-                            echo "O . $id . foi editado";
-                        }
-
-                        if(isset($_GET['delete'])){
-                            $id = (int)$_GET['delete'];
-                            $nome = $_GET['nome'];
-
-                            $pdo->exec("DELETE FROM tbatualizacao WHERE idAtualizacao = $id");
-                            $pdo->exec("DELETE FROM tbartigo WHERE nomeArtigo = '$nome'");
-                            
-                        }
-                    
-                    foreach($artigos as $artigo){?>
-                        <tr>
-                            <th><?= $artigo['nomeAtualizacao'] ?></th>
-                            <th><?= $artigo['descAtualizacao'] ?></th>
-                            <th><?= $artigo['imagemAtualizacao'] ?></th>
-                            <td> <a href="?editar=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
-                            <td> <a href="?delete=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined">delete</span></a></td>
-                        </tr>
-                        <?php
-                    }
-
-                    ?>
-                </tbody>
-            </table>
         </div>
     </div>
     <div>
