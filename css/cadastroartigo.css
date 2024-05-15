@@ -1,5 +1,5 @@
 .index_fundo{
-    height: 750px;
+    height: 800px;
 }
 .cabecalho_container_cadArt{
     position: sticky;
@@ -27,22 +27,19 @@
 }
 
 .titulo_edicao_button_div{
-    background-color: var(--claro2);
     width: 5px;
-    border-right: solid var(--claro);
-    margin-left: 2%;
-}
-.titulo_edicao_button_div:hover{
-    width: 15%;
-    transition: 1s;
 }
 
 .titulo_edicao_button{
     width: 50%;
     padding: 0.45rem 2rem;
-    color: #000;
+    color: #fff;
     border-radius: 0.75rem;
-
+}
+.titulo_edicao_button:hover{
+    color: var(--escuro2);
+    transition: 0.5s;
+    scale: 1.1, 1.1;
 }
 
 .titulo_edicao{
@@ -93,13 +90,13 @@
 }
 
 
-#selectTipoFormulario{
+#selectTipoFormulario, #selectTabela{
     padding: 0.75rem;
     width: 25%;
     letter-spacing: 1px;
     overflow: hidden;
-    border-radius: 12px;
 }
+
 
 
 .opcao_content:first-child{
@@ -141,43 +138,48 @@
     width: 75%;
 }
 
-
-
 input, button, textarea{
     border: none;
     border-radius: 12px;
     padding: 0.5rem;
 }
 
-
-
-.input_file{
-   text-align: center;
-    border: none;
-    border-radius: 12px;
-    padding: 0.5rem;
-    background-color: var(--claro);
-}
-
-.input_file:hover, .button_enviar:hover {
+.button_enviar:hover {
     background-color: var(--navbarHover);
+    transition: 0.2s;
     cursor: pointer;
 }
-
-
-.button_enviar{
-    background-color: var(--claro);
+.input_file:hover{
+    background-color: var(--escuro2);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.button_enviar, .input_file:first-child{
     padding: 0.75rem 1rem;
-    font-weight: bold;
+    border-radius: 12px;
     font-size: 1rem;
     width: 100%;
-
+    margin-bottom: 5%;
 }
-
-
+.input_file{
+    background-color: var(--fundo);
+    color: var(--texto);
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+.button_enviar{
+    font-weight: bold;
+    background-color: var(--claro);
+}
 
 .content_button_enviar{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    gap: 1rem;
     margin-bottom: 2%;
+    width: 33%;
+}
+.content_button_alinhamento{
+    display: flex;
+    flex-direction: row-reverse;
 }
