@@ -36,10 +36,10 @@
     box-shadow: 0 0.625rem 1.25rem 0 #00000086;
     position: sticky;
     top: 0;
-    height: 750px;
+    height: 100vh;
 }
 .lateral_conteudo{
-    margin-top: 50%;
+    margin-top: 10rem;
     
 }
 .lateral_conteudo p{
