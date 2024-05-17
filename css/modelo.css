@@ -24,12 +24,14 @@
     display: flex;
     width: 75%;
     background-color: var(--fundoCards);
+    
 }
 
 .principal_conteudo{
     text-align: justify;
     margin: 5% 10%;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
 }
 .titulo_principal{
     margin: 1rem;
