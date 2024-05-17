@@ -2,6 +2,10 @@
     background-color: var(--fundo);
 }
 
+html{
+    scroll-padding-top: 135px;
+}
+
 .cabecalho_container{
     top: 0;
     width: 100%;
@@ -15,6 +19,14 @@
 }
 
 .cabecalho_superior_container{
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+    align-items: center;
+    background-color: var(--escuro);
+    height: 12vh;
+}
+.cabecalho_superior_container.sticky{
     display: flex;
     justify-content: space-between;
     align-items: center;
