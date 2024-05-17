@@ -114,6 +114,17 @@
     justify-content: center;
 }
 
+.container_index_atualizacao{
+    width: 100%;
+    border-radius: 1.25rem 0.625rem;
+}
+
+.indexImagem{
+    width: 33%;
+    height: 51vh;
+    border-radius: 1.25rem 0.625rem;
+}
+
 .conteudo_tabela{
     width: 80%;
 }

@@ -51,7 +51,22 @@
 
     <div class="conteudo">
         <div class="conteudo_atualizacoes">
-            exemplo
+            <?php
+                $atualizacao_code = "SELECT idAtualizacao, caminhoImagemAtualizacao FROM tbatualizacao ORDER BY idAtualizacao DESC LIMIT 3 ";
+                $prepareAtualizacao = $pdo->prepare($atualizacao_code);
+                $count = $prepareAtualizacao->execute();
+                $atualizacoes = $prepareAtualizacao->fetchAll(PDO::FETCH_ASSOC);?>
+
+                <div class="container_index_atualizacao">
+                    <?php  
+                    foreach($atualizacoes as $atualizacao){?>
+                        
+                        <img class="indexImagem" src="<?=$atualizacao['caminhoImagemAtualizacao']?>"><?php
+                    }
+
+                    ?>
+                </div>
+
         </div>
     </div>
     
@@ -64,33 +79,30 @@
 
                     <?php
 
-                    $farm_code = "SELECT idFarm FROM tbfarm";
+                    $farm_code = "SELECT idFarm, caminhoImagemFarm FROM tbfarm ORDER BY idFarm DESC LIMIT 3";
                     $prepareFarm = $pdo->prepare($farm_code);
                     $count = $prepareFarm->execute();
                     $farms = $prepareFarm->fetchAll(PDO::FETCH_ASSOC);
 
                     $numRepeticoes = 3;
-                    $contador = 0;
+                    $contador = 0;?>
+                    
+                    
+                    <?php
 
-                    foreach($farms as $farm){
+                    foreach($farms as $farm){?>
 
-                        if($contador < $numRepeticoes)
-                        {
-                            echo " <th class='conteudo_cards_container'>";
-                            mostraFarm($farm['idFarm']);
-                            $contador++;
-                        }else{
-                            break;
-                        }
-                    }
+                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
                         
-                    ?>
+                    }  ?>
+                    
                     </th>
 
 
-                    <th class="conteudo_cards_container final">
+                    <th class="conteudo_cards_container final"> </th>
                         <a  href="ler_mais/farms.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
-                    </th>
+                   
+                      
                     
                 </tr>
             </table>
