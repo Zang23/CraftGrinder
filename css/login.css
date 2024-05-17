@@ -23,6 +23,15 @@
     gap: 2rem;
 }
 
+.voltar_button{
+    color: #fff;
+    margin-bottom: 2rem;
+}
+.voltar_button:hover{
+    color: var(--escuro2);
+    transition: 0.5s;
+}
+
 .formulario_titulo{
     color: var(--claro);
     font-size: 2.5rem;
@@ -74,4 +83,6 @@
     justify-content: center;
     align-items: center;
     margin: 10%;
+    color: var(--texto);
+    font-size: 32px;
 }

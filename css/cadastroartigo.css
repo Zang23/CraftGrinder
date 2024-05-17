@@ -39,7 +39,7 @@
 .titulo_edicao_button:hover{
     color: var(--escuro2);
     transition: 0.5s;
-    scale: 1.1, 1.1;
+   
 }
 
 .titulo_edicao{
