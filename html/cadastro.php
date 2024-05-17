@@ -7,15 +7,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/cadastro.css">
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <title>Cadastro</title>
     </head>
     <body>
         <form action="../php/scriptCadastro.php" method="post">
-
+<div class="index_fundo_cad">
         
+        <div class="voltar_button_align">
 
+        <a class="voltar_button" href="index.php">
+                    <span class="material-symbols-outlined">arrow_back</span>
+        </a>
             <div class="cadastro_container">
-           
+
                 <div class="formulario_cadastro_container">
             
                     <div class="formulario_input_container">
@@ -79,6 +84,8 @@
                 </div>
             
             </div>
+        </div>
+</div>
         </form>
     </body>
 </html>
