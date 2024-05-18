@@ -101,6 +101,8 @@
             </ol>
         </aside>
     </section>
+
+    <!-- https://codepen.io/Schepp/pen/WNbQByE -->
     
     <div>
         <h1 id="farms" class="navbar_titulo">Farms</h1>
