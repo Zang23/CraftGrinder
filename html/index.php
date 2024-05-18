@@ -49,7 +49,7 @@
 
     <h1 id="atualizacoes" class="navbar_titulo"> Últimas Atualizações</h1>
 
-    <div class="conteudo">
+    <!--<div class="conteudo">
         <div class="conteudo_atualizacoes">
             <?php
                 $atualizacao_code = "SELECT idAtualizacao, caminhoImagemAtualizacao FROM tbatualizacao ORDER BY idAtualizacao DESC LIMIT 3 ";
@@ -68,7 +68,39 @@
                 </div>
 
         </div>
-    </div>
+    </div>-->
+
+    <section class="carousel_atualizacao">
+        <ol class="carousel_conteudo">
+            <li id="carousel_slide1" class="carousel_slide">
+                <div class="carousel_setas_conteudo">
+                    <a href="#carousel_slide2" class="carousel_seta">seta</a>
+                    <a href="#carousel_slide3" class="carousel_seta">seta</a>
+                </div>
+            </li>
+            <li id="carousel_slide2" class="carousel_slide">
+                <div class="carousel_setas_conteudo">
+                    <a href="#carousel_slide3" class="carousel_seta">seta</a>
+                    <a href="#carousel_slide1" class="carousel_seta">seta</a>
+                </div>
+            </li>
+            <li id="carousel_slide3" class="carousel_slide">
+                <div class="carousel_setas_conteudo">
+                    <a href="#carousel_slide1" class="carousel_seta">seta</a>
+                    <a href="#carousel_slide2" class="carousel_seta">seta</a>
+                </div>
+            </li>
+        </ol>
+        <aside class="carousel_navegacao">
+            <ol class="carousel_navegacao_lista">
+                <li class="carousel_navegacao_slide">
+                    <a href="#carousel_slide1" class="carousel_button">
+                        botao_seta
+                    </a>
+                </li>
+            </ol>
+        </aside>
+    </section>
     
     <div>
         <h1 id="farms" class="navbar_titulo">Farms</h1>
