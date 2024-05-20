@@ -124,5 +124,20 @@
         }
     }
     
+    function getArtigo(string $tipo, int $id){
+        require "../../../php/conexao.php";
+
+        $sql_code = "SELECT * FROM tb$tipo WHERE id$tipo = $id";
+        $prepare = $pdo->prepare($sql_code);
+        $count = $prepare->execute();
+        $artigos = $prepare->fetchAll();
+
+        foreach($artigos as $artigo){
+            $nomeArtigo = "nome" . $tipo;
+
+            $artigo[$nomeArtigo];
+        }
+
+    }
 
 ?>

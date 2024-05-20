@@ -31,6 +31,9 @@
         </div>
         <div class="container_principal">
             <div class="principal_conteudo">
+                <?php
+                    
+                ?>
                 <div class="titulo_principal"><h1>titulo</h1></div>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores eum, iure eos, qui quidem cum officiis veritatis animi doloribus ducimus officia, quisquam repellat perferendis quos nisi cumque. Minus, officiis atque!Lorem
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quasi reprehenderit voluptatum, natus odio molestiae corporis quam, sunt obcaecati maxime laudantium harum soluta totam tempore. Alias quae nisi quam qui.
