@@ -111,6 +111,8 @@
             <table class="conteudo_tabela">
                 <tr>
 
+                <th class="conteudo_cards_container">
+
                     <?php
 
                     $farm_code = "SELECT idFarm, caminhoImagemFarm FROM tbfarm ORDER BY idFarm DESC LIMIT 3";
@@ -129,12 +131,52 @@
                         <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
                         
                     }  ?>
+                    <p class="conteudo_cards_titulo"> Titulo </p>
+                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
+
+                </th>
+                <th class="conteudo_cards_container">
+
+                    <div class="conteudo_imagem">
                     
-                    </th>
+                    <?php
+
+                    foreach($farms as $farm){?>
+
+                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
+                        
+                    }  ?>
+
+                    </div>
+
+                    <p class="conteudo_cards_titulo"> Titulo </p>
+                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
+                    
+                </th>
+                <th class="conteudo_cards_container">
+
+                    <div class="conteudo_imagem">
+                    
+                    <?php
+
+                    foreach($farms as $farm){?>
+
+                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
+                        
+                    }  ?>
+
+                    </div>
+
+                    <p class="conteudo_cards_titulo"> Titulo </p>
+                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
+                    
+                </th>
 
 
-                    <th class="conteudo_cards_container final"> </th>
-                        <a  href="ler_mais/farms.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
+                <th class="conteudo_cards_container final"> 
+                    <a  href="ler_mais/farms.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
+                </th>
+                        
                    
                       
                     
@@ -142,6 +184,7 @@
             </table>
         </div>
     </div>
+
     <h1 id="guias" class="navbar_titulo">Guias</h1>
 
     <div class="conteudo_container">
