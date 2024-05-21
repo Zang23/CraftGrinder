@@ -134,10 +134,22 @@
 
         foreach($artigos as $artigo){
             $nomeArtigo = "nome" . $tipo;
+            $descArtigo = "desc" . $tipo;
+            $caminhoImagemArtigo = "caminhoImagem" . $tipo;
 
-            $artigo[$nomeArtigo];
+           $nomeDoArtigo = $artigo[$nomeArtigo];
+           $descDoArtigo = $artigo[$descArtigo];
+           $caminhoImagemArtigo = $artigo[$caminhoImagemArtigo];
+
+
+           return [$nomeDoArtigo, $descDoArtigo, $caminhoImagemArtigo];
+           
+
+
         }
 
     }
+
+    
 
 ?>
