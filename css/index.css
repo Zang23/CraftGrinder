@@ -108,16 +108,30 @@ html{
 ol, li{
     list-style: none;
 }
+
+*::-webkit-scrollbar{ /*deixar a scrollbar invisivel*/
+    width: 0;
+}
+
 .carousel_atualizacao{
     position: relative;
+    /*padding-top: 200px;*/
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 .carousel_conteudo{
+    /*position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;*/
+
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
     width: 75%;
 }
 .carousel_slide{
@@ -126,18 +140,46 @@ ol, li{
     width: 100%;
     background-color: var(--claro3);
 }
-.carousel_slide::before{
+.carousel_slide:nth-child(even){
+    background-color: #fff; /*colorir só as child pares*/
+}
+
+.carousel_slide:before{
     position: absolute;
     top: 50%;
     left: 50%;
 }
-.carousel_setas_conteudo{
+.carousel_rolagem_conteudo{
     position: absolute;
     width: 100%;
     height: 100%;
     scroll-snap-align: center;
 }
 
+.carousel_atualizacao::before,
+.carousel_atualizacao::after,
+.carousel_seta_direita,
+.carousel_seta_esquerda{
+    position: absolute;
+    top: 0;
+    margin-top: 37%;
+    width: 4rem;
+    height: 4rem;
+    color: #000;
+}
+
+.carousel_atualizacao::before, .carousel_seta_direita{
+    left: -1rem;
+}
+.carousel_atualizacao::before, .carousel_seta_esquerda{
+    left: -1rem;
+}
+
+.carousel_atualizacao::before, .carousel_atualizacao::after{
+    z-index: 1;
+}
+
+/*--*/
 
 .conteudo_container{
     display: flex;
@@ -178,7 +220,7 @@ ol, li{
 }
 
 .conteudo_cards_container{
-    width: 5rem;
+    max-width: 5rem;
     height: 25rem;
     background-color: var(--claro3);
     border-radius: 1.25rem 0.625rem;
@@ -193,7 +235,19 @@ ol, li{
 
 .conteudo_imagem{
     width: 100%;
-    height: 12.5rem;
+    height: auto;
+}
+.conteudo_cards_titulo{
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: start;
+    margin: 2px 2px 0 2px
+}
+.conteudo_descricao{
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: justify;
+    margin: 0 7px 7px 7px;
 }
 
 .conteudo_lermais{

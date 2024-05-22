@@ -70,37 +70,31 @@
         </div>
     </div>-->
 
+    <div class="conteudo_carousel">
     <section class="carousel_atualizacao">
         <ol class="carousel_conteudo">
             <li id="carousel_slide1" class="carousel_slide">
-                <div class="carousel_setas_conteudo">
-                    <a href="#carousel_slide2" class="carousel_seta">seta</a>
-                    <a href="#carousel_slide3" class="carousel_seta">seta</a>
+                <div class="carousel_rolagem_conteudo">
+                    <a href="#carousel_slide2" class="carousel_seta_direita">seta</a>
+                    <a href="#carousel_slide3" class="carousel_seta_esquerda">seta</a>
                 </div>
             </li>
             <li id="carousel_slide2" class="carousel_slide">
-                <div class="carousel_setas_conteudo">
-                    <a href="#carousel_slide3" class="carousel_seta">seta</a>
-                    <a href="#carousel_slide1" class="carousel_seta">seta</a>
+                <div class="carousel_rolagem_conteudo">
+                    <a href="#carousel_slide3" class="carousel_seta_direita">seta</a>
+                    <a href="#carousel_slide1" class="carousel_seta_esquerda">seta</a>
                 </div>
             </li>
             <li id="carousel_slide3" class="carousel_slide">
-                <div class="carousel_setas_conteudo">
-                    <a href="#carousel_slide1" class="carousel_seta">seta</a>
-                    <a href="#carousel_slide2" class="carousel_seta">seta</a>
+                <div class="carousel_rolagem_conteudo">
+                    <a href="#carousel_slide1" class="carousel_seta_direita">seta</a>
+                    <a href="#carousel_slide2" class="carousel_seta_esquerda">seta</a>
                 </div>
             </li>
         </ol>
-        <aside class="carousel_navegacao">
-            <ol class="carousel_navegacao_lista">
-                <li class="carousel_navegacao_slide">
-                    <a href="#carousel_slide1" class="carousel_button">
-                        botao_seta
-                    </a>
-                </li>
-            </ol>
-        </aside>
+        
     </section>
+    </div>
 
     <!-- https://codepen.io/Schepp/pen/WNbQByE -->
     
@@ -110,6 +104,8 @@
         <div class="conteudo_container">
             <table class="conteudo_tabela">
                 <tr>
+
+                <th class="conteudo_cards_container">
 
                     <?php
 
@@ -129,12 +125,52 @@
                         <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
                         
                     }  ?>
+                    <p class="conteudo_cards_titulo"> Titulo </p>
+                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
+
+                </th>
+                <th class="conteudo_cards_container">
+
+                    <div class="conteudo_imagem">
                     
-                    </th>
+                    <?php
+
+                    foreach($farms as $farm){?>
+
+                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
+                        
+                    }  ?>
+
+                    </div>
+
+                    <p class="conteudo_cards_titulo"> Titulo </p>
+                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
+                    
+                </th>
+                <th class="conteudo_cards_container">
+
+                    <div class="conteudo_imagem">
+                    
+                    <?php
+
+                    foreach($farms as $farm){?>
+
+                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
+                        
+                    }  ?>
+
+                    </div>
+
+                    <p class="conteudo_cards_titulo"> Titulo </p>
+                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
+                    
+                </th>
 
 
-                    <th class="conteudo_cards_container final"> </th>
-                        <a  href="ler_mais/farms.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
+                <th class="conteudo_cards_container final"> 
+                    <a  href="ler_mais/farms.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
+                </th>
+                        
                    
                       
                     
@@ -142,6 +178,7 @@
             </table>
         </div>
     </div>
+
     <h1 id="guias" class="navbar_titulo">Guias</h1>
 
     <div class="conteudo_container">
