@@ -112,9 +112,7 @@ ol, li{
 *::-webkit-scrollbar{ /*deixar a scrollbar invisivel*/
     width: 0;
 }
-.conteudo_carousel{
-    
-}
+
 .carousel_atualizacao{
     position: relative;
     /*padding-top: 200px;*/
@@ -129,7 +127,7 @@ ol, li{
     right: 0;
     bottom: 0;
     left: 0;*/
-    
+
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
