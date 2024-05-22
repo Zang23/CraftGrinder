@@ -70,19 +70,29 @@
                 die("Sua imagem é muito pesada, o tamanho máximo suportado é de 2MB");
             }
 
-            
-            if($tipo == "Atualizacao"){
-                $pasta = "../img/atualizacoes/";
-            }else if($tipo == "Item"){
-                $pasta = "../img/itens/";
-            }else{
-                $pasta = "../img/" . strtolower($tipo) . "s/"  ;
-            }
 
             $nomeTemp = "nome" . $tipo;
             $nome = $_POST[$nomeTemp];
 
-            mkdir("../img/" . strtolower($tipo) . "s/" . $nome );
+            
+
+            
+            
+            if($tipo == "Atualizacao"){
+                $caminhoPasta = "../img/atualizacoes/" . $nome;
+                mkdir($caminhoPasta);
+                $pasta = "../img/atualizacoes/" . $nome . "/";
+            }else if($tipo == "Item"){
+                $caminhoPasta = "../img/itens/" . $nome;
+                mkdir($caminhoPasta);
+                $pasta = "../img/itens/" . $nome . "/";
+            }else{
+                $caminhoPasta = "../img/" . strtolower($tipo) . "s/" . $nome;
+                mkdir($caminhoPasta);
+                $pasta = "../img/" . strtolower($tipo) . "s/" . $nome . "/"  ;
+            }
+
+           
 
 
 
@@ -96,6 +106,7 @@
             }
     
             $caminhoImagem = $pasta . $novoNomeArquivo . "." . $extensao;
+
             $verificado = move_uploaded_file($arquivo['tmp_name'], $caminhoImagem);
 
             if($verificado){
