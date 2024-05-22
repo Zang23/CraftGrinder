@@ -166,6 +166,7 @@ input, button, textarea{
     color: var(--texto);
     padding: 0.5rem;
     border-radius: 12px;
+    text-align: center;
 }
 .button_enviar{
     font-weight: bold;

@@ -76,8 +76,15 @@
             }else if($tipo == "Item"){
                 $pasta = "../img/itens/";
             }else{
-                $pasta = "../img/" . strtolower($tipo) . "s/";
+                $pasta = "../img/" . strtolower($tipo) . "s/"  ;
             }
+
+            $nomeTemp = "nome" . $tipo;
+            $nome = $_POST[$nomeTemp];
+
+            mkdir("../img/" . strtolower($tipo) . "s/" . $nome );
+
+
 
 
             $nomeArquivo = $arquivo['name'];
@@ -92,7 +99,7 @@
             $verificado = move_uploaded_file($arquivo['tmp_name'], $caminhoImagem);
 
             if($verificado){
-                $nomeTemp = "nome" . $tipo;
+                
                 $descTemp = "desc" . $tipo;
                 $bdPersonalizado = strtolower($tipo);
 
@@ -101,7 +108,7 @@
                     $minidesc = $_POST[$miniDescTemp];
                 }
 
-                $nome = $_POST[$nomeTemp];
+                
                 $desc = $_POST[$descTemp];
 
                 if($tipo == "Atualizacao"){
