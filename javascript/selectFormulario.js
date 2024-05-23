@@ -9,6 +9,6 @@ document.getElementById('selectTipoFormulario').addEventListener('change', funct
     document.getElementById('formularioMaquina').style.display='none';
     
 
-    document.getElementById('formulario' + selecionado.charAt(0).toUpperCase() + selecionado.slice(1)).style.display="block";
+    document.getElementById('formulario' + selecionado.charAt(0).toUpperCase() + selecionado.slice(1))        .style.display="block";
 
 })

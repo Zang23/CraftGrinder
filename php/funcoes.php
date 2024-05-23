@@ -35,9 +35,22 @@
         require '../../php/conexao.php';
 
         $novoCaminho = "../" . getCaminhoArtigo($nome, $tipo);
+
+        if($tipo == "Atualizacao"){
+            $novoCaminhoDiretorio = "../../img/atualizacoes/" . $nome;
+        }else if($tipo == "Item"){
+            $novoCaminhoDiretorio = "../../img/itens/" . $nome;
+        }else{
+            $novoCaminhoDiretorio = "../../img/" . strtolower($tipo) . "s/". $nome ;
+        }
+        
+        
+
         unlink($novoCaminho);
+        rmdir($novoCaminhoDiretorio);
         $pdo->exec("DELETE FROM tb$tipo WHERE nome$tipo = '$nome'");
-        echo $tipo . " ID:" . $id . " Foi deletado com sucesso"; 
+
+        echo $tipo . " ID:" . $id . " Foi deletado com sucesso" . $parangole; 
 
     }
 
