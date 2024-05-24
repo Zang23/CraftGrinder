@@ -70,33 +70,27 @@
         </div>
     </div>-->
 
-    <div class="conteudo_carousel">
-    <section class="carousel_atualizacao">
-        <ol class="carousel_conteudo">
-            <li id="carousel_slide1" class="carousel_slide">
-                <div class="carousel_rolagem_conteudo">
-                    <a href="#carousel_slide2" class="carousel_seta_direita">seta</a>
-                    <a href="#carousel_slide3" class="carousel_seta_esquerda">seta</a>
-                </div>
-            </li>
-            <li id="carousel_slide2" class="carousel_slide">
-                <div class="carousel_rolagem_conteudo">
-                    <a href="#carousel_slide3" class="carousel_seta_direita">seta</a>
-                    <a href="#carousel_slide1" class="carousel_seta_esquerda">seta</a>
-                </div>
-            </li>
-            <li id="carousel_slide3" class="carousel_slide">
-                <div class="carousel_rolagem_conteudo">
-                    <a href="#carousel_slide1" class="carousel_seta_direita">seta</a>
-                    <a href="#carousel_slide2" class="carousel_seta_esquerda">seta</a>
-                </div>
-            </li>
+    <div class="carousel_conteudo">
+
+    <section class="carousel">
+
+        <ol class="carousel__viewport">
+            <li id="carousel_slide1" class="carousel__slide">slide 1</li>
+
+            <li id="carousel_slide2" class="carousel__slide">slide 2</li>
+
         </ol>
-        
+
     </section>
+
+    <div class="carousel_buttons">
+        <div class="next_slide"><a href="#carousel_slide1"><span class="material-symbols-outlined">chevron_left</span></a></div>
+        <div class="prev_slide"><a href="#carousel_slide2"><span class="material-symbols-outlined">chevron_right</span></a></div>
+    </div>
+    
     </div>
 
-    <!-- https://codepen.io/Schepp/pen/WNbQByE -->
+    <!---->
     
     <div>
         <h1 id="farms" class="navbar_titulo">Farms</h1>
