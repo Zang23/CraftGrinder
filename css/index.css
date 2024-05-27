@@ -102,7 +102,9 @@ html{
 
 
 /*------------------------------PRINCIPAL-----------------------------------*/
-
+.carousel_conteudo::-webkit-scrollbar {
+    width: 0;
+}
   
 .carousel_conteudo {
     scrollbar-color: transparent transparent; 
@@ -112,22 +114,7 @@ html{
     justify-content: center;
     align-items: center;
 }
-.carousel_buttons{
-    display: flex;
-    flex-direction: row;
-    
-}
 
-
-.carousel_conteudo::-webkit-scrollbar {
-    width: 0;
-}
-ol, li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-  
 .carousel {
     position: relative;
     padding-top: 25%;
@@ -137,15 +124,9 @@ ol, li {
   
 .carousel__viewport {
     border-radius: 1.25rem 0.625rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
+    position: relative;
+    border-radius: 1.25rem 0.625rem;
+    overflow: hidden;
 }
 .carousel__slide {
     position: relative;
@@ -156,7 +137,24 @@ ol, li {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+}
+
+.carousel_buttons{
+    display: flex;
+    flex-direction: row;
+}
+.button_slide{
+    position: absolute;
+    border: none;
+    font-size: 24px;
+    background: none;
+    cursor: pointer;
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
 }
 
 /*https://codepen.io/jeetbhow/pen/ZENWrVZ*/

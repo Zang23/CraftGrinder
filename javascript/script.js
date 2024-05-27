@@ -1,6 +1,8 @@
 const header = document.querySelector(".cabecalho_container");
 const toggleClass = "sticky";
 
+
+
 window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
     if (currentScroll > 150){
@@ -9,7 +11,7 @@ window.addEventListener("scroll", () => {
     else{
         header.classList.remove(toggleClass);
     }
-})
+});
 
 
 /*
@@ -20,3 +22,5 @@ document.getElementsByClassName("cont_menor") [1].appendChild(expl);
 event.preventDefault();
 }
 */
+
+const nextbtn = document.querySelector(".next");

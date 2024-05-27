@@ -74,18 +74,21 @@
 
     <section class="carousel">
 
-        <ol class="carousel__viewport">
-            <li id="carousel_slide1" class="carousel__slide">slide 1</li>
-
-            <li id="carousel_slide2" class="carousel__slide">slide 2</li>
-
-        </ol>
+        <div class="carousel__viewport">
+            <div id="carousel_slide1" class="carousel__slide">slide 1</div>
+            <div id="carousel_slide2" class="carousel__slide">slide 2</div>
+        </div>
 
     </section>
 
     <div class="carousel_buttons">
+        <!--
         <div class="next_slide"><a href="#carousel_slide1"><span class="material-symbols-outlined">chevron_left</span></a></div>
         <div class="prev_slide"><a href="#carousel_slide2"><span class="material-symbols-outlined">chevron_right</span></a></div>
+        -->
+        
+        <button class="button_slide prev"><span class="material-symbols-outlined">chevron_left</span></button>
+        <button class="button_slide next"><span class="material-symbols-outlined">chevron_right</span></button>
     </div>
     
     </div>
