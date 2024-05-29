@@ -35,9 +35,22 @@
         require '../../php/conexao.php';
 
         $novoCaminho = "../" . getCaminhoArtigo($nome, $tipo);
+
+        if($tipo == "Atualizacao"){
+            $novoCaminhoDiretorio = "../../img/atualizacoes/" . $nome;
+        }else if($tipo == "Item"){
+            $novoCaminhoDiretorio = "../../img/itens/" . $nome;
+        }else{
+            $novoCaminhoDiretorio = "../../img/" . strtolower($tipo) . "s/". $nome ;
+        }
+        
+        
+
         unlink($novoCaminho);
+        rmdir($novoCaminhoDiretorio);
         $pdo->exec("DELETE FROM tb$tipo WHERE nome$tipo = '$nome'");
-        echo $tipo . " ID:" . $id . " Foi deletado com sucesso"; 
+
+        echo $tipo . " ID:" . $id . " Foi deletado com sucesso" . $parangole; 
 
     }
 
@@ -70,14 +83,31 @@
                 die("Sua imagem é muito pesada, o tamanho máximo suportado é de 2MB");
             }
 
+
+            $nomeTemp = "nome" . $tipo;
+            $nome = $_POST[$nomeTemp];
+
+            
+
+            
             
             if($tipo == "Atualizacao"){
-                $pasta = "../img/atualizacoes/";
+                $caminhoPasta = "../img/atualizacoes/" . $nome;
+                mkdir($caminhoPasta);
+                $pasta = "../img/atualizacoes/" . $nome . "/";
             }else if($tipo == "Item"){
-                $pasta = "../img/itens/";
+                $caminhoPasta = "../img/itens/" . $nome;
+                mkdir($caminhoPasta);
+                $pasta = "../img/itens/" . $nome . "/";
             }else{
-                $pasta = "../img/" . strtolower($tipo) . "s/";
+                $caminhoPasta = "../img/" . strtolower($tipo) . "s/" . $nome;
+                mkdir($caminhoPasta);
+                $pasta = "../img/" . strtolower($tipo) . "s/" . $nome . "/"  ;
             }
+
+           
+
+
 
 
             $nomeArquivo = $arquivo['name'];
@@ -89,10 +119,11 @@
             }
     
             $caminhoImagem = $pasta . $novoNomeArquivo . "." . $extensao;
+
             $verificado = move_uploaded_file($arquivo['tmp_name'], $caminhoImagem);
 
             if($verificado){
-                $nomeTemp = "nome" . $tipo;
+                
                 $descTemp = "desc" . $tipo;
                 $bdPersonalizado = strtolower($tipo);
 
@@ -101,7 +132,7 @@
                     $minidesc = $_POST[$miniDescTemp];
                 }
 
-                $nome = $_POST[$nomeTemp];
+                
                 $desc = $_POST[$descTemp];
 
                 if($tipo == "Atualizacao"){
@@ -123,6 +154,33 @@
             }
         }
     }
+    
+    function getArtigo(string $tipo, int $id){
+        require "../../../php/conexao.php";
+
+        $sql_code = "SELECT * FROM tb$tipo WHERE id$tipo = $id";
+        $prepare = $pdo->prepare($sql_code);
+        $count = $prepare->execute();
+        $artigos = $prepare->fetchAll();
+
+        foreach($artigos as $artigo){
+            $nomeArtigo = "nome" . $tipo;
+            $descArtigo = "desc" . $tipo;
+            $caminhoImagemArtigo = "caminhoImagem" . $tipo;
+
+           $nomeDoArtigo = $artigo[$nomeArtigo];
+           $descDoArtigo = $artigo[$descArtigo];
+           $caminhoImagemArtigo = $artigo[$caminhoImagemArtigo];
+
+
+           return [$nomeDoArtigo, $descDoArtigo, $caminhoImagemArtigo];
+           
+
+
+        }
+
+    }
+
     
 
 ?>

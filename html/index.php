@@ -49,11 +49,50 @@
 
     <h1 id="atualizacoes" class="navbar_titulo"> Últimas Atualizações</h1>
 
-    <div class="conteudo">
+    <!--<div class="conteudo">
         <div class="conteudo_atualizacoes">
-            exemplo
+            <?php
+                $atualizacao_code = "SELECT idAtualizacao, caminhoImagemAtualizacao FROM tbatualizacao ORDER BY idAtualizacao DESC LIMIT 3 ";
+                $prepareAtualizacao = $pdo->prepare($atualizacao_code);
+                $count = $prepareAtualizacao->execute();
+                $atualizacoes = $prepareAtualizacao->fetchAll(PDO::FETCH_ASSOC);?>
+
+                <div class="container_index_atualizacao">
+                    <?php  
+                    foreach($atualizacoes as $atualizacao){?>
+                        
+                        <img class="indexImagem" src="<?=$atualizacao['caminhoImagemAtualizacao']?>"><?php
+                    }
+
+                    ?>
+                </div>
+
         </div>
+    </div>-->
+
+    <div class="carousel_alinhamento">
+    <div class="carousel_conteudo">
+
+    <div class="carousel">
+
+        <div class="viewport">
+            <div id="carousel_slide1" class="carousel__slide"><div class="carousel_animation"></div>slide 1</div>
+            <div id="carousel_slide2" class="carousel__slide"><div class="carousel_animation"></div>slide 2</div>
+            <div id="carousel_slide3" class="carousel__slide"><div class="carousel_animation"></div>slide 3</div>
+
+        </div>
+
+        <div class="carousel_buttons">
+            <button class="button_slide prev"><span class="material-symbols-outlined">chevron_left</span></button>
+            <button class="button_slide next"><span class="material-symbols-outlined">chevron_right</span></button>
+        </div>
+
     </div>
+    
+    </div>
+    </div>
+
+    <!---->
     
     <div>
         <h1 id="farms" class="navbar_titulo">Farms</h1>
@@ -62,40 +101,80 @@
             <table class="conteudo_tabela">
                 <tr>
 
+                <th class="conteudo_cards_container">
+
                     <?php
 
-                    $farm_code = "SELECT idFarm FROM tbfarm";
+                    $farm_code = "SELECT idFarm, caminhoImagemFarm FROM tbfarm ORDER BY idFarm DESC LIMIT 3";
                     $prepareFarm = $pdo->prepare($farm_code);
                     $count = $prepareFarm->execute();
                     $farms = $prepareFarm->fetchAll(PDO::FETCH_ASSOC);
 
                     $numRepeticoes = 3;
-                    $contador = 0;
+                    $contador = 0;?>
+                    
+                    
+                    <?php
 
-                    foreach($farms as $farm){
+                    foreach($farms as $farm){?>
 
-                        if($contador < $numRepeticoes)
-                        {
-                            echo " <th class='conteudo_cards_container'>";
-                            mostraFarm($farm['idFarm']);
-                            $contador++;
-                        }else{
-                            break;
-                        }
-                    }
+                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
                         
-                    ?>
-                    </th>
+                    }  ?>
+                    <p class="conteudo_cards_titulo"> Titulo </p>
+                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
+
+                </th>
+                <th class="conteudo_cards_container">
+
+                    <div class="conteudo_imagem">
+                    
+                    <?php
+
+                    foreach($farms as $farm){?>
+
+                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
+                        
+                    }  ?>
+
+                    </div>
+
+                    <p class="conteudo_cards_titulo"> Titulo </p>
+                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
+                    
+                </th>
+                <th class="conteudo_cards_container">
+
+                    <div class="conteudo_imagem">
+                    
+                    <?php
+
+                    foreach($farms as $farm){?>
+
+                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
+                        
+                    }  ?>
+
+                    </div>
+
+                    <p class="conteudo_cards_titulo"> Titulo </p>
+                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
+                    
+                </th>
 
 
-                    <th class="conteudo_cards_container final">
-                        <a  href="ler_mais/farms.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
-                    </th>
+                <th class="conteudo_cards_container final"> 
+                    <a  href="ler_mais/farms.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
+                </th>
+                        
+                   
+                      
                     
                 </tr>
             </table>
         </div>
     </div>
+
     <h1 id="guias" class="navbar_titulo">Guias</h1>
 
     <div class="conteudo_container">

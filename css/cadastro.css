@@ -1,11 +1,16 @@
-
-.cadastro_container{
+.index_fundo_cad{
     background-color: var(--escuro);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cadastro_container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 100vh;
+    width: 80rem;
 }
 
 .formulario_cadastro_container, .cadastro_perfil_container{
@@ -64,6 +69,14 @@
     color: var(--escuro2);
 }
 
+.voltar_button{
+    color: #fff;
+    margin-bottom: 2rem;
+}
+.voltar_button:hover{
+    color: var(--escuro2);
+    transition: 0.5s;
+}
 
 .cadastro_perfil_foto{
     display: flex;

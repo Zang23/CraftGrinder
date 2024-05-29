@@ -57,7 +57,7 @@
 
         <div class="content_opcao_cadastro">
 
-        <div id="formularioAtualizacao" class="opcao_content"> <!-- style="display: none na hora que for estilizar passar para o css -->
+        <div id="formularioAtualizacao" class="opcao_content"> 
             <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
                 <div class="content_opcao_align c">
                     <input type="text" name="nomeAtualizacao" placeholder="Insira o nome da atualizacao">
@@ -66,6 +66,7 @@
                     <input type="file" name="imagemAtualizacao" id="inputIdAtualizacao" style="display: none;">
                     <input type="text" name="tipoArtigo" value="Atualizacao" style="display: none;">
                     <div class="content_button_alinhamento">
+
                         <div class="content_button_enviar">
                             <label for="inputIdAtualizacao" class="input_file">
                                 Enviar Arquivos
@@ -84,11 +85,30 @@
                 <div class="opcao_align">
                     <input type="text" name="nomeFarm" placeholder="Insira o nome da Farm">
                     <input type="text" name="miniDescFarm" placeholder="Insira uma breve descricao sobre a farm">
+
                     <label for="inputIdFarm" class="input_file" >
-                        Escolher Arquivo
+                        Escolha a Capa da Farm
                     </label>
+
                     <input type="file" id="inputIdFarm" name="imagemFarm" style="display: none;"">
+
+                    <label for="inputImagensFarm" class="input_file">
+                        Selecione as imagens em ordem
+                    </label>
+
                     <input type="text" name="tipoArtigo" value="Farm" style="display: none;">
+
+                    <input type="file" id="inputImagensFarm" name="imagensFarm" multiple style="display: none; ">
+
+                    
+                    <button id="adicionarRequisito" type="button" class="input_file">Adicionar Requisito</button>
+                    <button id="removerRequisito" type="button" class="input_file">Remover Requisito</button>
+                    
+                    <div id="containerRequisitos" class="container_requisitos">
+
+                    </div>
+
+                    
                 </div>
                     <div class="descricao_align">
                         <textarea name="descFarm" class="descricao_opcao" placeholder="Insira a descricao completa da farm"></textarea>
