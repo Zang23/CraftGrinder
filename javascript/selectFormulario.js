@@ -16,6 +16,7 @@ document.getElementById('selectTipoFormulario').addEventListener('change', funct
 document.addEventListener("DOMContentLoaded", function(){
 
     var adicionarRequisito = document.getElementById("adicionarRequisito");
+    var removerRequisito = document.getElementById("removerRequisito");
     var containerRequisitos = document.getElementById("containerRequisitos");
     var contador = 0;
 
@@ -30,5 +31,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
         containerRequisitos.appendChild(newInput);
+    });
+
+    removerRequisito.addEventListener("click", function(){
+        var requisitoInputs = containerRequisitos.querySelectorAll(".inputRequisito");
+        var lastRequistoInput = requisitoInputs[requisitoInputs.length - 1];
+        if(lastRequistoInput){
+            containerRequisitos.removeChild(lastRequistoInput);
+            contador--;
+        }
     });
 });
