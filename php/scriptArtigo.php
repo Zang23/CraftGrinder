@@ -6,8 +6,11 @@ require_once 'funcoes.php';
 
 $tipoArtigo = $_POST['tipoArtigo'];
 
+$requisito = $_POST['requisito' . 1];
 
-if($tipoArtigo == "Farm"){
+echo $requisito;
+
+/*if($tipoArtigo == "Farm"){
     setArtigo($tipoArtigo);
 }
 
@@ -25,5 +28,5 @@ if($tipoArtigo == "Item"){
 
 if($tipoArtigo == "Atualizacao"){
     setArtigo($tipoArtigo);
-}
+}*/
 ?>

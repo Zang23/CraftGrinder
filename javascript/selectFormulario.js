@@ -25,9 +25,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
         var newInput = document.createElement("input");
         newInput.type = "text";
-        newInput.name = "campo " + contador;
+        newInput.name = "requisito" + contador;
         newInput.placeholder = "Requisito " + contador;
         newInput.className = "inputRequisito";
+
 
 
         containerRequisitos.appendChild(newInput);
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if(lastRequistoInput){
             containerRequisitos.removeChild(lastRequistoInput);
             contador--;
+
         }
     });
 });
