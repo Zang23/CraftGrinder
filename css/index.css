@@ -102,6 +102,50 @@ html{
 
 
 /*------------------------------PRINCIPAL-----------------------------------*/
+/*--animacao--*/
+@keyframes tonext{
+    75%{
+        left: 0;
+    }
+    95%{
+        left: 100%;
+    }
+    98%{
+        left: 100%;
+    }
+    99%{
+        left: 0;
+    }
+}
+@keyframes tostart{
+    75%{
+        left: 0;
+    }
+    95%{
+        left: -300%;
+    }
+    99%{
+        left: -300%;
+    }
+    99%{
+        left: 0;
+    }
+}
+
+@media (hover:hover){
+    .carousel_animation{
+        -webkit-animation-name: tonext;
+        animation-name: tonext;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+        -webkit-animation-duration: 4s;
+        animation-duration: 4s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+    }
+    
+}
+
 .carousel_conteudo::-webkit-scrollbar {
     width: 0;
 }
