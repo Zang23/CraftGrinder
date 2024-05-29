@@ -76,9 +76,9 @@
     <div class="carousel">
 
         <div class="viewport">
-            <div id="carousel_slide1" class="carousel__slide">slide 1</div>
-            <div id="carousel_slide2" class="carousel__slide">slide 2</div>
-            <div id="carousel_slide3" class="carousel__slide">slide 3</div>
+            <div id="carousel_slide1" class="carousel__slide"><div class="carousel_animation"></div>slide 1</div>
+            <div id="carousel_slide2" class="carousel__slide"><div class="carousel_animation"></div>slide 2</div>
+            <div id="carousel_slide3" class="carousel__slide"><div class="carousel_animation"></div>slide 3</div>
 
         </div>
 
