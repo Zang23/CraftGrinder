@@ -156,12 +156,18 @@ input, button, textarea{
     cursor: pointer;
     transition: 0.2s;
 }
-.button_enviar, .input_file:first-child{
+.button_enviar, .enviar{
     padding: 0.75rem 1rem;
     border-radius: 12px;
     font-size: 1rem;
     width: 100%;
     margin-bottom: 5%;
+}
+
+.addremove_container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }
 .input_file{
     background-color: var(--fundo);
@@ -170,15 +176,25 @@ input, button, textarea{
     border-radius: 12px;
     text-align: center;
 }
-
-.container_requisitos{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.add_remove{
+    width: 50%;
+    height: 3rem;
 }
 
+.container_requisitos{
+    margin-bottom: 1rem;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.container_addremove_alinhamento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .inputRequisito{
-    text-align: center;
+    width: 30%;
 }
 
 .button_enviar{

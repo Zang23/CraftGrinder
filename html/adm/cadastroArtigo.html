@@ -68,7 +68,7 @@
                     <div class="content_button_alinhamento">
 
                         <div class="content_button_enviar">
-                            <label for="inputIdAtualizacao" class="input_file">
+                            <label for="inputIdAtualizacao" class="input_file enviar">
                                 Enviar Arquivos
                             </label>
                             <button type="submit" class="button_enviar">Enviar</button>
@@ -100,20 +100,31 @@
 
                     <input type="file" id="inputImagensFarm" name="imagensFarm" multiple style="display: none; ">
 
+            
+                <div class="addremove_container">
+                    <button id="adicionarRequisito" type="button" class="input_file add_remove">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    <button id="removerRequisito" type="button" class="input_file add_remove">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                </div>
                     
-                    <button id="adicionarRequisito" type="button" class="input_file">Adicionar Requisito</button>
-                    <button id="removerRequisito" type="button" class="input_file">Remover Requisito</button>
-                    
-                    <div id="containerRequisitos" class="container_requisitos">
-
-                    </div>
 
                     
                 </div>
                     <div class="descricao_align">
                         <textarea name="descFarm" class="descricao_opcao" placeholder="Insira a descricao completa da farm"></textarea>
                     </div>
+                    
             </div>
+
+            <div class="container_addremove_alinhamento">
+                <div id="containerRequisitos" class="container_requisitos">
+                            
+                </div>
+            </div>
+
                 <div class="content_button_alinhamento">
                     <div class="content_button_enviar">
                         <button type="submit" class="button_enviar">Enviar</button>
