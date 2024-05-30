@@ -60,7 +60,7 @@
         <div id="formularioAtualizacao" class="opcao_content"> 
             <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
                 <div class="content_opcao_align c">
-                    <input type="text" name="nomeAtualizacao" placeholder="Insira o nome da atualizacao">
+                    <input type="text" name="nomeAtualizacao" placeho   lder="Insira o nome da atualizacao">
                     <textarea name="descAtualizacao" class="descricao att" placeholder="Insira a descricao completa da atualizacao"></textarea>
                     
                     <input type="file" name="imagemAtualizacao" id="inputIdAtualizacao" style="display: none;">
@@ -89,19 +89,21 @@
                     <label for="inputIdFarm" class="input_file" >
                         Escolha a Capa da Farm
                     </label>
-
                     <input type="file" id="inputIdFarm" name="imagemFarm" style="display: none;"">
+
 
                     <label for="inputImagensFarm" class="input_file">
                         Selecione as imagens em ordem
                     </label>
+                    <input type="file" id="inputImagensFarm" name="galeriaFarm[]" multiple style="display: none; ">
 
                     <input type="text" name="tipoArtigo" value="Farm" style="display: none;">
 
-                    <input type="file" id="inputImagensFarm" name="imagensFarm" multiple style="display: none; ">
+                    
 
                     
                     <button id="adicionarRequisito" type="button" class="input_file">Adicionar Requisito</button>
+                    <input type="hidden" id="contadorInput" name="contador">
                     <button id="removerRequisito" type="button" class="input_file">Remover Requisito</button>
                     
                     <div id="containerRequisitos" class="container_requisitos">

@@ -6,9 +6,34 @@ require_once 'funcoes.php';
 
 $tipoArtigo = $_POST['tipoArtigo'];
 
-$requisito = $_POST['requisito' . 1];
+$contador = $_POST['contador'];
 
-echo $requisito;
+
+
+for($i = 1; $i <= $contador; $i++){
+    $requisitos[] = $_POST['requisito'.$i];
+}
+
+
+
+$variavelCodada = (base64_encode(serialize($requisitos)));
+
+print_r($variavelCodada);
+
+echo "<br>";
+
+$mostrarJeito = unserialize(base64_decode($variavelCodada));
+
+print_r ($mostrarJeito);
+
+echo "<br>";
+
+
+
+    
+    
+    
+
 
 /*if($tipoArtigo == "Farm"){
     setArtigo($tipoArtigo);
@@ -29,4 +54,5 @@ if($tipoArtigo == "Item"){
 if($tipoArtigo == "Atualizacao"){
     setArtigo($tipoArtigo);
 }*/
+
 ?>
