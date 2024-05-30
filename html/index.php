@@ -76,15 +76,16 @@
     <div class="carousel">
 
         <div class="viewport">
-            <div id="carousel_slide1" class="carousel__slide"><div class="carousel_animation"></div>slide 1</div>
-            <div id="carousel_slide2" class="carousel__slide"><div class="carousel_animation"></div>slide 2</div>
-            <div id="carousel_slide3" class="carousel__slide"><div class="carousel_animation"></div>slide 3</div>
-
+            
+            <div id="carousel_slide1" class="carousel__slide animacao">slide 1</div>
+            <div id="carousel_slide2" class="carousel__slide animacao">slide 2</div>
+            <div id="carousel_slide3" class="carousel__slide animacao">slide 3</div>
+            
         </div>
 
         <div class="carousel_buttons">
-            <button class="button_slide prev"><span class="material-symbols-outlined">chevron_left</span></button>
-            <button class="button_slide next"><span class="material-symbols-outlined">chevron_right</span></button>
+            <button id="passarBtn" class="button_slide prev"><span class="material-symbols-outlined">chevron_left</span></button>
+            <button id="passarBtn" class="button_slide next"><span class="material-symbols-outlined">chevron_right</span></button>
         </div>
 
     </div>
