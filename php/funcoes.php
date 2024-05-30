@@ -67,6 +67,62 @@
     <?php
     }
 
+
+    function setArrayImagensFarm(){
+        
+        $galeriaArtigo = "galeria" . $tipoArtigo;
+
+        if(isset($_FILES[$galeriaArtigo])){
+    
+        $galerias = $_FILES[$galeriaArtigo];
+    
+        
+        if(is_array($galerias['name'])){
+            // Itera sobre cada arquivo enviado
+            foreach($galerias['name'] as $indice => $nome_arquivo){
+                
+                $nome_temporario = $galerias['tmp_name'][$indice];
+                $tamanho = $galerias['size'][$indice];
+                $erro = $galerias['error'][$indice];
+                $tipo = $galerias['type'][$indice];
+    
+                
+                if($erro){
+                    die("Houve um erro ao enviar suas imagens");
+                }
+
+                if($tamanho > 2097152){
+                    die("Suas imagens são muito pesadas. O tamanho limite suportado")
+                }
+
+                $nomeArquivo = $galerias['name'];
+                $novoNomeArquivo = uniqid();
+                $extensao = strtolower(pathinfo($nomeArquivo,PATHINFO_EXTENSION ));
+
+                if($extensao != "jpg" && $extensao != "png"){
+                    die("Tipo de arquivo não aceito");
+                }
+
+                $caminhoImagem = $pasta . $novoNomeArquivo . "." . $extensao;
+
+                $verificado = move_uploaded_file($galerias['tmp_name'], $caminhoImagem);
+    
+                $sql_code = $pdo->prepare("INSERT INTO tbfarm VALUES (null,?,?,?,?,?,?)");
+                $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo, $caminhoImagem]);
+    
+                $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
+                $code_sql->execute([$nome, $tipo]);
+
+                voltaAdm()
+                
+            }
+
+        }else {
+            die("Envie mais de um arquivo por favor");
+        }
+    }
+    }
+
     function setArtigo(string $tipo){
         require 'conexao.php';
 
@@ -87,10 +143,6 @@
             $nomeTemp = "nome" . $tipo;
             $nome = $_POST[$nomeTemp];
 
-            
-
-            
-            
             if($tipo == "Atualizacao"){
                 $caminhoPasta = "../img/atualizacoes/" . $nome;
                 mkdir($caminhoPasta);
@@ -106,10 +158,6 @@
             }
 
            
-
-
-
-
             $nomeArquivo = $arquivo['name'];
             $novoNomeArquivo = uniqid();
             $extensao = strtolower(pathinfo($nomeArquivo,PATHINFO_EXTENSION ));
