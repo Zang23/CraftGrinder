@@ -6,6 +6,8 @@ require_once 'funcoes.php';
 
 $tipoArtigo = $_POST['tipoArtigo'];
 
+
+
 $contador = $_POST['contador'];
 
 
@@ -29,7 +31,9 @@ print_r ($mostrarJeito);
 echo "<br>";
 
 
-
+if($tipoArtigo == "Farm"){
+    setArtigo($tipoArtigo);
+}
     
     
     

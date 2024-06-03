@@ -68,7 +68,7 @@
     }
 
 
-    function setArrayImagensFarm(){
+    function setArrayImagens(string $tipoArtigo, string $pasta){
         
         $galeriaArtigo = "galeria" . $tipoArtigo;
 
@@ -92,10 +92,10 @@
                 }
 
                 if($tamanho > 2097152){
-                    die("Suas imagens são muito pesadas. O tamanho limite suportado")
+                    die("Suas imagens são muito pesadas. O tamanho limite suportado");
                 }
 
-                $nomeArquivo = $galerias['name'];
+                $nomeArquivo = $nome_arquivo;
                 $novoNomeArquivo = uniqid();
                 $extensao = strtolower(pathinfo($nomeArquivo,PATHINFO_EXTENSION ));
 
@@ -107,13 +107,12 @@
 
                 $verificado = move_uploaded_file($galerias['tmp_name'], $caminhoImagem);
     
-                $sql_code = $pdo->prepare("INSERT INTO tbfarm VALUES (null,?,?,?,?,?,?)");
-                $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo, $caminhoImagem]);
-    
-                $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
-                $code_sql->execute([$nome, $tipo]);
+                if($verificado){
+                    $imagemCodificada = base64_encode(serialize($caminhoImagem));
+                    $arrayImagens[] = $imagemCodificada;
 
-                voltaAdm()
+                    return $arrayImagens;
+                }
                 
             }
 
@@ -121,7 +120,10 @@
             die("Envie mais de um arquivo por favor");
         }
     }
+
     }
+
+    
 
     function setArtigo(string $tipo){
         require 'conexao.php';
@@ -180,6 +182,11 @@
                     $minidesc = $_POST[$miniDescTemp];
                 }
 
+
+                setArrayImagens($tipo, $pasta);
+
+                $imagens = base64_encode(unserialize($array)); 
+
                 
                 $desc = $_POST[$descTemp];
 
@@ -190,12 +197,14 @@
                     $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
                     $code_sql->execute([$nome, $tipo]);
                 }else{
-                    $sql_code = $pdo->prepare("INSERT INTO tb$bdPersonalizado VALUES (null,?,?,?,?,?,?)");
-                    $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo, $caminhoImagem]);
+                    $sql_code = $pdo->prepare("INSERT INTO tb$bdPersonalizado VALUES (null,?,?,?,?,?,null)");
+                    $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo]);
         
                     $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
                     $code_sql->execute([$nome, $tipo]);
                 }
+
+                
                 
                 voltaAdm();
                 
