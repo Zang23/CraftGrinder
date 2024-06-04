@@ -35,7 +35,7 @@
 
                 require "../../../php/funcoes.php";
                     
-                $resultado = getArtigo("Farm", 72);
+                $resultado = getArtigo("Farm", 92);
 
 
                     
@@ -71,6 +71,15 @@
                     <li>x10 perolas do fim</li>
                     <li>5x ovelhas</li>
                 </ul>
+
+                <?php
+                    $arrayRequisitos = unserialize(base64_decode($resultado[3]));
+
+                    foreach($arrayRequisitos as $requisito){ ?>
+                        <li>x <?= $requisito?></li>
+                    
+                    <?php }
+                ?>
             </div>   
         </div>
     </div>

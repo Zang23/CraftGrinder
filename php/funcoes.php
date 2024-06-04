@@ -243,13 +243,15 @@
             $nomeArtigo = "nome" . $tipo;
             $descArtigo = "desc" . $tipo;
             $caminhoImagemArtigo = "caminhoImagem" . $tipo;
+            $requisitosArtigo = "requisitos" . $tipo;
 
            $nomeDoArtigo = $artigo[$nomeArtigo];
            $descDoArtigo = $artigo[$descArtigo];
            $caminhoImagemArtigo = $artigo[$caminhoImagemArtigo];
+           $requisitosArtigo = $artigo[$requisitosArtigo];
 
 
-           return [$nomeDoArtigo, $descDoArtigo, $caminhoImagemArtigo];
+           return [$nomeDoArtigo, $descDoArtigo, $caminhoImagemArtigo, $requisitosArtigo];
            
 
 
