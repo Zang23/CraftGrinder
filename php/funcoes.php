@@ -191,10 +191,16 @@
                 }
 
 
-                
 
                 $imagens = base64_encode(serialize(setArrayImagens($tipo, $pasta))); 
 
+                $contador = $_POST['contador'];
+
+                for($i = 1; $i <= $contador; $i++){
+                    $requisitos[] = $_POST['requisito'.$i];
+                }
+
+                $requisitosSerializado = (base64_encode(serialize($requisitos)));
                 
                 $desc = $_POST[$descTemp];
 
@@ -205,8 +211,8 @@
                     $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
                     $code_sql->execute([$nome, $tipo]);
                 }else{
-                    $sql_code = $pdo->prepare("INSERT INTO tb$bdPersonalizado VALUES (null,?,?,?,?,?,?,?)");
-                    $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo, $caminhoImagem, $imagens]);
+                    $sql_code = $pdo->prepare("INSERT INTO tb$bdPersonalizado VALUES (null,?,?,?,?,?,?,?,?)");
+                    $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo, $caminhoImagem, $imagens, $requisitosSerializado]);
         
                     $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
                     $code_sql->execute([$nome, $tipo]);
@@ -214,7 +220,12 @@
 
                 
                 
-                voltaAdm();
+
+
+
+                
+                
+                //voltaAdm();
                 
             }
         }
