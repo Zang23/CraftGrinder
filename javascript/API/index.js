@@ -45,7 +45,7 @@ app.get('/api/:id', async (req, res) => {
                     const string = JSON.stringify(vetor);  
 
                     let regex = /"type":"[^"]*",|"value":/gi;
-                    let stringcut = string.replace(regex, '').replace(/[{}]/g, '').replace(/,"Slot/g, '}, {"Slot').replace("[", '[{').replace("]", ']}');
+                    let stringcut = string.replace(regex, '').replace(/[{}]/g, '').replace(/,"Slot/g, '}, {"Slot').replace("[", '[{').replace("]", '}]');
        
                     res.send(stringcut);
 

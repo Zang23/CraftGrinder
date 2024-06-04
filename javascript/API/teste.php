@@ -1,21 +1,35 @@
 <?php
 
-$pdo = new PDO('mysql:host=localhost;dbname=testeid' , 'root', '');
-$pdo-> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+function getJson(){
+    $pdo = new PDO('mysql:host=localhost;dbname=testeid' , 'root', '');
+    $pdo-> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-$sql_code = "SELECT vetorsql FROM usuarios";
-$prepare = $pdo->prepare($sql_code);
-$count = $prepare->execute();
+    $sql_code = "SELECT vetorsql FROM usuarios";
+    $prepare = $pdo->prepare($sql_code);
+    $count = $prepare->execute();
 
-$charutos = $prepare->fetchAll();
+    $json_codificado = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
-/*print_r($charutos);*/
+    foreach($json_codificado as $json){
+       $jsonCodificado = $json['vetorsql'];
+    }
 
+    return $jsonCodificado;
+}
 
+$jsonCodificado = getJson();
 
-foreach($charutos as $charuto){
-    
-    foreach($charuto['vetorsql'] as $indice => $item){
-        $charuto['quantidade'][$indice];
+$array_de_objetos = json_decode($jsonCodificado);
+
+if ($array_de_objetos === null) {
+    echo "Erro ao decodificar a string JSON.";
+} else {
+    // Exemplo de como acessar os dados do array de objetos decodificado
+    foreach ($array_de_objetos as $objeto) {
+        echo "Slot: " . $objeto->Slot . ", id: " . $objeto->id . ", Count: " . $objeto->Count . ", Damage: " . $objeto->Damage . "<br>";
     }
 }
+
+
+
+
