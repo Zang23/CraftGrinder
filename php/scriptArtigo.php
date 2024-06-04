@@ -30,6 +30,12 @@ print_r ($mostrarJeito);
 
 echo "<br>";
 
+/*$nome = $_POST['nomeFarm'];
+$pasta = "../img/" . strtolower($tipoArtigo) . "s/" . $nome . "/"; 
+
+print_r(setArrayImagens($tipoArtigo, $pasta));*/
+
+
 
 if($tipoArtigo == "Farm"){
     setArtigo($tipoArtigo);

@@ -44,9 +44,15 @@
             $novoCaminhoDiretorio = "../../img/" . strtolower($tipo) . "s/". $nome ;
         }
         
+        $nomeArquivos = glob("$novoCaminhoDiretorio/*");
+
         
 
-        unlink($novoCaminho);
+
+        for($i = 0; $i < count($nomeArquivos); $i++){
+            unlink($nomeArquivos[$i]);
+        }
+        
         rmdir($novoCaminhoDiretorio);
         $pdo->exec("DELETE FROM tb$tipo WHERE nome$tipo = '$nome'");
 
@@ -105,13 +111,13 @@
 
                 $caminhoImagem = $pasta . $novoNomeArquivo . "." . $extensao;
 
-                $verificado = move_uploaded_file($galerias['tmp_name'], $caminhoImagem);
+                $verificado = move_uploaded_file($nome_temporario, $caminhoImagem);
     
                 if($verificado){
                     $imagemCodificada = base64_encode(serialize($caminhoImagem));
                     $arrayImagens[] = $imagemCodificada;
 
-                    return $arrayImagens;
+                    
                 }
                 
             }
@@ -119,6 +125,8 @@
         }else {
             die("Envie mais de um arquivo por favor");
         }
+
+        return $arrayImagens;
     }
 
     }
@@ -183,9 +191,9 @@
                 }
 
 
-                setArrayImagens($tipo, $pasta);
+                
 
-                $imagens = base64_encode(unserialize($array)); 
+                $imagens = base64_encode(serialize(setArrayImagens($tipo, $pasta))); 
 
                 
                 $desc = $_POST[$descTemp];
@@ -197,8 +205,8 @@
                     $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
                     $code_sql->execute([$nome, $tipo]);
                 }else{
-                    $sql_code = $pdo->prepare("INSERT INTO tb$bdPersonalizado VALUES (null,?,?,?,?,?,null)");
-                    $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo]);
+                    $sql_code = $pdo->prepare("INSERT INTO tb$bdPersonalizado VALUES (null,?,?,?,?,?,?,?)");
+                    $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo, $caminhoImagem, $imagens]);
         
                     $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
                     $code_sql->execute([$nome, $tipo]);
