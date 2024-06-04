@@ -44,9 +44,15 @@
             $novoCaminhoDiretorio = "../../img/" . strtolower($tipo) . "s/". $nome ;
         }
         
+        $nomeArquivos = glob("$novoCaminhoDiretorio/*");
+
         
 
-        unlink($novoCaminho);
+
+        for($i = 0; $i < count($nomeArquivos); $i++){
+            unlink($nomeArquivos[$i]);
+        }
+        
         rmdir($novoCaminhoDiretorio);
         $pdo->exec("DELETE FROM tb$tipo WHERE nome$tipo = '$nome'");
 
@@ -66,6 +72,66 @@
         </div>
     <?php
     }
+
+
+    function setArrayImagens(string $tipoArtigo, string $pasta){
+        
+        $galeriaArtigo = "galeria" . $tipoArtigo;
+
+        if(isset($_FILES[$galeriaArtigo])){
+    
+        $galerias = $_FILES[$galeriaArtigo];
+    
+        
+        if(is_array($galerias['name'])){
+            // Itera sobre cada arquivo enviado
+            foreach($galerias['name'] as $indice => $nome_arquivo){
+                
+                $nome_temporario = $galerias['tmp_name'][$indice];
+                $tamanho = $galerias['size'][$indice];
+                $erro = $galerias['error'][$indice];
+                $tipo = $galerias['type'][$indice];
+    
+                
+                if($erro){
+                    die("Houve um erro ao enviar suas imagens");
+                }
+
+                if($tamanho > 2097152){
+                    die("Suas imagens são muito pesadas. O tamanho limite suportado");
+                }
+
+                $nomeArquivo = $nome_arquivo;
+                $novoNomeArquivo = uniqid();
+                $extensao = strtolower(pathinfo($nomeArquivo,PATHINFO_EXTENSION ));
+
+                if($extensao != "jpg" && $extensao != "png"){
+                    die("Tipo de arquivo não aceito");
+                }
+
+                $caminhoImagem = $pasta . $novoNomeArquivo . "." . $extensao;
+
+                $verificado = move_uploaded_file($nome_temporario, $caminhoImagem);
+    
+                if($verificado){
+                    $imagemCodificada = base64_encode(serialize($caminhoImagem));
+                    $arrayImagens[] = $imagemCodificada;
+
+                    
+                }
+                
+            }
+
+        }else {
+            die("Envie mais de um arquivo por favor");
+        }
+
+        return $arrayImagens;
+    }
+
+    }
+
+    
 
     function setArtigo(string $tipo){
         require 'conexao.php';
@@ -87,10 +153,6 @@
             $nomeTemp = "nome" . $tipo;
             $nome = $_POST[$nomeTemp];
 
-            
-
-            
-            
             if($tipo == "Atualizacao"){
                 $caminhoPasta = "../img/atualizacoes/" . $nome;
                 mkdir($caminhoPasta);
@@ -106,10 +168,6 @@
             }
 
            
-
-
-
-
             $nomeArquivo = $arquivo['name'];
             $novoNomeArquivo = uniqid();
             $extensao = strtolower(pathinfo($nomeArquivo,PATHINFO_EXTENSION ));
@@ -132,6 +190,17 @@
                     $minidesc = $_POST[$miniDescTemp];
                 }
 
+
+
+                $imagens = base64_encode(serialize(setArrayImagens($tipo, $pasta))); 
+
+                $contador = $_POST['contador'];
+
+                for($i = 1; $i <= $contador; $i++){
+                    $requisitos[] = $_POST['requisito'.$i];
+                }
+
+                $requisitosSerializado = (base64_encode(serialize($requisitos)));
                 
                 $desc = $_POST[$descTemp];
 
@@ -142,14 +211,21 @@
                     $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
                     $code_sql->execute([$nome, $tipo]);
                 }else{
-                    $sql_code = $pdo->prepare("INSERT INTO tb$bdPersonalizado VALUES (null,?,?,?,?,?,?)");
-                    $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo, $caminhoImagem]);
+                    $sql_code = $pdo->prepare("INSERT INTO tb$bdPersonalizado VALUES (null,?,?,?,?,?,?,?,?)");
+                    $sql_code->execute([$nome, $desc, $minidesc, $tipo, $nomeArquivo, $caminhoImagem, $imagens, $requisitosSerializado]);
         
                     $code_sql = $pdo->prepare("INSERT INTO tbartigo VALUES (null,?,?)");
                     $code_sql->execute([$nome, $tipo]);
                 }
+
                 
-                voltaAdm();
+                
+
+
+
+                
+                
+                //voltaAdm();
                 
             }
         }
@@ -167,13 +243,15 @@
             $nomeArtigo = "nome" . $tipo;
             $descArtigo = "desc" . $tipo;
             $caminhoImagemArtigo = "caminhoImagem" . $tipo;
+            $requisitosArtigo = "requisitos" . $tipo;
 
            $nomeDoArtigo = $artigo[$nomeArtigo];
            $descDoArtigo = $artigo[$descArtigo];
            $caminhoImagemArtigo = $artigo[$caminhoImagemArtigo];
+           $requisitosArtigo = $artigo[$requisitosArtigo];
 
 
-           return [$nomeDoArtigo, $descDoArtigo, $caminhoImagemArtigo];
+           return [$nomeDoArtigo, $descDoArtigo, $caminhoImagemArtigo, $requisitosArtigo];
            
 
 

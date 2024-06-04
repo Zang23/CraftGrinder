@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/05/2024 às 18:14
+-- Tempo de geração: 04/06/2024 às 12:18
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -38,11 +38,11 @@ CREATE TABLE `tbartigo` (
 --
 
 INSERT INTO `tbartigo` (`idArtigo`, `nomeArtigo`, `tipoArtigo`) VALUES
-(89, 'Farm de Pigman', 'Farm'),
-(90, 'Espada de Netherite', 'Item'),
-(91, 'Fornalha Industrial', 'Maquina'),
-(92, 'Atualizacao 1.20.1', 'Atualizacao'),
-(93, 'Como domesticar um lobo', 'Guia');
+(114, 'Farm de Esqueleto', 'Farm'),
+(115, 'Farm de Pigman', 'Farm'),
+(116, 'Farm de Pigman', 'Farm'),
+(117, 'Farm de zumbi', 'Farm'),
+(118, 'Farm de Kaisa', 'Farm');
 
 -- --------------------------------------------------------
 
@@ -58,13 +58,6 @@ CREATE TABLE `tbatualizacao` (
   `imagemAtualizacao` varchar(250) DEFAULT NULL,
   `caminhoImagemAtualizacao` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `tbatualizacao`
---
-
-INSERT INTO `tbatualizacao` (`idAtualizacao`, `nomeAtualizacao`, `descAtualizacao`, `tipoAtualizacao`, `imagemAtualizacao`, `caminhoImagemAtualizacao`) VALUES
-(9, 'Atualizacao 1.20.1', 'Descricao atualizacao', 'Atualizacao', 'Screenshot_2.png', '../img/atualizacoes/66438d8d1cf81.png');
 
 -- --------------------------------------------------------
 
@@ -92,15 +85,21 @@ CREATE TABLE `tbfarm` (
   `miniDescFarm` varchar(250) DEFAULT NULL,
   `tipoFarm` varchar(25) DEFAULT NULL,
   `imagemFarm` varchar(250) DEFAULT NULL,
-  `caminhoImagemFarm` varchar(150) DEFAULT NULL
+  `caminhoImagemFarm` varchar(150) DEFAULT NULL,
+  `galeriaImagensFarm` mediumtext DEFAULT NULL,
+  `requisitosFarm` mediumtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `tbfarm`
 --
 
-INSERT INTO `tbfarm` (`idFarm`, `nomeFarm`, `descFarm`, `miniDescFarm`, `tipoFarm`, `imagemFarm`, `caminhoImagemFarm`) VALUES
-(71, 'Farm de Pigman', 'asd', 'Ossos xesquedole', 'Farm', 'Screenshot_2.png', '../img/farms/6640139870f58.png');
+INSERT INTO `tbfarm` (`idFarm`, `nomeFarm`, `descFarm`, `miniDescFarm`, `tipoFarm`, `imagemFarm`, `caminhoImagemFarm`, `galeriaImagensFarm`, `requisitosFarm`) VALUES
+(88, 'Farm de Esqueleto', 'toma gap', 'Ossos xesquedole', 'Farm', 'imagem_2024-06-04_064806083.png', '../img/farms/Farm de Esqueleto/665ee2e1ce6a2.png', 'YToyOntpOjA7czo3NjoiY3pvME9Eb2lMaTR2YVcxbkwyWmhjbTF6TDBaaGNtMGdaR1VnUlhOeGRXVnNaWFJ2THpZMk5XVmxNbVV4WTJVM1pEa3VjRzVuSWpzPSI7aToxO3M6NzY6ImN6bzBPRG9pTGk0dmFXMW5MMlpoY20xekwwWmhjbTBnWkdVZ1JYTnhkV1ZzWlhSdkx6WTJOV1ZsTW1VeFkyVTRaV0l1Y0c1bklqcz0iO30=', NULL),
+(89, 'Farm de Pigman', '', 'Uma farm de esqueletinho', 'Farm', 'Screenshot_2.png', '../img/farms/Farm de Pigman/665ee70d0ed99.png', 'YToxOntpOjA7czo3MjoiY3pvME5Ub2lMaTR2YVcxbkwyWmhjbTF6TDBaaGNtMGdaR1VnVUdsbmJXRnVMelkyTldWbE56QmtNR1ZsWmpBdWNHNW5JanM9Ijt9', NULL),
+(90, 'Farm de Pigman', '', 'Uma farm de esqueletinho', 'Farm', 'Screenshot_2.png', '../img/farms/Farm de Pigman/665ee77908dd6.png', 'YToxOntpOjA7czo3MjoiY3pvME5Ub2lMaTR2YVcxbkwyWmhjbTF6TDBaaGNtMGdaR1VnVUdsbmJXRnVMelkyTldWbE56YzVNRGt3T1RRdWNHNW5JanM9Ijt9', NULL),
+(91, 'Farm de zumbi', 'ww', 'wda', 'Farm', 'imagem_2024-06-04_070913086.png', '../img/farms/Farm de zumbi/665ee7db02f40.png', 'YToxOntpOjA7czo3MjoiY3pvME5Eb2lMaTR2YVcxbkwyWmhjbTF6TDBaaGNtMGdaR1VnZW5WdFlta3ZOalkxWldVM1pHSXdNekE0TVM1d2JtY2lPdz09Ijt9', NULL),
+(92, 'Farm de Kaisa', 'jjj', 'Uma farm de esqueletinho', 'Farm', 'imagem_2024-06-04_071504988.png', '../img/farms/Farm de Kaisa/665ee955a56c2.png', 'YToyOntpOjA7czo3MjoiY3pvME5Eb2lMaTR2YVcxbkwyWmhjbTF6TDBaaGNtMGdaR1VnUzJGcGMyRXZOalkxWldVNU5UVmhOVGcyWmk1d2JtY2lPdz09IjtpOjE7czo3MjoiY3pvME5Eb2lMaTR2YVcxbkwyWmhjbTF6TDBaaGNtMGdaR1VnUzJGcGMyRXZOalkxWldVNU5UVmhOVGxtTWk1d2JtY2lPdz09Ijt9', 'YTozOntpOjA7czo0OiJhd2RhIjtpOjE7czo1OiJrYWlzYSI7aToyO3M6NjoiZXpyZWFsIjt9');
 
 -- --------------------------------------------------------
 
@@ -118,13 +117,6 @@ CREATE TABLE `tbguia` (
   `caminhoImagemGuia` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `tbguia`
---
-
-INSERT INTO `tbguia` (`idGuia`, `nomeGuia`, `descGuia`, `miniDescGuia`, `tipoGuia`, `imagemGuia`, `caminhoImagemGuia`) VALUES
-(11, 'Como domesticar um lobo', 'adwadadawdasda', 'Aquela teste', 'Guia', 'Screenshot_2.png', '../img/guias/66438d9e2ac27.png');
-
 -- --------------------------------------------------------
 
 --
@@ -141,13 +133,6 @@ CREATE TABLE `tbitem` (
   `caminhoImagemItem` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `tbitem`
---
-
-INSERT INTO `tbitem` (`idItem`, `nomeItem`, `descItem`, `miniDescItem`, `tipoItem`, `imagemItem`, `caminhoImagemItem`) VALUES
-(12, 'Espada de Netherite', 'surto de acao\r\n', 'A espada mais forte que pode ser craftada no overworld', 'Item', 'Screenshot_2.png', '../img/itens/66405a8633112.png');
-
 -- --------------------------------------------------------
 
 --
@@ -163,13 +148,6 @@ CREATE TABLE `tbmaquina` (
   `imagemMaquina` varchar(250) DEFAULT NULL,
   `caminhoImagemMaquina` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `tbmaquina`
---
-
-INSERT INTO `tbmaquina` (`idMaquina`, `nomeMaquina`, `descMaquina`, `miniDescMaquina`, `tipoMaquina`, `imagemMaquina`, `caminhoImagemMaquina`) VALUES
-(7, 'Fornalha Industrial', 'understand', 'jdawhdau', 'Maquina', 'Screenshot_2.png', '../img/maquinas/66405a973e14d.png');
 
 --
 -- Índices para tabelas despejadas
@@ -225,13 +203,13 @@ ALTER TABLE `tbmaquina`
 -- AUTO_INCREMENT de tabela `tbartigo`
 --
 ALTER TABLE `tbartigo`
-  MODIFY `idArtigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `idArtigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT de tabela `tbatualizacao`
 --
 ALTER TABLE `tbatualizacao`
-  MODIFY `idAtualizacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idAtualizacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `tbclientes`
@@ -243,25 +221,25 @@ ALTER TABLE `tbclientes`
 -- AUTO_INCREMENT de tabela `tbfarm`
 --
 ALTER TABLE `tbfarm`
-  MODIFY `idFarm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `idFarm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT de tabela `tbguia`
 --
 ALTER TABLE `tbguia`
-  MODIFY `idGuia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idGuia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `tbitem`
 --
 ALTER TABLE `tbitem`
-  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `tbmaquina`
 --
 ALTER TABLE `tbmaquina`
-  MODIFY `idMaquina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idMaquina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -26,6 +26,7 @@ event.preventDefault();
 const nextbtn = document.querySelector(".next");
 const prevbtn = document.querySelector(".prev");
 const viewport = document.querySelector(".viewport");
+const pararAnimacao = document.getElementById('passarBtn');
 
 const num_slides = 3;
 let slide_atual = 0;
@@ -39,9 +40,17 @@ function slide_passagem(){
 nextbtn.addEventListener("click", () => {
     slide_atual = (slide_atual + 1) % num_slides;
     slide_passagem();
+
 });
 //ir para o slide anterior e voltar para o primeiro
 prevbtn.addEventListener("click", () => {
     slide_atual = (slide_atual - 1 + num_slides) % num_slides;
     slide_passagem();
 });
+
+/*pararAnimacao.addEventListener('click', () => {
+    const animacao = document.getAnimations("paraLado");
+    animacao.style.animationPlayState = 'paused';
+})*/
+
+

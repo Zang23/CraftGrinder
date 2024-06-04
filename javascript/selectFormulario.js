@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", function(){
     var containerRequisitos = document.getElementById("containerRequisitos");
     var contador = 0;
 
+
+
+    
+
     adicionarRequisito.addEventListener("click", function(){
         contador++;
 
@@ -28,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function(){
         newInput.name = "requisito" + contador;
         newInput.placeholder = "Requisito " + contador;
         newInput.className = "inputRequisito";
-
+        document.getElementById("contadorInput").value = contador;
+        console.log(contador);
 
 
         containerRequisitos.appendChild(newInput);
@@ -41,6 +46,14 @@ document.addEventListener("DOMContentLoaded", function(){
             containerRequisitos.removeChild(lastRequistoInput);
             contador--;
 
+            document.getElementById("contadorInput").value = contador;
+            console.log(contador);
+
         }
+
     });
+
 });
+
+
+
