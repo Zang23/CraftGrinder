@@ -42,10 +42,10 @@ app.get('/api/:id', async (req, res) => {
 
                     const string = JSON.stringify(vetor);  
 
-                    let regex = /"type":"[^"]*",|"value":/gi;
-                    let stringcut = string.replace(regex, '');   
+                    /*let regex = /"type":"[^"]*",|"value":/gi;
+                    let stringcut = string.replace(regex, ''); */  
 
-                    res.send(stringcut);
+                    res.send(string);
 
                         connection.query(sqlpost, [stringcut, userId], (error, results, fields) => {
                         if (error) {
