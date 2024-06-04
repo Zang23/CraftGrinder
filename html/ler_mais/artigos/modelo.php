@@ -64,14 +64,6 @@
 
             <div class="sidebar_requisitos_lista">
                 <ul>
-                    <li>x10 Pedras</li>
-                    <li>x25 terras</li>
-                    <li>x50 madeiras</li>
-                    <li>x90 escadas</li>
-                    <li>x10 perolas do fim</li>
-                    <li>5x ovelhas</li>
-                </ul>
-
                 <?php
                     $arrayRequisitos = unserialize(base64_decode($resultado[3]));
 
@@ -80,6 +72,9 @@
                     
                     <?php }
                 ?>
+                </ul>
+
+                
             </div>   
         </div>
     </div>
