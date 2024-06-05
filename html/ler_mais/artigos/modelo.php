@@ -35,7 +35,7 @@
 
                 require "../../../php/funcoes.php";
                     
-                $resultado = getArtigo("Farm", 92);
+                $resultado = getArtigo("Farm", 93);
 
 
                     
@@ -63,12 +63,12 @@
             </div>
 
             <div class="sidebar_requisitos_lista">
-                <ul>
+                <ul class="requisitos_lista">
                 <?php
                     $arrayRequisitos = unserialize(base64_decode($resultado[3]));
 
                     foreach($arrayRequisitos as $requisito){ ?>
-                        <li>x <?= $requisito?></li>
+                        <li ><?= $requisito?></li>
                     
                     <?php }
                 ?>

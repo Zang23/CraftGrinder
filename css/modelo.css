@@ -66,3 +66,11 @@
     font-size: 18px;
 }
 
+.requisitos_lista{
+    list-style-type: none;
+}
+
+.requisitos_lista li:before{
+    content: "x ";
+}
+
