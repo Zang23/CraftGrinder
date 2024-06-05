@@ -77,9 +77,9 @@
 
         <div class="viewport">
             
-            <div id="carousel_slide1" class="carousel__slide animacao">slide 1</div>
-            <div id="carousel_slide2" class="carousel__slide animacao">slide 2</div>
-            <div id="carousel_slide3" class="carousel__slide animacao">slide 3</div>
+            <div id="carousel_slide1" class="carousel__slide animacao" data-animacao="stop">slide 1</div>
+            <div id="carousel_slide2" class="carousel__slide animacao" data-animacao="stop">slide 2</div>
+            <div id="carousel_slide3" class="carousel__slide animacao" data-animacao="stop">slide 3</div>
             
         </div>
 
