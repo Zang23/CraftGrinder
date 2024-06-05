@@ -113,7 +113,7 @@
                         <span class="material-symbols-outlined">remove</span>
                     </button>
 
-                    <button id="removerRequisito" type="button" class="input_file add_remove">
+                    <button id="removerTodosRequisito" type="button" class="input_file add_remove">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
                 </div>
@@ -160,29 +160,34 @@
 
                     <div class="addremove_container">
 
-                        <button id="adicionarRequisito" type="button" class="input_file add_remove">
+                        <button id="adicionarRequisitoGuia" type="button" class="input_file add_remove">
                             <span class="material-symbols-outlined">add</span>
                         </button>
-
+    
                         <input type="hidden" id="contadorInput" name="contador">
-
-                        <button id="removerRequisito" type="button" class="input_file add_remove">
+                        
+                        <button id="removerRequisitoGuia" type="button" class="input_file add_remove">
+                            <span class="material-symbols-outlined">remove</span>
+                        </button>
+    
+                        <button id="removerTodosRequisito" type="button" class="input_file add_remove">
                             <span class="material-symbols-outlined">delete</span>
                         </button>
-                        
                     </div>
 
-                </div>
-                    <div class="descricao_align">
-                        <textarea name="descGuia" class="descricao_opcao" placeholder="Insira a descricao completa do guia"></textarea>
                     </div>
+
+                        <div class="descricao_align">
+                            <textarea name="descGuia" class="descricao_opcao" placeholder="Insira a descricao completa do guia"></textarea>
+                        </div>
             </div>
 
-            <div class="container_addremove_alinhamento">
-                <div id="containerRequisitos" class="container_requisitos">
-                            
+                <div class="container_addremove_alinhamento">
+                    <div id="containerRequisitosGuia" class="container_requisitos">
+                                
+                    </div>
                 </div>
-            </div>
+
                 <div class="content_button_alinhamento">
                     <div class="content_button_enviar">
                         <button type="submit" class="button_enviar">Enviar</button>

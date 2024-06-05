@@ -18,15 +18,20 @@ document.getElementById('selectTipoFormulario').addEventListener('change', funct
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    var adicionarRequisito = document.getElementById("adicionarRequisito");
-    var removerRequisito = document.getElementById("removerRequisito");
-    var containerRequisitos = document.getElementById("containerRequisitos");
-    var contador = 0;
+    var adicionarRequisitoF = document.getElementById("adicionarRequisito");
+    var removerRequisitoF = document.getElementById("removerRequisito");
+    var containerRequisitosF = document.getElementById("containerRequisitos");
+    var contadorF = 0;
+
+    var adicionarRequisitoG = document.getElementById("adicionarRequisitoGuia");
+    var removerRequisitoG = document.getElementById("removerRequisitoGuia");
+    var containerRequisitosG = document.getElementById("containerRequisitosGuia");
+    var contadorG = 0;
 
 
 
-    adicionarRequisito.addEventListener("click", function(){
-        contador++;
+    adicionarRequisitoF.addEventListener("click", function(){
+        contadorF++;
 
         console.log("Tipo de formulario selecionado: ", tipoFormularioSelecionado);
 
@@ -34,15 +39,15 @@ document.addEventListener("DOMContentLoaded", function(){
         var newParagraph = document.createElement("p");
 
         newParagraph.className = "numeradorRequisitos";
-        newParagraph.innerHTML = contador + ".";
+        newParagraph.innerHTML = contadorF + ".";
         newInput.type = "text";
-        newInput.name = "requisito" + contador;
-        newInput.placeholder = "Requisito " + contador;
+        newInput.name = "requisito" + contadorF;
+        newInput.placeholder = "Requisito " + contadorF;
         newInput.className = "inputRequisito";
-        document.getElementById("contadorInput").value = contador;
-        console.log(contador);
+        document.getElementById("contadorInput").value = contadorF;
+        console.log(contadorF);
 
-        containerRequisitos.appendChild(newInput);
+        containerRequisitosF.appendChild(newInput);
 
         const novaDiv = document.createElement("div");
         novaDiv.className = "alinhamentoRequisitos";
@@ -50,28 +55,75 @@ document.addEventListener("DOMContentLoaded", function(){
         novaDiv.appendChild(newParagraph);
         novaDiv.appendChild(newInput);
 
-        containerRequisitos.appendChild(novaDiv);
-        /*containerRequisitos.appendChild(newParagraph);
-        containerRequisitos.appendChild(newInput);*/
+        containerRequisitosF.appendChild(novaDiv);
     });
 
-    removerRequisito.addEventListener("click", function(){
+    removerRequisitoF.addEventListener("click", function(){
         
-        var requisitoInputs = containerRequisitos.querySelectorAll(".alinhamentoRequisitos");
+        var requisitoInputs = containerRequisitosF.querySelectorAll(".alinhamentoRequisitos");
         var lastRequistoInput = requisitoInputs[requisitoInputs.length - 1];
 
         console.log("Tipo de formulario selecionado: ", tipoFormularioSelecionado);
 
         if(lastRequistoInput){
-            containerRequisitos.removeChild(lastRequistoInput);
-            contador--;
+            containerRequisitosF.removeChild(lastRequistoInput);
+            contadorF--;
 
             document.getElementById("contadorInput").value = contador;
-            console.log(contador);
+            console.log(contadorF);
 
         }
 
     });
+
+
+    adicionarRequisitoG.addEventListener("click", function(){
+        contadorG++;
+
+        console.log("Tipo de formulario selecionado: ", tipoFormularioSelecionado);
+
+        var newInput = document.createElement("input");
+        var newParagraph = document.createElement("p");
+
+        newParagraph.className = "numeradorRequisitos";
+        newParagraph.innerHTML = contadorG + ".";
+        newInput.type = "text";
+        newInput.name = "requisito" + contadorG;
+        newInput.placeholder = "Requisito " + contadorG;
+        newInput.className = "inputRequisito";
+        document.getElementById("contadorInput").value = contadorG;
+        console.log(contadorG);
+
+        containerRequisitosG.appendChild(newInput);
+
+        const novaDiv = document.createElement("div");
+        novaDiv.className = "alinhamentoRequisitos";
+        
+        novaDiv.appendChild(newParagraph);
+        novaDiv.appendChild(newInput);
+
+        containerRequisitosG.appendChild(novaDiv);
+    });
+
+    removerRequisitoG.addEventListener("click", function(){
+        
+        var requisitoInputs = containerRequisitosG.querySelectorAll(".alinhamentoRequisitos");
+        var lastRequistoInput = requisitoInputs[requisitoInputs.length - 1];
+
+        console.log("Tipo de formulario selecionado: ", tipoFormularioSelecionado);
+
+        if(lastRequistoInput){
+            containerRequisitosG.removeChild(lastRequistoInput);
+            contadorG--;
+
+            document.getElementById("contadorInput").value = contador;
+            console.log(contadorG);
+
+        }
+
+    });
+
+    
 
 });
 
