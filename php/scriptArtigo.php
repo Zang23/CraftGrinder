@@ -13,7 +13,7 @@ if($tipoArtigo == "Farm"){
 }
     
 
-/*if($tipoArtigo == "Guia"){
+if($tipoArtigo == "Guia"){
     setArtigo($tipoArtigo);
 }
 
@@ -27,6 +27,6 @@ if($tipoArtigo == "Item"){
 
 if($tipoArtigo == "Atualizacao"){
     setArtigo($tipoArtigo);
-}*/
+}
 
 ?>

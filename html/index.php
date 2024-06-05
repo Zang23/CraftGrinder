@@ -102,11 +102,11 @@
             <table class="conteudo_tabela">
                 <tr>
 
-                <th class="conteudo_cards_container">
+                
 
                     <?php
 
-                    $farm_code = "SELECT idFarm, caminhoImagemFarm FROM tbfarm ORDER BY idFarm DESC LIMIT 3";
+                    $farm_code = "SELECT idFarm, caminhoImagemFarm, nomeFarm, miniDescFarm FROM tbfarm ORDER BY idFarm DESC LIMIT 3";
                     $prepareFarm = $pdo->prepare($farm_code);
                     $count = $prepareFarm->execute();
                     $farms = $prepareFarm->fetchAll(PDO::FETCH_ASSOC);
@@ -118,52 +118,15 @@
                     <?php
 
                     foreach($farms as $farm){?>
+                        <th class="conteudo_cards_container">
+                            <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>">
+                            <p class="conteudo_cards_titulo"> <?= $farm['nomeFarm'] ?> </p>
+                            <p class="conteudo_descricao"> <?= $farm['miniDescFarm']?> </p>
+                        </th>
 
-                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
-                        
+                    <?php    
                     }  ?>
-                    <p class="conteudo_cards_titulo"> Titulo </p>
-                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
-
-                </th>
-                <th class="conteudo_cards_container">
-
-                    <div class="conteudo_imagem">
                     
-                    <?php
-
-                    foreach($farms as $farm){?>
-
-                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
-                        
-                    }  ?>
-
-                    </div>
-
-                    <p class="conteudo_cards_titulo"> Titulo </p>
-                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
-                    
-                </th>
-                <th class="conteudo_cards_container">
-
-                    <div class="conteudo_imagem">
-                    
-                    <?php
-
-                    foreach($farms as $farm){?>
-
-                        <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>"><?php
-                        
-                    }  ?>
-
-                    </div>
-
-                    <p class="conteudo_cards_titulo"> Titulo </p>
-                    <p class="conteudo_descricao"> Exemplo de descrição do conteúdo </p>
-                    
-                </th>
-
-
                 <th class="conteudo_cards_container final"> 
                     <a  href="ler_mais/farms.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
                 </th>

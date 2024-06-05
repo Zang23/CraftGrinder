@@ -1,5 +1,8 @@
+var tipoFormularioSelecionado = "";
+
 document.getElementById('selectTipoFormulario').addEventListener('change', function() {
     var selecionado = this.value;
+    tipoFormularioSelecionado = this.value;
 
 
     document.getElementById('formularioAtualizacao').style.display ='none';
@@ -22,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-    
-
     adicionarRequisito.addEventListener("click", function(){
         contador++;
+
+        console.log("Tipo de formulario selecionado: ", tipoFormularioSelecionado);
 
         var newInput = document.createElement("input");
         newInput.type = "text";
@@ -35,13 +38,16 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("contadorInput").value = contador;
         console.log(contador);
 
-
         containerRequisitos.appendChild(newInput);
     });
 
     removerRequisito.addEventListener("click", function(){
+        
         var requisitoInputs = containerRequisitos.querySelectorAll(".inputRequisito");
         var lastRequistoInput = requisitoInputs[requisitoInputs.length - 1];
+
+        console.log("Tipo de formulario selecionado: ", tipoFormularioSelecionado);
+
         if(lastRequistoInput){
             containerRequisitos.removeChild(lastRequistoInput);
             contador--;

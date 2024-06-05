@@ -91,7 +91,6 @@
                     </label>
                     <input type="file" id="inputIdFarm" name="imagemFarm" style="display: none;"">
 
-
                     <label for="inputImagensFarm" class="input_file">
                         Selecione as imagens em ordem
                     </label>
@@ -103,10 +102,13 @@
 
             
                 <div class="addremove_container">
+
                     <button id="adicionarRequisito" type="button" class="input_file add_remove">
                         <span class="material-symbols-outlined">add</span>
                     </button>
+
                     <input type="hidden" id="contadorInput" name="contador">
+                    
                     <button id="removerRequisito" type="button" class="input_file add_remove">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
@@ -139,15 +141,43 @@
                 <div class="opcao_align">
                     <input type="text" name="nomeGuia" placeholder="Insira o nome do guia">
                     <input type="text" name="miniDescGuia" placeholder="Insira uma breve descricao sobre o guia">
+
+                    <label for="inputImagensFarm" class="input_file">
+                        Selecione as imagens em ordem
+                    </label>
+
+                    <input type="file" id="inputImagensGuia" name="galeriaGuia[]" multiple style="display: none; ">
+
                     <label for="inputIdGuia" class="input_file">
                         Enviar Arquivo
                     </label>
                     <input type="file" name="imagemGuia" id="inputIdGuia" style="display: none;">
                     <input type="text" name="tipoArtigo" value="Guia" style="display: none;">
+
+                    <div class="addremove_container">
+
+                        <button id="adicionarRequisito" type="button" class="input_file add_remove">
+                            <span class="material-symbols-outlined">add</span>
+                        </button>
+
+                        <input type="hidden" id="contadorInput" name="contador">
+
+                        <button id="removerRequisito" type="button" class="input_file add_remove">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                        
+                    </div>
+
                 </div>
                     <div class="descricao_align">
                         <textarea name="descGuia" class="descricao_opcao" placeholder="Insira a descricao completa do guia"></textarea>
                     </div>
+            </div>
+
+            <div class="container_addremove_alinhamento">
+                <div id="containerRequisitos" class="container_requisitos">
+                            
+                </div>
             </div>
                 <div class="content_button_alinhamento">
                     <div class="content_button_enviar">

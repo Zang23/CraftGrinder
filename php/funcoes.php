@@ -194,13 +194,17 @@
 
                 $imagens = base64_encode(serialize(setArrayImagens($tipo, $pasta))); 
 
-                $contador = $_POST['contador'];
+                if($tipo != "Atualizacao"){
+                    $contador = $_POST['contador'];
 
-                for($i = 1; $i <= $contador; $i++){
-                    $requisitos[] = $_POST['requisito'.$i];
+                    for($i = 1; $i <= $contador; $i++){
+                        $requisitos[] = $_POST['requisito'.$i];
+                    }
+
+                    $requisitosSerializado = (base64_encode(serialize($requisitos)));
                 }
-
-                $requisitosSerializado = (base64_encode(serialize($requisitos)));
+                
+                
                 
                 $desc = $_POST[$descTemp];
 
@@ -220,12 +224,8 @@
 
                 
                 
-
-
-
                 
-                
-                //voltaAdm();
+                voltaAdm();
                 
             }
         }
