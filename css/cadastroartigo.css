@@ -184,7 +184,7 @@ input, button, textarea{
 
 .container_requisitos{
     margin-bottom: 1rem;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -198,12 +198,13 @@ input, button, textarea{
     width: 30%;
 }
 .numeradorRequisitos{
-    font-size: 8px;
+    font-size: 10px;
     color: var(--escuro2);
 }
 .alinhamentoRequisitos{
     display: flex;
     flex-direction: row;
+    width: 80%;
 }
 
 .button_enviar{
