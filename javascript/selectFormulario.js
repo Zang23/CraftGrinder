@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     removerRequisito.addEventListener("click", function(){
         
-        var requisitoInputs = containerRequisitos.querySelectorAll(".inputRequisito");
+        var requisitoInputs = containerRequisitos.querySelectorAll(".alinhamentoRequisitos");
         var lastRequistoInput = requisitoInputs[requisitoInputs.length - 1];
 
         console.log("Tipo de formulario selecionado: ", tipoFormularioSelecionado);
