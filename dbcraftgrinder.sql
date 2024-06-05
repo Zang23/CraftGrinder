@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/06/2024 às 12:18
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 06-Jun-2024 às 00:31
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbartigo`
+-- Estrutura da tabela `tbartigo`
 --
 
 CREATE TABLE `tbartigo` (
@@ -34,7 +34,7 @@ CREATE TABLE `tbartigo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `tbartigo`
+-- Extraindo dados da tabela `tbartigo`
 --
 
 INSERT INTO `tbartigo` (`idArtigo`, `nomeArtigo`, `tipoArtigo`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `tbartigo` (`idArtigo`, `nomeArtigo`, `tipoArtigo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbatualizacao`
+-- Estrutura da tabela `tbatualizacao`
 --
 
 CREATE TABLE `tbatualizacao` (
@@ -62,7 +62,7 @@ CREATE TABLE `tbatualizacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbclientes`
+-- Estrutura da tabela `tbclientes`
 --
 
 CREATE TABLE `tbclientes` (
@@ -75,7 +75,7 @@ CREATE TABLE `tbclientes` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbfarm`
+-- Estrutura da tabela `tbfarm`
 --
 
 CREATE TABLE `tbfarm` (
@@ -91,7 +91,7 @@ CREATE TABLE `tbfarm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `tbfarm`
+-- Extraindo dados da tabela `tbfarm`
 --
 
 INSERT INTO `tbfarm` (`idFarm`, `nomeFarm`, `descFarm`, `miniDescFarm`, `tipoFarm`, `imagemFarm`, `caminhoImagemFarm`, `galeriaImagensFarm`, `requisitosFarm`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `tbfarm` (`idFarm`, `nomeFarm`, `descFarm`, `miniDescFarm`, `tipoFar
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbguia`
+-- Estrutura da tabela `tbguia`
 --
 
 CREATE TABLE `tbguia` (
@@ -114,13 +114,15 @@ CREATE TABLE `tbguia` (
   `miniDescGuia` varchar(250) DEFAULT NULL,
   `tipoGuia` varchar(25) DEFAULT NULL,
   `imagemGuia` varchar(250) DEFAULT NULL,
-  `caminhoImagemGuia` varchar(150) DEFAULT NULL
+  `caminhoImagemGuia` varchar(150) DEFAULT NULL,
+  `galeriaImagensGuia` mediumtext DEFAULT NULL,
+  `requisitosGuia` mediumtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbitem`
+-- Estrutura da tabela `tbitem`
 --
 
 CREATE TABLE `tbitem` (
@@ -130,13 +132,15 @@ CREATE TABLE `tbitem` (
   `miniDescItem` varchar(250) DEFAULT NULL,
   `tipoItem` varchar(25) DEFAULT NULL,
   `imagemItem` varchar(250) DEFAULT NULL,
-  `caminhoImagemItem` varchar(150) DEFAULT NULL
+  `caminhoImagemItem` varchar(150) DEFAULT NULL,
+  `galeriaImagensItem` mediumtext DEFAULT NULL,
+  `requisitosItem` mediumtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tbmaquina`
+-- Estrutura da tabela `tbmaquina`
 --
 
 CREATE TABLE `tbmaquina` (
@@ -146,7 +150,9 @@ CREATE TABLE `tbmaquina` (
   `miniDescMaquina` varchar(250) DEFAULT NULL,
   `tipoMaquina` varchar(25) DEFAULT NULL,
   `imagemMaquina` varchar(250) DEFAULT NULL,
-  `caminhoImagemMaquina` varchar(150) DEFAULT NULL
+  `caminhoImagemMaquina` varchar(150) DEFAULT NULL,
+  `galeriaImagensMaquina` mediumtext DEFAULT NULL,
+  `requisitosMaquina` mediumtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -154,49 +160,49 @@ CREATE TABLE `tbmaquina` (
 --
 
 --
--- Índices de tabela `tbartigo`
+-- Índices para tabela `tbartigo`
 --
 ALTER TABLE `tbartigo`
   ADD PRIMARY KEY (`idArtigo`);
 
 --
--- Índices de tabela `tbatualizacao`
+-- Índices para tabela `tbatualizacao`
 --
 ALTER TABLE `tbatualizacao`
   ADD PRIMARY KEY (`idAtualizacao`);
 
 --
--- Índices de tabela `tbclientes`
+-- Índices para tabela `tbclientes`
 --
 ALTER TABLE `tbclientes`
   ADD PRIMARY KEY (`idCliente`);
 
 --
--- Índices de tabela `tbfarm`
+-- Índices para tabela `tbfarm`
 --
 ALTER TABLE `tbfarm`
   ADD PRIMARY KEY (`idFarm`);
 
 --
--- Índices de tabela `tbguia`
+-- Índices para tabela `tbguia`
 --
 ALTER TABLE `tbguia`
   ADD PRIMARY KEY (`idGuia`);
 
 --
--- Índices de tabela `tbitem`
+-- Índices para tabela `tbitem`
 --
 ALTER TABLE `tbitem`
   ADD PRIMARY KEY (`idItem`);
 
 --
--- Índices de tabela `tbmaquina`
+-- Índices para tabela `tbmaquina`
 --
 ALTER TABLE `tbmaquina`
   ADD PRIMARY KEY (`idMaquina`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --

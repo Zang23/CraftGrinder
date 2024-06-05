@@ -84,7 +84,7 @@
     
         
         if(is_array($galerias['name'])){
-            // Itera sobre cada arquivo enviado
+            
             foreach($galerias['name'] as $indice => $nome_arquivo){
                 
                 $nome_temporario = $galerias['tmp_name'][$indice];
@@ -188,13 +188,7 @@
                 if($tipo != "Atualizacao"){
                     $miniDescTemp = "miniDesc" . $tipo;
                     $minidesc = $_POST[$miniDescTemp];
-                }
 
-
-
-                $imagens = base64_encode(serialize(setArrayImagens($tipo, $pasta))); 
-
-                if($tipo != "Atualizacao"){
                     $contador = $_POST['contador'];
 
                     for($i = 1; $i <= $contador; $i++){
@@ -203,9 +197,10 @@
 
                     $requisitosSerializado = (base64_encode(serialize($requisitos)));
                 }
-                
-                
-                
+
+
+
+                $imagens = base64_encode(serialize(setArrayImagens($tipo, $pasta)));                 
                 $desc = $_POST[$descTemp];
 
                 if($tipo == "Atualizacao"){
