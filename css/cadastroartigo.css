@@ -176,6 +176,7 @@ input, button, textarea{
     border-radius: 12px;
     text-align: center;
 }
+
 .add_remove{
     width: 50%;
     height: 3rem;
@@ -195,6 +196,14 @@ input, button, textarea{
 }
 .inputRequisito{
     width: 30%;
+}
+.numeradorRequisitos{
+    font-size: 8px;
+    color: var(--escuro2);
+}
+.alinhamentoRequisitos{
+    display: flex;
+    flex-direction: row;
 }
 
 .button_enviar{

@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function(){
         contador++;
 
         var newInput = document.createElement("input");
+        var newParagraph = document.createElement("p");
+
+        newParagraph.className = "numeradorRequisitos";
+        newParagraph.innerHTML = contador + ".";
         newInput.type = "text";
         newInput.name = "requisito" + contador;
         newInput.placeholder = "Requisito " + contador;
@@ -35,8 +39,15 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("contadorInput").value = contador;
         console.log(contador);
 
+        const novaDiv = document.createElement("div");
+        novaDiv.className = "alinhamentoRequisitos";
+        
+        novaDiv.appendChild(newParagraph);
+        novaDiv.appendChild(newInput);
 
-        containerRequisitos.appendChild(newInput);
+        containerRequisitos.appendChild(novaDiv);
+        /*containerRequisitos.appendChild(newParagraph);
+        containerRequisitos.appendChild(newInput);*/
     });
 
     removerRequisito.addEventListener("click", function(){
