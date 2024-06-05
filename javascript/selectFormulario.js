@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log("Tipo de formulario selecionado: ", tipoFormularioSelecionado);
 
         var newInput = document.createElement("input");
+        var newParagraph = document.createElement("p");
+
+        newParagraph.className = "numeradorRequisitos";
+        newParagraph.innerHTML = contador + ".";
         newInput.type = "text";
         newInput.name = "requisito" + contador;
         newInput.placeholder = "Requisito " + contador;
@@ -39,6 +43,16 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log(contador);
 
         containerRequisitos.appendChild(newInput);
+
+        const novaDiv = document.createElement("div");
+        novaDiv.className = "alinhamentoRequisitos";
+        
+        novaDiv.appendChild(newParagraph);
+        novaDiv.appendChild(newInput);
+
+        containerRequisitos.appendChild(novaDiv);
+        /*containerRequisitos.appendChild(newParagraph);
+        containerRequisitos.appendChild(newInput);*/
     });
 
     removerRequisito.addEventListener("click", function(){

@@ -113,28 +113,24 @@ html{
     76%{
         right: 200%;
     }
-    99%{
+    100%{
         right: 0;
     }
 }
 
 @media (hover:hover){
+    [data-animacao]{
+        animation: var(--animname, none)
+        var(--animduration, 0s)
+        var(--animtimingfunction, ease)
+        var(--animiterationcount, infinite)
+        var(--animplaystate, running)
+    }
     .animacao{
-        -webkit-animation-name: paraLado;
-        animation-name: paraLado;
-        -webkit-animation-timing-function: ease;
-        animation-timing-function: ease;
-        -webkit-animation-duration: 4s;
-        animation-duration: 20s;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        -webkit-animation-play-state: running;
-        animation-play-state: running;
+        --animname: paraLado;
+        --animduration: 10s;
     }
-    .animacao .carousel__slide:last-child{
-        animation: paraComeco;
-
-    }
+    
 }
 
 

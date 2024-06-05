@@ -26,10 +26,10 @@ event.preventDefault();
 const nextbtn = document.querySelector(".next");
 const prevbtn = document.querySelector(".prev");
 const viewport = document.querySelector(".viewport");
-const pararAnimacao = document.getElementById('passarBtn');
+
 
 const num_slides = 3;
-let slide_atual = 0;
+let slide_atual = 0; 
 
 //arrastar o slide
 function slide_passagem(){
@@ -48,9 +48,18 @@ prevbtn.addEventListener("click", () => {
     slide_passagem();
 });
 
-/*pararAnimacao.addEventListener('click', () => {
-    const animacao = document.getAnimations("paraLado");
-    animacao.style.animationPlayState = 'paused';
-})*/
+/*parar animacao*/
+const pararAnimacao = document.getElementById('passarBtn');
+
+pararAnimacao.addEventListener('click', () => {
+    const animacao = document.querySelectorAll('[data-animacao');
+    animacao.forEach(animation => {
+        const acao = animation.style.animationPlayState || 'running';
+            if (acao === 'running'){
+                animation.style.animationPlayState = 'paused';
+                animation.style.animationIterationCount = 'none';
+            }
+    })
+})
 
 
