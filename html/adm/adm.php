@@ -24,7 +24,7 @@ error_reporting(E_ERROR | E_PARSE);
     <header class="cabecalho_container s">
 
         <div class="cabecalho_superior_container">
-            <a href="index.html"><p class="cabecalho_titulo">CraftGrinder</p></a>
+            <a href="index.php"><p class="cabecalho_titulo">CraftGrinder</p></a>
         </div>
         
     </header>
