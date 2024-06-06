@@ -146,24 +146,24 @@
             <tr>
 
                 <th class="conteudo_cards_container">
-                    <div class="conteudo_titulo">
+                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
-                    <p>exemplo</p>
+                    <p>exemplo</p></a>
                 </th>
 
                 <th class="conteudo_cards_container">
-                    <div class="conteudo_titulo">
+                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
-                    <p>exemplo</p>
+                    <p>exemplo</p></a>
                 </th>
 
                 <th class="conteudo_cards_container">
-                    <div class="conteudo_titulo">
+                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
-                    <p>exemplo</p>
+                    <p>exemplo</p></a>
                 </th>
 
                 <th class="conteudo_cards_container final">
@@ -180,22 +180,22 @@
         <table class="conteudo_tabela">
             <tr>
                 <th class="conteudo_cards_item_container">
-                    <div class="conteudo_titulo">
+                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
-                    <p>exemplo</p>
+                    <p>exemplo</p></a>
                 </th>
                 <th class="conteudo_cards_item_container">
-                    <div class="conteudo_titulo">
+                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
-                    <p>exemplo</p>
+                    <p>exemplo</p></a>
                 </th>
                 <th class="conteudo_cards_item_container">
-                    <div class="conteudo_titulo">
+                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
-                    <p>exemplo</p>
+                    <p>exemplo</p></a>
                 </th>
 
                 <th class="conteudo_cards_item_container final">
@@ -211,22 +211,22 @@
         <table class="conteudo_tabela">
             <tr>
                 <th class="conteudo_cards_item_container">
-                    <div class="conteudo_titulo">
+                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
-                    <p>exemplo</p>
+                    <p>exemplo</p></a>
                 </th>
                 <th class="conteudo_cards_item_container">
-                    <div class="conteudo_titulo">
+                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
-                    <p>exemplo</p>
+                    <p>exemplo</p></a>
                 </th>
                 <th class="conteudo_cards_item_container">
-                    <div class="conteudo_titulo">
+                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
-                    <p>exemplo</p>
+                    <p>exemplo</p></a>
                 </th>
 
                 <th class="conteudo_cards_item_container final">
