@@ -102,7 +102,7 @@ html{
 
 
 /*------------------------------PRINCIPAL-----------------------------------*/
-/*--animacao--*/
+/*--animacao--
 @keyframes paraLado{
     10%{
         right: 0;
@@ -132,7 +132,7 @@ html{
     }
     
 }
-
+*/
 
 .carousel_conteudo::-webkit-scrollbar {
     width: 0;
