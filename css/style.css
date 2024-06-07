@@ -138,6 +138,12 @@ a{
     justify-content: center;
     gap: 5%;
 }
+.container_navbar_sair{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
 
 .cabecalho_cadastro{
     border-style: none;
@@ -160,10 +166,29 @@ a{
     background-color: #966400;
     transition: 0.2s;
 }
+.cabecalho_sair{
+    background-color: var(--claro);
+    border-radius: 1.25rem;
+    width: 7rem;
+    height: 2.7rem;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cabecalho_sair:hover{
+    background-color: #966400;
+    transition: 0.2s;
+}
 
 .imagem_fotoPerfil{
     width: 3rem;
     height: 3rem;
+    margin: 1rem;
+}
+.sair:hover{
+    transition: 0.2s;
+    transform: scale(1.5, 1.5);
 }
 
 .cabecalho_inferior_container{
