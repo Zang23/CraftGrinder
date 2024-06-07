@@ -15,6 +15,12 @@
     background-color: var(--claro3);
     border-radius: 1.25rem 0.625rem ;
 }
+.card_container:hover{
+    transition: 0.2s;
+    transform: scale(1.1, 1.1);
+    background-color: var(--fundoCards);
+    box-shadow: 0 0 1.5625rem var(--shadowBox);
+}
 
 .card_imagem{
     width: 100%;
