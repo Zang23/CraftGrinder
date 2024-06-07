@@ -1,6 +1,12 @@
 <?php
+    session_start();
     require '../php/funcoes.php';
     require '../php/conexao.php';
+
+    $verificado = verificaLogin();
+
+
+    
 
 
 ?>
@@ -22,11 +28,12 @@
     <header class="cabecalho_container r">
 
     <div class="cabecalho_superior_container">
-        <p class="cabecalho_titulo">CraftGrinder</p>
+        <p class="cabecalho_titulo"><a href="index.php">CraftGrinder</a></p>
         <div class="cabecalho_superior_box">
             <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
-            <a class="cabecalho_cadastro" href="cadastro.php">Cadastrar</a>
-            <a class="cabecalho_entrar" href="login.html">Entrar</a>
+            <div class="container_navbar_cadastro">
+                <?= mostraLogin($verificado)?>
+            </div>
         </div>
     </div>
 
@@ -38,8 +45,8 @@
             <th><a href="#itens"><p class="cabecalho_inferior_nav">Itens </p> </a> </th>
             <th><a href="#maquinas"><p class="cabecalho_inferior_nav">Máquinas </p> </a> </th>
             <th><a href="#premium"><p class="cabecalho_inferior_nav">Premium </p> </a> </th>
-            <th><a href="#contato"><p class="cabecalho_inferior_nav">Contato </p> </a> </th>
             <th><a href="#sobre"><p class="cabecalho_inferior_nav">Sobre </p> </a> </th>
+            <th><a href="#contato"><p class="cabecalho_inferior_nav">Contato </p> </a> </th>
         </tr>
     </table>
 
@@ -252,6 +259,8 @@
             <div class="sobrenos_container">
                 <h1 id="sobre" class="navbar_titulo">Sobre nós</h1>
                 <p>CraftGrinder é destinado para os amantes de Minecraft com sede de conhecimento</p>
+                <p id="contato" class="ctt">Contato</p>
+                <p>Exemplos de contato</p>
             </div>
         </div>
     </div>

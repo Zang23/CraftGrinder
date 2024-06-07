@@ -59,6 +59,7 @@ html{
     border-radius: 1.25rem;
     padding: 0.75rem 2rem;
     background-color: #4f663d;
+    margin-right: 0.5rem;
 }
 .cabecalho_cadastro:hover{
     background-color: #415333;
@@ -71,6 +72,7 @@ html{
     padding: 0.75rem 2rem;
     background-color: var(--claro);
 }
+
 .cabecalho_entrar:hover{
     background-color: #966400;
     transition: 0.2s;
@@ -84,6 +86,7 @@ html{
 .cabecalho_inferior_nav{
     color: var(--texto);
 }
+
 
 .cabecalho_inferior_nav:hover{
     background-color: var(--navbarHover);
@@ -298,4 +301,9 @@ html{
 
 .sobrenos_container{
     margin: 3%
+}
+.ctt{
+    font-size: 20px;
+    color: var(--texto);
+    margin: 1rem 0 1rem 0;
 }
