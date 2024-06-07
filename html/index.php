@@ -1,6 +1,12 @@
 <?php
+    session_start();
     require '../php/funcoes.php';
     require '../php/conexao.php';
+
+    $verificado = verificaLogin();
+
+
+    
 
 
 ?>
@@ -25,8 +31,9 @@
         <p class="cabecalho_titulo"><a href="index.php">CraftGrinder</a></p>
         <div class="cabecalho_superior_box">
             <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
-            <a class="cabecalho_cadastro" href="cadastro.php">Cadastrar</a>
-            <a class="cabecalho_entrar" href="login.html">Entrar</a>
+            <div class="container_navbar_cadastro">
+                <?= mostraLogin($verificado)?>
+            </div>
         </div>
     </div>
 

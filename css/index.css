@@ -71,6 +71,7 @@ html{
     padding: 0.75rem 2rem;
     background-color: var(--claro);
 }
+
 .cabecalho_entrar:hover{
     background-color: #966400;
     transition: 0.2s;

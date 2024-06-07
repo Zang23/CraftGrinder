@@ -1,5 +1,29 @@
 <?php
 
+
+    function verificaLogin(){
+
+        if(isset($_SESSION['perfilCadastrado'])){
+            return $verificado = $_SESSION['perfilCadastrado'];
+       }else{
+            return $verificado = false;
+       }
+    }
+
+    function mostraLogin (bool $verificado){
+
+        if($verificado == false){?>
+            <a class="cabecalho_cadastro" href="cadastro.php">Cadastrar</a>
+            <a class="cabecalho_entrar" href="login.html">Entrar</a>
+        <?php
+
+        }else if ($verificado){?>
+            <a href="paginaUsuario.html"><img class="imagem_fotoPerfil" src="../img/fotoperfil.png"></a>
+            <a class="cabecalho_entrar" href="../php/logoff.php">Sair</a>
+        <?php
+        }
+    }
+
     function mostraFarm(int $id){
         
         require 'conexao.php';
