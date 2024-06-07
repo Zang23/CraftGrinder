@@ -1,4 +1,55 @@
-.tabela, tr, td{
+@font-face {
+    font-family: Minecraft;
+    src: url(../fonts/Monocraft.ttf);
+}
+
+    .tabela, td{
     border-style: solid;
     border-color: black;
+}
+body{
+    display: flex;
+}
+.slot{
+    
+    height: 12px;
+    width: 12px;
+    position: relative;
+    cursor: pointer;
+}
+.cont{
+    position: absolute;
+    z-index: 2;
+    white-space: nowrap;
+    transform: translateX(30%);
+    top: -20%;
+    font-size: 12px;
+}
+.cont, .nomeBloco{
+    font-family: Minecraft;
+}
+.popnull, .nomeBloco{
+    position: absolute;
+    top: 260%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s ease;
+    background-color: #2d0057;
+    border-color: #8a2be2;
+    border-style: solid;
+    color: #fff;
+    border-radius: 12.5%;
+    padding: 0px 10px;
+    z-index: 1;
+}
+.slot:hover .nomeBloco{
+    top: 130%;
+    visibility: visible;
+    opacity: 1;
+}
+.slot:hover{
+    background-color: #9999;
 }
