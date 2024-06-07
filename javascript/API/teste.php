@@ -67,8 +67,9 @@ if ($array_de_objetos === null) {
 
     console.log(slots, ids, counts, damages);
     for (let i = 0; i < 36; i++) {
-        let newp = document.createElement("p");
-        newp.innerHTML = ids[i];  // more statements
+        let newp = document.createElement("img");
+        newp.setAttribute("src", "../../img/iconeitens/item/" + ids[i] + ".png");
+        //newp.innerHTML = ids[i];   more statements
         item = document.getElementById(slots[i]);
         if(ids[i] == null){}
         else{
