@@ -3,9 +3,30 @@
     src: url(../fonts/Monocraft.ttf);
 }
 
-    .tabela, td{
+:root{
+    --texto: #ffffff;
+    --escuro: #627E4C;
+    --escuro2: #545454;
+    --claro: #C98700;
+    --claro2: #B9B9B9;
+    --claro3: #d5d5c8;
+    --fundo: #979797;
+    --preto: #000000;
+    --shadowBox: #00000086;
+    --navbarHover: #966400;
+    --fundoCards: #acacac;
+}
+
+    .tabela{
     border-style: solid;
-    border-color: black;
+    border-color: var(--fundo);
+}
+.slot{
+    border-style: solid;
+    color: var(--preto);
+}
+.tabela{
+    background-color: var(--claro3);
 }
 body{
     display: flex;
@@ -16,17 +37,23 @@ body{
     width: 12px;
     position: relative;
     cursor: pointer;
+    background-color: var(--fundo);
 }
 .cont{
     position: absolute;
     z-index: 2;
-    white-space: nowrap;
-    transform: translateX(30%);
-    top: -20%;
-    font-size: 12px;
+    white-space: nowrap;  
+    top: 40%;
+    font-size: 16px;
+    text-shadow: 1.5px 1px #000;
+    text-align: right;
+    width: 100%;
+
 }
 .cont, .nomeBloco{
     font-family: Minecraft;
+    color: var(--texto);
+    
 }
 .popnull, .nomeBloco{
     position: absolute;
@@ -40,8 +67,7 @@ body{
     background-color: #2d0057;
     border-color: #8a2be2;
     border-style: solid;
-    color: #fff;
-    border-radius: 12.5%;
+    border-radius: 7px;
     padding: 0px 10px;
     z-index: 1;
 }
@@ -49,6 +75,8 @@ body{
     top: 130%;
     visibility: visible;
     opacity: 1;
+    z-index: 3;
+    
 }
 .slot:hover{
     background-color: #9999;

@@ -14,6 +14,7 @@
 <body>
     <table class="tabela">
         <tr>
+            
             <td class="slot" id="9"><p class="cont" id="cont9"></p><span class="popnull" id="popup9">
                     <p id="nome9">a</p>
                 </span></td>
@@ -193,9 +194,9 @@
                 if(ids[i] == null){}
             else{
                 item.appendChild(newp);
-                document.getElementById("popup" + i).className = "nomeBloco";
-                document.getElementById("nome" + i).innerHTML = ids[i] + " X" + counts[i];
-                document.getElementById("cont" + i).innerHTML = counts[i];
+                document.getElementById("popup" + slots[i]).className = "nomeBloco";
+                document.getElementById("nome" + slots[i]).innerHTML = ids[i] + " X" + counts[i];
+                document.getElementById("cont" + slots[i]).innerHTML = counts[i];
                 }
             }
        
