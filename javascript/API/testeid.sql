@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/06/2024 às 13:07
+-- Tempo de geração: 08/06/2024 às 05:29
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -39,7 +39,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `clinome`, `vetorsql`, `file`) VALUES
-(1, 'joao', '[{\"Slot\":{0},\"id\":{\"minecraft:log\"},\"Count\":{10},\"Damage\":{0}},{\"Slot\":{1},\"id\":{\"minecraft:wool\"},\"Count\":{1},\"Damage\":{0}},{\"Slot\":{2},\"id\":{\"minecraft:mutton\"},\"Count\":{1},\"Damage\":{0}},{\"Slot\":{3},\"id\":{\"tconstruct:book\"},\"Count\":{1},\"Damage\":{0}},{\"Slot\":{4},\"id\":{\"conarm:book\"},\"Count\":{1},\"Damage\":{0}},{\"Slot\":{5},\"id\":{\"minecraft:apple\"},\"Count\":{1},\"Damage\":{0}},{\"Slot\":{6},\"id\":{\"minecraft:sapling\"},\"Count\":{3},\"Damage\":{0}}]', '0304cadb-1ec5-384b-a49d-1a83b5c502d4.dat');
+(1, 'joao', '[{\"count\":64,\"Slot\":3,\"id\":\"target\"}, {\"count\":64,\"Slot\":4,\"id\":\"sticky_piston\"}, {\"count\":64,\"Slot\":5,\"id\":\"warped_hyphae\"}, {\"count\":1,\"Slot\":6,\"id\":\"diamond_sword\"}, {\"count\":64,\"Slot\":7,\"id\":\"detector_rail\"}, {\"count\":64,\"Slot\":8,\"id\":\"rail\"}, {\"count\":64,\"Slot\":9,\"id\":\"jungle_log\"}, {\"count\":64,\"Slot\":17,\"id\":\"jukebox\"}, {\"count\":64,\"Slot\":21,\"id\":\"warped_stem\"}, {\"count\":64,\"Slot\":22,\"id\":\"jungle_wood\"}, {\"count\":64,\"Slot\":25,\"id\":\"powered_rail\"}, {\"count\":64,\"Slot\":27,\"id\":\"redstone\"}, {\"count\":64,\"Slot\":28,\"id\":\"redstone_torch\"}, {\"count\":64,\"Slot\":29,\"id\":\"redstone_block\"}, {\"count\":1,\"Slot\":100,\"id\":\"diamond_boots\"}, {\"count\":1,\"Slot\":101,\"id\":\"diamond_leggings\"}, {\"count\":1,\"Slot\":102,\"id\":\"diamond_chestplate\"}, {\"count\":1,\"Slot\":103,\"id\":\"diamond_helmet\"}, {\"count\":1,\"Slot\":-106,\"id\":\"shield\"}]', '06e617e3-84d8-474e-a14a-beceb5cc7726.dat');
 
 --
 -- Índices para tabelas despejadas
