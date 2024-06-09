@@ -44,27 +44,27 @@ body{
     margin: 2px 2px 2px 11.5%;
 }
 .cabeca{
-    background-image: url(../img/iconeItens/items/empty_armor_slot_helmet.png);
+    background-image: url(../img/iconeItens/minecraft/empty_armor_slot_helmet.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .peitoral{
-    background-image: url(../img/iconeItens/items/empty_armor_slot_chestplate.png);
+    background-image: url(../img/iconeItens/minecraft/empty_armor_slot_chestplate.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .calca{
-    background-image: url(../img/iconeItens/items/empty_armor_slot_leggings.png);
+    background-image: url(../img/iconeItens/minecraft/empty_armor_slot_leggings.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .pes{
-    background-image: url(../img/iconeItens/items/empty_armor_slot_boots.png);
+    background-image: url(../img/iconeItens/minecraft/empty_armor_slot_boots.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .escudo{
-    background-image: url(../img/iconeItens/items/empty_armor_slot_shield.png);
+    background-image: url(../img/iconeItens/minecraft/empty_armor_slot_shield.png);
     background-repeat: no-repeat;
     background-size: cover;
 }

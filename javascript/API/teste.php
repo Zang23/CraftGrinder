@@ -119,7 +119,7 @@
                     <?php
             }
             ?>
-      <?php } ?>
+      
             console.log(slots, ids, counts);
             for (let i = 0; i < 41 ;  i++) {
 
@@ -160,6 +160,7 @@
             }
        
             </script>
+            <?php } ?>
   
 </body>
 
