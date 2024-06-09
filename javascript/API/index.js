@@ -45,8 +45,8 @@ app.get('/api/:id', async (req, res) => {
 
                     const string = JSON.stringify(vetor);  
 
-                    let regex = /"type":"[^"]*",|"value":|minecraft:/gi;
-                    let stringcut = string.replace(regex, '').replace(/[{}]/g, '').replace(/,"count/g, '}, {"count').replace("[", '[{').replace("]", '}]');
+                    let regex = /"type":"[^"]*",|"value":/gi;
+                    let stringcut = string.replace(regex, '').replace(/[{}]/g, '').replace(/,"count/g, '}, {"count').replace("[", '[{').replace(/minecraft:/g, "minecraft/").replace("]", '}]');
        
                     res.send(stringcut);
 

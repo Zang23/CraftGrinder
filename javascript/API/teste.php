@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -71,7 +72,7 @@
             <td class="slot" id="8"></td>
         </tr>
     </table>
-
+    <script src="./tradutorteste.js"></script>
     <?php
 
     function getJson()
@@ -100,7 +101,7 @@
         echo "Erro ao decodificar a string JSON.";
     } else {
        ?>
-
+        
         <script>
             const slots = [];
             const ids = [];
@@ -118,7 +119,7 @@
                     <?php
             }
             ?>
-    
+      <?php } ?>
             console.log(slots, ids, counts);
             for (let i = 0; i < 41 ;  i++) {
 
@@ -128,7 +129,7 @@
             else{
                 let  newimg = document.createElement("img");
                 newimg.className = "item";
-                newimg.setAttribute("src", "../../img/iconeitens/items/" + ids[i] + ".png");
+                newimg.setAttribute("src", "../../img/iconeitens/" + ids[i] + ".png");
 
                 let newcont = document.createElement("p");
                 newcont.className = "cont";
@@ -136,12 +137,16 @@
 
                 let newnome = document.createElement("p");
                 newnome.setAttribute("id", "nome" + i);
-
+                let newId = document.createElement("p");
+                newId.className = "id";
+                newId.innerHTML = ids[i].replace('/', ':');
                 let newpopup = document.createElement("span");
                 newpopup.setAttribute("id", "popup" + i);
                 newpopup.className = "nomeBloco";
                 item.style.backgroundImage = "none";
-                newnome.innerHTML = ids[i] + " X" + counts[i];
+                let traduzido = ids[i] + "/";
+                traduzido = traduzir(traduzido);
+                newnome.innerHTML = traduzido;
                 newcont.innerHTML = counts[i];
                 item.appendChild(newimg);
                 if(slots[i] <= 36 && slots[i] > 0){
@@ -149,11 +154,13 @@
                 }
                 item.appendChild(newpopup);
                 newpopup.appendChild(newnome);
+                newpopup.appendChild(newId);
+                console.log(traduzido);
                 }
             }
        
             </script>
-    <?php } ?>
+  
 </body>
 
 </html>

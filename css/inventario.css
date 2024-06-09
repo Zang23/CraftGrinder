@@ -16,13 +16,17 @@
     --navbarHover: #966400;
     --fundoCards: #acacac;
 }
-
+.id{
+    margin-top: 10%;
+    color: var(--fundo);
+}
 .tabela{
     flex-direction: column;
     border-style: solid;
     background-color: var(--claro3);
     width: 400px;  
     height: 351.44px;  
+    margin-left: 15%;
 }
 .fim{
     margin-bottom: 16px;
