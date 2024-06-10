@@ -13,13 +13,17 @@
     function mostraLogin (bool $verificado){
 
         if($verificado == false){?>
-            <a class="cabecalho_cadastro" href="cadastro.php">Cadastrar</a>
-            <a class="cabecalho_entrar" href="login.html">Entrar</a>
+            <div class="container_navbar_cadastro">
+                <a class="cabecalho_cadastro" href="cadastro.php">Cadastrar</a>
+                <a class="cabecalho_entrar" href="login.html">Entrar</a>
+            </div>
         <?php
 
         }else if ($verificado){?>
-            <a href="paginaUsuario.html"><img class="imagem_fotoPerfil" src="../img/fotoperfil.png"></a>
-            <a class="cabecalho_entrar" href="../php/logoff.php">Sair</a>
+            <div class="container_navbar_sair">
+                <a href="paginaUsuario.html"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
+                <a class="cabecalho_sair" href="../php/logoff.php">Sair</a>
+            </div>
         <?php
         }
     }
