@@ -1,6 +1,21 @@
+.index_fundo{
+    height: 100vh;
+}
 .container_perfil{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+.content_perfil{
     display: flex;
     flex-direction: row;
+    width: 50%;
+    background-color: var(--claro2);
+    border-radius: 1.25rem 0.625rem;
+    box-shadow: 0 0.625rem 0.625rem 0 #00000086;
 }
 .container_perfilimagem{
     margin: 2rem;
@@ -10,31 +25,71 @@
 .perfil_usuario{
     width: 200px;
     height: 200px;
+    background-color: var(--fundoCards);
+    border-radius: 1.25rem 1.25rem 0 0;
 }
 .container_alterarfoto{
     display: flex;
     justify-content: center;
+    background-color: var(--claro3);
+    color: var(--escuro2);
+    padding: 0.25rem;
+    border-radius: 0 0 1.25rem 1.25rem;
+}
+.container_alterarfoto:hover{
+    transition: 0.2s;
+    background-color: #ebebeb;
 }
 
 .container_perfilinfo{
     display: flex;
     flex-direction: column;
 }
-.nome_usuario{
-    font-size: 24px;
+.container_usuario{
     margin: 1rem;
 }
+.nome_usuario{
+    font-size: 24px;
+}
 .editarperfil_button{
-    margin-left: 1rem;
+    margin: 0.5rem;
     width: 7.5rem;
     height: 2rem;
-    background-color: var(--claro);
+    background-color: var(--claro3);
+    color: var(--escuro2);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 1.25rem;
 }
 .editarperfil_button:hover{
-    background-color: #966400;
+    background-color: #ebebeb;
     transition: 0.2s;
+}
+.import_invent{
+    margin: 1rem;
+}
+.import_invent p{
+    font-size: 18px;
+}
+.invent_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+}
+.invent_buttons > label{
+    margin: 1rem;
+    padding: 1rem;
+    color: var(--texto);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.invent_imp{
+    background-color: var(--claro);
+}
+.invent_most{
+    background-color: var(--fundo);
 }
