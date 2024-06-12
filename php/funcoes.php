@@ -21,7 +21,7 @@
 
         }else if ($verificado){?>
             <div class="container_navbar_sair">
-                <a href="paginaUsuario.html"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
+                <a href="paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
                 <a class="cabecalho_sair" href="../php/logoff.php">Sair</a>
             </div>
         <?php

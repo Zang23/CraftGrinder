@@ -1,3 +1,38 @@
+<?php
+
+    
+
+    session_start();
+
+    if($_SESSION['perfilCadastrado']){
+        $idUsuario = $_SESSION['idUsuario'];
+
+        require '../php/conexao.php';
+
+        $sql_code = "SELECT * FROM tbclientes WHERE idCliente = '$idUsuario'";
+        $prepare = $pdo->prepare($sql_code);
+        $count = $prepare->execute();
+        $usuarios = $prepare->fetchAll();
+    }
+
+
+    function getEmail(int $id){
+        require "../php/conexao.php";
+
+        $user_code = "SELECT emailCliente FROM tbclientes WHERE idCliente = '$id' ";
+        $prepare = $pdo->prepare($user_code);
+        $count = $prepare->execute();
+        $users = $prepare->fetchAll();
+
+        foreach($users as $user){
+            $userEmail =  $user['emailCliente'];
+            return $userEmail;
+        }
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +52,6 @@
             <div class="cabecalho_superior_box">
                 <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
                 <div class="container_navbar_sair">
-                    <!--<?= mostraLogin($verificado)?>-->
                     <a href="paginaUsuario.html"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
                     <a class="cabecalho_sair" href="../php/logoff.php">Sair</a>
                 </div>
@@ -40,7 +74,7 @@
                     <div class="container_perfilinfo">
                         <div class="container_usuario">
                             <p class="nome_usuario">Exemplo Nome Kogos</p>
-                            <p>Seu email: exemplo@gmail.com</p>
+                            <p>Seu email: <?= getEmail($idUsuario)?> </p>
                             <a href="" class="editarperfil_button"><p>Editar Perfil</p></a>
                         </div>
                     </div>

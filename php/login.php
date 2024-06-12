@@ -3,7 +3,7 @@
 session_start();
 require 'conexao.php';
 
-$sql_code = "SELECT emailCliente, senhaCliente, nicknameCliente FROM tbclientes";
+$sql_code = "SELECT * FROM tbclientes";
 $prepare = $pdo->prepare($sql_code);
 $count = $prepare->execute();
 
@@ -21,6 +21,7 @@ foreach($usuarios as $usuario){
 
         if($email == $usuario['emailCliente'] and $senha == $usuario['senhaCliente']){
             $_SESSION['perfilCadastrado'] = true;
+            $_SESSION['idUsuario'] = $usuario['idCliente'];
             header('location: ../html/index.php');
         }else{
             echo "Um erro ocorreu";
@@ -30,6 +31,7 @@ foreach($usuarios as $usuario){
 
         if($nickname == $usuario['nicknameCliente'] and $senha == $usuario['senhaCliente']){
             $_SESSION['perfilCadastrado'] = true;
+            $_SESSION['idUsuario'] = $usuario['idCliente'];
             header('location: ../html/index.php');
         }else{
             echo "Erro aconteceu"; 
