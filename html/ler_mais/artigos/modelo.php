@@ -77,52 +77,56 @@
                 </div>
 
                 <div class="descricao_completa">
-                    <?= $resultado[1]?>
-
-            
-                    
-                    
                     <?php 
+                    
+                    
+
+                    $descricao = $resultado[1];
+
+                    
+                    $novaDesc = [];
 
                     for($i = -1; $i <= count($galeriaImagens); $i++){
 
                         $imagem = "--imagem" . $i;
                         $contador = $i - 1;
+                        
 
-                        if (strstr($resultado[1], $imagem)){
+                        if (strstr($descricao, $imagem)){
 
                             if($imagem == "--imagem1"){
 
                                 $imagemGaleria = unserialize(base64_decode($galeriaImagens[0]));
                             
-                                $imagemGaleria = "../../" . $imagemGaleria; ?>
+                                $imagemGaleria = "<img src='../../" . $imagemGaleria . "'class='imagemModelo'><br>"; 
 
+                                $novaDesc[$i] = str_replace("--imagem1", $imagemGaleria, $descricao);
                                 
+                              
+                                //print_r($novaDesc);
 
-                                <img src="<?= $imagemGaleria?>" alt="">
-                                
-
-                                
-
-                            <?php
-                            }else{
-                                
-                            $imagemGaleria = unserialize(base64_decode($galeriaImagens[$contador]));
                             
-                            $imagemGaleria = "../../" . $imagemGaleria; ?>
+                            }else{
+                            
+                                $imagemGaleria = unserialize(base64_decode($galeriaImagens[$contador]));
+                                
+                                $imagemGaleria = "<img src='../../" . $imagemGaleria. " 'class='imagemModelo'><br>"; 
 
-                            <img src="<?= $imagemGaleria?>" alt="">
+                                $novaDesc[$i] = str_replace($imagem, $imagemGaleria, $descricao);
 
-                            <?php
                             }
                             
 
                         }
+                        
                     }
 
                     
-                    
+                    print_r($novaDesc);
 
+                    //$novaDesc[1] = str_replace("imagem2", )
+                    
+                    
                     
             
 

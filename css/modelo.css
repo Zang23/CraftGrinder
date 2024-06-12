@@ -5,6 +5,7 @@
 }
 .index_fundo_mod{
     background-color: var(--fundo);
+    height: auto;
 }
 
 .container_modelo{
@@ -24,6 +25,8 @@
     display: flex;
     width: 75%;
     background-color: var(--fundoCards);
+    min-height: 100vh;
+    height: auto;
     
 }
 
@@ -74,3 +77,7 @@
     content: "x ";
 }
 
+.imagemModelo{
+    width: 100px;
+    height: 100px;
+}
