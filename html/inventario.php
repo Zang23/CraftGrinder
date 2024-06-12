@@ -5,14 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/inventario.css">
+    <link rel="stylesheet" href="../css/inventario.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap" rel="stylesheet">
     
 </head>
 
 <body>
+<?php
+    session_start();
+    require '../php/funcoes.php';
+    require '../php/conexao.php';
+
+    $verificado = verificaLogin();
+?>
+
+<div class="index_fundo">
+
+    <header class="cabecalho_container r">
+        <div class="cabecalho_superior_container">
+            <p class="cabecalho_titulo"><a href="index.php">CraftGrinder</a></p>
+            <div class="cabecalho_superior_box">
+                <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
+                <div class="container_navbar_cadastro">
+                    <?= mostraLogin($verificado)?>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <h1 class="navbar_titulo">Seu inventário</h1>
+
+    <div class="container_inventario">
+
     <table class="tabela">
         <tr class="inventariolinha">
             <td class="slotarmadura cabeca" id="103"></td>
@@ -72,7 +100,9 @@
             <td class="slot" id="8"></td>
         </tr>
     </table>
-    <script src="./tradutorteste.js"></script>
+    </div>
+</div>
+    <script src="../javascript/tradutor.js"></script>
     <?php
 
     function getJson()
@@ -129,10 +159,10 @@
             else{
                 let  newimg = document.createElement("img");
                 newimg.className = "item";
-                newimg.setAttribute("src", "../../img/iconeitens/" + ids[i] + ".png");
+                newimg.setAttribute("src", "../img/iconeitens/" + ids[i] + ".png");
 
                 let newcont = document.createElement("p");
-                newcont.className = "cont";
+                newcont.className = "contador";
                 newcont.setAttribute("id", "cont" + i);
 
                 let newnome = document.createElement("p");
@@ -161,7 +191,7 @@
        
             </script>
             <?php } ?>
-  
+
 </body>
 
 </html>
