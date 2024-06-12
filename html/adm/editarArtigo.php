@@ -103,7 +103,7 @@
                             <th><?= $artigo['nomeAtualizacao'] ?></th>
                             <th><?= $artigo['descAtualizacao'] ?></th>
                             <th><?= $artigo['imagemAtualizacao'] ?></th>
-                            <td> <a href="?editar=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
+                            <td> <a href="?editar=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined">Slowoidoijwoi</span></a></td>
                             <td> <a href="?delete=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined">delete</span></a></td>
                         </tr>
                         <?php
@@ -165,7 +165,7 @@
                             <th><?= $artigo['miniDescFarm'] ?></th>
                             <th><?= $artigo['descFarm'] ?></th>
                             <th><?= $artigo['imagemFarm'] ?></th>
-                            <td> <a href="?editar=<?=$artigo['idFarm']?>&nome=<?=$artigo['nomeFarm']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
+                            <td> <a href="editarArtigoScript.php?editar=<?=$artigo['idFarm']?>&nome=<?=$artigo['nomeFarm']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
                             <td> <a href="?delete=<?=$artigo['idFarm']?>&nome=<?=$artigo['nomeFarm']?>"><span class="material-symbols-outlined">delete</span></a></td>
                         </tr>
                         <?php

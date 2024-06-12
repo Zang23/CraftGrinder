@@ -33,17 +33,96 @@
             <div class="principal_conteudo">
                 <?php
 
+                require "../../../php/conexao.php";
                 require "../../../php/funcoes.php";
-                    
-                $resultado = getArtigo("Farm", 93);
+
+                $sql_code = "SELECT * FROM tbfarm WHERE idFarm = '88' ";
+                $prepare = $pdo->prepare($sql_code);
+                $count = $prepare->execute();
+                $farms = $prepare->fetchAll();
 
 
+
+                function getGaleria(){
+                
+                    require "../../../php/conexao.php";
+                    $galeria_code = "SELECT * FROM tbfarm WHERE idFarm = '95' ";
+                    $prepare = $pdo->prepare($galeria_code);
+                    $count = $prepare->execute();
+                    $imagens = $prepare->fetchAll();
+
+                    foreach($imagens as $imagem){
+                        $arrayGaleria =  $imagem['galeriaImagensFarm'];
+                        return $arrayGaleria;
+                    }
+
+                }
+                
+                
+
                     
+                $resultado = getArtigo("Farm", 95);
+
+                $galeriaCodificada = getGaleria();
+                $galeriaImagens = unserialize(base64_decode($galeriaCodificada));
+
+                
+                
                 ?>
                 <div class="titulo_principal">
-                    <h1><?= $resultado[0]?></h1>
+                    <h1><?= $resultado[0]?> </h1>
                 </div>
-                <?= $resultado[1]?>
+
+                <div class="descricao_completa">
+                    <?= $resultado[1]?>
+
+            
+                    
+                    
+                    <?php 
+
+                    for($i = -1; $i < count($galeriaImagens); $i++){
+
+                        $imagem = "--imagem" . $i;
+
+                        if (strstr($resultado[1], $imagem)){
+
+                            if($imagem == "--imagem1"){
+
+                                $imagemGaleria = unserialize(base64_decode($galeriaImagens[0]));
+                            
+                                $imagemGaleria = "../../" . $imagemGaleria; ?>
+
+                                
+
+                                <img src="<?= $imagemGaleria?>" alt="">
+                                
+
+                                
+
+                            <?php
+                            }else{
+                                
+                            $imagemGaleria = unserialize(base64_decode($galeriaImagens[$i]));
+                            
+                            $imagemGaleria = "../../" . $imagemGaleria; ?>
+
+                            <img src="<?= $imagemGaleria?>" alt="">
+
+                            <?php
+                            }
+                            
+
+                        }
+                    }
+
+                    
+
+                    
+            
+
+                    ?>
+                </div>
                
 
             </div>

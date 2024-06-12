@@ -17,3 +17,7 @@ tbody{
 table{
     border-collapse: collapse;
 }
+
+.material-symbols-outlined{
+    color: #000;
+}
