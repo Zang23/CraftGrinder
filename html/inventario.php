@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/inventario.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modelosteve.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap" rel="stylesheet">
     
@@ -43,16 +44,68 @@
 
     <table class="tabela">
         <tr class="inventariolinha">
-            <td class="slotarmadura cabeca" id="103"></td>
+            <td class="slotarmadura cabeca_slot" id="103"></td>
+            <td class="modelo3d">
+            <div class="modelocontainer">
+    <div class="containermodel">
+
+        <div class="cabeca" id="corpo">
+           
+                <div class="s1"></div>
+                <div class="s2"></div>
+                <div class="s3"></div>
+                <div class="s4"></div>
+                <div class="s5"></div>
+                <div class="s6"></div>
+            
+            <div id="torso" class="torso">
+                <div class="s7"></div>
+                <div class="s8"></div>
+            </div>
+            <div id="pernadireita" class="perna direitasteve">
+                <div class="s9"></div>
+                <div class="s10"></div>
+                <div class="s11"></div>
+                <div class="s12"></div>
+            </div>
+            <div id="pernaesquerda" class="perna esquerdasteve">
+                <div class="s13"></div>
+                <div class="s14"></div>
+                <div class="s15"></div>
+                <div class="s15-5"></div>
+                
+            </div>
+            <div id="bracodireito" class="braco direitosteve">
+                <div class="s16"></div>
+                <div class="s17"></div>
+                <div class="s18"></div>
+                <div class="s19"></div>
+                <div class="s20"></div>
+
+            </div>
+            <div id="bracoesquerdo" class="braco esquerdosteve">
+                <div class="s21"></div>
+                <div class="s22"></div>
+                <div class="s23"></div>
+                <div class="s24"></div>
+                <div class="s25"></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+            </td>
         </tr>
         <tr class="inventariolinha">
-            <td class="slotarmadura peitoral" id="102"></td>
+            <td class="slotarmadura peitoral_slot" id="102"></td>
         </tr>
         <tr class="inventariolinha">
-            <td class="slotarmadura calca" id="101"></td>
+            <td class="slotarmadura calca_slot" id="101"></td>
         </tr>
         <tr class="inventariolinha fim">
-            <td class="slotarmadura pes" id="100"></td>
+            <td class="slotarmadura pes_slot" id="100"></td>
+            
             <td class="slotarmadura escudo" id="-106"></td>
         </tr>
         <tr class="inventariolinha"> 
@@ -191,6 +244,7 @@
        
             </script>
             <?php } ?>
+            <script src="../javascript/model.js"></script>
 
 </body>
 

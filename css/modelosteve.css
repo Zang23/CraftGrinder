@@ -1,0 +1,241 @@
+:root{
+    --cabeca: 30px;
+    --skin: calc(var(--cabeca)*8);
+}
+
+.modelocontainer {
+    margin: 0;
+    background: #000;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .containermodel{
+    perspective: var(--skin);
+    margin: calc(var(--skin)*0.3125);
+    position: absolute;
+  }
+
+ .torso{
+    transform: translateY(100%);
+    position: absolute;
+    transform-style: preserve-3d;
+    z-index: 0;
+ }
+ .esquerdasteve > div{
+  left: calc(var(--cabeca)/2);
+}
+ .perna{
+  transform: translateY(250%);
+  position: absolute;
+    transform-style: preserve-3d;
+    z-index: 0;
+    height: calc(var(--cabeca)*2);
+
+ }
+ .braco{
+  top: var(--cabeca);
+  position: absolute;
+    transform-style: preserve-3d;
+    z-index: 0;
+    height: calc(var(--cabeca)*2);
+ }
+ .braco > div{
+  width: calc(var(--cabeca)/2) !important;
+  height: calc(var(--cabeca)*1.5);
+ }
+ .direitosteve{
+  right: calc(var(--cabeca)/2);
+ }
+ .esquerdosteve{
+  left: var(--cabeca);
+ }
+ .perna > div{
+  width: calc(var(--cabeca)/2) !important;
+  height: calc(var(--cabeca)*1.5);
+  
+}
+  
+  .cabeca {
+    position: relative;
+    width: var(--cabeca);
+    height: var(--cabeca);
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform: rotateX(23deg) rotateY(-13deg);
+  }
+  .torso > div{
+    height: calc(var(--cabeca)*1.5) !important;
+    
+  }
+  .cabeca > div{
+    height: var(--cabeca);
+  }
+  .cabeca > div, .torso > div , .perna > div , .braco > div{
+    position: absolute;
+    width: var(--cabeca);
+    
+    background-image: url(../img/skins/Original_Steve_with_Beard.png);
+    background-size: var(--skin);
+    image-rendering: pixelated;
+  }
+  
+
+  .s1 {
+    transform: translateZ(calc(var(--skin)*0.0625));
+    background-position-x: calc(var(--skin)*0.875);
+    background-position-y: calc(var(--skin)*0.875);
+  }
+  
+  .s2 {
+    transform: rotateY(90deg) translateZ(calc(var(--skin)*0.0625));
+    background-position-x: calc(var(--skin)*0.75);
+    background-position-y: calc(var(--skin)*0.875);
+  }
+  
+  .s3 {
+    transform: rotateY(180deg) translateZ(calc(var(--skin)*0.0625));
+    background-position-x: calc(var(--skin)*0.625);
+    background-position-y: calc(var(--skin)*0.875);
+  }
+  
+  .s4 {
+    transform: rotateX(90deg) translateZ(calc(var(--skin)*0.0625));
+    background-position-x: calc(var(--skin)*0.875);
+    background-position-y: 0;
+  }
+  
+  .s5 {
+    transform: rotateY(-90deg) translateZ(calc(var(--skin)*0.0625));
+    background-position-x: 0;
+    background-position-y: calc(var(--skin)*0.875);
+  }
+  
+  .s6 {
+    transform: rotateX(-90deg) translateZ(calc(var(--skin)*0.0625)) rotate(180deg);
+    background-position-x: calc(var(--skin)*0.75);
+    background-position-y: 0;
+  }
+  .s7 {
+    transform: translateZ(calc(var(--skin)*0.03125)); 
+    background-position-x: calc(var(--skin)*0.6875);
+    background-position-y: calc(var(--skin)*0.6875);
+  }
+  .s8{
+    transform: rotateY(180deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.5);
+    background-position-y: calc(var(--skin)*0.6875);
+
+  }
+  .s9{
+    transform: translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.9375);
+    background-position-y: calc(var(--skin)*0.6875);
+  }
+  .s10{
+    transform: rotateY(180deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: 0;
+    background-position-y: calc(var(--skin)*0.6875);
+  }
+  
+  .s11{
+    transform: rotateY(-90deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.875);
+    background-position-y: calc(var(--skin)*0.6875);
+  }
+  .s12{
+    height: calc(var(--skin)*0.0625) !important;
+    width: calc(var(--skin)*0.0625);
+    transform: rotateX(-90deg) translateZ(calc(var(--skin)*0.15625));
+    background-position-x: calc(var(--skin)*0.625);
+    background-position-y: calc(var(--skin)*0.25);
+  }
+  .s13{
+    transform: translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.6875);
+    background-position-y: calc(var(--skin)*0.1875);
+  }
+  .s14{
+    transform: rotateY(180deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.5625);
+    background-position-y: calc(var(--skin)*0.1875);
+
+  }
+  .s15{
+    transform: rotateY(90deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.75);
+    background-position-y: calc(var(--skin)*0.1875);
+  }
+  .s15-5{
+    height: calc(var(--skin)*0.0625) !important;
+    width: calc(var(--skin)*0.0625);
+    transform: rotateX(-90deg) translateZ(calc(var(--skin)*0.15625));
+    background-position-x: calc(var(--skin)*0.875);
+    background-position-y: calc(var(--skin)*0.75);
+  }
+  
+  .s16{
+    transform: translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.3125);
+    background-position-y: calc(var(--skin)*0.6875);
+  }
+  .s17{
+    transform: rotateY(180deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.1875);
+    background-position-y: calc(var(--skin)*0.6875);
+
+  }
+  .s18{
+    transform: rotateY(-90deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.25);
+    background-position-y: calc(var(--skin)*0.6875);
+  }
+  .s19{
+    height: calc(var(--skin)*0.0625) !important;
+    width: calc(var(--skin)*0.0625);
+    transform: rotateX(-90deg) translateZ(calc(var(--skin)*0.15625));
+    background-position-x: calc(var(--skin)*0.375);
+    background-position-y: calc(var(--skin)*0.25);
+  }
+  .s20{
+    height: calc(var(--skin)*0.0625) !important;
+    width: calc(var(--skin)*0.0625);
+    transform: rotateX(90deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.3125);
+    background-position-y: calc(var(--skin)*0.75);
+  }
+  .s21{
+    transform: translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.4375);
+    background-position-y: calc(var(--skin)*0.1875);
+  }
+  .s22{
+    transform: rotateY(180deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.3125);
+    background-position-y: calc(var(--skin)*0.1875);
+
+  }
+  .s23{
+    transform: rotateY(90deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.5);
+    background-position-y: calc(var(--skin)*0.1875);
+  }
+  .s24{
+    height: calc(var(--skin)*0.0625) !important;
+    width: calc(var(--skin)*0.0625);
+    transform: rotateX(-90deg) translateZ(calc(var(--skin)*0.15625));
+    background-position-x: calc(var(--skin)*0.375);
+    background-position-y: calc(var(--skin)*0.25);
+  }
+  .s25{
+    height: calc(var(--skin)*0.0625) !important;
+    width: calc(var(--skin)*0.0625);
+    transform: rotateX(90deg) translateZ(calc(var(--skin)*0.03125));
+    background-position-x: calc(var(--skin)*0.4375);
+    background-position-y: calc(var(--skin)*0.25);
+  }
+
+  
