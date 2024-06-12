@@ -2,19 +2,15 @@
     font-family: Minecraft;
     src: url(../fonts/Monocraft.ttf);
 }
-
-:root{
-    --texto: #ffffff;
-    --escuro: #627E4C;
-    --escuro2: #545454;
-    --claro: #C98700;
-    --claro2: #B9B9B9;
-    --claro3: #d5d5c8;
-    --fundo: #979797;
-    --preto: #000000;
-    --shadowBox: #00000086;
-    --navbarHover: #966400;
-    --fundoCards: #acacac;
+.index_fundo{
+    height: 100vh;
+}
+.container_inventario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
 }
 .id{
     margin-top: 10%;
@@ -26,13 +22,9 @@
     background-color: var(--claro3);
     width: 400px;  
     height: 351.44px;  
-    margin-left: 15%;
 }
 .fim{
     margin-bottom: 16px;
-}
-body{
-  display: flex;
 }
 .inventariolinha{
     display: flex;
@@ -90,18 +82,18 @@ body{
 .slot, .escudo{
     margin: 3px;
 }
-.cont{
+.contador{
     position: absolute;
     z-index: 2;
     white-space: nowrap;  
-    top: 10%;
+    top: 25%;
     font-size: 100%;
     text-shadow: 1.5px 1px #000;
     text-align: right;
     width: 100%;
 
 }
-.cont, .nomeBloco{
+.contador, .nomeBloco{
     font-family: Minecraft;
     color: var(--texto);
     
@@ -118,8 +110,8 @@ body{
     visibility: hidden;
     opacity: 0;
     transition: 0.05s ease;
-    background-color: #2d0057;
-    border-color: #8a2be2;
+    background-color: var(--claro);
+    border-color: var(--navbarHover);
     border-style: solid;
     border-radius: 7px;
     padding: 0px 10px;
