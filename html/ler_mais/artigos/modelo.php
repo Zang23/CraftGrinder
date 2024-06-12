@@ -36,17 +36,20 @@
                 require "../../../php/conexao.php";
                 require "../../../php/funcoes.php";
 
-                $sql_code = "SELECT * FROM tbfarm WHERE idFarm = '88' ";
+                $id = $_GET['id'];
+
+                $sql_code = "SELECT * FROM tbfarm WHERE idFarm = '$id' ";
                 $prepare = $pdo->prepare($sql_code);
                 $count = $prepare->execute();
                 $farms = $prepare->fetchAll();
 
 
 
-                function getGaleria(){
+                function getGaleria(int $id){
                 
                     require "../../../php/conexao.php";
-                    $galeria_code = "SELECT * FROM tbfarm WHERE idFarm = '95' ";
+
+                    $galeria_code = "SELECT * FROM tbfarm WHERE idFarm = '$id' ";
                     $prepare = $pdo->prepare($galeria_code);
                     $count = $prepare->execute();
                     $imagens = $prepare->fetchAll();
@@ -61,9 +64,9 @@
                 
 
                     
-                $resultado = getArtigo("Farm", 95);
+                $resultado = getArtigo("Farm", $id);
 
-                $galeriaCodificada = getGaleria();
+                $galeriaCodificada = getGaleria($id);
                 $galeriaImagens = unserialize(base64_decode($galeriaCodificada));
 
                 
@@ -81,9 +84,10 @@
                     
                     <?php 
 
-                    for($i = -1; $i < count($galeriaImagens); $i++){
+                    for($i = -1; $i <= count($galeriaImagens); $i++){
 
                         $imagem = "--imagem" . $i;
+                        $contador = $i - 1;
 
                         if (strstr($resultado[1], $imagem)){
 
@@ -103,7 +107,7 @@
                             <?php
                             }else{
                                 
-                            $imagemGaleria = unserialize(base64_decode($galeriaImagens[$i]));
+                            $imagemGaleria = unserialize(base64_decode($galeriaImagens[$contador]));
                             
                             $imagemGaleria = "../../" . $imagemGaleria; ?>
 
@@ -116,6 +120,7 @@
                         }
                     }
 
+                    
                     
 
                     

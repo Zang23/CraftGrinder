@@ -126,7 +126,7 @@
 
                     foreach($farms as $farm){?>
                         <th class="conteudo_cards_container">
-                            <a href="ler_mais/farms.html" class="link_">
+                            <a href="ler_mais/artigos/modelo.php?id=<?= $farm['idFarm'] ?>" class="link_">
                             <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>">
                             <p class="conteudo_cards_titulo"> <?= $farm['nomeFarm'] ?> </p>
                             <p class="conteudo_descricao"> <?= $farm['miniDescFarm']?> </p>
