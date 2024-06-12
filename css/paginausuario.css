@@ -2,20 +2,23 @@
     height: 100vh;
 }
 .container_perfil{
-    
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    
 }
 .content_perfil{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 50%;
+    
     background-color: var(--claro2);
     border-radius: 1.25rem 0.625rem;
     box-shadow: 0 0.625rem 0.625rem 0 #00000086;
+}
+.perfil_alinhamento{
+    display: flex;
+    flex-direction: row;
 }
 .container_perfilimagem{
     margin: 2rem;
@@ -67,11 +70,17 @@
     transition: 0.2s;
 }
 .import_invent{
-    margin: 1rem;
-    width: 100%;
+    margin: 1.5rem;
+    background-color: var(--fundoCards);
+    border-radius: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .import_invent p{
     font-size: 18px;
+    margin: 1rem;
 }
 .invent_buttons{
     display: flex;
