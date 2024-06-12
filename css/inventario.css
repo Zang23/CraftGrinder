@@ -14,7 +14,7 @@
 }
 .id{
     margin-top: 10%;
-    color: var(--fundo);
+    color: var(--escuro2);
 }
 .tabela{
     flex-direction: column;
@@ -65,6 +65,7 @@
     background-image: url(../img/iconeItens/minecraft/empty_armor_slot_shield.png);
     background-repeat: no-repeat;
     background-size: cover;
+    left: 30%;
 }
 
 .slot, .slotarmadura{
@@ -99,15 +100,18 @@
     width: 100%;
 
 }
-.contador, .nomeBloco{
+.contador{
     font-family: Minecraft;
     color: var(--texto);
-    
 }
 .hotbar{
     margin-top: 10px;
 }
+.nomeBloco p{
+    font-family: Minecraft;
+}
 .nomeBloco{
+    color: #000;
     position: absolute;
     top: 260%;
     left: 50%;

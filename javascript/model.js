@@ -21,8 +21,8 @@ function updateCube() {
     cubeX += dx * easing;
     cubeY += dy * easing;
 
-    const corpoY = (cubeX / corpoRect.width - 0.5) * 90; // Ajustando para coordenadas relativas à div
-    const corpoX = -(cubeY / corpoRect.height - 0.5) * 90;
+    const corpoY = (cubeX / corpoRect.width - 0.5) * 5; // Ajustando para coordenadas relativas à div
+    const corpoX = -(cubeY / corpoRect.height - 0.5) * 5;
     corpo.style.transform = `rotateX(${corpoX}deg) rotateY(${corpoY}deg)`;
     requestAnimationFrame(updateCube);
 }
