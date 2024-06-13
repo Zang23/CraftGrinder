@@ -45,51 +45,51 @@
 
     <table class="tabela">
         <tr class="inventariolinha">
-            <td class="slotarmadura cabeca_slot" id="103"></td>
+            <td class="slotarmadura first cabeca_slot" id="103"></td>
             <td class="modelo3d">
             <div class="modelocontainer">
     <div class="containermodel">
 
         <div class="cabeca full" id="corpo">
            <div class="cabeca parte" id="cabeca">
-                <div class="s1" id="s1"></div>
-                <div class="s2" id="s2"></div>
-                <div class="s3" id="s3"></div>
-                <div class="s4" id="s4"></div>
-                <div class="s5" id="s5"></div>
-                <div class="s6" id="s6"></div>
+                <div class="s1 first" id="s1"></div>
+                <div class="s2 first" id="s2"></div>
+                <div class="s3 first" id="s3"></div>
+                <div class="s4 first" id="s4"></div>
+                <div class="s5 first" id="s5"></div>
+                <div class="s6 first" id="s6"></div>
             </div>
             <div id="torso" class="torso">
-                <div class="s7" id="s7"></div>
-                <div class="s8" id="s8"></div>
+                <div class="s7 first" id="s7"></div>
+                <div class="s8 first" id="s8"></div>
             </div>
             <div id="pernadireita" class="perna direitasteve">
-                <div class="s9" id="s9"></div>
-                <div class="s10" id="s10"></div>
-                <div class="s11" id="s11"></div>
-                <div class="s12" id="s12"></div>
+                <div class="s9 first" id="s9"></div>
+                <div class="s10 first" id="s10"></div>
+                <div class="s11 first" id="s11"></div>
+                <div class="s12 first" id="s12"></div>
             </div>
             <div id="pernaesquerda" class="perna esquerdasteve">
-                <div class="s13" id="s13"></div>
-                <div class="s14" id="s14"></div>
-                <div class="s15" id="s15"></div>
-                <div class="s15-5" id="s15-5"></div>
+                <div class="s13 first" id="s13"></div>
+                <div class="s14 first" id="s14"></div>
+                <div class="s15 first" id="s15"></div>
+                <div class="s15-5 first" id="s15-5"></div>
                 
             </div>
             <div id="bracodireito" class="braco direitosteve">
-                <div class="s16" id="s16"></div>
-                <div class="s17" id="s17"></div>
-                <div class="s18" id="s18"></div>
-                <div class="s19" id="s19"></div>
-                <div class="s20" id="s20"></div>
+                <div class="s16 first" id="s16"></div>
+                <div class="s17 first" id="s17"></div>
+                <div class="s18 first" id="s18"></div>
+                <div class="s19 first" id="s19"></div>
+                <div class="s20 first" id="s20"></div>
 
             </div>
             <div id="bracoesquerdo" class="braco esquerdosteve">
-                <div class="s21" id="s21"></div>
-                <div class="s22" id="s22"></div>
-                <div class="s23" id="s23"></div>
-                <div class="s24" id="s24"></div>
-                <div class="s25" id="s25"></div>
+                <div class="s21 first" id="s21"></div>
+                <div class="s22 first" id="s22"></div>
+                <div class="s23 first" id="s23"></div>
+                <div class="s24 first" id="s24"></div>
+                <div class="s25 first" id="s25"></div>
             </div>
         </div>
 
@@ -99,15 +99,15 @@
             </td>
         </tr>
         <tr class="inventariolinha">
-            <td class="slotarmadura peitoral_slot" id="102"></td>
+            <td class="slotarmadura first peitoral_slot" id="102"></td>
         </tr>
         <tr class="inventariolinha">
-            <td class="slotarmadura calca_slot" id="101"></td>
+            <td class="slotarmadura first calca_slot" id="101"></td>
         </tr>
         <tr class="inventariolinha fim">
-            <td class="slotarmadura pes_slot" id="100"></td>
+            <td class="slotarmadura first pes_slot" id="100"></td>
             
-            <td class="slotarmadura escudo" id="-106"></td>
+            <td class="slotarmadura first escudo" id="-106"></td>
         </tr>
         <tr class="inventariolinha"> 
             <td class="slot" id="9"></td>

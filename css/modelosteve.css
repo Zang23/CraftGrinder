@@ -81,11 +81,17 @@
     position: absolute;
     width: var(--cabeca);
     
-    background-image: url(../img/skins/Original_Steve_with_Beard.png);
+    
+  }
+  .first{
+    background-image: url(../img/skins/edukof.png);
     background-size: var(--skin);
     image-rendering: pixelated;
-  }
-  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+  } 
 
   .s1 {
     transform: translateZ(calc(var(--skin)*0.0625));
