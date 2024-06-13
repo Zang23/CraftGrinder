@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inventário</title>
+    <link rel="icon" href="../img/iconeItens/minecraft/honey_block.png">
     <link rel="stylesheet" href="../css/inventario.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="../css/style.css">
@@ -162,6 +163,8 @@
     {
         $pdo = new PDO('mysql:host=localhost;dbname=testeid', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        session_start();
 
         $sql_code = "SELECT vetorsql FROM usuarios";
         $prepare = $pdo->prepare($sql_code);

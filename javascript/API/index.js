@@ -48,7 +48,6 @@ app.get('/api/:id', async (req, res) => {
                     let regex = /"type":"[^"]*",|"value":/gi;
                     let stringcut = string.replace(regex, '').replace(/[{}]/g, '').replace(/,"count/g, '}, {"count').replace("[", '[{').replace(/minecraft:/g, "minecraft/").replace("]", '}]');
        
-                    res.send(stringcut);
 
                         connection.query(sqlpost, [stringcut, userId], (error, results, fields) => {
                         if (error) {
@@ -75,7 +74,7 @@ app.get('/api/:id', async (req, res) => {
             }   
         });
         
-        /* res.redirect("https://youtube.com"); */
+        res.redirect("http://localhost/CraftGrinder/html/");
         
     } catch (error) {
         console.error('Erro:', error);
