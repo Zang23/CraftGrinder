@@ -125,7 +125,8 @@ a{
 
 .cabecalho_titulo{
     font-family: Minecraft;
-    font-size: 40px;
+    text-shadow: #00000086 2px 1.5px;
+    font-size: 35px;
     float: left;
     color: var(--texto);
 }
