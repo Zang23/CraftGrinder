@@ -20,7 +20,10 @@
     --navbarHover: #966400;
     --fundoCards: #acacac;
 }
-
+@font-face {
+    font-family: Minecraft;
+    src: url(../fonts/Monocraft.ttf);
+}
 
 /*teste
 :root{
@@ -121,9 +124,14 @@ a{
 }
 
 .cabecalho_titulo{
+    font-family: Minecraft;
     font-size: 40px;
     float: left;
     color: var(--texto);
+}
+.cabecalho_titulo a{
+    font-family: Minecraft;
+    text-shadow: #00000086 2px 1.5px;
 }
 
 .cabecalho_pesquisar{
@@ -188,7 +196,7 @@ a{
 }
 .sair:hover{
     transition: 0.2s;
-    transform: scale(1.5, 1.5);
+    transform: scale(1.1, 1.1);
 }
 
 .cabecalho_inferior_container{

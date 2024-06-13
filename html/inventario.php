@@ -38,7 +38,7 @@
     </header>
 
 
-    <h1 class="navbar_titulo">Seu inventário</h1>
+    <h1 class="titulo_inventario">Seu inventário</h1>
 
     <div class="container_inventario">
 
