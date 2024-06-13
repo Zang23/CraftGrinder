@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../css/cadastro.css">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="icon" href="../img/iconeItens/minecraft/honey_block.png">
         <title>Cadastro</title>
     </head>
     <body>
