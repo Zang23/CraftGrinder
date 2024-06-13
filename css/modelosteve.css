@@ -63,14 +63,12 @@
   height: calc(var(--cabeca)*1.5);
   
 }
-  
   .cabeca {
     position: relative;
     width: var(--cabeca);
     height: var(--cabeca);
     transform-style: preserve-3d;
     z-index: 1;
-    transform: rotateX(23deg) rotateY(-13deg);
   }
   .torso > div{
     height: calc(var(--cabeca)*1.5) !important;

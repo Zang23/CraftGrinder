@@ -1,5 +1,6 @@
+const cabeca = document.getElementById('cabeca');
 const corpo = document.getElementById('corpo');
-const corpoRect = corpo.getBoundingClientRect(); // Obtendo as coordenadas da div estilizada
+const corpoRect = cabeca.getBoundingClientRect(); // Obtendo as coordenadas da div estilizada
 
 let mouseX = 0;
 let mouseY = 0;
@@ -21,9 +22,10 @@ function updateCube() {
     cubeX += dx * easing;
     cubeY += dy * easing;
 
-    const corpoY = (cubeX / corpoRect.width - 0.5) * 2; // Ajustando para coordenadas relativas à div
-    const corpoX = -(cubeY / corpoRect.height - 0.5) * 2;
-    corpo.style.transform = `rotateX(${corpoX}deg) rotateY(${corpoY}deg)`;
+    const corpoY = (cubeX / corpoRect.width - 0.5); // Ajustando para coordenadas relativas à div
+    const corpoX = -(cubeY / corpoRect.height - 0.5);
+    cabeca.style.transform = `rotateX(${corpoX}deg) rotateY(${corpoY}deg)`;
+    corpo.style.transform = `rotateY(${corpoY}deg)`;
     requestAnimationFrame(updateCube);
 }
 

@@ -50,46 +50,46 @@
             <div class="modelocontainer">
     <div class="containermodel">
 
-        <div class="cabeca" id="corpo">
-           
-                <div class="s1"></div>
-                <div class="s2"></div>
-                <div class="s3"></div>
-                <div class="s4"></div>
-                <div class="s5"></div>
-                <div class="s6"></div>
-            
+        <div class="cabeca full" id="corpo">
+           <div class="cabeca parte" id="cabeca">
+                <div class="s1" id="s1"></div>
+                <div class="s2" id="s2"></div>
+                <div class="s3" id="s3"></div>
+                <div class="s4" id="s4"></div>
+                <div class="s5" id="s5"></div>
+                <div class="s6" id="s6"></div>
+            </div>
             <div id="torso" class="torso">
-                <div class="s7"></div>
-                <div class="s8"></div>
+                <div class="s7" id="s7"></div>
+                <div class="s8" id="s8"></div>
             </div>
             <div id="pernadireita" class="perna direitasteve">
-                <div class="s9"></div>
-                <div class="s10"></div>
-                <div class="s11"></div>
-                <div class="s12"></div>
+                <div class="s9" id="s9"></div>
+                <div class="s10" id="s10"></div>
+                <div class="s11" id="s11"></div>
+                <div class="s12" id="s12"></div>
             </div>
             <div id="pernaesquerda" class="perna esquerdasteve">
-                <div class="s13"></div>
-                <div class="s14"></div>
-                <div class="s15"></div>
-                <div class="s15-5"></div>
+                <div class="s13" id="s13"></div>
+                <div class="s14" id="s14"></div>
+                <div class="s15" id="s15"></div>
+                <div class="s15-5" id="s15-5"></div>
                 
             </div>
             <div id="bracodireito" class="braco direitosteve">
-                <div class="s16"></div>
-                <div class="s17"></div>
-                <div class="s18"></div>
-                <div class="s19"></div>
-                <div class="s20"></div>
+                <div class="s16" id="s16"></div>
+                <div class="s17" id="s17"></div>
+                <div class="s18" id="s18"></div>
+                <div class="s19" id="s19"></div>
+                <div class="s20" id="s20"></div>
 
             </div>
             <div id="bracoesquerdo" class="braco esquerdosteve">
-                <div class="s21"></div>
-                <div class="s22"></div>
-                <div class="s23"></div>
-                <div class="s24"></div>
-                <div class="s25"></div>
+                <div class="s21" id="s21"></div>
+                <div class="s22" id="s22"></div>
+                <div class="s23" id="s23"></div>
+                <div class="s24" id="s24"></div>
+                <div class="s25" id="s25"></div>
             </div>
         </div>
 
@@ -163,8 +163,6 @@
     {
         $pdo = new PDO('mysql:host=localhost;dbname=testeid', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        session_start();
 
         $sql_code = "SELECT vetorsql FROM usuarios";
         $prepare = $pdo->prepare($sql_code);
