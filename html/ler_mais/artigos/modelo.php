@@ -84,35 +84,34 @@
                     $descricao = $resultado[1];
 
                     
-                    $novaDesc = [];
+                    
 
                     for($i = -1; $i <= count($galeriaImagens); $i++){
 
-                        $imagem = "--imagem" . $i;
+                        $imagem = "--imagem" . $i . ";";
                         $contador = $i - 1;
                         
 
                         if (strstr($descricao, $imagem)){
 
-                            if($imagem == "--imagem1"){
+                            if($i == 1){
 
                                 $imagemGaleria = unserialize(base64_decode($galeriaImagens[0]));
                             
-                                $imagemGaleria = "<img src='../../" . $imagemGaleria . "'class='imagemModelo'><br>"; 
+                                $imagemGaleria = "<br><img src='../../" . $imagemGaleria . "'class='imagemModelo'><br>"; 
 
-                                $novaDesc[$i] = str_replace("--imagem1", $imagemGaleria, $descricao);
+                                $descricao = str_replace("--imagem1;", $imagemGaleria, $descricao);
                                 
                               
-                                //print_r($novaDesc);
 
                             
                             }else{
                             
                                 $imagemGaleria = unserialize(base64_decode($galeriaImagens[$contador]));
                                 
-                                $imagemGaleria = "<img src='../../" . $imagemGaleria. " 'class='imagemModelo'><br>"; 
+                                $imagemGaleria = "<br><img src='../../" . $imagemGaleria. " 'class='imagemModelo'><br>"; 
 
-                                $novaDesc[$i] = str_replace($imagem, $imagemGaleria, $descricao);
+                                $descricao = str_replace($imagem, $imagemGaleria, $descricao);
 
                             }
                             
@@ -122,9 +121,8 @@
                     }
 
                     
-                    print_r($novaDesc);
+                    echo $descricao;
 
-                    //$novaDesc[1] = str_replace("imagem2", )
                     
                     
                     
