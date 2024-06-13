@@ -15,14 +15,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/editarartigoscript.css">
     <title>Document</title>
 </head>
 <body>
 
+    <div class="index_fundo">
+
+    <header class="cabecalho_container_cadArt">
+
+        <div class="cabecalho_superior_container">
+            <a href="../index.php"><p class="cabecalho_titulo">CraftGrinder</p></a>
+        </div>
+        
+    </header>
+
     <form action="" method="post">
 
-        <h2>Editar: <?= $_GET['nome'] ?></h2>
+        <p class="titulo_editar_script">Editar: <?= $_GET['nome'] ?></p>
         
+        <div class="container_input_editar">
+            <div class="content_editar">
 
         <?php
             foreach($farms as $farm){?>
@@ -33,7 +47,11 @@
             }
         ?>
 
-        <button type="Submit">Editar</button>
+                <div class="container_button">
+                    <button type="Submit" class="button_editar">Editar</button>
+                </div>
+            </div>
+        </div>
     </form>
 
     <?php
@@ -48,5 +66,7 @@
             header('location: editarArtigo.php');
         }
     ?>
+
+    </div>
 </body>
 </html>

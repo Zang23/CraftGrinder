@@ -1,0 +1,28 @@
+.titulo_editar_script{
+    color: var(--texto);
+    font-size: 20px;
+    margin: 5%;
+}
+.container_input_editar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content_editar{
+    width: 50%;
+    background-color: var(--claro2);
+}
+.button_editar{
+    border: none;
+    font-size: 18px;
+    background-color: var(--claro);
+    padding: 10px;
+    border-radius: 1.75rem;
+}
+.container_button{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.button_editar{
+    margin: 2%;
+}
