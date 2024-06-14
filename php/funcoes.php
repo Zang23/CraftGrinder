@@ -213,7 +213,7 @@
                 $descTemp = "desc" . $tipo;
                 $bdPersonalizado = strtolower($tipo);
 
-                if($tipo != "Atualizacao"){
+                /*if($tipo != "Atualizacao"){
                     $miniDescTemp = "miniDesc" . $tipo;
                     $minidesc = $_POST[$miniDescTemp];
 
@@ -224,6 +224,20 @@
                     }
 
                     $requisitosSerializado = (base64_encode(serialize($requisitos)));
+                }*/
+
+                if($tipo == "guia" || $tipo == "Farm" || $tipo == "Itens" || $tipo == "maquinas"){
+                    $miniDescTemp = "miniDesc" . $tipo;
+                    $minidesc = $_POST[$miniDescTemp];
+
+                    $contador = $_POST['contador'];
+
+                    for($i = 1; $i <= $contador; $i++){
+                        $requisitos[] = $_POST['requisito'.$i];
+                    }
+
+                    $requisitosSerializado = (base64_encode(serialize($requisitos)));
+
                 }
 
 
@@ -267,14 +281,16 @@
             $descArtigo = "desc" . $tipo;
             $caminhoImagemArtigo = "caminhoImagem" . $tipo;
             $requisitosArtigo = "requisitos" . $tipo;
+            $tipoArtigo = "tipo" . $tipo;
 
            $nomeDoArtigo = $artigo[$nomeArtigo];
            $descDoArtigo = $artigo[$descArtigo];
            $caminhoImagemArtigo = $artigo[$caminhoImagemArtigo];
            $requisitosArtigo = $artigo[$requisitosArtigo];
+           $tipoArtigo = $artigo[$tipoArtigo];
 
 
-           return [$nomeDoArtigo, $descDoArtigo, $caminhoImagemArtigo, $requisitosArtigo];
+           return [$nomeDoArtigo, $descDoArtigo, $caminhoImagemArtigo, $requisitosArtigo, $tipoArtigo];
            
 
 

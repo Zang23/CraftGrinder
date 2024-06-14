@@ -38,19 +38,17 @@
                 require "../../../php/funcoes.php";
 
                 $id = $_GET['id'];
+                $tipo = $_GET['tipo'];
 
-                $sql_code = "SELECT * FROM tbfarm WHERE idFarm = '$id' ";
-                $prepare = $pdo->prepare($sql_code);
-                $count = $prepare->execute();
-                $farms = $prepare->fetchAll();
+                
 
 
 
-                function getGaleria(int $id){
+                function getGaleria(int $id, string $tipo){
                 
                     require "../../../php/conexao.php";
 
-                    $galeria_code = "SELECT * FROM tbfarm WHERE idFarm = '$id' ";
+                    $galeria_code = "SELECT * FROM tb$tipo WHERE id$tipo = '$id' ";
                     $prepare = $pdo->prepare($galeria_code);
                     $count = $prepare->execute();
                     $imagens = $prepare->fetchAll();
@@ -65,9 +63,9 @@
                 
 
                     
-                $resultado = getArtigo("Farm", $id);
+                $resultado = getArtigo($tipo, $id);
 
-                $galeriaCodificada = getGaleria($id);
+                $galeriaCodificada = getGaleria($id, $tipo);
                 $galeriaImagens = unserialize(base64_decode($galeriaCodificada));
 
                 
@@ -123,11 +121,6 @@
 
                     
                     echo $descricao;
-
-                    
-                    
-                    
-            
 
                     ?>
                 </div>

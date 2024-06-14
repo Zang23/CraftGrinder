@@ -114,7 +114,7 @@
 
                     <?php
 
-                    $farm_code = "SELECT idFarm, caminhoImagemFarm, nomeFarm, miniDescFarm FROM tbfarm ORDER BY idFarm DESC LIMIT 3";
+                    $farm_code = "SELECT idFarm, caminhoImagemFarm, nomeFarm, miniDescFarm, tipoFarm FROM tbfarm ORDER BY idFarm DESC LIMIT 3";
                     $prepareFarm = $pdo->prepare($farm_code);
                     $count = $prepareFarm->execute();
                     $farms = $prepareFarm->fetchAll(PDO::FETCH_ASSOC);
@@ -127,7 +127,7 @@
 
                     foreach($farms as $farm){?>
                         <th class="conteudo_cards_container">
-                            <a href="ler_mais/artigos/modelo.php?id=<?= $farm['idFarm'] ?>" class="link_">
+                            <a href="ler_mais/artigos/modelo.php?id=<?=$farm['idFarm']?>&tipo=<?=$farm['tipoFarm']?>" class="link_">
                             <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>">
                             <p class="conteudo_cards_titulo"> <?= $farm['nomeFarm'] ?> </p>
                             <p class="conteudo_descricao"> <?= $farm['miniDescFarm']?> </p>
