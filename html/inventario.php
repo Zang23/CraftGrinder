@@ -45,7 +45,7 @@
 
     <table class="tabela">
         <tr class="inventariolinha">
-            <td class="slotarmadura first cabeca_slot" id="103"></td>
+            <td class="slotarmadura cabeca_slot" id="103"></td>
             <td class="modelo3d">
             <div class="modelocontainer">
     <div class="containermodel">
@@ -99,15 +99,15 @@
             </td>
         </tr>
         <tr class="inventariolinha">
-            <td class="slotarmadura first peitoral_slot" id="102"></td>
+            <td class="slotarmadura peitoral_slot" id="102"></td>
         </tr>
         <tr class="inventariolinha">
-            <td class="slotarmadura first calca_slot" id="101"></td>
+            <td class="slotarmadura calca_slot" id="101"></td>
         </tr>
         <tr class="inventariolinha fim">
-            <td class="slotarmadura first pes_slot" id="100"></td>
+            <td class="slotarmadura pes_slot" id="100"></td>
             
-            <td class="slotarmadura first escudo" id="-106"></td>
+            <td class="slotarmadura escudo" id="-106"></td>
         </tr>
         <tr class="inventariolinha"> 
             <td class="slot" id="9"></td>

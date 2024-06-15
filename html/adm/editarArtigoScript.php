@@ -37,18 +37,20 @@
         
         <div class="container_input_editar">
             <div class="content_editar">
+                <div class="content_inputscript">
 
         <?php
             foreach($farms as $farm){?>
-                <input type="text" name="nomeFarm" value="<?= $farm['nomeFarm'] ?>">
-                <input type="text" name="miniDescFarm" value=" <?= $farm['miniDescFarm'] ?>">
-                <input type="text" name="descFarm" value=" <?= $farm['descFarm'] ?>">
+                <input type="text" class="inputscript" name="nomeFarm" value="<?= $farm['nomeFarm'] ?>">
+                <input type="text" class="inputscript" name="miniDescFarm" value=" <?= $farm['miniDescFarm'] ?>">
+                <input type="text" class="inputscript" name="descFarm" value=" <?= $farm['descFarm'] ?>">
             <?php
             }
-        ?>
+        ?> 
 
                 <div class="container_button">
                     <button type="Submit" class="button_editar">Editar</button>
+                </div>
                 </div>
             </div>
         </div>

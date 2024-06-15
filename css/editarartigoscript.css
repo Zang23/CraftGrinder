@@ -16,12 +16,29 @@
     background-color: var(--claro2);
     border-radius: 1.25rem 0.625rem;
 }
+.content_inputscript{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem;
+}
+.inputscript{
+    border: none;
+    padding: 7px;
+    border-radius: 15px;
+}
 .button_editar{
     border: none;
     font-size: 18px;
     background-color: var(--claro);
-    padding: 10px;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
     border-radius: 1.75rem;
+}
+.button_editar:hover{
+    transition: 2s;
+    background-color: #966400;
 }
 .container_button{
     display: flex;
