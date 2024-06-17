@@ -2,12 +2,14 @@
 
     require '../../php/conexao.php';
     $id = $_GET['editar'];
+    $tipo = $_GET['tipo'];
+    echo $tipo;
 
-    $sql_code = "SELECT * FROM tbfarm WHERE idFarm = '$id'";
+    $sql_code = "SELECT * FROM tb$tipo WHERE id$tipo = '$id'";
     $prepare = $pdo->prepare($sql_code);
     $count = $prepare->execute();
 
-    $farms = $prepare->fetchAll();
+    $artigos = $prepare->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -40,10 +42,15 @@
                 <div class="content_inputscript">
 
         <?php
-            foreach($farms as $farm){?>
-                <input type="text" class="inputscript" name="nomeFarm" value="<?= $farm['nomeFarm'] ?>">
-                <input type="text" class="inputscript" name="miniDescFarm" value=" <?= $farm['miniDescFarm'] ?>">
-                <input type="text" class="inputscript" name="descFarm" value=" <?= $farm['descFarm'] ?>">
+            foreach($artigos as $artigo){
+
+                $nomeArtigo = "nome" . $tipo;
+                $miniDescArtigo = "miniDesc" . $tipo;
+                $descArtigo = "desc" . $tipo; ?>
+                
+                <input type="text" class="inputscript" name="nomeArtigo" value="<?= $artigo[$nomeArtigo] ?>">
+                <input type="text" class="inputscript" name="miniDescArtigo" value=" <?= $artigo[$miniDescArtigo] ?>">
+                <input type="text" class="inputscript" name="descArtigo" value=" <?= $artigo[$descArtigo] ?>">
             <?php
             }
         ?> 
@@ -58,11 +65,12 @@
 
     <?php
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $nome = $_POST['nomeFarm'];
-            $descFarm = $_POST['descFarm'];
-            $miniDescFarm = $_POST['miniDescFarm'];
 
-            $update_code = "UPDATE tbfarm SET nomeFarm = '$nome', descFarm = '$descFarm', miniDescFarm = '$miniDescFarm' WHERE idFarm = '$id' ";
+            $nome = $_POST['nomeArtigo'];
+            $descArtigo = $_POST['descArtigo'];
+            $miniDescArtigo = $_POST['miniDescArtigo'];
+
+            $update_code = "UPDATE tb$tipo SET nome$tipo = '$nome', desc$tipo = '$descArtigo', miniDesc$tipo = '$miniDescArtigo' WHERE id$tipo = '$id' ";
             $pdo->exec($update_code);
 
             header('location: editarArtigo.php');

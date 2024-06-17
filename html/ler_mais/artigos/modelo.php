@@ -54,7 +54,8 @@
                     $imagens = $prepare->fetchAll();
 
                     foreach($imagens as $imagem){
-                        $arrayGaleria =  $imagem['galeriaImagensFarm'];
+                        $galeriaImagens = "galeriaImagens" . $tipo;
+                        $arrayGaleria =  $imagem[$galeriaImagens];
                         return $arrayGaleria;
                     }
 
@@ -146,11 +147,14 @@
                 <ul class="requisitos_lista">
                 <?php
                     $arrayRequisitos = unserialize(base64_decode($resultado[3]));
-
                     foreach($arrayRequisitos as $requisito){ ?>
-                        <li ><?= $requisito?></li>
+                        <li ><?= $requisito ?></li>
+                        <p>Barganha</p>
                     
-                    <?php }
+                    <?php 
+                    
+                        
+                    }
                 ?>
                 </ul>
 

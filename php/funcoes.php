@@ -106,6 +106,9 @@
         
         $galeriaArtigo = "galeria" . $tipoArtigo;
 
+
+        $arrayImagens = [];
+
         if(isset($_FILES[$galeriaArtigo])){
     
         $galerias = $_FILES[$galeriaArtigo];
@@ -122,7 +125,8 @@
     
                 
                 if($erro){
-                    die("Houve um erro ao enviar suas imagens");
+                    //die("Houve um erro ao enviar suas imagens (array de imagens)");
+                    echo $erro;
                 }
 
                 if($tamanho > 2097152){
@@ -170,7 +174,7 @@
             $arquivo = $_FILES[$imagemArtigo];
 
             if($arquivo['error']){
-                die("Houve um erro ao enviar sua imagem");
+                die("Houve um erro ao enviar sua imagem (imagem capa)");
             }
     
             if($arquivo['size'] > 2097152){
@@ -226,9 +230,15 @@
                     $requisitosSerializado = (base64_encode(serialize($requisitos)));
                 }*/
 
-                if($tipo == "guia" || $tipo == "Farm" || $tipo == "Itens" || $tipo == "maquinas"){
+                
+                
+
+                if($tipo == "Guia" || $tipo == "Farm" || $tipo == "Itens" || $tipo == "maquinas"){
                     $miniDescTemp = "miniDesc" . $tipo;
                     $minidesc = $_POST[$miniDescTemp];
+
+
+                    $requisitos = [];
 
                     $contador = $_POST['contador'];
 
@@ -295,6 +305,34 @@
 
 
         }
+
+    }
+
+
+    function mostraCardArtigo(string $tipo){
+        require "../php/conexao.php";
+
+        $artigo_code = "SELECT id$tipo, $caminhoimagem$tipo, nome$tipo, miniDesc$tipo FROM tb$tipo ORDER BY id$tipo DESC LIMIT 3";
+        $prepare = $pdo->prepare($artigo_code);
+        $count = $prepare->execute();
+        $artigos = $prepare->fetchAll(PDO::FETCH_ASSOC);
+        
+        $numRepeticoes = 3;
+        $contador = 0; ?>
+
+        <?php
+
+        foreach($artigos as $artigo){?>
+            <th class="conteudo_cards_container">
+                <a href="ler_mais/artigos/modelo.php?id=<?=$artigo['id$tipo']?>&tipo=<?=$artigo['tipo$tipo']?>" class="link_">
+                <img class="conteudo_imagem" src="<?= $artigo['caminhoImagem$tipo'] ?>">
+                <p class="conteudo_cards_titulo"> <?= $artigo['nome$tipo'] ?> </p>
+                <p class="conteudo_descricao"> <?= $artigo['miniDesc$tipo']?> </p>
+                </a>
+            </th>
+        <?php
+        }
+
 
     }
 

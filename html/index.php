@@ -154,8 +154,33 @@
     <div class="conteudo_container">
         <table class="conteudo_tabela">
             <tr>
+                
+            <?php
 
-                <th class="conteudo_cards_container">
+                $guia_code = "SELECT idGuia, caminhoImagemGuia, nomeGuia, miniDescGuia, tipoGuia FROM tbguia ORDER BY idGuia DESC LIMIT 3";
+                $prepareGuia = $pdo->prepare($guia_code);
+                $count = $prepareGuia->execute();
+                $guias = $prepareGuia->fetchAll(PDO::FETCH_ASSOC);
+
+                $numRepeticoesg = 3;
+                $contadorg = 0;?>
+
+
+                <?php
+
+                foreach($guias as $guia){?>
+                    <th class="conteudo_cards_container">
+                        <a href="ler_mais/artigos/modelo.php?id=<?=$guia['idGuia']?>&tipo=<?=$guia['tipoGuia']?>" class="link_">
+                        <img class="conteudo_imagem" src="<?= $guia['caminhoImagemGuia'] ?>">
+                        <p class="conteudo_cards_titulo"> <?= $guia['nomeGuia'] ?> </p>
+                        <p class="conteudo_descricao"> <?= $guia['miniDescGuia']?> </p>
+                        </a>
+                    </th>
+
+                <?php    
+                }  ?>
+
+                <!-- <th class="conteudo_cards_container">
                     <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
@@ -174,7 +199,7 @@
                     <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
                     </div>
                     <p>exemplo</p></a>
-                </th>
+                </th> -->
 
                 <th class="conteudo_cards_container final">
                     <a  href="ler_mais/guia.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
