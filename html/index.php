@@ -180,26 +180,6 @@
                 <?php    
                 }  ?>
 
-                <!-- <th class="conteudo_cards_container">
-                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
-                    <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                    </div>
-                    <p>exemplo</p></a>
-                </th>
-
-                <th class="conteudo_cards_container">
-                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
-                    <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                    </div>
-                    <p>exemplo</p></a>
-                </th>
-
-                <th class="conteudo_cards_container">
-                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
-                    <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                    </div>
-                    <p>exemplo</p></a>
-                </th> -->
 
                 <th class="conteudo_cards_container final">
                     <a  href="ler_mais/guia.html"> <p class="conteudo_lermais"> Ler mais </p> </a>

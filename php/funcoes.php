@@ -240,7 +240,10 @@
 
                     $requisitos = [];
 
-                    $contador = $_POST['contador'];
+                    $primeiraLetra = ucfirst(substr($tipo, 0, 1));
+
+                    $contador = $_POST['contador' . $tipo];
+                    
 
                     for($i = 1; $i <= $contador; $i++){
                         $requisitos[] = $_POST['requisito'.$i];
@@ -272,7 +275,7 @@
                 
                 
                 
-                voltaAdm();
+               voltaAdm();
                 
             }
         }
@@ -312,7 +315,7 @@
     function mostraCardArtigo(string $tipo){
         require "../php/conexao.php";
 
-        $artigo_code = "SELECT id$tipo, $caminhoimagem$tipo, nome$tipo, miniDesc$tipo FROM tb$tipo ORDER BY id$tipo DESC LIMIT 3";
+        $artigo_code = "SELECT id$tipo, $caminhoImagem$tipo, nome$tipo, miniDesc$tipo FROM tb$tipo ORDER BY id$tipo DESC LIMIT 3";
         $prepare = $pdo->prepare($artigo_code);
         $count = $prepare->execute();
         $artigos = $prepare->fetchAll(PDO::FETCH_ASSOC);
