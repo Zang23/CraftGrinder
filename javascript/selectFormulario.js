@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var adicionarRequisitoF = document.getElementById("adicionarRequisito");
     var removerRequisitoF = document.getElementById("removerRequisito");
     var containerRequisitosF = document.getElementById("containerRequisitos");
+    var containerRequisitosF_ = document.getElementById("containerRequisitos2");
     var contadorF = 0;
 
     var adicionarRequisitoG = document.getElementById("adicionarRequisitoGuia");
@@ -57,8 +58,9 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("contadorInput").value = contadorF;
         console.log(contadorF);
 
-        
 
+        
+        
         const novaDiv = document.createElement("div");
         novaDiv.className = "alinhamentoRequisitos";
         
@@ -66,6 +68,13 @@ document.addEventListener("DOMContentLoaded", function(){
         novaDiv.appendChild(newInput);
 
         containerRequisitosF.appendChild(novaDiv);
+
+        /*if (contadorF <= 4){
+            containerRequisitosF.appendChild(novaDiv);
+        }
+        else{
+            containerRequisitosF_.appendChild(novaDiv);
+        }*/
     });
 
     removerRequisitoF.addEventListener("click", function(){
@@ -78,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if(lastRequistoInput){
             containerRequisitosF.removeChild(lastRequistoInput);
             contadorF--;
+
 
             document.getElementById("contadorInput").value = contadorF;
             console.log(contadorF);
