@@ -111,8 +111,11 @@ document.addEventListener("DOMContentLoaded", function(){
         newInput.name = "requisito" + contadorG;
         newInput.placeholder = "Requisito " + contadorG;
         newInput.className = "inputRequisito";
-        document.getElementById("contadorInput").value = contadorG;
+        document.getElementById("contadorInputG").value = contadorG;
         console.log(contadorG);
+
+
+
 
         
 

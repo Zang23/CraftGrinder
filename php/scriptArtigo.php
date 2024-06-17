@@ -7,7 +7,6 @@ require_once 'funcoes.php';
 $tipoArtigo = $_POST['tipoArtigo'];
 
 
-
 if($tipoArtigo == "Farm"){
     setArtigo($tipoArtigo);
 }
