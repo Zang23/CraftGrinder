@@ -54,10 +54,10 @@
             <p class="cabecalho_titulo"><a href="index.php">CraftGrinder</a></p>
             <div class="cabecalho_superior_box">
                 <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
-                <div class="container_navbar_sair">
-                    <a href="paginaUsuario.html"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
-                    <a class="cabecalho_sair" href="../php/logoff.php">Sair</a>
-                </div>
+                    <div class="container_navbar_sair">
+                        <a href="paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
+                        <a class="cabecalho_sair" href="../php/logoff.php">Sair</a>
+                    </div>
             </div>
         </div>
     </header>
