@@ -84,7 +84,6 @@
     
   }
   .first{
-    background-image: url(../img/skins/edukof.png);
     background-size: var(--skin);
     image-rendering: pixelated;
     display: flex;
