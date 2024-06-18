@@ -107,7 +107,7 @@
                         <span class="material-symbols-outlined">add</span>
                     </button>
 
-                    <input type="hidden" id="contadorInput" name="contador">
+                    <input type="hidden" id="contadorInputF" name="contadorFarm">
                     
                     <button id="removerRequisito" type="button" class="input_file add_remove">
                         <span class="material-symbols-outlined">remove</span>
@@ -217,6 +217,12 @@
                     <label for="inputIdMaquina" class="input_file">
                         Selecione a imagem
                     </label>
+
+                    <label for="inputImagensMaquina" class="input_file">
+                        Selecione as imagens em ordem
+                    </label>
+
+                    <input type="file" id="inputImagensMaquina" name="galeriaMaquina[]" multiple style="display: none; ">
                     <input type="file" name="imagemMaquina" id="inputIdMaquina" style="display: none;">
                     <input type="text" name="tipoArtigo" value="Maquina" style="display: none;">
 
@@ -226,7 +232,7 @@
                         <span class="material-symbols-outlined">add</span>
                     </button>
 
-                    <input type="hidden" id="contadorInput" name="contador">
+                    <input type="hidden" id="contadorInputM" name="contadorMaquina">
                     
                     <button id="removerRequisitoMaquina" type="button" class="input_file add_remove">
                         <span class="material-symbols-outlined">remove</span>
@@ -268,6 +274,13 @@
                     <label for="inputIdItem" class="input_file">
                        Selecione a imagem
                     </label>
+
+                    <label for="inputImagensItem" class="input_file">
+                        Selecione as imagens em ordem
+                    </label>
+
+                    <input type="file" id="inputImagensItem" name="galeriaItem[]" multiple style="display: none; ">
+                    
                     <input type="file" name="imagemItem" id="inputIdItem" style="display: none;" >
                     <input type="text" name="tipoArtigo" value="Item" style="display: none;">
 
@@ -277,7 +290,7 @@
                             <span class="material-symbols-outlined">add</span>
                         </button>
     
-                        <input type="hidden" id="contadorInput" name="contador">
+                        <input type="hidden" id="contadorInputI" name="contadorItem">
                         
                         <button id="removerRequisitoItem" type="button" class="input_file add_remove">
                             <span class="material-symbols-outlined">remove</span>

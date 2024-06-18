@@ -78,13 +78,34 @@
         </div>
     </div>-->
 
+    <?php
+        $atualizacao_code = "SELECT idAtualizacao, caminhoImagemAtualizacao FROM tbatualizacao ORDER BY idAtualizacao DESC LIMIT 3 ";
+        $prepareAtualizacao = $pdo->prepare($atualizacao_code);
+        $count = $prepareAtualizacao->execute();
+        $atualizacoes = $prepareAtualizacao->fetchAll(PDO::FETCH_ASSOC);
+
+
+    ?>
+
     <div class="carousel_alinhamento">
     <div class="carousel_conteudo">
 
     <div class="carousel">
 
         <div class="viewport">
-            
+            <?php
+
+                $contador = 1;
+
+                foreach($atualizacoes as $atualizacao){?>
+
+
+                    <div id="carousel_slide<?=$contador?>" class="carousel__slide animacao" data-animacao="stop"> <img src="<?=$atualizacao['caminhoImagemAtualizacao'] ?>"> </div>
+
+                    <?php
+                    $contador++;
+                }
+            ?>
             <div id="carousel_slide1" class="carousel__slide animacao" data-animacao="stop">slide 1</div>
             <div id="carousel_slide2" class="carousel__slide animacao" data-animacao="stop">slide 2</div>
             <div id="carousel_slide3" class="carousel__slide animacao" data-animacao="stop">slide 3</div>
@@ -194,24 +215,31 @@
     <div class="conteudo_container" onclick="explodir(event)">
         <table class="conteudo_tabela">
             <tr>
-                <th class="conteudo_cards_item_container">
-                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
-                    <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                    </div>
-                    <p>exemplo</p></a>
-                </th>
-                <th class="conteudo_cards_item_container">
-                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
-                    <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                    </div>
-                    <p>exemplo</p></a>
-                </th>
-                <th class="conteudo_cards_item_container">
-                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
-                    <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                    </div>
-                    <p>exemplo</p></a>
-                </th>
+            <?php
+
+                $item_code = "SELECT idItem, caminhoImagemItem, nomeItem, miniDescItem, tipoItem FROM tbitem ORDER BY idItem DESC LIMIT 3";
+                $prepareItem = $pdo->prepare($item_code);
+                $count = $prepareItem->execute();
+                $itens = $prepareItem->fetchAll(PDO::FETCH_ASSOC);
+
+                $numRepeticoesI = 3;
+                $contadorI = 0;?>
+
+
+                <?php
+
+                foreach($itens as $item){?>
+                    <th class="conteudo_cards_container">
+                        <a href="ler_mais/artigos/modelo.php?id=<?=$item['idItem']?>&tipo=<?=$item['tipoItem']?>" class="link_">
+                        <img class="conteudo_imagem" src="<?= $item['caminhoImagemItem'] ?>">
+                        <p class="conteudo_cards_titulo"> <?= $item['nomeItem'] ?> </p>
+                        <p class="conteudo_descricao"> <?= $item['miniDescItem']?> </p>
+                        </a>
+                    </th>
+
+                <?php    
+                } ?>
+               
 
                 <th class="conteudo_cards_item_container final">
                     <a href="ler_mais/itens.html"> <p class="conteudo_lermais" >Ler mais</p> </a>
@@ -225,24 +253,30 @@
     <div class="conteudo_container">
         <table class="conteudo_tabela">
             <tr>
-                <th class="conteudo_cards_item_container">
-                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
-                    <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                    </div>
-                    <p>exemplo</p></a>
-                </th>
-                <th class="conteudo_cards_item_container">
-                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
-                    <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                    </div>
-                    <p>exemplo</p></a>
-                </th>
-                <th class="conteudo_cards_item_container">
-                    <a href="ler_mais/artigos/modelo.php" class="link_"><div class="conteudo_titulo">
-                    <img class="conteudo_imagem" src="../img/branco.jpg" alt="">
-                    </div>
-                    <p>exemplo</p></a>
-                </th>
+            <?php
+
+                $maquina_code = "SELECT idMaquina, caminhoImagemMaquina, nomeMaquina, miniDescMaquina, tipoMaquina FROM tbmaquina ORDER BY idMaquina DESC LIMIT 3";
+                $prepareMaquina = $pdo->prepare($maquina_code);
+                $count = $prepareMaquina->execute();
+                $maquinas = $prepareMaquina->fetchAll(PDO::FETCH_ASSOC);
+
+                $numRepeticoesM = 3;
+                $contadorM = 0;?>
+
+
+                <?php
+
+                foreach($maquinas as $maquina){?>
+                    <th class="conteudo_cards_container">
+                        <a href="ler_mais/artigos/modelo.php?id=<?=$maquina['idMaquina']?>&tipo=<?=$maquina['tipoMaquina']?>" class="link_">
+                        <img class="conteudo_imagem" src="<?= $maquina['caminhoImagemMaquina'] ?>">
+                        <p class="conteudo_cards_titulo"> <?= $maquina['nomeMaquina'] ?> </p>
+                        <p class="conteudo_descricao"> <?= $maquina['miniDescMaquina']?> </p>
+                        </a>
+                    </th>
+
+                <?php    
+                }  ?>
 
                 <th class="conteudo_cards_item_container final">
                     <a href="ler_mais/maquinas.html"> <p class="conteudo_lermais" >Ler mais</p> </a>

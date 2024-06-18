@@ -149,7 +149,7 @@
                     $arrayRequisitos = unserialize(base64_decode($resultado[3]));
                     foreach($arrayRequisitos as $requisito){ ?>
                         <li ><?= $requisito ?></li>
-                        <p>Barganha</p>
+                        
                     
                     <?php 
                     

@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(){
         newInput.name = "requisito" + contadorF;
         newInput.placeholder = "Requisito " + contadorF;
         newInput.className = "inputRequisito";
-        document.getElementById("contadorInput").value = contadorF;
+        document.getElementById("contadorInputF").value = contadorF;
         console.log(contadorF);
 
 
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function(){
         newInput.name = "requisito" + contadorI;
         newInput.placeholder = "Requisito " + contadorI;
         newInput.className = "inputRequisito";
-        document.getElementById("contadorInput").value = contadorI;
+        document.getElementById("contadorInputI").value = contadorI;
         console.log(contadorI);
 
         
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function(){
         newInput.name = "requisito" + contadorM;
         newInput.placeholder = "Requisito " + contadorM;
         newInput.className = "inputRequisito";
-        document.getElementById("contadorInput").value = contadorM;
+        document.getElementById("contadorInputM").value = contadorM;
         console.log(contadorM);
 
         

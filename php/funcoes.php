@@ -233,7 +233,7 @@
                 
                 
 
-                if($tipo == "Guia" || $tipo == "Farm" || $tipo == "Itens" || $tipo == "maquinas"){
+                if($tipo == "Guia" || $tipo == "Farm" || $tipo == "Item" || $tipo == "Maquina"){
                     $miniDescTemp = "miniDesc" . $tipo;
                     $minidesc = $_POST[$miniDescTemp];
 
