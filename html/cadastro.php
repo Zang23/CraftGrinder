@@ -20,6 +20,7 @@
         <a class="voltar_button" href="index.php">
                     <span class="material-symbols-outlined">arrow_back</span>
         </a>
+        
             <div class="cadastro_container">
 
                 <div class="formulario_cadastro_container">
