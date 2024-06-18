@@ -82,6 +82,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+.cadastro_perfil_botao:hover{
+    transition: 0.2s;
+    background-color: var(--navbarHover);
 }
 
 .perfil_imagem{
