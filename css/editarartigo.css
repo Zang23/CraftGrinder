@@ -18,6 +18,9 @@ table{
     border-collapse: collapse;
 }
 
+.td_simbolo{
+    text-align: center;
+}
 .material-symbols-outlined{
     color: #000;
 }
