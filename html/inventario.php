@@ -176,8 +176,26 @@
 
         return $jsonCodificado;
     }
+    function getSkin()
+    {
+        $pdo = new PDO('mysql:host=localhost;dbname=testeid', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql_code = "SELECT imgskin FROM usuarios";
+        $prepare = $pdo->prepare($sql_code);
+        $count = $prepare->execute();
+
+        $json_skin = $prepare->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($json_skin as $json) {
+            $skin = $json['imgskin'];
+        }
+
+        return $skin;
+    }
 
     $jsonCodificado = getJson();
+    $skin = getSkin();
 
     $array_de_objetos = json_decode($jsonCodificado);
 
@@ -242,11 +260,24 @@
                 console.log(traduzido);
                 }
             }
-       
+            
+            caminhoSkin = <?php if($skin === null){
+                echo '"' . "../img/skins/steve.png" . '"';
+            }
+            else{
+                 echo '"' . $skin . '"';
+                }?>;
+            const faces = document.querySelectorAll('.first');
+            faces.forEach(function(div) {
+                div.style.backgroundImage = 'url(' + caminhoSkin + ')';
+            });
+            
+            console.log(caminhoSkin)
             </script>
             <?php } ?>
             <script src="../javascript/model.js"></script>
 
 </body>
+
 
 </html>
