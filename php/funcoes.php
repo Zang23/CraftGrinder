@@ -21,7 +21,7 @@
 
         }else if ($verificado){?>
             <div class="container_navbar_sair">
-                <a href="paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
+                <a href="usuario/paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
                 <a class="cabecalho_sair" href="../php/logoff.php">Sair</a>
             </div>
         <?php
@@ -216,21 +216,6 @@
                 
                 $descTemp = "desc" . $tipo;
                 $bdPersonalizado = strtolower($tipo);
-
-                /*if($tipo != "Atualizacao"){
-                    $miniDescTemp = "miniDesc" . $tipo;
-                    $minidesc = $_POST[$miniDescTemp];
-
-                    $contador = $_POST['contador'];
-
-                    for($i = 1; $i <= $contador; $i++){
-                        $requisitos[] = $_POST['requisito'.$i];
-                    }
-
-                    $requisitosSerializado = (base64_encode(serialize($requisitos)));
-                }*/
-
-                
                 
 
                 if($tipo == "Guia" || $tipo == "Farm" || $tipo == "Item" || $tipo == "Maquina"){
