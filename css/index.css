@@ -105,37 +105,6 @@ html{
 
 
 /*------------------------------PRINCIPAL-----------------------------------*/
-/*--animacao--
-@keyframes paraLado{
-    10%{
-        right: 0;
-    }
-    43%{
-        right: 100%;
-    }
-    76%{
-        right: 200%;
-    }
-    100%{
-        right: 0;
-    }
-}
-
-@media (hover:hover){
-    [data-animacao]{
-        animation: var(--animname, none)
-        var(--animduration, 0s)
-        var(--animtimingfunction, ease)
-        var(--animiterationcount, infinite)
-        var(--animplaystate, running)
-    }
-    .animacao{
-        --animname: paraLado;
-        --animduration: 10s;
-    }
-    
-}
-*/
 
 .carousel_conteudo::-webkit-scrollbar {
     width: 0;
@@ -192,6 +161,18 @@ html{
 }
 .next{ 
     right: 0;
+}
+
+.imagem_align{
+    width: 1150px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imagem_att{
+    width: auto;
+    height: 100%;
 }
 
 /*----*/

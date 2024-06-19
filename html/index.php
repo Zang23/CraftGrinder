@@ -100,15 +100,31 @@
                 foreach($atualizacoes as $atualizacao){?>
 
 
-                    <div id="carousel_slide<?=$contador?>" class="carousel__slide animacao" data-animacao="stop"> <img src="<?=$atualizacao['caminhoImagemAtualizacao'] ?>"> </div>
+                    <div id="carousel_slide<?=$contador?>" class="carousel__slide"> 
+                        <div class="imagem_align">
+                            <img src="<?=$atualizacao['caminhoImagemAtualizacao'] ?>" class="imagem_att"> 
+                        </div>
+                    </div>
 
                     <?php
                     $contador++;
                 }
             ?>
-            <div id="carousel_slide1" class="carousel__slide animacao" data-animacao="stop">slide 1</div>
-            <div id="carousel_slide2" class="carousel__slide animacao" data-animacao="stop">slide 2</div>
-            <div id="carousel_slide3" class="carousel__slide animacao" data-animacao="stop">slide 3</div>
+            <div id="carousel_slide1" class="carousel__slide">
+                <div class="imagem_align">
+                    slide 1
+                </div>
+            </div>
+            <div id="carousel_slide2" class="carousel__slide">
+                <div class="imagem_align">
+                    slide 2
+                </div>
+            </div>
+            <div id="carousel_slide3" class="carousel__slide">
+                <div class="imagem_align">
+                    slide 3
+                </div>
+            </div>
             
         </div>
 
