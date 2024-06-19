@@ -57,7 +57,7 @@
                 <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
                 <div class="container_navbar_cadastro">
                     <div class="container_navbar_sair">
-                        <a href="paginaUsuario.html"><img class="imagem_fotoPerfil sair" src="../../img/fotoperfil.png"></a>
+                        <a href="paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../../img/fotoperfil.png"></a>
                         <a class="cabecalho_sair" href="../../php/logoff.php">Sair</a>
                     </div>
                 </div>

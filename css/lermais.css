@@ -10,7 +10,7 @@
 
 .card_container{
     width: 18.75rem;
-    margin: 2%;
+    margin: 1rem;
     text-align: center;
     background-color: var(--claro3);
     border-radius: 1.25rem 0.625rem ;
@@ -36,7 +36,7 @@
 
 .lateral_container{
     background-color: var(--claro2);
-    width: 50%;
+    width: 33%;
     border-left: solid 5px var(--claro);
     overflow-x: hidden;
     box-shadow: 0 0.625rem 1.25rem 0 #00000086;
