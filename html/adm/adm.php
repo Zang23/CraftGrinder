@@ -40,7 +40,7 @@ error_reporting(E_ERROR | E_PARSE);
 
                 <a href="cadastroArtigo.html"><p>Inserir novo Artigo</p></a>
                 <a href="editarArtigo.php"><p>Editar Artigo</p></a>
-                <a href=""><p>Sair</p></a>
+                <a href="../index.php"><p>Sair</p></a>
                
 
             </div>
@@ -154,8 +154,8 @@ error_reporting(E_ERROR | E_PARSE);
                         <tr>
                             <td><?= $artigo['nomeArtigo'] ?></td>
                             <td><?= $artigo['tipoArtigo'] ?></td>
-                            <td> <a href="?editar=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>&nome=<?=$artigo['nomeArtigo']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
-                            <td> <a href="?delete=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>&nome=<?=$artigo['nomeArtigo']?>"><span class="material-symbols-outlined">delete</span></a></td>
+                            <td class="td_simbolo"> <a href="?editar=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>&nome=<?=$artigo['nomeArtigo']?>"><span class="material-symbols-outlined">edit_note</span></a></td>
+                            <td class="td_simbolo"> <a href="?delete=<?=$artigo['idArtigo']?>&tipo=<?=$artigo['tipoArtigo']?>&nome=<?=$artigo['nomeArtigo']?>"><span class="material-symbols-outlined">delete</span></a></td>
                         </tr>
                     <?php
                     }
