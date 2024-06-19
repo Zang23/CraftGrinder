@@ -1,3 +1,6 @@
+.index_fundo{
+    height: 100vh;
+}
 .adm_container{
    display: flex;
 }
@@ -14,7 +17,7 @@
     box-shadow: 0 0.625rem 1.25rem 0 #00000086;
     position: sticky;
     top: 0;
-    height: 100vh;
+    height: 680px;
 }
 .content_lateral{
     margin-top: 5rem;

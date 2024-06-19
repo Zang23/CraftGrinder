@@ -69,12 +69,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
         containerRequisitosF.appendChild(novaDiv);
 
-        /*if (contadorF <= 4){
-            containerRequisitosF.appendChild(novaDiv);
-        }
-        else{
-            containerRequisitosF_.appendChild(novaDiv);
-        }*/
     });
 
     removerRequisitoF.addEventListener("click", function(){
