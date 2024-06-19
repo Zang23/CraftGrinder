@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/paginausuario.css">
     <link rel="icon" href="../img/iconeItens/minecraft/honey_block.png">
-
+    <link rel="icon" href="../../img/iconeItens/minecraft/honey_block.png">
     <title>Usuário</title>     
 
 </head>

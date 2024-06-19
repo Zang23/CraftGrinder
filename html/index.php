@@ -45,7 +45,6 @@
             <th><a href="#guias"><p class="cabecalho_inferior_nav">Guias </p> </a> </th>
             <th><a href="#itens"><p class="cabecalho_inferior_nav">Itens </p> </a> </th>
             <th><a href="#maquinas"><p class="cabecalho_inferior_nav">Máquinas </p> </a> </th>
-            <th><a href="#premium"><p class="cabecalho_inferior_nav">Premium </p> </a> </th>
             <th><a href="#sobre"><p class="cabecalho_inferior_nav">Sobre </p> </a> </th>
             <th><a href="#contato"><p class="cabecalho_inferior_nav">Contato </p> </a> </th>
         </tr>
@@ -301,24 +300,16 @@
         </table>
     </div>
 
-    <h1 id="premium" class="navbar_titulo_premium">Premium</h1>
-
-    <div class="conteudo_container">
-        <div class="conteudo_premium">
-            <div class="premium">
-            <p>CraftGrinder possibilita você desbloquear a aba de Mods com o rescurso Premium.</p>
-            <p></p>
-            </div>
-        </div>
-    </div>
-
     <div class="conteudo_container">
         <div class="conteudo_sobrenos">
             <div class="sobrenos_container">
-                <h1 id="sobre" class="navbar_titulo">Sobre nós</h1>
-                <p>CraftGrinder é destinado para os amantes de Minecraft com sede de conhecimento</p>
+                <p id="sobre" class="sobrenos">Sobre nós</p>
+                <p class="detalhes_texto">CraftGrinder é destinado para os amantes de Minecraft com sede de conhecimento. 
+                    Nossa missão é aproximar os players de suas próprias gameplays, auxiliando por meio da apresentação de tutoriais diversos.
+                    Os tutoriais podem incluir farms, guias, itens e muito mais </p>
                 <p id="contato" class="ctt">Contato</p>
-                <p>Exemplos de contato</p>
+                <p class="detalhes_texto">Email profissional: suporte@craftgrinder.com</p>
+                <p class="detalhes_texto">Telefone: (55)11 0800 8667</p>
             </div>
         </div>
     </div>

@@ -186,6 +186,7 @@ html{
 
 .conteudo_container:last-child{
     margin-bottom: 0;
+    margin-top: 5rem;
 }
 
 .conteudo_atualizacoes{
@@ -274,15 +275,19 @@ html{
 
 .conteudo_sobrenos{
     background-color: var(--escuro);
-    height: 25rem;
+    height: 20rem;
     width: 100%;
 }
 
 .sobrenos_container{
     margin: 3%
 }
-.ctt{
+.ctt, .sobrenos{
     font-size: 20px;
     color: var(--texto);
     margin: 1rem 0 1rem 0;
+}
+.detalhes_texto{
+    font-size: 14px;
+    color: var(--claro2);
 }
