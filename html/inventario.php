@@ -179,10 +179,10 @@
     }
     function getSkin()
     {
-        $pdo = new PDO('mysql:host=localhost;dbname=testeid', 'root', '');
+        $pdo = new PDO('mysql:host=localhost;dbname=dbcraftgrinder', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql_code = "SELECT imgskin FROM usuarios";
+        $sql_code = "SELECT imgskin FROM tbclientes WHERE idCliente='$idUsuario' ";
         $prepare = $pdo->prepare($sql_code);
         $count = $prepare->execute();
 
