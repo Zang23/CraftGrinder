@@ -40,7 +40,7 @@ if($_POST['senha'] != $_POST['senha_confirmada']){
 }
 
 if($senhaCorreta == true && $usuarioCorreto == true && $emailCorreto == true){
-    $sql_code = $pdo->prepare("INSERT INTO tbclientes VALUES (null,?,?,?,null)");
+    $sql_code = $pdo->prepare("INSERT INTO tbclientes VALUES (null,?,?,?,null,null)");
     $sql_code->execute([$_POST['email'], $_POST['senha'], $_POST['user']]);
     header('location: ../html/index.php');
 }
