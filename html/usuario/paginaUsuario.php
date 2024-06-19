@@ -91,12 +91,16 @@
                     <div class="invent_buttons">
 
                         <div class="button_enviar_inventario">
-                            <label for="inputInventario" class="invent_imp">Importar inventario</label> 
+                            <label for="inputInventario" class="invent_imp">Importe seu inventário</label> 
                             <input type="file" id="inputInventario" name="inventario" style="display:none;" >
-                            <button type="submit" class="enviar_inventario">Enviar Inventario</button>
+                            <button type="submit" class="enviar_inventario">Enviar Inventário</button>
+                        </div>
+                        <div class="button_mostrar_inventario">
+                            <div class="container_button_mostinvent">
+                                <a href="../inventario.php" class="invent_most"><label>Mostrar inventário já existente</label></a>  
+                            </div>
                         </div>
 
-                            <a  class="invent_most" href="../inventario.php"> <label>Mostrar inventário já existente</label></a>  
                     </div>
                     
                     </form>  
