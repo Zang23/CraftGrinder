@@ -159,7 +159,7 @@
                     }  ?>
                     
                 <th class="conteudo_cards_container final"> 
-                    <a  href="ler_mais/farms.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
+                    <a  href="ler_mais/farms.php"> <p class="conteudo_lermais"> Ler mais </p> </a>
                 </th>
                         
                    
@@ -203,7 +203,7 @@
 
 
                 <th class="conteudo_cards_container final">
-                    <a  href="ler_mais/guia.html"> <p class="conteudo_lermais"> Ler mais </p> </a>
+                    <a  href="ler_mais/guia.php"> <p class="conteudo_lermais"> Ler mais </p> </a>
                 </th>
                 
             </tr>
@@ -242,7 +242,7 @@
                
 
                 <th class="conteudo_cards_item_container final">
-                    <a href="ler_mais/itens.html"> <p class="conteudo_lermais" >Ler mais</p> </a>
+                    <a href="ler_mais/itens.php"> <p class="conteudo_lermais" >Ler mais</p> </a>
                 </th>
             </tr>
         </table>
@@ -279,7 +279,7 @@
                 }  ?>
 
                 <th class="conteudo_cards_item_container final">
-                    <a href="ler_mais/maquinas.html"> <p class="conteudo_lermais" >Ler mais</p> </a>
+                    <a href="ler_mais/maquinas.php"> <p class="conteudo_lermais" >Ler mais</p> </a>
                 </th>
             </tr>
         </table>

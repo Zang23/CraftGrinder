@@ -32,45 +32,12 @@
 
             <div class="conteudo_cards_container">
 
-                <div class="card_container"><a href="artigos/modelo.php" class="link_">
-                    <img class="card_imagem" src="../../img/branco.jpg" alt="">
-                    <p>exemplo</p>
-                </a></div>
+                <?php
+                    require '../../php/funcoes.php';
 
-                <div class="card_container"><a href="artigos/modelo.php" class="link_">
-                    <img class="card_imagem" src="../../img/branco.jpg" alt="">
-                    <p>exemplo</p>
-                </a></div>
+                    mostraLerMaisArtigo("Guia");
+                ?>
 
-                <div class="card_container"><a href="artigos/modelo.php" class="link_">
-                    <img class="card_imagem" src="../../img/branco.jpg" alt="">
-                    <p>exemplo</p>
-                </a></div>
-
-                <div class="card_container"><a href="artigos/modelo.php" class="link_">
-                    <img class="card_imagem" src="../../img/branco.jpg" alt="">
-                    <p>exemplo</p>
-                </a></div>
-
-                <div class="card_container"><a href="artigos/modelo.php" class="link_">
-                    <img class="card_imagem" src="../../img/branco.jpg" alt="">
-                    <p>exemplo</p>
-                </a></div>
-                
-                <div class="card_container"><a href="artigos/modelo.php" class="link_">
-                    <img class="card_imagem" src="../../img/branco.jpg" alt="">
-                    <p>exemplo</p>
-                </a></div>
-
-                <div class="card_container"><a href="artigos/modelo.php" class="link_">
-                    <img class="card_imagem" src="../../img/branco.jpg" alt="">
-                    <p>exemplo</p>
-                </a></div>
-                
-                <div class="card_container"><a href="artigos/modelo.php" class="link_">
-                    <img class="card_imagem" src="../../img/branco.jpg" alt="">
-                    <p>exemplo</p>
-                </a></div>
             </div>
         </div>
 

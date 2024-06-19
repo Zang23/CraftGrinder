@@ -297,33 +297,34 @@
     }
 
 
-    function mostraCardArtigo(string $tipo){
-        require "../php/conexao.php";
+    function mostraLerMaisArtigo(string $tipo){
+        require '../../php/conexao.php';
 
-        $artigo_code = "SELECT id$tipo, $caminhoImagem$tipo, nome$tipo, miniDesc$tipo FROM tb$tipo ORDER BY id$tipo DESC LIMIT 3";
-        $prepare = $pdo->prepare($artigo_code);
+        $sql_code = "SELECT nome$tipo, miniDesc$tipo, caminhoImagem$tipo, id$tipo, tipo$tipo FROM tb$tipo";
+        $prepare = $pdo->prepare($sql_code);
         $count = $prepare->execute();
-        $artigos = $prepare->fetchAll(PDO::FETCH_ASSOC);
-        
-        $numRepeticoes = 3;
-        $contador = 0; ?>
+        $artigos = $prepare->fetchAll();
 
-        <?php
+        foreach($artigos as $artigo){
 
-        foreach($artigos as $artigo){?>
-            <th class="conteudo_cards_container">
-                <a href="ler_mais/artigos/modelo.php?id=<?=$artigo['id$tipo']?>&tipo=<?=$artigo['tipo$tipo']?>" class="link_">
-                <img class="conteudo_imagem" src="<?= $artigo['caminhoImagem$tipo'] ?>">
-                <p class="conteudo_cards_titulo"> <?= $artigo['nome$tipo'] ?> </p>
-                <p class="conteudo_descricao"> <?= $artigo['miniDesc$tipo']?> </p>
+            $caminhoImagemArtigo = "caminhoImagem" . $tipo;       
+            $imagem = "../" . $artigo[$caminhoImagemArtigo];
+            
+            $idArtigo = "id" . $tipo;
+            $tipoArtigo = "tipo" . $tipo;
+            $miniDescArtigo = "miniDesc" . $tipo;
+            ?>
+
+            <div class="card_container">
+                <a href="artigos/modelo.php?id=<?=$artigo[$idArtigo]?>&tipo=<?=$artigo[$tipoArtigo]?>">
+                    <img class="card_imagem" src="<?=$imagem?>" alt="">
+                    <p><?=$artigo[$miniDescArtigo]?></p>
                 </a>
-            </th>
-        <?php
+            </div>
+
+        <?php    
         }
-
-
     }
-
     
 
 ?>
