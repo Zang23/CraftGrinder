@@ -7,7 +7,7 @@
 }
 .titulo_inventario{
     color: var(--texto);
-    margin: 5% 5% 2% 30%;
+    margin: 3rem 3rem 4rem 30%;
 }
 .container_inventario{
     display: flex;
