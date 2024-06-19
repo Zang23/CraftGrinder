@@ -3,6 +3,13 @@
     align-items: center;
     justify-content: center;
 }
+.seta{
+    color: var(--texto);
+}
+.seta:hover{
+    color: var(--escuro2);
+    transition: 0.5s;
+}
 
 thead, th, tr{
     padding: 1rem 2rem;
@@ -21,6 +28,6 @@ table{
 .td_simbolo{
     text-align: center;
 }
-.material-symbols-outlined{
+.d{
     color: #000;
 }

@@ -38,7 +38,7 @@
 
             <div class="titulo_edicao_button_div">
                 <a class="titulo_edicao_button" href="../adm/adm.php">
-                    <span class="material-symbols-outlined">arrow_back</span>
+                    <span class="material-symbols-outlined seta">arrow_back</span>
                 </a>
             </div>
 
@@ -103,8 +103,8 @@
                             <th><?= $artigo['nomeAtualizacao'] ?></th>
                             <th><?= $artigo['descAtualizacao'] ?></th>
                             <th><?= $artigo['imagemAtualizacao'] ?></th>
-                            <td class="td_simbolo"> <a href="?editar=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined">Slowoidoijwoi</span></a></td class="td_simbolo">
-                            <td class="td_simbolo"> <a href="?delete=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined">delete</span></a></td class="td_simbolo">
+                            <td class="td_simbolo"> <a href="?editar=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined d">Slowoidoijwoi</span></a></td class="td_simbolo">
+                            <td class="td_simbolo"> <a href="?delete=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined d">delete</span></a></td class="td_simbolo">
                         </tr>
                         <?php
                     }
@@ -165,8 +165,8 @@
                             <th><?= $artigo['miniDescFarm'] ?></th>
                             <th><?= $artigo['descFarm'] ?></th>
                             <th><?= $artigo['imagemFarm'] ?></th>
-                            <td class="td_simbolo"> <a href="editarArtigoScript.php?editar=<?=$artigo['idFarm']?>&nome=<?=$artigo['nomeFarm']?>&tipo=<?=$artigo['tipoFarm']?>"><span class="material-symbols-outlined">edit_note</span></a></td class="td_simbolo">
-                            <td class="td_simbolo"> <a href="?delete=<?=$artigo['idFarm']?>&nome=<?=$artigo['nomeFarm']?>"><span class="material-symbols-outlined">delete</span></a></td class="td_simbolo">
+                            <td class="td_simbolo"> <a href="editarArtigoScript.php?editar=<?=$artigo['idFarm']?>&nome=<?=$artigo['nomeFarm']?>&tipo=<?=$artigo['tipoFarm']?>"><span class="material-symbols-outlined d">edit_note</span></a></td class="td_simbolo">
+                            <td class="td_simbolo"> <a href="?delete=<?=$artigo['idFarm']?>&nome=<?=$artigo['nomeFarm']?>"><span class="material-symbols-outlined d">delete</span></a></td class="td_simbolo">
                         </tr>
                         <?php
                     }
@@ -223,8 +223,8 @@
                             <th><?= $artigo['miniDescGuia'] ?></th>
                             <th><?= $artigo['descGuia'] ?></th>
                             <th><?= $artigo['imagemGuia'] ?></th>
-                            <td class="td_simbolo"> <a href="editarArtigoScript.php?editar=<?=$artigo['idGuia']?>&nome=<?=$artigo['nomeGuia']?>&tipo=<?=$artigo['tipoGuia']?>"><span class="material-symbols-outlined">edit_note</span></a></td class="td_simbolo">
-                            <td class="td_simbolo"> <a href="?delete=<?=$artigo['idGuia']?>&nome=<?=$artigo['nomeGuia']?>"><span class="material-symbols-outlined">delete</span></a></td class="td_simbolo">
+                            <td class="td_simbolo"> <a href="editarArtigoScript.php?editar=<?=$artigo['idGuia']?>&nome=<?=$artigo['nomeGuia']?>&tipo=<?=$artigo['tipoGuia']?>"><span class="material-symbols-outlined d">edit_note</span></a></td class="td_simbolo">
+                            <td class="td_simbolo"> <a href="?delete=<?=$artigo['idGuia']?>&nome=<?=$artigo['nomeGuia']?>"><span class="material-symbols-outlined d">delete</span></a></td class="td_simbolo">
                         </tr>
                         <?php
                     }
@@ -281,8 +281,8 @@
                                 <th><?= $artigo['miniDescMaquina'] ?></th>
                                 <th><?= $artigo['descMaquina'] ?></th>
                                 <th><?= $artigo['imagemMaquina'] ?></th>
-                                <td class="td_simbolo"> <a href="editarArtigoScript.php?editar=<?=$artigo['idMaquina']?>&nome=<?=$artigo['nomeMaquina']?>&tipo=<?=$artigo['tipoMaquina']?>"><span class="material-symbols-outlined">edit_note</span></a></td class="td_simbolo">
-                                <td class="td_simbolo"> <a href="?delete=<?=$artigo['idMaquina']?>&nome=<?=$artigo['nomeMaquina']?>"><span class="material-symbols-outlined">delete</span></a></td class="td_simbolo">
+                                <td class="td_simbolo"> <a href="editarArtigoScript.php?editar=<?=$artigo['idMaquina']?>&nome=<?=$artigo['nomeMaquina']?>&tipo=<?=$artigo['tipoMaquina']?>"><span class="material-symbols-outlined d">edit_note</span></a></td class="td_simbolo">
+                                <td class="td_simbolo"> <a href="?delete=<?=$artigo['idMaquina']?>&nome=<?=$artigo['nomeMaquina']?>"><span class="material-symbols-outlined d">delete</span></a></td class="td_simbolo">
 
                             </tr>
                         <?php
@@ -339,8 +339,8 @@
                             <th><?= $artigo['miniDescItem'] ?></th>
                             <th><?= $artigo['descItem'] ?></th>
                             <th><?= $artigo['imagemItem'] ?></th>
-                            <td class="td_simbolo"> <a href="editarArtigoScript.php?editar=<?=$artigo['idItem']?>&nome=<?=$artigo['nomeItem']?>&tipo=<?=$artigo['tipoItem']?>"><span class="material-symbols-outlined">edit_note</span></a></td class="td_simbolo">
-                            <td class="td_simbolo"> <a href="?delete=<?=$artigo['idItem']?>&nome=<?=$artigo['nomeItem']?>"><span class="material-symbols-outlined">delete</span></a></td class="td_simbolo">
+                            <td class="td_simbolo"> <a href="editarArtigoScript.php?editar=<?=$artigo['idItem']?>&nome=<?=$artigo['nomeItem']?>&tipo=<?=$artigo['tipoItem']?>"><span class="material-symbols-outlined d">edit_note</span></a></td class="td_simbolo">
+                            <td class="td_simbolo"> <a href="?delete=<?=$artigo['idItem']?>&nome=<?=$artigo['nomeItem']?>"><span class="material-symbols-outlined d">delete</span></a></td class="td_simbolo">
                         </tr>
                         <?php
                     }
