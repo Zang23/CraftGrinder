@@ -87,18 +87,18 @@
                 <div class="import_invent">
                     <p>Importe seu inventário e veja suas atualizações: </p>
                     <form action="" method="post" enctype="multipart/form-data">
-                        <div class="invent_buttons">
 
+                    <div class="invent_buttons">
 
+                        <div class="button_enviar_inventario">
                             <label for="inputInventario" class="invent_imp">Importar inventario</label> 
-
                             <input type="file" id="inputInventario" name="inventario" style="display:none;" >
-                           
-
-                            <button type="submit" > Enviar Inventario</button>
+                            <button type="submit" class="enviar_inventario">Enviar Inventario</button>
+                        </div>
 
                             <a  class="invent_most" href="../inventario.php"> <label>Mostrar inventário já existente</label></a>  
-                        </div>
+                    </div>
+                    
                     </form>  
                 </div>
             </div>

@@ -87,7 +87,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 75%;
 }
 .invent_buttons > label{
     margin: 1rem;
@@ -98,9 +97,25 @@
     align-items: center;
     text-align: center;
 }
+.button_enviar_inventario{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 2rem;
+}
 .invent_imp{
+    border-radius: 12px;
+    padding: 10px;
     background-color: var(--claro);
+}
+.enviar_inventario{
+    border: none;
+    background: var(--claro3);
+    padding: 5px;
+    border-radius: 12px;
+    font-size: 15px;
 }
 .invent_most{
     background-color: var(--fundo);
+    padding: 10px;
 }
