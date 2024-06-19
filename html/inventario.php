@@ -161,10 +161,12 @@
 
     function getJson()
     {
-        $pdo = new PDO('mysql:host=localhost;dbname=testeid', 'root', '');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        session_start();
 
-        $sql_code = "SELECT vetorsql FROM usuarios";
+        $pdo = new PDO('mysql:host=localhost;dbname=dbcraftgrinder', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $idUsuario = $_SESSION['idUsuario'];
+        $sql_code = "SELECT vetorinventario FROM tbclientes WHERE id='$idUsuario' ";
         $prepare = $pdo->prepare($sql_code);
         $count = $prepare->execute();
 
