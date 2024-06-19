@@ -52,7 +52,9 @@
     margin-bottom: 5%;
 }
 
-
+.td_simbolo{
+    text-align: center;
+}
 .conteudo_tabela_adm{
     border-collapse: collapse;
     margin: 25px 0;
