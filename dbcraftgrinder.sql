@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Jun-2024 às 00:31
+-- Tempo de geração: 19-Jun-2024 às 02:13
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -69,8 +69,17 @@ CREATE TABLE `tbclientes` (
   `idCliente` int(11) NOT NULL,
   `emailCliente` varchar(255) NOT NULL,
   `senhaCliente` varchar(50) NOT NULL,
-  `nicknameCliente` varchar(30) NOT NULL
+  `nicknameCliente` varchar(30) NOT NULL,
+  `inventarioClientes` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tbclientes`
+--
+
+INSERT INTO `tbclientes` (`idCliente`, `emailCliente`, `senhaCliente`, `nicknameCliente`, `inventarioClientes`) VALUES
+(1, 'thiago@gmail.com', 'senha', 'Zang', 'usuarios/06e617e3-84d8-474e-a14a-beceb5cc7726.dat'),
+(2, 'kevinviado@gmail.com', 'senha', 'kevin Viado', 'usuarios/06e617e3-84d8-474e-a14a-beceb5cc7726.dat');
 
 -- --------------------------------------------------------
 
@@ -221,7 +230,7 @@ ALTER TABLE `tbatualizacao`
 -- AUTO_INCREMENT de tabela `tbclientes`
 --
 ALTER TABLE `tbclientes`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbfarm`
