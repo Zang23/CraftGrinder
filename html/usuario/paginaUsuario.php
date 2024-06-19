@@ -52,12 +52,14 @@
     <header class="cabecalho_container r">
 
         <div class="cabecalho_superior_container">
-            <p class="cabecalho_titulo"><a href="index.php">CraftGrinder</a></p>
+            <p class="cabecalho_titulo"><a href="../index.php">CraftGrinder</a></p>
             <div class="cabecalho_superior_box">
                 <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
-                <div class="container_navbar_sair">
-                    <a href="paginaUsuario.html"><img class="imagem_fotoPerfil sair" src="../../img/fotoperfil.png"></a>
-                    <a class="cabecalho_sair" href="../../php/logoff.php">Sair</a>
+                <div class="container_navbar_cadastro">
+                    <div class="container_navbar_sair">
+                        <a href="paginaUsuario.html"><img class="imagem_fotoPerfil sair" src="../../img/fotoperfil.png"></a>
+                        <a class="cabecalho_sair" href="../../php/logoff.php">Sair</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,9 +98,11 @@
                             <button type="submit" class="enviar_inventario">Enviar Inventário</button>
                         </div>
                         <div class="button_mostrar_inventario">
-                            <div class="container_button_mostinvent">
-                                <a href="../inventario.php" class="invent_most"><label>Mostrar inventário já existente</label></a>  
-                            </div>
+                            <a href="../inventario.php" class="invent_most">
+                                <div class="container_button_mostinvent">
+                                    <label>Mostrar inventário já existente</label>
+                                </div>
+                            </a>
                         </div>
 
                     </div>
