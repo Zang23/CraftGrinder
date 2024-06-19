@@ -161,19 +161,18 @@
 
     function getJson()
     {
-        session_start();
 
         $pdo = new PDO('mysql:host=localhost;dbname=dbcraftgrinder', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $idUsuario = $_SESSION['idUsuario'];
-        $sql_code = "SELECT vetorinventario FROM tbclientes WHERE id='$idUsuario' ";
+        $sql_code = "SELECT vetorInventarioClientes FROM tbclientes WHERE idCliente='$idUsuario' ";
         $prepare = $pdo->prepare($sql_code);
         $count = $prepare->execute();
 
         $json_codificado = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($json_codificado as $json) {
-            $jsonCodificado = $json['vetorsql'];
+            $jsonCodificado = $json['vetorInventarioClientes'];
         }
 
         return $jsonCodificado;

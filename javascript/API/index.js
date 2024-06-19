@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'testeid'
+    database: 'dbcraftgrinder'
 });
 const porta = 8796;
 
@@ -21,8 +21,8 @@ app.get('/api/:id', async (req, res) => {
         const userId = req.params.id;
 
         // Consulta SQL para obter o email do usuário com base no ID
-        const sqlget = 'SELECT file FROM usuarios WHERE id = ?';
-        const sqlpost = 'UPDATE usuarios SET vetorsql = ? WHERE id = ?'
+        const sqlget = 'SELECT inventarioClientes FROM tbclientes WHERE idCliente = ?';
+        const sqlpost = 'UPDATE tbclientes SET vetorInventarioClientes = ? WHERE idCliente = ?'
 
         // Executar a consulta SQL
         connection.query(sqlget, [userId], (error, results, fields) => {
@@ -30,10 +30,9 @@ app.get('/api/:id', async (req, res) => {
                 console.error('Erro ao executar a consulta:', error);
                 return;
             }
-
-            // Verificar se encontrou algum resultado
+            console.log(results);
             if (results.length > 0) {
-                const dir = results[0].file;
+                const dir = "../../html/usuario/"+results[0].inventarioClientes;
                 if (fs.existsSync(dir)) {
                 var data = fs.readFileSync(dir);
                 nbt.parse(data, function (error, data) {
