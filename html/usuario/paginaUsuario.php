@@ -193,7 +193,6 @@
     </script>
     <form class="enviarfotoperfil" id="formularioFotoPerfilPost" method="post" action="../../php/fotoPerfil.php" enctype="multipart/form-data">
         <label class="input_label">
-            mude sua skin aqui:
         <input type="file" class="input_skin" name="arquivo" id="arquivo" onchange="mandarFotoPerfil()">
         </label>
     </form>
