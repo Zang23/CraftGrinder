@@ -127,9 +127,8 @@
             <td>
             <form class="enviarskin" id="formularioSkinPost" method="post" action="../php/skin.php" enctype="multipart/form-data">
                 <label class="input_label">
-                    mude sua skin aqui:
+                    <p>Escolha sua skin</p>
                 <input type="file" class="input_skin" name="arquivo" id="arquivo" onchange="mandarSkin()">
-
                 </label>
             </form>
 

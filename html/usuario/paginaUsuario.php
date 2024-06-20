@@ -86,14 +86,20 @@
         
             <div class="content_perfil">
                 <div class="perfil_alinhamento">
+
+                <div class="container_fotobutton">
+
                     <div class="container_perfilimagem">
                         <img src=<?= '"imgPerfilUsuarios/'. getUser($idUsuario)[2] . '"'?> class="perfil_usuario">
 
-                        <div class="container_alterarfoto" onclick="selecionarFotoPerfil()">
-                            <label for="">Alterar Foto</label>
-                            
-                        </div>
+                            <div class="container_alterarfoto" onclick="selecionarFotoPerfil()">
+                                <label for="">Alterar Foto</label>
+                            </div>
+                            <button class="button_excluir" >Excluir foto de perfil</button>
                     </div>
+
+                </div>
+
                     <div class="container_perfilinfo">
                         <div class="container_usuario">
                             <p class="nome_usuario"><?= getUser($idUsuario)[1] ?></p>

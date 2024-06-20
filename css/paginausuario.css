@@ -35,18 +35,36 @@
     background-color: var(--fundoCards);
     border-radius: 1.25rem 1.25rem 0 0;
 }
+.container_fotobutton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
 .container_alterarfoto{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: var(--claro3);
     color: var(--escuro2);
     padding: 0.25rem;
     border-radius: 0 0 1.25rem 1.25rem;
     cursor: pointer;
 }
-.container_alterarfoto:hover{
+.container_alterarfoto:hover, .button_excluir:hover{
     transition: 0.2s;
     background-color: #ebebeb;
+}
+.button_excluir{
+    border: none;
+    color: var(--escuro2);
+    background-color: var(--claro3);
+    padding: 5px;
+    border-radius: 12px;
+    margin: 0.5rem 0 0 0;
+    cursor: pointer;
 }
 
 .container_perfilinfo{
@@ -115,17 +133,17 @@
 .invent_imp{
     border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
     padding: 0.75rem;
-    background-color: var(--claro3);
+    background-color: var(--claro);
     text-align: center;
     cursor: pointer;
 }
 .invent_imp:hover{
     transition: 0.2s;
-    background-color: #fff;
+    background-color: var(--navbarHover);
 }
 .enviar_inventario{
     border: none;
-    background: var(--claro);
+    background: var(--claro3);
     padding: 1rem;
     border-radius: 0 0 1.5rem 1.5rem;
     font-size: 15px;
@@ -138,7 +156,7 @@
     background-color: var(--navbarHover);
 }
 .container_button_mostinvent{
-    background-color: var(--fundo);
+    background-color: var(--escuro2);
     border-radius: 1.5rem;
     padding: 1.75rem;
     cursor: pointer;
