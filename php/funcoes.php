@@ -23,7 +23,7 @@
         }else if ($verificado){?>
             <div class="container_navbar_sair">
                 <div class="hover_perfil">
-                    <a href="paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
+                    <a href="usuario/paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
                         
                     <span class="perfil_modal">
                         <div class="container_modal">
