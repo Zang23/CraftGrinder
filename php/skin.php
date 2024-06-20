@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Verifica se a atualização foi bem-sucedida
                     if ($count > 0) {
                         // Redireciona para a página de sucesso
-                        header('Location: http://localhost/craftgrinder/html/usuario/paginaUsuario.php');
+                        header('Location: http://localhost/craftgrinder/html/inventario.php');
                         exit;
                     } else {
                         echo "Erro ao atualizar o banco de dados.";
