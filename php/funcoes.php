@@ -16,13 +16,24 @@
             <div class="container_navbar_cadastro">
                 <a class="cabecalho_cadastro" href="cadastro.php">Cadastrar</a>
                 <a class="cabecalho_entrar" href="login.html">Entrar</a>
+                
             </div>
         <?php
 
         }else if ($verificado){?>
             <div class="container_navbar_sair">
-                <a href="usuario/paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
-                <a class="cabecalho_sair" href="../php/logoff.php">Sair</a>
+                <div class="hover_perfil">
+                    <a href="usuario/paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
+                        
+                    <span class="perfil_modal">
+                        <div class="container_modal">
+                            <img class="imagem_fotoPerfilmodal" src="../img/fotoperfil.png" alt="">
+                            <p class="nome_usuariomodal">nome usuario</p>
+                            <a class="cabecalho_sair" href="../php/logoff.php">Sair</a>
+                        </div>
+                    </span>
+                </div>
+                <a class="cabecalho_opcoes" href="usuario/paginaUsuario.php">Opções</a>
             </div>
         <?php
         }

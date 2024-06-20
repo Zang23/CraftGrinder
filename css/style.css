@@ -175,8 +175,7 @@ a{
     background-color: #966400;
     transition: 0.2s;
 }
-.cabecalho_sair{
-    background-color: var(--claro);
+.cabecalho_sair, .cabecalho_opcoes{
     border-radius: 1.25rem;
     width: 7rem;
     height: 2.7rem;
@@ -185,10 +184,29 @@ a{
     justify-content: center;
     align-items: center;
 }
+.cabecalho_sair{
+    background-color: var(--claro);
+    margin-left: 2.5rem;
+}
+.cabecalho_opcoes{
+    background-color: #4f663d;
+}
 .cabecalho_sair:hover{
     background-color: #966400;
     transition: 0.2s;
 }
+.cabecalho_opcoes:hover{
+    background-color: #415333;
+    transition: 0.2s;
+}
+.imagem_fotoPerfilmodal{
+    height: 50px;
+    width: 50px;
+}
+.nome_usuariomodal{
+    font-size: 14px;
+}
+
 
 .imagem_fotoPerfil{ 
     width: 3rem;
@@ -198,6 +216,30 @@ a{
 .sair:hover{
     transition: 0.2s;
     transform: scale(1.1, 1.1);
+}
+.perfil_modal{
+    top: 100px;
+    transform: translateX(-33%);
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--claro2);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    transition: 0.2s;
+}
+.hover_perfil:hover .perfil_modal{
+    top: 90px;
+    visibility: visible;
+    opacity: 1;
+    z-index: 3;
+}
+.container_modal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .cabecalho_inferior_container{
