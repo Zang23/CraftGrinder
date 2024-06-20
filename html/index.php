@@ -5,7 +5,29 @@
 
     $verificado = verificaLogin();
 
+    if($_SESSION['perfilCadastrado']){
+        $idUsuario = $_SESSION['idUsuario'];
 
+        
+
+        $sql_code = "SELECT * FROM tbclientes WHERE idCliente = '$idUsuario'";
+        $prepare = $pdo->prepare($sql_code);
+        $count = $prepare->execute();
+        $usuarios = $prepare->fetchAll();
+
+        $user_code = "SELECT nicknameCliente, imgCliente FROM tbclientes WHERE idCliente = '$idUsuario' ";
+        $prepare = $pdo->prepare($user_code);
+        $count = $prepare->execute();
+        $users = $prepare->fetchAll();
+
+        foreach($users as $user){
+            $userNick = $user['nicknameCliente'];
+            $userImg = 'usuario/imgPerfilUsuarios/'.$user['imgCliente'];
+            if($user['imgCliente'] === null){
+                $userImg = "usuario/imgPerfilUsuarios/default.png";
+            }
+        }
+    }
     
 
 
@@ -33,7 +55,7 @@
         <div class="cabecalho_superior_box">
             <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
             <div class="container_navbar_cadastro">
-                <?= mostraLogin($verificado)?>
+                <?= mostraLogin($verificado, $userNick, $userImg)?>
             </div>
         </div>
     </div>

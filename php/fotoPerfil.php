@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     if ($resultado && !empty($resultado['imgCliente'])) {
                         // Remove o arquivo anterior
-                        unlink($resultado['imgCliente']);
+                        unlink($pastaUpload . $resultado['imgCliente']);
                     }
 
                     // Atualiza o campo na tabela do banco de dados

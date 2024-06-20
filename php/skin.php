@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Verifica o tipo de arquivo (apenas PNG)
             $tipoArquivo = $_FILES['arquivo']['type'];
-            if ($tipoArquivo != 'image/png' || $tipoArquivo != 'image/jpg' || $tipoArquivo != 'image/webp') {
+            if ($tipoArquivo != 'image/png' && $tipoArquivo != 'image/jpg') {
                 echo "Erro: Favor selecionar um formato válido";
             } else {
                 // Define variáveis para o arquivo

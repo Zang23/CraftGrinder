@@ -10,7 +10,7 @@
        }
     }
 
-    function mostraLogin (bool $verificado){
+    function mostraLogin (bool $verificado, string $userNick, string $userImg){
 
         if($verificado == false){?>
             <div class="container_navbar_cadastro">
@@ -23,12 +23,12 @@
         }else if ($verificado){?>
             <div class="container_navbar_sair">
                 <div class="hover_perfil">
-                    <a href="usuario/paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../img/fotoperfil.png"></a>
+                    <a href="usuario/paginaUsuario.php"><img class="imagem_fotoPerfil sair" src=<?= $userImg ?>></a>
                         
                     <span class="perfil_modal">
                         <div class="container_modal">
-                            <img class="imagem_fotoPerfilmodal" src="../img/fotoperfil.png" alt="">
-                            <p class="nome_usuariomodal">nome usuario</p>
+                            <img class="imagem_fotoPerfilmodal" src=<?= $userImg ?> alt="">
+                            <p class="nome_usuariomodal"><?= $userNick ?></p>
                             <a class="cabecalho_sair" href="../php/logoff.php">Sair</a>
                         </div>
                     </span>

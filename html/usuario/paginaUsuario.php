@@ -28,6 +28,9 @@
             $userEmail =  $user['emailCliente'];
             $userNick = $user['nicknameCliente'];
             $userImg = $user['imgCliente'];
+            if($userImg === null){
+                $userImg = "default.png";
+            }
             return [$userEmail, $userNick, $userImg];
         }
     }
