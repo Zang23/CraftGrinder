@@ -95,13 +95,34 @@
     margin-top: 7.5%;
     font-size: 30px;
     font-family: Minecraft;
-    
-    /*color: var(--texto);*/
+    animation-name: mudarcor;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    color: #fff;
     text-shadow: #00000086 3px 3px;
 }
+@keyframes mudarcor{
+    0%{
+        color: #FFF;
+    }
+    20% {
+        color: #ff3232;
+    }
+    40%{
+        color: #ffee00;
+    }
+    60%{
+        color: #00ff40;
+    }
+    80%{
+        color: #0084ff;
+    }
+    100%{
+        color: #FFF;
+    }
 
-
-
+} 
 
 .perfil_imagem{
     image-rendering: pixelated;
