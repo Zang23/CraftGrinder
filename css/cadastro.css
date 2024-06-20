@@ -80,6 +80,7 @@
 
 .cadastro_perfil_foto{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -92,6 +93,22 @@
 .perfil_imagem{
     width: 200px;
     height: auto;
+}
+.alterar_foto_cad{
+    border: none;
+    background-color: var(--fundo);
+    padding: 0.5rem;
+    border-radius: 12px;
+    font-size: 14px;
+    color: var(--texto);
+    cursor: pointer;
+}
+.alterar_foto_cad label{
+    cursor: pointer;
+}
+.alterar_foto_cad:hover{
+    transition: 0.2s;
+    background-color: var(--escuro2);
 }
 
 .cadastro_perfil_botao{

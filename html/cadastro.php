@@ -42,15 +42,15 @@
                         
                         <?php
                             if (isset($_GET['senhaErro'])){?>
-                                 <label class="formulario_input_erro">As senhas devem ser identicas</label> <?php
+                                 <label class="formulario_input_erro">As senhas devem ser idênticas.</label> <?php
                             }
 
                             if(isset($_GET['userErro'])){?>
-                                <label class="formulario_input_erro">Esse nome de usuario já existe</label> <?php
+                                <label class="formulario_input_erro">Esse nome de usuario já existe.</label> <?php
                             }
 
                             if(isset($_GET['emailErro'])){?>
-                                <label class="formulario_input_erro">Esse email ja está sendo utilizado</label> <?php
+                                <label class="formulario_input_erro">Esse email já está sendo utilizado.</label> <?php
                             }
 
                         ?>
@@ -72,6 +72,9 @@
 
                         <div class="cadastro_perfil_foto">
                             <img class="perfil_imagem" src="../img/fotoperfil.png" alt="">
+                            <div class="alterar_foto_cad">
+                                <label>Escolher foto de perfil</label>
+                            </div>
                         </div>
 
                         <div class="content_criar_conta">
