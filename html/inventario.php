@@ -102,7 +102,11 @@
             <td class="slotarmadura peitoral_slot" id="102"></td>
             <td>
             <form class="enviarskin" id="formularioSkinPost" method="post" action="../php/skin.php" enctype="multipart/form-data">
-                <input class="input_skin" type="file" name="arquivo" id="arquivo" onchange="mandarSkin()">
+                <label class="input_label">
+                    mude sua skin aqui:
+                <input type="file" class="input_skin" name="arquivo" id="arquivo" onchange="mandarSkin()">
+
+                </label>
             </form>
 
             </td>
@@ -164,9 +168,6 @@
 </div>
     <script src="../javascript/tradutor.js"></script>
     <?php
-    function enviarSkin(){
-
-    }
 
     function getJson()
     {

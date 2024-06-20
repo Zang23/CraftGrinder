@@ -1,6 +1,10 @@
 .index_fundo{
     height: 100vh;
 }
+.enviarfotoperfil{
+    visibility: hidden;
+    opacity: 0;
+}
 .container_perfil{
     display: flex;
     align-items: center;

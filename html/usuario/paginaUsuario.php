@@ -19,7 +19,7 @@
     function getUser(int $id){
         require "../../php/conexao.php";
 
-        $user_code = "SELECT emailCliente, nicknameCliente FROM tbclientes WHERE idCliente = '$id' ";
+        $user_code = "SELECT emailCliente, nicknameCliente, imgCliente FROM tbclientes WHERE idCliente = '$id' ";
         $prepare = $pdo->prepare($user_code);
         $count = $prepare->execute();
         $users = $prepare->fetchAll();
@@ -27,7 +27,8 @@
         foreach($users as $user){
             $userEmail =  $user['emailCliente'];
             $userNick = $user['nicknameCliente'];
-            return [$userEmail, $userNick];
+            $userImg = $user['imgCliente'];
+            return [$userEmail, $userNick, $userImg];
         }
     }
 
@@ -58,11 +59,11 @@
                 <div class="container_navbar_cadastro">
                     <div class="container_navbar_sair">
                         <div class="hover_perfil">
-                            <a href="paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../../img/fotoperfil.png"></a>
+                            <a href="paginaUsuario.php"><img class="imagem_fotoPerfil sair" src=<?= '"imgPerfilUsuarios/'. getUser($idUsuario)[2] . '"'?>></a>
                         
                         <span class="perfil_modal">
                             <div class="container_modal">
-                                <img class="imagem_fotoPerfilmodal" src="../../img/fotoperfil.png" alt="">
+                                <img class="imagem_fotoPerfilmodal" src=<?= '"imgPerfilUsuarios/'. getUser($idUsuario)[2] . '"'?> alt="">
                                 <p class="nome_usuariomodal"><?= getUser($idUsuario)[1] ?></p>
                                 <a class="cabecalho_sair" href="../../php/logoff.php">Sair</a>
                             </div>
@@ -75,6 +76,7 @@
             </div>
         </div>
     </header>
+
     <h1 class="navbar_titulo">Seu Perfil</h1>  
 
         <div class="container_perfil">
@@ -82,10 +84,11 @@
             <div class="content_perfil">
                 <div class="perfil_alinhamento">
                     <div class="container_perfilimagem">
-                        <img src="../../img/fotoperfil.png" class="perfil_usuario">
+                        <img src=<?= '"imgPerfilUsuarios/'. getUser($idUsuario)[2] . '"'?> class="perfil_usuario">
 
-                        <div class="container_alterarfoto">
+                        <div class="container_alterarfoto" onclick="selecionarFotoPerfil()">
                             <label for="">Alterar Foto</label>
+                            
                         </div>
                     </div>
                     <div class="container_perfilinfo">
@@ -164,5 +167,21 @@
     
          
     ?>
+    <script>
+        function selecionarFotoPerfil(event){
+            document.getElementById("arquivo").click();
+            event.preventDefault();
+        }
+        function mandarFotoPerfil(event) {
+            document.getElementById("formularioFotoPerfilPost").submit();
+            event.preventDefault();
+        }
+    </script>
+    <form class="enviarfotoperfil" id="formularioFotoPerfilPost" method="post" action="../../php/fotoPerfil.php" enctype="multipart/form-data">
+        <label class="input_label">
+            mude sua skin aqui:
+        <input type="file" class="input_skin" name="arquivo" id="arquivo" onchange="mandarFotoPerfil()">
+        </label>
+    </form>
 </body>
 </html>
