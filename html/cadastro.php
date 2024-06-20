@@ -70,7 +70,7 @@
                         
                         <p>Escolha sua foto de perfil</p>
 
-                        <div class="cadastro_perfil_foto">
+                        <div class="cadastro_perfil_foto"onclick="mandarfoto()">
                             <img class="perfil_imagem" src="../img/fotoperfil.png" alt="">
                             <div class="alterar_foto_cad">
                                 <label>Escolher foto de perfil</label>
@@ -87,10 +87,20 @@
                     </div>
 
                 </div>
-            
+                <form action="post" method="post" action="../php/fotoPerfil.php" id="fotoform">
+            <input type="file" onchange="sqlfoto()" id="enviarfotoinput">
+            </form>
             </div>
         </div>
 </div>
         </form>
+        <script>
+            function sqlfoto(){
+                document.getElementById("fotoform").submit();
+            }
+            function mandarfoto(){
+                document.getElementById("enviarfotoinput").click();
+            }
+        </script>
     </body>
 </html>
