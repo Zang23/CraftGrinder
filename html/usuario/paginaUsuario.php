@@ -57,8 +57,19 @@
                 <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
                 <div class="container_navbar_cadastro">
                     <div class="container_navbar_sair">
-                        <a href="paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../../img/fotoperfil.png"></a>
-                        <a class="cabecalho_sair" href="../../php/logoff.php">Sair</a>
+                        <div class="hover_perfil">
+                            <a href="paginaUsuario.php"><img class="imagem_fotoPerfil sair" src="../../img/fotoperfil.png"></a>
+                        
+                        <span class="perfil_modal">
+                            <div class="container_modal">
+                                <img class="imagem_fotoPerfilmodal" src="../../img/fotoperfil.png" alt="">
+                                <p class="nome_usuariomodal"><?= getUser($idUsuario)[1] ?></p>
+                                <a class="cabecalho_sair" href="../../php/logoff.php">Sair</a>
+                            </div>
+                        </span>
+                        </div>
+                        
+                        <a class="cabecalho_opcoes" href="../../php/logoff.php">Opções</a>
                     </div>
                 </div>
             </div>
