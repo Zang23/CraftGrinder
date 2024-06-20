@@ -5,7 +5,7 @@
 
     $verificado = verificaLogin();
 
-    if($_SESSION['perfilCadastrado']){
+    if($verificado == true){
         $idUsuario = $_SESSION['idUsuario'];
 
         
@@ -27,6 +27,10 @@
                 $userImg = "usuario/imgPerfilUsuarios/default.png";
             }
         }
+    }
+    else{
+        $userNick = "";
+        $userImg = "";
     }
     
 
