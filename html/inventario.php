@@ -100,6 +100,12 @@
         </tr>
         <tr class="inventariolinha">
             <td class="slotarmadura peitoral_slot" id="102"></td>
+            <td>
+            <form class="enviarskin" id="formularioSkinPost" method="post" action="../php/skin.php" enctype="multipart/form-data">
+                <input class="input_skin" type="file" name="arquivo" id="arquivo" onchange="mandarSkin()">
+            </form>
+
+            </td>
         </tr>
         <tr class="inventariolinha">
             <td class="slotarmadura calca_slot" id="101"></td>
@@ -158,6 +164,9 @@
 </div>
     <script src="../javascript/tradutor.js"></script>
     <?php
+    function enviarSkin(){
+
+    }
 
     function getJson()
     {
@@ -181,7 +190,7 @@
     {
         $pdo = new PDO('mysql:host=localhost;dbname=dbcraftgrinder', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+        $idUsuario = $_SESSION['idUsuario'];
         $sql_code = "SELECT imgskin FROM tbclientes WHERE idCliente='$idUsuario' ";
         $prepare = $pdo->prepare($sql_code);
         $count = $prepare->execute();
@@ -206,6 +215,12 @@
        ?>
         
         <script>
+
+            function mandarSkin(event) {
+            document.getElementById("formularioSkinPost").submit();
+            event.preventDefault();
+        }
+
             const slots = [];
             const ids = [];
             const counts = [];
