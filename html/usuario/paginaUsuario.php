@@ -110,9 +110,9 @@
                     <div class="invent_buttons">
 
                         <div class="button_enviar_inventario">
-                            <label for="inputInventario" class="invent_imp">Importe seu inventário</label> 
-                            <input type="file" id="inputInventario" name="inventario" style="display:none;" >
-                            <button type="submit" class="enviar_inventario">Enviar Inventário</button>
+                            <label for="inputInventario" class="invent_imp" id="labelInventario">Importe seu inventário</label> 
+                            <input type="file" onchange="enviarInventarioBotao()" id="inputInventario" name="inventario" style="display:none;" >
+                            <button type="submit" class="enviar_inventario" id="enviarInventario">Enviar Inventário</button>
                         </div>
                         <div class="button_mostrar_inventario">
                             <a href="../inventario.php" class="invent_most">
@@ -171,6 +171,11 @@
          
     ?>
     <script>
+        function enviarInventarioBotao(){
+            document.getElementById("labelInventario").style.borderRadius = " 1.5rem 1.5rem 0rem 0rem";
+            document.getElementById("enviarInventario").style.opacity = "1";
+            document.getElementById("enviarInventario").style.visibility = "visible";    
+        }
         function selecionarFotoPerfil(event){
             document.getElementById("arquivo").click();
             event.preventDefault();
