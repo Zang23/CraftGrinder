@@ -15,9 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($_FILES['arquivo']['size'] > 4194304) {
             echo "Erro: O tamanho do arquivo deve ser no máximo 4MB.";
         } else {
-            // Verifica o tipo de arquivo (apenas PNG)
             $tipoArquivo = $_FILES['arquivo']['type'];
-            if ($tipoArquivo != 'image/png' && $tipoArquivo != 'image/jpg') {
+            if ($tipoArquivo != 'image/png' && $tipoArquivo != 'image/jpeg' && $tipoArquivo != 'image/gif') {
                 echo "Erro: Favor selecionar um formato válido";
             } else {
                 // Define variáveis para o arquivo

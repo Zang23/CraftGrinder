@@ -191,10 +191,12 @@
             event.preventDefault();
         }
     </script>
+    <div class="container_fundo">
     <form class="enviarfotoperfil" id="formularioFotoPerfilPost" method="post" action="../../php/fotoPerfil.php" enctype="multipart/form-data">
         <label class="input_label">
         <input type="file" class="input_skin" name="arquivo" id="arquivo" onchange="mandarFotoPerfil()">
         </label>
     </form>
+    </div>
 </body>
 </html>
