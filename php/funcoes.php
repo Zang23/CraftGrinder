@@ -204,6 +204,10 @@
                 $caminhoPasta = "../img/itens/" . $nome;
                 mkdir($caminhoPasta);
                 $pasta = "../img/itens/" . $nome . "/";
+            }else if($tipo == "Guia"){
+                $caminhoPasta = "../img/guias/" . $nome;
+                mkdir($caminhoPasta);
+                $pasta = "../img/guias/" . $nome . "/";
             }else{
                 $caminhoPasta = "../img/" . strtolower($tipo) . "s/" . $nome;
                 mkdir($caminhoPasta);
