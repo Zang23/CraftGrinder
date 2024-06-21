@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/06/2024 às 16:00
+-- Tempo de geração: 21/06/2024 às 17:16
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -169,7 +169,23 @@ CREATE TABLE `tbitem` (
   `caminhoImagemItem` varchar(150) DEFAULT NULL,
   `galeriaImagensItem` mediumtext DEFAULT NULL,
   `requisitosItem` mediumtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Despejando dados para a tabela `tbitem`
+--
+
+INSERT INTO `tbitem` (`idItem`, `nomeItem`, `descItem`, `miniDescItem`, `tipoItem`, `imagemItem`, `caminhoImagemItem`, `galeriaImagensItem`, `requisitosItem`) VALUES
+(14, 'Picareta de Diamante', 'A picareta de diamante é a melhor picareta que pode ser feita no mundo normal so perdendo para a picareta de netherite, para fazer essa picareta é um processo simples, porém exige que passe algum tempo nas cavernas do jogo\r\n\r\n--imagem1;\r\n\r\nExiste outro meio de conseguir essas picaretas que é por meio de troca com villagers, e para isso, é necessario que tenha um villager ferramenteiro que possua o selo de esmeralda para conseguir esse item, trocando por esmeraldas', 'A Melhor picareta que pode ser feita no overworld ', 'Item', 'picaretaDiamante.png', '../img/itens/Picareta de Diamante/66758b5e8954b.png', 'YToxOntpOjA7czo4MDoiY3pvMU1Ub2lMaTR2YVcxbkwybDBaVzV6TDFCcFkyRnlaWFJoSUdSbElFUnBZVzFoYm5SbEx6WTJOelU0WWpWbE9EazJaREV1Y0c1bklqcz0iO30=', 'YToyOntpOjA7czoxMToiMyBkaWFtYW50ZXMiO2k6MTtzOjEwOiIyIGdyYXZldG9zIjt9'),
+(15, 'Alto-forno', 'O alto-forno é excelente para derreter minérios, sendo 2x mais eficiente que a fornalha normal, é sempre bom ter uma contigo, principalemente depois daquela mineração extensa\r\n\r\n--imagem1; ', 'Uma fornalha 2x mais eficiente para o derretimento de minérios, vai ajudar bastante na minerção', 'Item', 'altoForno.png', '../img/itens/Alto-forno/66758d78e4da9.png', 'YToxOntpOjA7czo2ODoiY3pvME1Ub2lMaTR2YVcxbkwybDBaVzV6TDBGc2RHOHRabTl5Ym04dk5qWTNOVGhrTnpobE5HWTBOUzV3Ym1jaU93PT0iO30=', 'YTozOntpOjA7czo4OiI1IEZlcnJvcyI7aToxO3M6MTE6IjEgRm9ybmFsaGEgIjtpOjI7czoxNDoiMyBQZWRyYXMgbGlzYXMiO30='),
+(16, 'Olho do Ender', 'Item essencial para chegar ao fim, podendo ser utilizado tanto para achar o portal do fim dentro do mundo normal, quanto para preencher o portal do fim para chegar no The End\r\n\r\n--imagem1;\r\n--imagem2;', 'Item essencial para chegar no fim do jogo', 'Item', 'olhoEnder.png', '../img/itens/Olho do Ender/66758ea20a4fd.png', 'YToyOntpOjA7czo3MjoiY3pvME5Eb2lMaTR2YVcxbkwybDBaVzV6TDA5c2FHOGdaRzhnUlc1a1pYSXZOalkzTlRobFlUSXdZVFkyTkM1d2JtY2lPdz09IjtpOjE7czo3MjoiY3pvME5Eb2lMaTR2YVcxbkwybDBaVzV6TDA5c2FHOGdaRzhnUlc1a1pYSXZOalkzTlRobFlUSXdZVGM0TVM1d2JtY2lPdz09Ijt9', 'YToyOntpOjA7czoxODoiMSBQw6lyb2xhIGRvIGVuZGVyIjtpOjE7czoxNDoiMSBQw7MgZGUgYmxhemUiO30='),
+(17, 'Bússola de retomada', 'Item muito util para achar o local da sua ultima morte, os recursos podem inacessiveis no começo, mas não deixa de ser util para sua jogatina, principalmente quando tem itens mais importantes que não pode perder\r\n--imagem1;', 'Item muito util para achar o local da sua ultima morte', 'Item', 'bussola.png', '../img/itens/Bússola de retomada/6675904322f70.png', 'YToxOntpOjA7czo4MDoiY3pvMU1Ub2lMaTR2YVcxbkwybDBaVzV6TDBMRHVuTnpiMnhoSUdSbElISmxkRzl0WVdSaEx6WTJOelU1TURRek1qTXdZMkV1Y0c1bklqcz0iO30=', 'YToyOntpOjA7czoxMDoiMSBCw7pzc29sYSI7aToxO3M6MTY6IjggRnJhZ21lbnRvcyBlY28iO30='),
+(18, 'Botas de Couro', 'Única armadura do jogo que pode ser tingida no jogo, podendo fazer combinações incriveis, teste sua imaginação com as combinações diversas\r\n--imagem1;\r\n', 'Única armadura do jogo que pode ser tingida no jogo, podendo fazer combinações incriveis ', 'Item', 'botaCouro.png', '../img/itens/Botas de Couro/6675917f62a23.png', 'YToxOntpOjA7czo3MjoiY3pvME5Ub2lMaTR2YVcxbkwybDBaVzV6TDBKdmRHRnpJR1JsSUVOdmRYSnZMelkyTnpVNU1UZG1OakppWm1JdWNHNW5JanM9Ijt9', 'YToxOntpOjA7czo3OiI0IENvdXJvIjt9'),
+(19, 'Arco', 'Uma otima arma para atacar de longe e causar muito dano, além de ser melhor que a besta em relação a rapidez entre os disparos \r\n--imagem1;\r\n', 'Uma otima arma para atacar de longe e causar muito dano', 'Item', 'arco.png', '../img/itens/Arco/6675925e865dc.png', 'YToxOntpOjA7czo2MDoiY3pvek5Ub2lMaTR2YVcxbkwybDBaVzV6TDBGeVkyOHZOalkzTlRreU5XVTROamN4WWk1d2JtY2lPdz09Ijt9', 'YToyOntpOjA7czoxMDoiMyBHcmF2ZXRvcyI7aToxO3M6ODoiMyBMaW5oYXMiO30='),
+(20, 'Escudo', 'Melhor forma de se defender no jogo, além das armaduras, talvez a arma mais forte do jogo, podendo bloquear golpes de qualquer oponente \r\n--imagem1;', 'Melhor forma de se defender no jogo, além das armaduras', 'Item', 'escudo.png', '../img/itens/Escudo/667593243b74f.png', 'YToxOntpOjA7czo2MDoiY3pvek56b2lMaTR2YVcxbkwybDBaVzV6TDBWelkzVmtieTgyTmpjMU9UTXlORE5pT0RreExuQnVaeUk3Ijt9', 'YToyOntpOjA7czoxNjoiMSBCYXJyYSBkZSBGZXJybyI7aToxO3M6Mzk6IjYgVMOhYnVhcyBkZSBtYWRlaXJhIChkZSBxdWFscXVlciB0aXBvKSI7fQ=='),
+(21, 'Peitoral de Netherite', 'Parte da armadura que ofere a maior proteção do jogo, envolve um processo mais complexo para ser feita. tendo que ser usado uma bancada diferente para sua construção, a bancada de ferraria, além disso, também é necessario um molde de ferraria que pode ser encontrado em Dugeons no Nether, um peitoral de diamante e uma barra de netherite que tambem so pode ser adiquirida no Nether\r\n--imagem1;\r\n', 'Parte da armadura que ofere a maior proteção do jogo', 'Item', 'netherite peitoral.png', '../img/itens/Peitoral de Netherite/6675948c596d4.png', 'YToxOntpOjA7czo4MDoiY3pvMU1qb2lMaTR2YVcxbkwybDBaVzV6TDFCbGFYUnZjbUZzSUdSbElFNWxkR2hsY21sMFpTODJOamMxT1RRNFl6VTVPREk1TG5CdVp5STciO30=', 'YTo0OntpOjA7czoyMToiMSBCYW5jYWRhIGRlIGZlcnJhcmlhIjtpOjE7czoxOToiMSBNb2xkZSBkZSBmZXJyYXJpYSI7aToyO3M6MjM6IjEgUGVpdG9yYWwgZGUgRGlhbWFudGUgIjtpOjM7czoyMDoiMSBCYXJyYSBkZSBOZXRoZXJpdGUiO30='),
+(22, 'Calça de Diamante', ' A melhor calça que pode ser feita no mundo normal--imagem1;', ' A melhor calça que pode ser feita no mundo normal', 'Item', 'calca dima.png', '../img/itens/Calca de Diamante/667595532986a.png', 'YToxOntpOjA7czo3NjoiY3pvME9Eb2lMaTR2YVcxbkwybDBaVzV6TDBOaGJHTmhJR1JsSUVScFlXMWhiblJsTHpZMk56VTVOVFV6TWprNVltWXVjRzVuSWpzPSI7fQ==', 'YToxOntpOjA7czoxMToiNyBEaWFtYW50ZXMiO30='),
+(23, 'Capacete de Ferro', 'O melhor capacete para ser feito no inicio do jogo, sendo possivel craftar com apenas 5 ferros, sendo bem barato no inicio do jogo e oferecendo uma proteção moderada\r\n\r\n--imagem1;', 'O melhor capacete para ser feito no inicio do jogo', 'Item', 'capacete.png', '../img/itens/Capacete de Ferro/667595ed167cf.png', 'YToxOntpOjA7czo3NjoiY3pvME9Eb2lMaTR2YVcxbkwybDBaVzV6TDBOaGNHRmpaWFJsSUdSbElFWmxjbkp2THpZMk56VTVOV1ZrTVRZNU0ySXVjRzVuSWpzPSI7fQ==', 'YToxOntpOjA7czoxNzoiNSBCYXJyYXMgZGUgZmVycm8iO30=');
 
 -- --------------------------------------------------------
 
@@ -284,7 +300,7 @@ ALTER TABLE `tbguia`
 -- AUTO_INCREMENT de tabela `tbitem`
 --
 ALTER TABLE `tbitem`
-  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `tbmaquina`
