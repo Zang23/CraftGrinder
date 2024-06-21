@@ -1,15 +1,20 @@
 <?php
 
+ob_start();
+
     require '../../php/conexao.php';
     $id = $_GET['editar'];
     $tipo = $_GET['tipo'];
-    echo $tipo;
 
     $sql_code = "SELECT * FROM tb$tipo WHERE id$tipo = '$id'";
     $prepare = $pdo->prepare($sql_code);
     $count = $prepare->execute();
-
     $artigos = $prepare->fetchAll();
+
+    $code_sql = "SELECT * FROM tbArtigo WHERE idArtigo = '$id'";
+    $prepare = $pdo->prepare($code_sql);
+    $count = $prepare->execute();
+    $artigos_os = $prepare->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -61,6 +66,7 @@
                 <input type="text" class="inputscript" name="descArtigo" value=" <?= $artigo[$descArtigo] ?>">
             <?php
             }
+
         ?> 
 
                 <div class="container_button">
@@ -80,6 +86,9 @@
 
             $update_code = "UPDATE tb$tipo SET nome$tipo = '$nome', desc$tipo = '$descArtigo', miniDesc$tipo = '$miniDescArtigo' WHERE id$tipo = '$id' ";
             $pdo->exec($update_code);
+
+            $uptade_artigo = "UPDATE tbartigo SET nomeArtigo = '$nome' WHERE idArtigo = '$id'";
+            $pdo->exec($uptade_artigo);
 
             header('location: editarArtigo.php');
         }
