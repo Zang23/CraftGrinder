@@ -163,18 +163,6 @@ html{
     right: 0;
 }
 
-.imagem_align{
-    width: 1150px;
-    height: 450px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.imagem_att{
-    width: auto;
-    height: 100%;
-}
-
 /*----*/
 
 .conteudo_container{
@@ -199,6 +187,37 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.imagem_align{
+    width: 1150px;
+    height: 450px;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imagem_att{
+    width: auto;
+    height: 100%;
+}
+.descricao_att{
+    width: 100%;
+}
+.desc_align{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-right: 2rem;
+    gap: 2rem;
+}
+.desc_att{
+    font-size: 16px;
+    text-align: justify;
+    color: var(--escuro2);
+}
+.titulo_att{
+    font-size: 24px;
+    color: var(--claro);
 }
 
 .container_index_atualizacao{

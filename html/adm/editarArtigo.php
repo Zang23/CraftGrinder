@@ -103,7 +103,7 @@
                             <th><?= $artigo['nomeAtualizacao'] ?></th>
                             <th><?= $artigo['descAtualizacao'] ?></th>
                             <th><?= $artigo['imagemAtualizacao'] ?></th>
-                            <td class="td_simbolo"> <a href="?editar=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined d">Slowoidoijwoi</span></a></td class="td_simbolo">
+                            <td class="td_simbolo"> <a href="?editar=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined d">edit_note</span></a></td class="td_simbolo">
                             <td class="td_simbolo"> <a href="?delete=<?=$artigo['idAtualizacao']?>&nome=<?=$artigo['nomeAtualizacao']?>"><span class="material-symbols-outlined d">delete</span></a></td class="td_simbolo">
                         </tr>
                         <?php
