@@ -122,7 +122,7 @@
             ?>
             <div id="carousel_slide1" class="carousel__slide">
                 <div class="imagem_align">
-                    slide 1
+                    slide 3
                 </div>
             </div>
             <div id="carousel_slide2" class="carousel__slide">
@@ -132,7 +132,7 @@
             </div>
             <div id="carousel_slide3" class="carousel__slide">
                 <div class="imagem_align">
-                    slide 3
+                    slide 1
                 </div>
             </div>
             
