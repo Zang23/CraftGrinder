@@ -5,6 +5,9 @@
     visibility: hidden;
     opacity: 0;
 }
+.container_fundo{
+    background-color: var(--fundo);
+}
 .container_perfil{
     display: flex;
     align-items: center;
