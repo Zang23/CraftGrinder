@@ -184,7 +184,7 @@
                     <?php    
                     }  ?>
                     
-                <th class="conteudo_cards_container final"> 
+                <th class="conteudo_cards_container final _maior"> 
                     <a  href="ler_mais/farms.php"> <p class="conteudo_lermais"> Ler mais </p> </a>
                 </th>
                         
@@ -228,7 +228,7 @@
                 }  ?>
 
 
-                <th class="conteudo_cards_container final">
+                <th class="conteudo_cards_container final _maior">
                     <a  href="ler_mais/guia.php"> <p class="conteudo_lermais"> Ler mais </p> </a>
                 </th>
                 
@@ -267,7 +267,7 @@
                 } ?>
                
 
-                <th class="conteudo_cards_item_container final">
+                <th class="conteudo_cards_item_container final _menor">
                     <a href="ler_mais/itens.php"> <p class="conteudo_lermais" >Ler mais</p> </a>
                 </th>
             </tr>
@@ -304,7 +304,7 @@
                 <?php    
                 }  ?>
 
-                <th class="conteudo_cards_item_container final">
+                <th class="conteudo_cards_item_container final _menor">
                     <a href="ler_mais/maquinas.php"> <p class="conteudo_lermais" >Ler mais</p> </a>
                 </th>
             </tr>
