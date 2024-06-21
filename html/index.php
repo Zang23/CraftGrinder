@@ -173,7 +173,7 @@
                     <?php
 
                     foreach($farms as $farm){?>
-                        <th class="conteudo_cards_container">
+                        <th class="conteudo_cards_container _maior">
                             <a href="ler_mais/artigos/modelo.php?id=<?=$farm['idFarm']?>&tipo=<?=$farm['tipoFarm']?>" class="link_">
                             <img class="conteudo_imagem" src="<?= $farm['caminhoImagemFarm'] ?>">
                             <p class="conteudo_cards_titulo"> <?= $farm['nomeFarm'] ?> </p>
@@ -216,7 +216,7 @@
                 <?php
 
                 foreach($guias as $guia){?>
-                    <th class="conteudo_cards_container">
+                    <th class="conteudo_cards_container _maior">
                         <a href="ler_mais/artigos/modelo.php?id=<?=$guia['idGuia']?>&tipo=<?=$guia['tipoGuia']?>" class="link_">
                         <img class="conteudo_imagem" src="<?= $guia['caminhoImagemGuia'] ?>">
                         <p class="conteudo_cards_titulo"> <?= $guia['nomeGuia'] ?> </p>
@@ -255,9 +255,9 @@
                 <?php
 
                 foreach($itens as $item){?>
-                    <th class="conteudo_cards_container">
+                    <th class="conteudo_cards_container _menor">
                         <a href="ler_mais/artigos/modelo.php?id=<?=$item['idItem']?>&tipo=<?=$item['tipoItem']?>" class="link_">
-                        <img class="conteudo_imagem" src="<?= $item['caminhoImagemItem'] ?>">
+                        <img class="conteudo_imagem_menor" src="<?= $item['caminhoImagemItem'] ?>">
                         <p class="conteudo_cards_titulo"> <?= $item['nomeItem'] ?> </p>
                         <p class="conteudo_descricao"> <?= $item['miniDescItem']?> </p>
                         </a>
@@ -293,7 +293,7 @@
                 <?php
 
                 foreach($maquinas as $maquina){?>
-                    <th class="conteudo_cards_container">
+                    <th class="conteudo_cards_container _menor">
                         <a href="ler_mais/artigos/modelo.php?id=<?=$maquina['idMaquina']?>&tipo=<?=$maquina['tipoMaquina']?>" class="link_">
                         <img class="conteudo_imagem" src="<?= $maquina['caminhoImagemMaquina'] ?>">
                         <p class="conteudo_cards_titulo"> <?= $maquina['nomeMaquina'] ?> </p>
