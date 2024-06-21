@@ -23,6 +23,8 @@
 
 .container_principal{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 75%;
     background-color: var(--fundoCards);
     min-height: 250vh;
@@ -43,7 +45,7 @@
 .container_sidebar{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 1000px;
     background-color: var(--claro2);
     box-shadow: 0 0.625rem 1.25rem 0 #00000086;
     border-left: solid 5px var(--claro);
@@ -71,6 +73,7 @@
 
 .requisitos_lista{
     list-style-type: none;
+    font-size: 14px;
 }
 
 .requisitos_lista li:before{
@@ -80,5 +83,6 @@
 .imagemModelo{
     width: 50rem;
     height: 25rem;
+    margin: 1rem;
 }
 
