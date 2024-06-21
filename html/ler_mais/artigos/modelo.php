@@ -1,3 +1,38 @@
+<?php
+    session_start();
+    require '../../../php/funcoes.php';
+    require '../../../php/conexao.php';
+
+    $verificado = verificaLogin();
+
+    if($verificado == true){
+        $idUsuario = $_SESSION['idUsuario'];
+
+        
+
+        $sql_code = "SELECT * FROM tbclientes WHERE idCliente = '$idUsuario'";
+        $prepare = $pdo->prepare($sql_code);
+        $count = $prepare->execute();
+        $usuarios = $prepare->fetchAll();
+
+        $user_code = "SELECT nicknameCliente, imgCliente FROM tbclientes WHERE idCliente = '$idUsuario' ";
+        $prepare = $pdo->prepare($user_code);
+        $count = $prepare->execute();
+        $users = $prepare->fetchAll();
+
+        foreach($users as $user){
+            $userNick = $user['nicknameCliente'];
+            $userImg = '../../usuario/imgPerfilUsuarios/'.$user['imgCliente'];
+            if($user['imgCliente'] === null){
+                $userImg = "../../usuario/imgPerfilUsuarios/default.png";
+            }
+        }
+    }
+    else{
+        $userNick = "";
+        $userImg = "";
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +53,7 @@
             <p class="cabecalho_titulo"><a href="../../index.php">CraftGrinder</a></p>
             <div class="cabecalho_superior_box">
                 <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
-                <a class="cabecalho_cadastro" href="../cadastro.html"> Cadastrar</a>
-                <a class="cabecalho_entrar" href="../login.html">Entrar</a>
+                <?= mostraLogin($verificado, $userNick, $userImg)?>
             </div>
         </div>
         
@@ -35,7 +69,6 @@
                 <?php
 
                 require "../../../php/conexao.php";
-                require "../../../php/funcoes.php";
 
                 $id = $_GET['id'];
                 $tipo = $_GET['tipo'];

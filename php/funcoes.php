@@ -14,8 +14,8 @@
 
         if($verificado == false){?>
             <div class="container_navbar_cadastro">
-                <a class="cabecalho_cadastro" href="cadastro.php">Cadastrar</a>
-                <a class="cabecalho_entrar" href="login.html">Entrar</a>
+                <a class="cabecalho_cadastro" href="http://localhost/CraftGrinder/html/cadastro.php">Cadastrar</a>
+                <a class="cabecalho_entrar" href="http://localhost/CraftGrinder/html/login.html">Entrar</a>
                 
             </div>
         <?php
@@ -23,17 +23,17 @@
         }else if ($verificado){?>
             <div class="container_navbar_sair">
                 <div class="hover_perfil">
-                    <a href="usuario/paginaUsuario.php"><img class="imagem_fotoPerfil sair" src=<?= $userImg ?>></a>
+                    <a href="http://localhost/CraftGrinder/html/usuario/paginaUsuario.php"><img class="imagem_fotoPerfil sair" src=<?= $userImg ?>></a>
                         
                     <span class="perfil_modal">
                         <div class="container_modal">
                             <img class="imagem_fotoPerfilmodal" src=<?= $userImg ?> alt="">
                             <p class="nome_usuariomodal"><?= $userNick ?></p>
-                            <a class="cabecalho_sair" href="../php/logoff.php">Sair</a>
+                            <a class="cabecalho_sair" href="http://localhost/CraftGrinder/php/logoff.php">Sair</a>
                         </div>
                     </span>
                 </div>
-                <a class="cabecalho_opcoes" href="usuario/paginaUsuario.php">Opções</a>
+                <a class="cabecalho_opcoes" href="http://localhost/CraftGrinder/html/usuario/paginaUsuario.php">Opções</a>
             </div>
         <?php
         }
