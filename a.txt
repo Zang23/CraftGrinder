@@ -1,0 +1,21 @@
+Passo 1. Crie uma base de 3 x 10 blocos que será a base do canhão. Até dominar a técnica pode ser interessante utilizar um material resistente a explosões, como Obsidiana;
+--imagem1;
+Passo 2. Na ponta que fica o "pavio", coloque três blocos a mais e um Botão no meio com Redstone nas pontas;
+--imagem2;
+Passo 3. Crie oito Repetidores de Redstone que vão atrasar o sinal de Redstone do seu canhão de TNT;
+--imagem3;
+Passo 4. Crie nove Ejetores, oito dos quais providenciarão TNT para propulsão e um que efetuará o disparo;
+--imagem4;
+Passo 5. Monte o lado esquerdo com oito blocos de Obsidiana (ou o material que escolher) e um Ejetor no final virado para dentro. Posicione também oito Repetidores de Redstone acima dos blocos e interaja com eles para aumentar o atraso de cada um ao máximo. Por fim, coloque um fio de Redstone acima do Ejetor;
+--imagem5;
+Passo 6. Do lado direito posicione os oito Ejetores virados para dentro e coloque Redstone sobre eles, conectada ao botão do Passo 2;
+--imagem6;
+Passo 7. Adicione um Balde de Água em frente ao botão que irá carregar a TNT e impedir que ela destrua o canhão ao disparar;
+--imagem7;
+Passo 8. Na ponta do canhão, adicione uma Laje de qualquer material em frente ao último Ejetor para que a TNT não ultrapasse a água;
+--imagem8;
+Passo 9. Seu canhão deve ter essa aparência quando visto de cima;
+--imagem9;
+Passo 10. Crie blocos de TNT e carregue cada Ejetor com eles. Quando o Botão for pressionado, os blocos de TNT serão jogados na água. Ao ficarem perto de explodir, o último Ejetor coloca um bloco de TNT a mais na ponta, que será disparado pela explosão dos outros como em um canhão.
+--imagem10;
+

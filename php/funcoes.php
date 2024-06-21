@@ -140,8 +140,8 @@
                     echo $erro;
                 }
 
-                if($tamanho > 2097152){
-                    die("Suas imagens são muito pesadas. O tamanho limite suportado");
+                if($tamanho > 6291456){
+                    die("Suas imagens são muito pesadas. O tamanho limite suportado é de 6mb");
                 }
 
                 $nomeArquivo = $nome_arquivo;
@@ -188,8 +188,8 @@
                 die("Houve um erro ao enviar sua imagem (imagem capa)");
             }
     
-            if($arquivo['size'] > 2097152){
-                die("Sua imagem é muito pesada, o tamanho máximo suportado é de 2MB");
+            if($arquivo['size'] > 6291456){
+                die("Sua imagem é muito pesada, o tamanho máximo suportado é de 6MB");
             }
 
 
