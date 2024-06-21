@@ -82,29 +82,8 @@
 
     <h1 id="atualizacoes" class="navbar_titulo"> Últimas Atualizações</h1>
 
-    <!--<div class="conteudo">
-        <div class="conteudo_atualizacoes">
-            <?php
-                $atualizacao_code = "SELECT idAtualizacao, caminhoImagemAtualizacao FROM tbatualizacao ORDER BY idAtualizacao DESC LIMIT 3 ";
-                $prepareAtualizacao = $pdo->prepare($atualizacao_code);
-                $count = $prepareAtualizacao->execute();
-                $atualizacoes = $prepareAtualizacao->fetchAll(PDO::FETCH_ASSOC);?>
-
-                <div class="container_index_atualizacao">
-                    <?php  
-                    foreach($atualizacoes as $atualizacao){?>
-                        
-                        <img class="indexImagem" src="<?=$atualizacao['caminhoImagemAtualizacao']?>"><?php
-                    }
-
-                    ?>
-                </div>
-
-        </div>
-    </div>-->
-
     <?php
-        $atualizacao_code = "SELECT idAtualizacao, caminhoImagemAtualizacao FROM tbatualizacao ORDER BY idAtualizacao DESC LIMIT 3 ";
+        $atualizacao_code = "SELECT idAtualizacao, caminhoImagemAtualizacao, nomeAtualizacao, descAtualizacao FROM tbatualizacao ORDER BY idAtualizacao DESC LIMIT 3 ";
         $prepareAtualizacao = $pdo->prepare($atualizacao_code);
         $count = $prepareAtualizacao->execute();
         $atualizacoes = $prepareAtualizacao->fetchAll(PDO::FETCH_ASSOC);
@@ -129,6 +108,12 @@
                         <div class="imagem_align">
                             <img src="<?=$atualizacao['caminhoImagemAtualizacao'] ?>" class="imagem_att"> 
                         </div>
+                        <div class="descricao_att">
+                            <div class="desc_align">
+                                <p class="titulo_att"><?=$atualizacao['nomeAtualizacao'] ?></p>
+                                <p class="desc_att"><?=$atualizacao['descAtualizacao'] ?></p>
+                            </div>
+                        </div>
                     </div>
 
                     <?php
@@ -137,7 +122,7 @@
             ?>
             <div id="carousel_slide1" class="carousel__slide">
                 <div class="imagem_align">
-                    slide 1
+                    slide 3
                 </div>
             </div>
             <div id="carousel_slide2" class="carousel__slide">
@@ -147,7 +132,7 @@
             </div>
             <div id="carousel_slide3" class="carousel__slide">
                 <div class="imagem_align">
-                    slide 3
+                    slide 1
                 </div>
             </div>
             

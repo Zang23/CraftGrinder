@@ -68,13 +68,12 @@
 
                     <div class="cadastro_input_container">
                         
-                        <p>Escolha sua foto de perfil</p>
+                        <p class="formulario_cadastro">Bem vindo!</p>
 
-                        <div class="cadastro_perfil_foto"onclick="mandarfoto()">
-                            <img class="perfil_imagem" src="../img/fotoperfil.png" alt="">
-                            <div class="alterar_foto_cad">
-                                <label>Escolher foto de perfil</label>
-                            </div>
+                        <div class="cadastro_perfil_foto">
+                            <img class="perfil_imagem" src="../img/Honey_Block_hd.jpg" alt="">
+                            <p class="titulo_logo">CraftGrinder</p>
+                            
                         </div>
 
                         <div class="content_criar_conta">
@@ -86,21 +85,20 @@
 
                     </div>
 
-                </div>
-                <form action="post" method="post" action="../php/fotoPerfil.php" id="fotoform">
-            <input type="file" onchange="sqlfoto()" id="enviarfotoinput">
-            </form>
+              
             </div>
         </div>
 </div>
         </form>
         <script>
             function sqlfoto(){
-                document.getElementById("fotoform").submit();
+                document.getElementById("arquivo").submit();
             }
             function mandarfoto(){
                 document.getElementById("enviarfotoinput").click();
             }
         </script>
+          </div>
+
     </body>
 </html>
