@@ -19,6 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/editarartigoscript.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Document</title>
 </head>
 <body>
@@ -33,9 +34,16 @@
         
     </header>
 
+
     <form action="" method="post">
 
         <p class="titulo_editar_script">Editar: <?= $_GET['nome'] ?></p>
+
+        <div class="titulo_edicao_button_div">
+            <a class="titulo_edicao_button" href="../adm/adm.php">
+                <span class="material-symbols-outlined seta">arrow_back</span>
+            </a>
+        </div>
         
         <div class="container_input_editar">
             <div class="content_editar">

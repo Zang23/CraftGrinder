@@ -1,6 +1,16 @@
 .index_fundo{
     height: 100vh;
 }
+
+.seta{
+    color: var(--texto);
+    margin: 0 0 1rem 7rem;
+}
+.seta:hover{
+    color: var(--escuro2);
+    transition: 0.5s;
+}
+
 .titulo_editar_script{
     color: var(--texto);
     font-size: 20px;
