@@ -16,10 +16,12 @@
     }
 
 
+
+
     function getUser(int $id){
         require "../../php/conexao.php";
 
-        $user_code = "SELECT emailCliente, nicknameCliente, imgCliente FROM tbclientes WHERE idCliente = '$id' ";
+        $user_code = "SELECT emailCliente, nicknameCliente, imgCliente, idCliente FROM tbclientes WHERE idCliente = '$id' ";
         $prepare = $pdo->prepare($user_code);
         $count = $prepare->execute();
         $users = $prepare->fetchAll();
@@ -31,9 +33,17 @@
             if($userImg === null){
                 $userImg = "default.png";
             }
-            return [$userEmail, $userNick, $userImg];
+            return [$userEmail, $userNick, $userImg, $user['idCliente']];
         }
     }
+
+    if (isset($_GET['id'])){
+        $idFoto = $_GET['id'];
+        $exclui_foto = "UPDATE tbclientes SET imgCliente = NULL WHERE idCliente = '$idFoto'";
+        $pdo->exec($exclui_foto);
+    }
+    
+
 
 ?>
 
@@ -95,7 +105,7 @@
                             <div class="container_alterarfoto" onclick="selecionarFotoPerfil()">
                                 <label for="">Alterar Foto</label>
                             </div>
-                            <button class="button_excluir" >Excluir foto de perfil</button>
+                            <a href="?id=<?=getUser($idUsuario)[3]?>"><button class="button_excluir" >Excluir foto de perfil</button></a>
                     </div>
 
                 </div>
