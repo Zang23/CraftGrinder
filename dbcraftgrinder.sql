@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/06/2024 às 17:16
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 21/06/2024 às 20:49
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,7 +50,8 @@ INSERT INTO `tbartigo` (`idArtigo`, `nomeArtigo`, `tipoArtigo`) VALUES
 (130, 'Canhão de tnt', 'Maquina'),
 (132, 'Fornalha industrial', 'Maquina'),
 (133, 'maquina voadora (simples)', 'Maquina'),
-(134, 'Portal do nether automático', 'Maquina');
+(134, 'Portal do nether automático', 'Maquina'),
+(135, 'Clava - Arma mais recente adicionada', 'Atualizacao');
 
 -- --------------------------------------------------------
 
@@ -66,6 +67,15 @@ CREATE TABLE `tbatualizacao` (
   `imagemAtualizacao` varchar(250) DEFAULT NULL,
   `caminhoImagemAtualizacao` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tbatualizacao`
+--
+
+INSERT INTO `tbatualizacao` (`idAtualizacao`, `nomeAtualizacao`, `descAtualizacao`, `tipoAtualizacao`, `imagemAtualizacao`, `caminhoImagemAtualizacao`) VALUES
+(1, 'Bancada Automática - Novo Item da 1.21', 'A bancada automática auxilia na fabricação de receitas através dos itens presentes no seu inventário. Por mais que seja prática, sua utilização necessita de um uso recorrente de Redstone, além disso possui uma baixa capacidade de armazenamento. Quando o item estiver pronto, a bancada ejetará este pela parte da frente de seu modelo ou para um contêiner escolhido pelo usuário. ', NULL, 'bancada_automatica.jpg', '../img/atualizacoes/Bancada Automatica - Novo Item da 1.21/6674d0df5834a.jpg'),
+(2, 'Clava - Arma mais recente adicionada', 'A clava, também apelidada de maça, é uma ferramenta de combate diferente das demais, uma vez que a intensidade de seu ataque depende da altura do jogador antes de realizar o golpe. Sua fabricação é feita por meio de um Núcleo Pesado e uma Vara de Vórtice, ambos anteriormente adicionados. Essa ferramenta de combate pode ser facilmente usada para matar instantaneamente uma outra entidade.', 'Atualizacao', 'clava.jpg', '../img/atualizacoes/Clava - Arma mais recente adicionada/6675c0ee8742b.jpg'),
+(3, 'Versão mais recente - 1.21 do Minecraft', 'A atualização vem com a descrição oficial de \"combate, aventuras e ajustes\", além de incluir várias variantes do bloco de cobre e as câmaras do desafio, também inclui a nova bancada automática, novas variantes do bloco de tufo, a nova arma Clava e novas criaturas hostis que são geradas nas câmaras do desafio.', NULL, 'novaversao.jpg', '../img/atualizacoes/Versao mais recente - 1.21 do Minecraft/6674c237bc787.jpg');
 
 -- --------------------------------------------------------
 
@@ -270,13 +280,13 @@ ALTER TABLE `tbmaquina`
 -- AUTO_INCREMENT de tabela `tbartigo`
 --
 ALTER TABLE `tbartigo`
-  MODIFY `idArtigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `idArtigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT de tabela `tbatualizacao`
 --
 ALTER TABLE `tbatualizacao`
-  MODIFY `idAtualizacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idAtualizacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `tbclientes`

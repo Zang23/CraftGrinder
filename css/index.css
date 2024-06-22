@@ -236,9 +236,11 @@ html{
 }
 
 .conteudo_cards_container{
-    gap: 3rem;
     background-color: var(--claro3);
     border-radius: 1.25rem 0.625rem;
+}
+.final{
+    width: 25%;
 }
 ._maior{
     height: 25rem;
