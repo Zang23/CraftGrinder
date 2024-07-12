@@ -236,26 +236,9 @@
     $skin = getSkin();
 
     
-$jsonString = '[
-    {"count":1,"Slot":0,"components":{"minecraft/damage":8},"id":"minecraft/iron_pickaxe"},
-    {"count":1,"Slot":1,"id":"minecraft/furnace"},
-    {"count":18,"Slot":2,"id":"minecraft/oak_planks"},
-    {"count":2,"Slot":3,"id":"minecraft/diorite"},
-    {"count":4,"Slot":5,"id":"minecraft/cobbled_deepslate"},
-    {"count":1,"Slot":6,"id":"minecraft/oak_sapling"},
-    {"count":2,"Slot":7,"id":"minecraft/gunpowder"},
-    {"count":1,"Slot":9,"components":{"minecraft/damage":8},"id":"minecraft/wooden_pickaxe"},
-    {"count":1,"Slot":10,"components":{"minecraft/damage":26},"id":"minecraft/stone_axe"},
-    {"count":22,"Slot":11,"id":"minecraft/coal"},
-    {"count":1,"Slot":12,"components":{"minecraft/damage":73},"id":"minecraft/stone_pickaxe"},
-    {"count":1,"Slot":14,"id":"minecraft/raw_gold"},
-    {"count":3,"Slot":15,"id":"minecraft/cobblestone"},
-    {"count":7,"Slot":16,"id":"minecraft/granite"},
-    {"count":1,"Slot":35,"id":"minecraft/pointed_dripstone"},
-    {"count":1,"Slot":100,"components":{"minecraft/damage":2},"id":"minecraft/diamond_boots"}
-]';
 
-$array_de_objetos = json_decode($jsonString); // Passando o segundo parâmetro true para obter um array associativo
+
+$array_de_objetos = json_decode($jsonCodificado); // Passando o segundo parâmetro true para obter um array associativo
 
  //$array_de_objetos = json_decode($jsonCodificado);
 
