@@ -6,7 +6,7 @@ let mouseX = 0;
 let mouseY = 0;
 let cubeX = corpoRect.left + corpoRect.width / 2; // Posição X do centro da div estilizada
 let cubeY = corpoRect.top + corpoRect.height / 2; // Posição Y do centro da div estilizada
-let easing = 0.25;
+let easing = 0.05;
 
 document.addEventListener('mousemove', updateMouse);
 

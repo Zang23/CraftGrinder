@@ -10,23 +10,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/modelosteve.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
-<?php
+    <?php
     session_start();
     require '../php/funcoes.php';
     require '../php/conexao.php';
 
     $verificado = verificaLogin();
-    
-    if($_SESSION['perfilCadastrado']){
+
+    if ($_SESSION['perfilCadastrado']) {
         $idUsuario = $_SESSION['idUsuario'];
 
-        
+
 
         $sql_code = "SELECT * FROM tbclientes WHERE idCliente = '$idUsuario'";
         $prepare = $pdo->prepare($sql_code);
@@ -38,159 +39,184 @@
         $count = $prepare->execute();
         $users = $prepare->fetchAll();
 
-        foreach($users as $user){
+        foreach ($users as $user) {
             $userNick = $user['nicknameCliente'];
-            $userImg = 'usuario/imgPerfilUsuarios/'.$user['imgCliente'];
-            if($user['imgCliente'] === null){
+            $userImg = 'usuario/imgPerfilUsuarios/' . $user['imgCliente'];
+            if ($user['imgCliente'] === null) {
                 $userImg = "usuario/imgPerfilUsuarios/default.png";
             }
         }
     }
 
-    
-?>
 
-<div class="index_fundo">
+    ?>
 
-    <header class="cabecalho_container r">
-        <div class="cabecalho_superior_container">
-            <p class="cabecalho_titulo"><a href="index.php">CraftGrinder</a></p>
-            <div class="cabecalho_superior_box">
-                <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
-                <div class="container_navbar_cadastro">
-                    <?= mostraLogin($verificado, $userNick, $userImg)?>
+    <div class="index_fundo">
+
+        <header class="cabecalho_container r">
+            <div class="cabecalho_superior_container">
+                <p class="cabecalho_titulo"><a href="index.php">CraftGrinder</a></p>
+                <div class="cabecalho_superior_box">
+                    <input class="cabecalho_pesquisar" type="text" placeholder="Pesquisar">
+                    <div class="container_navbar_cadastro">
+                        <?= mostraLogin($verificado, $userNick, $userImg) ?>
+                    </div>
                 </div>
             </div>
+        </header>
+
+
+        <h1 class="titulo_inventario">Seu inventário</h1>
+
+        <div class="container_inventario">
+
+            <table class="tabela">
+                <tr class="inventariolinha">
+                    <td class="slotarmadura cabeca_slot" id="103"></td>
+                    <td class="modelo3d">
+                        <div class="modelocontainer">
+                            <div class="containermodel">
+
+                                <div class="fullbody" id="corpo">
+                                    <div class="cabeca" id="cabeca">
+                                        <div class="s1 first layer" id="s1"></div>
+                                        <div class="s2 first layer" id="s2"></div>
+                                        <div class="s3 first layer" id="s3"></div>
+                                        <div class="s4 first layer" id="s4"></div>
+                                        <div class="s5 first layer" id="s5"></div>
+                                        <div class="s6 first layer" id="s6"></div>
+                                        <div class="s37 second layer" id=""></div>
+                                        <div class="s38 second layer" id=""></div>
+                                        <div class="s39 second layer" id=""></div>
+                                        <div class="s40 second layer" id=""></div>
+                                        <div class="s41 second layer" id=""></div>
+                                        <div class="s42 second layer" id=""></div>
+                                    </div>
+                                    <div id="torso" class="torso">
+                                        <div class="s7 first layer" id="s7"></div>
+                                        <div class="s8 first layer" id="s8"></div>
+                                        <div class="s43 second layer" id=""></div>
+                                        <div class="s44 second layer" id=""></div>
+                                    </div>
+                                    <div id="pernadireita" class="perna direitasteve">
+                                        <div class="s13 first layer" id="s13"></div>
+                                        <div class="s14 first layer" id="s14"></div>
+                                        <div class="s15 first layer" id="s15"></div>
+                                        <div class="s16 first layer" id="s16"></div>
+                                        <div class="s49 second layer" id=""></div>
+                                        <div class="s50 second layer" id=""></div>
+                                        <div class="s51 second layer" id=""></div>
+                                        <div class="s52 second layer" id=""></div>                                    
+                                    </div>
+                                    <div id="pernaesquerda" class="perna esquerdasteve">
+                                        <div class="s19 first layer" id="s19"></div>
+                                        <div class="s20 first layer" id="s20"></div>
+                                        <div class="s21 first layer" id="s21"></div>
+                                        <div class="s22 first layer" id="s22"></div>                                      
+                                        <div class="s55 second layer" id=""></div>
+                                        <div class="s56 second layer" id=""></div>
+                                        <div class="s57 second layer" id=""></div>
+                                        <div class="s58 second layer" id=""></div>
+                                    </div>
+                                    <div id="bracodireito" class="braco direitosteve">
+                                        <div class="s25 first layer" id="s25"></div>
+                                        <div class="s26 first layer" id="s26"></div>
+                                        <div class="s27 first layer" id="s27"></div>
+                                        <div class="s28 first layer" id="s28"></div>
+                                        <div class="s29 first layer" id="s29"></div>
+                                        <div class="s61 second layer" id=""></div>
+                                        <div class="s62 second layer" id=""></div>
+                                        <div class="s63 second layer" id=""></div>
+                                        <div class="s64 second layer" id=""></div>
+                                        <div class="s65 second layer" id=""></div>
+                                    </div>
+                                    <div id="bracoesquerdo" class="braco esquerdosteve">
+                                        <div class="s31 first layer" id="s31"></div>
+                                        <div class="s32 first layer" id="s32"></div>
+                                        <div class="s33 first layer" id="s33"></div>
+                                        <div class="s34 first layer" id="s34"></div>
+                                        <div class="s35 first layer" id="s35"></div>
+                                        <div class="s67 second layer" id=""></div>
+                                        <div class="s68 second layer" id=""></div>
+                                        <div class="s69 second layer" id=""></div>
+                                        <div class="s70 second layer" id=""></div>
+                                        <div class="s71 second layer" id=""></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="inventariolinha">
+                    <td class="slotarmadura peitoral_slot" id="102"></td>
+                    <td>
+                        <form class="enviarskin" id="formularioSkinPost" method="post" action="../php/skin.php"
+                            enctype="multipart/form-data">
+                            <label class="input_label">
+                                <p>Escolha sua skin</p>
+                                <input type="file" class="input_skin" name="arquivo" id="arquivo"
+                                    onchange="mandarSkin()">
+                            </label>
+                        </form>
+
+                    </td>
+                </tr>
+                <tr class="inventariolinha">
+                    <td class="slotarmadura calca_slot" id="101"></td>
+                </tr>
+                <tr class="inventariolinha fim">
+                    <td class="slotarmadura pes_slot" id="100"></td>
+
+                    <td class="slotarmadura escudo" id="-106"></td>
+                </tr>
+                <tr class="inventariolinha">
+                    <td class="slot" id="9"></td>
+                    <td class="slot" id="10"></td>
+                    <td class="slot" id="11"></td>
+                    <td class="slot" id="12"></td>
+                    <td class="slot" id="13"></td>
+                    <td class="slot" id="14"></td>
+                    <td class="slot" id="15"></td>
+                    <td class="slot" id="16"></td>
+                    <td class="slot" id="17"></td>
+                </tr>
+                <tr class="inventariolinha">
+                    <td class="slot" id="18"></td>
+                    <td class="slot" id="19"></td>
+                    <td class="slot" id="20"></td>
+                    <td class="slot" id="21"></td>
+                    <td class="slot" id="22"></td>
+                    <td class="slot" id="23"></td>
+                    <td class="slot" id="24"></td>
+                    <td class="slot" id="25"></td>
+                    <td class="slot" id="26"></td>
+                </tr>
+                <tr class="inventariolinha">
+                    <td class="slot" id="27"></td>
+                    <td class="slot" id="28"></td>
+                    <td class="slot" id="29"></td>
+                    <td class="slot" id="30"></td>
+                    <td class="slot" id="31"></td>
+                    <td class="slot" id="32"></td>
+                    <td class="slot" id="33"></td>
+                    <td class="slot" id="34"></td>
+                    <td class="slot" id="35"></td>
+                </tr>
+                <tr class="inventariolinha hotbar">
+                    <td class="slot" id="0"></td>
+                    <td class="slot" id="1"></td>
+                    <td class="slot" id="2"></td>
+                    <td class="slot" id="3"></td>
+                    <td class="slot" id="4"></td>
+                    <td class="slot" id="5"></td>
+                    <td class="slot" id="6"></td>
+                    <td class="slot" id="7"></td>
+                    <td class="slot" id="8"></td>
+                </tr>
+            </table>
         </div>
-    </header>
-
-
-    <h1 class="titulo_inventario">Seu inventário</h1>
-
-    <div class="container_inventario">
-
-    <table class="tabela">
-        <tr class="inventariolinha">
-            <td class="slotarmadura cabeca_slot" id="103"></td>
-            <td class="modelo3d">
-            <div class="modelocontainer">
-    <div class="containermodel">
-
-        <div class="cabeca full" id="corpo">
-           <div class="cabeca parte" id="cabeca">
-                <div class="s1 first" id="s1"></div>
-                <div class="s2 first" id="s2"></div>
-                <div class="s3 first" id="s3"></div>
-                <div class="s4 first" id="s4"></div>
-                <div class="s5 first" id="s5"></div>
-                <div class="s6 first" id="s6"></div>
-            </div>
-            <div id="torso" class="torso">
-                <div class="s7 first" id="s7"></div>
-                <div class="s8 first" id="s8"></div>
-            </div>
-            <div id="pernadireita" class="perna direitasteve">
-                <div class="s9 first" id="s9"></div>
-                <div class="s10 first" id="s10"></div>
-                <div class="s11 first" id="s11"></div>
-                <div class="s12 first" id="s12"></div>
-            </div>
-            <div id="pernaesquerda" class="perna esquerdasteve">
-                <div class="s13 first" id="s13"></div>
-                <div class="s14 first" id="s14"></div>
-                <div class="s15 first" id="s15"></div>
-                <div class="s15-5 first" id="s15-5"></div>
-                
-            </div>
-            <div id="bracodireito" class="braco direitosteve">
-                <div class="s16 first" id="s16"></div>
-                <div class="s17 first" id="s17"></div>
-                <div class="s18 first" id="s18"></div>
-                <div class="s19 first" id="s19"></div>
-                <div class="s20 first" id="s20"></div>
-
-            </div>
-            <div id="bracoesquerdo" class="braco esquerdosteve">
-                <div class="s21 first" id="s21"></div>
-                <div class="s22 first" id="s22"></div>
-                <div class="s23 first" id="s23"></div>
-                <div class="s24 first" id="s24"></div>
-                <div class="s25 first" id="s25"></div>
-            </div>
-        </div>
-
-
     </div>
-</div>
-            </td>
-        </tr>
-        <tr class="inventariolinha">
-            <td class="slotarmadura peitoral_slot" id="102"></td>
-            <td>
-            <form class="enviarskin" id="formularioSkinPost" method="post" action="../php/skin.php" enctype="multipart/form-data">
-                <label class="input_label">
-                    <p>Escolha sua skin</p>
-                <input type="file" class="input_skin" name="arquivo" id="arquivo" onchange="mandarSkin()">
-                </label>
-            </form>
-
-            </td>
-        </tr>
-        <tr class="inventariolinha">
-            <td class="slotarmadura calca_slot" id="101"></td>
-        </tr>
-        <tr class="inventariolinha fim">
-            <td class="slotarmadura pes_slot" id="100"></td>
-            
-            <td class="slotarmadura escudo" id="-106"></td>
-        </tr>
-        <tr class="inventariolinha"> 
-            <td class="slot" id="9"></td>
-            <td class="slot" id="10"></td>
-            <td class="slot" id="11"></td>
-            <td class="slot" id="12"></td>
-            <td class="slot" id="13"></td>
-            <td class="slot" id="14"></td>
-            <td class="slot" id="15"></td>
-            <td class="slot" id="16"></td>
-            <td class="slot" id="17"></td>
-        </tr>
-        <tr class="inventariolinha">
-            <td class="slot" id="18"></td>
-            <td class="slot" id="19"></td>
-            <td class="slot" id="20"></td>
-            <td class="slot" id="21"></td>
-            <td class="slot" id="22"></td>
-            <td class="slot" id="23"></td>
-            <td class="slot" id="24"></td>
-            <td class="slot" id="25"></td>
-            <td class="slot" id="26"></td>
-        </tr>
-        <tr class="inventariolinha">
-            <td class="slot" id="27"></td>
-            <td class="slot" id="28"></td>
-            <td class="slot" id="29"></td>
-            <td class="slot" id="30"></td>
-            <td class="slot" id="31"></td>
-            <td class="slot" id="32"></td>
-            <td class="slot" id="33"></td>
-            <td class="slot" id="34"></td>
-            <td class="slot" id="35"></td>
-        </tr>
-        <tr class="inventariolinha hotbar">
-            <td class="slot" id="0"></td>
-            <td class="slot" id="1"></td>
-            <td class="slot" id="2"></td>
-            <td class="slot" id="3"></td>
-            <td class="slot" id="4"></td>
-            <td class="slot" id="5"></td>
-            <td class="slot" id="6"></td>
-            <td class="slot" id="7"></td>
-            <td class="slot" id="8"></td>
-        </tr>
-    </table>
-    </div>
-</div>
     <script src="../javascript/tradutor.js"></script>
     <?php
 
@@ -209,7 +235,7 @@
 
         foreach ($json_codificado as $json) {
             $jsonCodificado = $json['vetorInventarioClientes'];
-            
+
         }
 
         return $jsonCodificado;
@@ -235,28 +261,27 @@
     $jsonCodificado = getJson();
     $skin = getSkin();
 
+
+
+
+    $array_de_objetos = json_decode($jsonCodificado); // Passando o segundo parâmetro true para obter um array associativo
+    
+    //$array_de_objetos = json_decode($jsonCodificado);
     
 
-
-$array_de_objetos = json_decode($jsonCodificado); // Passando o segundo parâmetro true para obter um array associativo
-
- //$array_de_objetos = json_decode($jsonCodificado);
-
- print_r($array_de_objetos);
-    
 
     if ($array_de_objetos === null) {
         echo "Erro ao decodificar a string JSON.";
 
     } else {
-       ?>
-        
+        ?>
+
         <script>
 
             function mandarSkin(event) {
-            document.getElementById("formularioSkinPost").submit();
-            event.preventDefault();
-        }
+                document.getElementById("formularioSkinPost").submit();
+                event.preventDefault();
+            }
 
             const slots = [];
             const ids = [];
@@ -265,70 +290,69 @@ $array_de_objetos = json_decode($jsonCodificado); // Passando o segundo parâmet
 
 
             foreach ($array_de_objetos as $elemento) { ?>
-  
+
                 slots.push(<?= $elemento->Slot . ", "; ?>);
-                    ids.push(<?= '"' . $elemento->id . '" , '; ?>);
-                    counts.push(<?= $elemento->count . ", "; ?>);
-                   
-    
-                    <?php
+                ids.push(<?= '"' . $elemento->id . '" , '; ?>);
+                counts.push(<?= $elemento->count . ", "; ?>);
+
+
+                <?php
             }
             ?>
-      
-            console.log(slots, ids, counts);
-            for (let i = 0; i < 41 ;  i++) {
+
+            
+            for (let i = 0; i < 41; i++) {
 
                 const item = document.getElementById(slots[i]);
 
-                if(item == null){}
-            else{
-                let  newimg = document.createElement("img");
-                newimg.className = "item";
-                newimg.setAttribute("src", "../img/iconeitens/" + ids[i] + ".png");
+                if (item == null) { }
+                else {
+                    let newimg = document.createElement("img");
+                    newimg.className = "item";
+                    newimg.setAttribute("src", "../img/iconeitens/" + ids[i] + ".png");
 
-                let newcont = document.createElement("p");
-                newcont.className = "contador";
-                newcont.setAttribute("id", "cont" + i);
+                    let newcont = document.createElement("p");
+                    newcont.className = "contador";
+                    newcont.setAttribute("id", "cont" + i);
 
-                let newnome = document.createElement("p");
-                newnome.setAttribute("id", "nome" + i);
-                let newId = document.createElement("p");
-                newId.className = "id";
-                newId.innerHTML = ids[i].replace('/', ':');
-                let newpopup = document.createElement("span");
-                newpopup.setAttribute("id", "popup" + i);
-                newpopup.className = "nomeBloco";
-                item.style.backgroundImage = "none";
-                let traduzido = ids[i] + "/";
-                traduzido = traduzir(traduzido);
-                newnome.innerHTML = traduzido;
-                newcont.innerHTML = counts[i];
-                item.appendChild(newimg);
-                if(slots[i] <= 36 && slots[i] > 0){
-                item.appendChild(newcont);
-                }
-                item.appendChild(newpopup);
-                newpopup.appendChild(newnome);
-                newpopup.appendChild(newId);
-                console.log(traduzido);
+                    let newnome = document.createElement("p");
+                    newnome.setAttribute("id", "nome" + i);
+                    let newId = document.createElement("p");
+                    newId.className = "id";
+                    newId.innerHTML = ids[i].replace('/', ':');
+                    let newpopup = document.createElement("span");
+                    newpopup.setAttribute("id", "popup" + i);
+                    newpopup.className = "nomeBloco";
+                    item.style.backgroundImage = "none";
+                    let traduzido = ids[i] + "/";
+                    traduzido = traduzir(traduzido);
+                    newnome.innerHTML = traduzido;
+                    newcont.innerHTML = counts[i];
+                    item.appendChild(newimg);
+                    if (slots[i] <= 36 && slots[i] > 0) {
+                        item.appendChild(newcont);
+                    }
+                    item.appendChild(newpopup);
+                    newpopup.appendChild(newnome);
+                    newpopup.appendChild(newId);
+                    
                 }
             }
-            
-            caminhoSkin = <?php if($skin === null){
+
+            caminhoSkin = <?php if ($skin === null) {
                 echo '"' . "../img/skins/steve.png" . '"';
-            }
-            else{
-                 echo '"' . $skin . '"';
-                }?>;
-            const faces = document.querySelectorAll('.first');
-            faces.forEach(function(div) {
+            } else {
+                echo '"' . $skin . '"';
+            } ?>;
+            const faces = document.querySelectorAll('.layer');
+            faces.forEach(function (div) {
                 div.style.backgroundImage = 'url(' + caminhoSkin + ')';
             });
+
             
-            console.log(caminhoSkin)
-            </script>
-            <?php } ?>
-            <script src="../javascript/model.js"></script>
+        </script>
+    <?php } ?>
+    <script src="../javascript/model.js"></script>
 
 </body>
 
