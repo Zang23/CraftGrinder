@@ -81,65 +81,49 @@
                                     <div class="cabeca" id="cabeca">
                                         <div class="s1 first layer" id="s1"></div>
                                         <div class="s2 first layer" id="s2"></div>
-                                        <div class="s3 first layer" id="s3"></div>
                                         <div class="s4 first layer" id="s4"></div>
                                         <div class="s5 first layer" id="s5"></div>
                                         <div class="s6 first layer" id="s6"></div>
                                         <div class="s37 second layer" id=""></div>
                                         <div class="s38 second layer" id=""></div>
-                                        <div class="s39 second layer" id=""></div>
                                         <div class="s40 second layer" id=""></div>
                                         <div class="s41 second layer" id=""></div>
                                         <div class="s42 second layer" id=""></div>
                                     </div>
                                     <div id="torso" class="torso">
                                         <div class="s7 first layer" id="s7"></div>
-                                        <div class="s8 first layer" id="s8"></div>
                                         <div class="s43 second layer" id=""></div>
-                                        <div class="s44 second layer" id=""></div>
                                     </div>
                                     <div id="pernadireita" class="perna direitasteve">
                                         <div class="s13 first layer" id="s13"></div>
-                                        <div class="s14 first layer" id="s14"></div>
                                         <div class="s15 first layer" id="s15"></div>
-                                        <div class="s16 first layer" id="s16"></div>
                                         <div class="s49 second layer" id=""></div>
-                                        <div class="s50 second layer" id=""></div>
-                                        <div class="s51 second layer" id=""></div>
-                                        <div class="s52 second layer" id=""></div>                                    
+                                        <div class="s51 second layer" id=""></div>                                  
                                     </div>
                                     <div id="pernaesquerda" class="perna esquerdasteve">
                                         <div class="s19 first layer" id="s19"></div>
-                                        <div class="s20 first layer" id="s20"></div>
-                                        <div class="s21 first layer" id="s21"></div>
-                                        <div class="s22 first layer" id="s22"></div>                                      
+                                        <div class="s21 first layer" id="s21"></div> 
                                         <div class="s55 second layer" id=""></div>
-                                        <div class="s56 second layer" id=""></div>
                                         <div class="s57 second layer" id=""></div>
-                                        <div class="s58 second layer" id=""></div>
                                     </div>
                                     <div id="bracodireito" class="braco direitosteve">
                                         <div class="s25 first layer" id="s25"></div>
                                         <div class="s26 first layer" id="s26"></div>
                                         <div class="s27 first layer" id="s27"></div>
-                                        <div class="s28 first layer" id="s28"></div>
                                         <div class="s29 first layer" id="s29"></div>
                                         <div class="s61 second layer" id=""></div>
                                         <div class="s62 second layer" id=""></div>
                                         <div class="s63 second layer" id=""></div>
-                                        <div class="s64 second layer" id=""></div>
                                         <div class="s65 second layer" id=""></div>
                                     </div>
                                     <div id="bracoesquerdo" class="braco esquerdosteve">
                                         <div class="s31 first layer" id="s31"></div>
                                         <div class="s32 first layer" id="s32"></div>
                                         <div class="s33 first layer" id="s33"></div>
-                                        <div class="s34 first layer" id="s34"></div>
                                         <div class="s35 first layer" id="s35"></div>
                                         <div class="s67 second layer" id=""></div>
                                         <div class="s68 second layer" id=""></div>
                                         <div class="s69 second layer" id=""></div>
-                                        <div class="s70 second layer" id=""></div>
                                         <div class="s71 second layer" id=""></div>
                                     </div>
                                 </div>
@@ -153,8 +137,8 @@
                     <td>
                         <form class="enviarskin" id="formularioSkinPost" method="post" action="../php/skin.php"
                             enctype="multipart/form-data">
-                            <label class="input_label">
-                                <p>Escolha sua skin</p>
+                            <label class="input_label" onclick="playSom()">
+                                <p class="botao-inventario">Escolha sua skin</p>
                                 <input type="file" class="input_skin" name="arquivo" id="arquivo"
                                     onchange="mandarSkin()">
                             </label>
@@ -349,7 +333,11 @@
                 div.style.backgroundImage = 'url(' + caminhoSkin + ')';
             });
 
-            
+            function playSom(){
+                const audio = new Audio('../effects/Sounds/minecraft_click.mp3');
+                audio.currentTime = 0.5;
+                audio.play();
+            }
         </script>
     <?php } ?>
     <script src="../javascript/model.js"></script>
