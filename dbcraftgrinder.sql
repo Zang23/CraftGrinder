@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/06/2024 às 20:49
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Tempo de geração: 24/07/2024 às 22:00
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,6 @@ INSERT INTO `tbartigo` (`idArtigo`, `nomeArtigo`, `tipoArtigo`) VALUES
 (122, 'Farm de madeira', 'Farm'),
 (124, 'Farm de flor', 'Farm'),
 (125, 'Farm de lã', 'Farm'),
-(126, 'Farm de Fungos do Nether', 'Farm'),
 (127, '  Farm de Cana de açúcar, Alga e Bambu', 'Farm'),
 (128, 'Farm de Invasão (Pillager)', 'Farm'),
 (129, 'porta 3x2 de pistões', 'Maquina'),
@@ -100,7 +99,7 @@ CREATE TABLE `tbclientes` (
 
 INSERT INTO `tbclientes` (`idCliente`, `emailCliente`, `senhaCliente`, `nicknameCliente`, `inventarioClientes`, `vetorInventarioClientes`, `imgskin`, `imgCliente`) VALUES
 (1, 'thiago@gmail.com', 'senha', 'Zang', 'usuarios/06e617e3-84d8-474e-a14a-beceb5cc7726.dat', '[{\"count\":64,\"Slot\":3,\"id\":\"minecraft/target\"}, {\"count\":64,\"Slot\":4,\"id\":\"minecraft/sticky_piston\"}, {\"count\":64,\"Slot\":5,\"id\":\"minecraft/warped_hyphae\"}, {\"count\":1,\"Slot\":6,\"id\":\"minecraft/diamond_sword\"}, {\"count\":64,\"Slot\":7,\"id\":\"minecraft/detector_rail\"}, {\"count\":64,\"Slot\":8,\"id\":\"minecraft/rail\"}, {\"count\":64,\"Slot\":9,\"id\":\"minecraft/jungle_log\"}, {\"count\":64,\"Slot\":17,\"id\":\"minecraft/jukebox\"}, {\"count\":64,\"Slot\":21,\"id\":\"minecraft/warped_stem\"}, {\"count\":64,\"Slot\":22,\"id\":\"minecraft/jungle_wood\"}, {\"count\":64,\"Slot\":25,\"id\":\"minecraft/powered_rail\"}, {\"count\":64,\"Slot\":27,\"id\":\"minecraft/redstone\"}, {\"count\":64,\"Slot\":28,\"id\":\"minecraft/redstone_torch\"}, {\"count\":64,\"Slot\":29,\"id\":\"minecraft/redstone_block\"}, {\"count\":1,\"Slot\":100,\"id\":\"minecraft/diamond_boots\"}, {\"count\":1,\"Slot\":101,\"id\":\"minecraft/diamond_leggings\"}, {\"count\":1,\"Slot\":102,\"id\":\"minecraft/diamond_chestplate\"}, {\"count\":1,\"Slot\":103,\"id\":\"minecraft/diamond_helmet\"}, {\"count\":1,\"Slot\":-106,\"id\":\"minecraft/shield\"}]', NULL, NULL),
-(2, 'kevinviado@gmail.com', 'senha', 'kevin Viado', 'usuarios/06e617e3-84d8-474e-a14a-beceb5cc7726.dat', '[{\"count\":64,\"Slot\":3,\"id\":\"minecraft/target\"}, {\"count\":64,\"Slot\":4,\"id\":\"minecraft/sticky_piston\"}, {\"count\":64,\"Slot\":5,\"id\":\"minecraft/warped_hyphae\"}, {\"count\":1,\"Slot\":6,\"id\":\"minecraft/diamond_sword\"}, {\"count\":64,\"Slot\":7,\"id\":\"minecraft/detector_rail\"}, {\"count\":64,\"Slot\":8,\"id\":\"minecraft/rail\"}, {\"count\":64,\"Slot\":9,\"id\":\"minecraft/jungle_log\"}, {\"count\":64,\"Slot\":17,\"id\":\"minecraft/jukebox\"}, {\"count\":64,\"Slot\":21,\"id\":\"minecraft/warped_stem\"}, {\"count\":64,\"Slot\":22,\"id\":\"minecraft/jungle_wood\"}, {\"count\":64,\"Slot\":25,\"id\":\"minecraft/powered_rail\"}, {\"count\":64,\"Slot\":27,\"id\":\"minecraft/redstone\"}, {\"count\":64,\"Slot\":28,\"id\":\"minecraft/redstone_torch\"}, {\"count\":64,\"Slot\":29,\"id\":\"minecraft/redstone_block\"}, {\"count\":1,\"Slot\":100,\"id\":\"minecraft/diamond_boots\"}, {\"count\":1,\"Slot\":101,\"id\":\"minecraft/diamond_leggings\"}, {\"count\":1,\"Slot\":102,\"id\":\"minecraft/diamond_chestplate\"}, {\"count\":1,\"Slot\":103,\"id\":\"minecraft/diamond_helmet\"}, {\"count\":1,\"Slot\":-106,\"id\":\"minecraft/shield\"}]', '../img/skins/arquivo_6674284b8d468_1718888523.png', 'arquivo_6675055ce2b04_1718945116.png');
+(2, 'kevin@gmail.com', 'senha', 'Segetto', 'usuarios/06e617e3-84d8-474e-a14a-beceb5cc7726.dat', '[{\"count\":64,\"Slot\":3,\"id\":\"minecraft/target\"}, {\"count\":64,\"Slot\":4,\"id\":\"minecraft/sticky_piston\"}, {\"count\":64,\"Slot\":5,\"id\":\"minecraft/warped_hyphae\"}, {\"count\":1,\"Slot\":6,\"id\":\"minecraft/diamond_sword\"}, {\"count\":64,\"Slot\":7,\"id\":\"minecraft/detector_rail\"}, {\"count\":64,\"Slot\":8,\"id\":\"minecraft/rail\"}, {\"count\":64,\"Slot\":9,\"id\":\"minecraft/jungle_log\"}, {\"count\":64,\"Slot\":17,\"id\":\"minecraft/jukebox\"}, {\"count\":64,\"Slot\":21,\"id\":\"minecraft/warped_stem\"}, {\"count\":64,\"Slot\":22,\"id\":\"minecraft/jungle_wood\"}, {\"count\":64,\"Slot\":25,\"id\":\"minecraft/powered_rail\"}, {\"count\":64,\"Slot\":27,\"id\":\"minecraft/redstone\"}, {\"count\":64,\"Slot\":28,\"id\":\"minecraft/redstone_torch\"}, {\"count\":64,\"Slot\":29,\"id\":\"minecraft/redstone_block\"}, {\"count\":1,\"Slot\":100,\"id\":\"minecraft/diamond_boots\"}, {\"count\":1,\"Slot\":101,\"id\":\"minecraft/diamond_leggings\"}, {\"count\":1,\"Slot\":102,\"id\":\"minecraft/diamond_chestplate\"}, {\"count\":1,\"Slot\":103,\"id\":\"minecraft/diamond_helmet\"}, {\"count\":1,\"Slot\":-106,\"id\":\"minecraft/shield\"}]', '../img/skins/arquivo_669ea63d7ebb8_1721673277.png', 'arquivo_6675055ce2b04_1718945116.png');
 
 -- --------------------------------------------------------
 
@@ -280,7 +279,7 @@ ALTER TABLE `tbmaquina`
 -- AUTO_INCREMENT de tabela `tbartigo`
 --
 ALTER TABLE `tbartigo`
-  MODIFY `idArtigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+  MODIFY `idArtigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
 
 --
 -- AUTO_INCREMENT de tabela `tbatualizacao`
@@ -292,13 +291,13 @@ ALTER TABLE `tbatualizacao`
 -- AUTO_INCREMENT de tabela `tbclientes`
 --
 ALTER TABLE `tbclientes`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tbfarm`
 --
 ALTER TABLE `tbfarm`
-  MODIFY `idFarm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `idFarm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT de tabela `tbguia`
