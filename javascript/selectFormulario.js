@@ -19,7 +19,7 @@ document.getElementById('selectTipoFormulario').addEventListener('change', funct
 document.addEventListener("DOMContentLoaded", function () {
 
 
-
+    const tipos = ['Farm', 'Guia', 'Item', 'Maquina'];
     tipos.forEach(tipo => {
         let contador = 0;
         const adicionar = document.getElementById(`adicionarRequisito${tipo}`);
