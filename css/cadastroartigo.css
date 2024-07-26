@@ -227,18 +227,15 @@ input, button, textarea{
     flex-direction: row-reverse;
 }
 .container-imagem-capa{
-    background-color: var(--escuro2);
+    background-color: var(--fundo);
     height: 60px;
     width: 100px;
     padding: 10px 20px;
     margin: 5px;
     border-radius: 5%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--escuro4);
 }
 .container-imagem-capa:hover{
-    background-color: var(--escuro3);
+    background-color: var(--escuro2);
     cursor: pointer;
 }
 .container-imagem-capa:active{

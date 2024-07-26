@@ -18,10 +18,9 @@ document.getElementById('selectTipoFormulario').addEventListener('change', funct
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    var adicionarRequisitoF = document.getElementById("adicionarRequisito");
-    var removerRequisitoF = document.getElementById("removerRequisito");
-    var containerRequisitosF = document.getElementById("containerRequisitos");
-    var containerRequisitosF_ = document.getElementById("containerRequisitos2");
+    var adicionarRequisitoF = document.getElementById("adicionarRequisitoFarm");
+    var removerRequisitoF = document.getElementById("removerRequisitoFarm");
+    var containerRequisitosF = document.getElementById("containerRequisitosFarm");
     var contadorF = 0;
 
     var adicionarRequisitoG = document.getElementById("adicionarRequisitoGuia");
@@ -64,8 +63,9 @@ document.addEventListener("DOMContentLoaded", function(){
                         if(imagemAnterior != null){
                             document.getElementById('containerRequisitos'+opcao.id.replace('formulario','')).removeChild(containerImagem);
                          }
+                         console.log('containerRequisitos'+opcao.id.replace('formulario',''));
                         document.getElementById('containerRequisitos'+opcao.id.replace('formulario','')).appendChild(newdiv);
-                       console.log('containerRequisitos'+opcao.id.replace('formulario',''));
+                       
                         newdiv.appendChild(iconeImagem);
                     };     
                     reader.readAsDataURL(imagemEnviada); 

@@ -1,327 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/cadastroartigo.css">
     <link rel="stylesheet" href="../../css/">
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Document</title>
 </head>
+
 <body>
-<div class="index_fundo"> 
+    <div class="index_fundo">
 
-    <header class="cabecalho_container_cadArt">
+        <header class="cabecalho_container_cadArt">
 
-        <div class="cabecalho_superior_container">
-            <a href="../index.php"><p class="cabecalho_titulo">CraftGrinder</p></a>
-        </div>
-        
-    </header>
-    
-    
-<div class="cadastro_art_align">
-<div class="cadastro_art_container">
-
-    <div class="container_titulo_edicao">
-        <p class="titulo_edicao">Escolha o conteúdo que será adicionado</p>
-        
-    </div>
-
-    <div class="cadastro_select_align">
-
-        <div class="titulo_edicao_button_div">
-            <a class="titulo_edicao_button" href="../adm/adm.php">
-                <span class="material-symbols-outlined">arrow_back</span>
-            </a>        
-        </div>
-
-            <div class="content_align_selector">
-                <div class="selector_content">
-                    <select id="selectTipoFormulario">
-                        <option value="atualizacao">Atualizacao</option>
-                        <option value="farm">Farm</option>
-                        <option value="item">Item</option>
-                        <option value="guia">Guia</option>
-                        <option value="maquina">Máquina</option>
-                    </select>
-                </div>
+            <div class="cabecalho_superior_container">
+                <a href="../index.php">
+                    <p class="cabecalho_titulo">CraftGrinder</p>
+                </a>
             </div>
 
-    </div>
+        </header>
 
-    
 
-    <div class="content_align_cadastro">
+        <div class="cadastro_art_align">
+            <div class="cadastro_art_container">
 
-        <div class="content_opcao_cadastro">
+                <div class="container_titulo_edicao">
+                    <p class="titulo_edicao">Escolha o conteúdo que será adicionado</p>
 
-        <div id="formularioAtualizacao" class="opcao_content"> 
-            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
-                <div class="content_opcao_align c">
-                    <input type="text" name="nomeAtualizacao" placeholder="Insira o nome da atualizacao">
-                    <textarea name="descAtualizacao" class="descricao att" placeholder="Insira a descricao completa da atualizacao"></textarea>
-                    
-                    <input type="file" name="imagemAtualizacao" id="inputIdAtualizacao" style="display: none;">
-                    <input type="text" name="tipoArtigo" value="Atualizacao" style="display: none;">
-                    <div class="content_button_alinhamento">
+                </div>
 
-                        <div class="content_button_enviar">
-                            <label for="inputIdAtualizacao" class="input_file enviar">
-                                Selecione a imagem
-                            </label>
-                            <button type="submit" class="button_enviar">Enviar</button>
+                <div class="cadastro_select_align">
+
+                    <div class="titulo_edicao_button_div">
+                        <a class="titulo_edicao_button" href="../adm/adm.php">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </a>
+                    </div>
+
+                    <div class="content_align_selector">
+                        <div class="selector_content">
+                            <select id="selectTipoFormulario">
+                                <option value="atualizacao">Atualizacao</option>
+                                <option value="farm">Farm</option>
+                                <option value="item">Item</option>
+                                <option value="guia">Guia</option>
+                                <option value="maquina">Máquina</option>
+                            </select>
                         </div>
                     </div>
 
                 </div>
-            </form>
-        </div>
-
-        <div id="formularioFarm" class="opcao_content">
-            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
-            <div class="content_opcao_align r">
-                <div class="opcao_align">
-                    <input type="text" name="nomeFarm" placeholder="Insira o nome da Farm">
-                    <input type="text" name="miniDescFarm" placeholder="Insira uma breve descricao sobre a farm">
-
-                    <label for="inputIdFarm" class="input_file" >
-                        Escolha a Capa da Farm
-                    </label>
-                    <input type="file" id="inputIdFarm" name="imagemFarm" style="display: none;"">
-
-                    <label for="inputImagensFarm" class="input_file">
-                        Selecione as imagens em ordem
-                    </label>
-                    <input type="file" id="inputImagensFarm" name="galeriaFarm[]" multiple style="display: none; ">
-
-                    <input type="text" name="tipoArtigo" value="Farm" style="display: none;">
-
-                    
-
-            
-                <div class="addremove_container">
-
-                    <button id="adicionarRequisito" type="button" class="input_file add_remove">
-                        <span class="material-symbols-outlined">add</span>
-                    </button>
-
-                    <input type="hidden" id="contadorInputF" name="contadorFarm">
-                    
-                    <button id="removerRequisito" type="button" class="input_file add_remove">
-                        <span class="material-symbols-outlined">remove</span>
-                    </button>
-
-                    <button id="removerTodosRequisito" type="button" class="input_file add_remove">
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                </div>
-                    
-                </div>
-                    <div class="descricao_align">
-                        <textarea name="descFarm" class="descricao_opcao" placeholder="Insira a descricao completa da farm"></textarea>
-                    </div>
-                    
-            </div>
-
-            <div class="container_addremove_alinhamento">
-                <div id="containerRequisitos" class="container_requisitos">
-                                
-                </div>
-            </div>
-
-                <div class="content_button_alinhamento">
-                    <div class="content_button_enviar">
-                        <button type="submit" class="button_enviar">Enviar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <div id="formularioGuia" class="opcao_content">
-            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data" >
-            <div class="content_opcao_align r">
-                <div class="opcao_align">
-                    <input type="text" name="nomeGuia" placeholder="Insira o nome do guia">
-                    <input type="text" name="miniDescGuia" placeholder="Insira uma breve descricao sobre o guia">
 
 
-                    <label for="inputIdGuia" class="input_file">
-                        Enviar Arquivo
-                    </label>
-                    
-                    <label for="inputImagensGuia" class="input_file">
-                        Selecione as imagens em ordem
-                    </label>
 
-                    <input type="file" id="inputImagensGuia" name="galeriaGuia[]" multiple style="display: none; ">
+                <div class="content_align_cadastro">
 
-                    
-                    <input type="file" name="imagemGuia" id="inputIdGuia" style="display: none;">
-                    <input type="text" name="tipoArtigo" value="Guia" style="display: none;">
+                    <div class="content_opcao_cadastro">
 
-                    <div class="addremove_container">
+                        <div id="formularioAtualizacao" class="opcao_content">
+                            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
+                                <div class="content_opcao_align c">
+                                    <input type="text" name="nomeAtualizacao"
+                                        placeholder="Insira o nome da atualizacao">
+                                    <textarea name="descAtualizacao" class="descricao att"
+                                        placeholder="Insira a descricao completa da atualizacao"></textarea>
 
-                        <button id="adicionarRequisitoGuia" type="button" class="input_file add_remove">
-                            <span class="material-symbols-outlined">add</span>
-                        </button>
-    
-                        <input type="hidden" id="contadorInputG" name="contadorGuia">
-                        
-                        <button id="removerRequisitoGuia" type="button" class="input_file add_remove">
-                            <span class="material-symbols-outlined">remove</span>
-                        </button>
-    
-                        <button id="removerTodosRequisito" type="button" class="input_file add_remove">
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                    </div>
+                                    <input type="file" name="imagemAtualizacao" id="inputIdAtualizacao"
+                                        style="display: none;">
+                                    <input type="text" name="tipoArtigo" value="Atualizacao" style="display: none;">
+                                    <div class="content_button_alinhamento">
 
-                    </div>
+                                        <div class="content_button_enviar">
+                                            <label for="inputIdAtualizacao" class="input_file enviar">
+                                                Selecione a imagem
+                                            </label>
+                                            <button type="submit" class="button_enviar">Enviar</button>
+                                        </div>
+                                    </div>
 
-                        <div class="descricao_align">
-                            <textarea name="descGuia" class="descricao_opcao" placeholder="Insira a descricao completa do guia"></textarea>
+                                </div>
+                            </form>
                         </div>
+
+                        <div id="formularioFarm" class="opcao_content">
+                            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
+                                <div class="content_opcao_align r">
+                                    <div class="opcao_align">
+                                        <input type="text" name="nomeFarm" placeholder="Insira o nome da Farm">
+                                        <input type="text" name="miniDescFarm"
+                                            placeholder="Insira uma breve descricao sobre a farm">
+
+                                        <label for="inputIdFarm" class="input_file">
+                                            Escolha a Capa da Farm
+                                        </label>
+                                        <input type="file" id="inputIdFarm" name="imagemFarm" style="display: none;"">
+
+                    <label for=" inputImagensFarm" class="input_file">
+                                        Selecione as imagens em ordem
+                                        </label>
+                                        <input type="file" id="inputImagensFarm" name="galeriaFarm[]" multiple
+                                            style="display: none; ">
+
+                                        <input type="text" name="tipoArtigo" value="Farm" style="display: none;">
+
+
+
+
+                                        <div class="addremove_container">
+
+                                            <button id="adicionarRequisitoFarm" type="button" class="input_file add_remove">
+                                                <span class="material-symbols-outlined">add</span>
+                                            </button>
+
+                                            <input type="hidden" id="contadorInputF" name="contadorFarm">
+
+                                            <button id="removerRequisitoFarm" type="button" class="input_file add_remove">
+                                                <span class="material-symbols-outlined">remove</span>
+                                            </button>
+
+                                            <button id="removerTodosRequisito" type="button"
+                                                class="input_file add_remove">
+                                                <span class="material-symbols-outlined">delete</span>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <div class="descricao_align">
+                                        <textarea name="descFarm" class="descricao_opcao"
+                                            placeholder="Insira a descricao completa da farm"></textarea>
+                                    </div>
+
+                                </div>
+
+                                <div class="container_addremove_alinhamento">
+                                    <div id="containerRequisitosFarm" class="container_requisitos">
+
+                                    </div>
+                                </div>
+
+                                <div class="content_button_alinhamento">
+                                    <div class="content_button_enviar">
+                                        <button type="submit" class="button_enviar">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div id="formularioGuia" class="opcao_content">
+                            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
+                                <div class="content_opcao_align r">
+                                    <div class="opcao_align">
+                                        <input type="text" name="nomeGuia" placeholder="Insira o nome do guia">
+                                        <input type="text" name="miniDescGuia"
+                                            placeholder="Insira uma breve descricao sobre o guia">
+
+
+                                        <label for="inputIdGuia" class="input_file">
+                                            Enviar Arquivo
+                                        </label>
+
+                                        <label for="inputImagensGuia" class="input_file">
+                                            Selecione as imagens em ordem
+                                        </label>
+
+                                        <input type="file" id="inputImagensGuia" name="galeriaGuia[]" multiple
+                                            style="display: none; ">
+
+
+                                        <input type="file" name="imagemGuia" id="inputIdGuia" style="display: none;">
+                                        <input type="text" name="tipoArtigo" value="Guia" style="display: none;">
+
+                                        <div class="addremove_container">
+
+                                            <button id="adicionarRequisitoGuia" type="button"
+                                                class="input_file add_remove">
+                                                <span class="material-symbols-outlined">add</span>
+                                            </button>
+
+                                            <input type="hidden" id="contadorInputG" name="contadorGuia">
+
+                                            <button id="removerRequisitoGuia" type="button"
+                                                class="input_file add_remove">
+                                                <span class="material-symbols-outlined">remove</span>
+                                            </button>
+
+                                            <button id="removerTodosRequisito" type="button"
+                                                class="input_file add_remove">
+                                                <span class="material-symbols-outlined">delete</span>
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="descricao_align">
+                                        <textarea name="descGuia" class="descricao_opcao"
+                                            placeholder="Insira a descricao completa do guia"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="container_addremove_alinhamento">
+                                    <div id="containerRequisitosGuia" class="container_requisitos">
+
+                                    </div>
+                                </div>
+
+                                <div class="content_button_alinhamento">
+                                    <div class="content_button_enviar">
+                                        <button type="submit" class="button_enviar">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div id="formularioMaquina" class="opcao_content">
+                            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
+                                <div class="content_opcao_align r">
+                                    <div class="opcao_align">
+                                        <input type="text" name="nomeMaquina" placeholder="Insira o nome da Máquina">
+                                        <input type="text" name="miniDescMaquina"
+                                            placeholder="Insira uma breve descricao sobre a Máquina">
+                                        <label for="inputIdMaquina" class="input_file">
+                                            Selecione a imagem
+                                        </label>
+
+                                        <label for="inputImagensMaquina" class="input_file">
+                                            Selecione as imagens em ordem
+                                        </label>
+
+                                        <input type="file" id="inputImagensMaquina" name="galeriaMaquina[]" multiple
+                                            style="display: none; ">
+                                        <input type="file" name="imagemMaquina" id="inputIdMaquina"
+                                            style="display: none;">
+                                        <input type="text" name="tipoArtigo" value="Maquina" style="display: none;">
+
+                                        <div class="addremove_container">
+
+                                            <button id="adicionarRequisitoMaquina" type="button"
+                                                class="input_file add_remove">
+                                                <span class="material-symbols-outlined">add</span>
+                                            </button>
+
+                                            <input type="hidden" id="contadorInputM" name="contadorMaquina">
+
+                                            <button id="removerRequisitoMaquina" type="button"
+                                                class="input_file add_remove">
+                                                <span class="material-symbols-outlined">remove</span>
+                                            </button>
+
+                                            <button id="removerTodosRequisitoMaquina" type="button"
+                                                class="input_file add_remove">
+                                                <span class="material-symbols-outlined">delete</span>
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="descricao_align">
+                                        <textarea name="descMaquina" class="descricao_opcao"
+                                            placeholder="Insira a descricao completa da Máquina"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="container_addremove_alinhamento">
+                                    <div id="containerRequisitosMaquina" class="container_requisitos">
+
+                                    </div>
+                                </div>
+
+                                <div class="content_button_alinhamento">
+                                    <div class="content_button_enviar">
+                                        <button type="submit" class="button_enviar">Enviar</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div id="formularioItem" class="opcao_content">
+                            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
+                                <div class="content_opcao_align r">
+                                    <div class="opcao_align">
+                                        <input type="text" name="nomeItem" placeholder="Insira o nome do Item">
+                                        <input type="text" name="miniDescItem"
+                                            placeholder="Insira uma breve descricao sobre o Item">
+                                        <label for="inputIdItem" class="input_file">
+                                            Selecione a imagem
+                                        </label>
+
+                                        <label for="inputImagensItem" class="input_file">
+                                            Selecione as imagens em ordem
+                                        </label>
+
+                                        <input type="file" id="inputImagensItem" name="galeriaItem[]" multiple
+                                            style="display: none; ">
+
+                                        <input type="file" name="imagemItem" id="inputIdItem" style="display: none;">
+                                        <input type="text" name="tipoArtigo" value="Item" style="display: none;">
+
+                                        <div class="addremove_container">
+
+                                            <button id="adicionarRequisitoItem" type="button"
+                                                class="input_file add_remove">
+                                                <span class="material-symbols-outlined">add</span>
+                                            </button>
+
+                                            <input type="hidden" id="contadorInputI" name="contadorItem">
+
+                                            <button id="removerRequisitoItem" type="button"
+                                                class="input_file add_remove">
+                                                <span class="material-symbols-outlined">remove</span>
+                                            </button>
+
+                                            <button id="removerTodosRequisitoItem" type="button"
+                                                class="input_file add_remove">
+                                                <span class="material-symbols-outlined">delete</span>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <div class="descricao_align">
+                                        <textarea name="descItem" class="descricao_opcao"
+                                            placeholder="Insira a descricao completa do Item"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="container_addremove_alinhamento">
+                                    <div id="containerRequisitosItem" class="container_requisitos">
+
+                                    </div>
+                                </div>
+
+                                <div class="content_button_alinhamento">
+                                    <div class="content_button_enviar">
+                                        <button type="submit" class="button_enviar">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-                <div class="container_addremove_alinhamento">
-                    <div id="containerRequisitosGuia" class="container_requisitos">
-                                
-                    </div>
-                </div>
-
-                <div class="content_button_alinhamento">
-                    <div class="content_button_enviar">
-                        <button type="submit" class="button_enviar">Enviar</button>
-                    </div>
-                </div>
-            </form>
         </div>
 
-        <div id="formularioMaquina" class="opcao_content">
-            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data">
-            <div class="content_opcao_align r">
-                <div class="opcao_align">
-                    <input type="text" name="nomeMaquina" placeholder="Insira o nome da Máquina">
-                    <input type="text" name="miniDescMaquina" placeholder="Insira uma breve descricao sobre a Máquina">
-                    <label for="inputIdMaquina" class="input_file">
-                        Selecione a imagem
-                    </label>
-
-                    <label for="inputImagensMaquina" class="input_file">
-                        Selecione as imagens em ordem
-                    </label>
-
-                    <input type="file" id="inputImagensMaquina" name="galeriaMaquina[]" multiple style="display: none; ">
-                    <input type="file" name="imagemMaquina" id="inputIdMaquina" style="display: none;">
-                    <input type="text" name="tipoArtigo" value="Maquina" style="display: none;">
-
-                <div class="addremove_container">
-
-                    <button id="adicionarRequisitoMaquina" type="button" class="input_file add_remove">
-                        <span class="material-symbols-outlined">add</span>
-                    </button>
-
-                    <input type="hidden" id="contadorInputM" name="contadorMaquina">
-                    
-                    <button id="removerRequisitoMaquina" type="button" class="input_file add_remove">
-                        <span class="material-symbols-outlined">remove</span>
-                    </button>
-
-                    <button id="removerTodosRequisitoMaquina" type="button" class="input_file add_remove">
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                </div>
-
-                </div>
-
-                    <div class="descricao_align">
-                        <textarea name="descMaquina" class="descricao_opcao" placeholder="Insira a descricao completa da Máquina"></textarea>
-                    </div>
-            </div>
-
-            <div class="container_addremove_alinhamento">
-                <div id="containerRequisitosMaquina" class="container_requisitos">
-                            
-                </div>
-            </div>
-
-                <div class="content_button_alinhamento">
-                    <div class="content_button_enviar">
-                        <button type="submit" class="button_enviar">Enviar</button>
-                    </div>
-                </div>
-            
-            </form>
-        </div>
-
-        <div id="formularioItem" class="opcao_content">
-            <form action="../../php/scriptArtigo.php" method="post" enctype="multipart/form-data" >
-            <div class="content_opcao_align r">
-                <div class="opcao_align">
-                    <input type="text" name="nomeItem" placeholder="Insira o nome do Item">
-                    <input type="text" name="miniDescItem" placeholder="Insira uma breve descricao sobre o Item">
-                    <label for="inputIdItem" class="input_file">
-                       Selecione a imagem
-                    </label>
-
-                    <label for="inputImagensItem" class="input_file">
-                        Selecione as imagens em ordem
-                    </label>
-
-                    <input type="file" id="inputImagensItem" name="galeriaItem[]" multiple style="display: none; ">
-                    
-                    <input type="file" name="imagemItem" id="inputIdItem" style="display: none;" >
-                    <input type="text" name="tipoArtigo" value="Item" style="display: none;">
-
-                    <div class="addremove_container">
-
-                        <button id="adicionarRequisitoItem" type="button" class="input_file add_remove">
-                            <span class="material-symbols-outlined">add</span>
-                        </button>
-    
-                        <input type="hidden" id="contadorInputI" name="contadorItem">
-                        
-                        <button id="removerRequisitoItem" type="button" class="input_file add_remove">
-                            <span class="material-symbols-outlined">remove</span>
-                        </button>
-    
-                        <button id="removerTodosRequisitoItem" type="button" class="input_file add_remove">
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                    </div>
-
-                </div>
-                    <div class="descricao_align">
-                        <textarea name="descItem" class="descricao_opcao" placeholder="Insira a descricao completa do Item"></textarea>
-                    </div>
-            </div>
-
-            <div class="container_addremove_alinhamento">
-                <div id="containerRequisitosItem" class="container_requisitos">
-                            
-                </div>
-            </div>
-            
-                <div class="content_button_alinhamento">
-                    <div class="content_button_enviar">
-                        <button type="submit" class="button_enviar">Enviar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        </div>
     </div>
-</div>
-
-</div>
-
-</div>
 
 
 
 
     <script src="../../javascript/selectFormulario.js"></script>
 </body>
+
 </html>
