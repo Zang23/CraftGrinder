@@ -39,6 +39,38 @@ document.addEventListener("DOMContentLoaded", function(){
     var containerRequisitosM = document.getElementById("containerRequisitosMaquina");
     var contadorM = 0;
 
+    const opcoes =  document.getElementsByClassName("opcao_content");
+
+        Array.from(opcoes).forEach((opcao) =>{
+            const imagemId = 'inputId'+opcao.id.replace('formulario','');
+            const imagem = document.getElementById(imagemId);
+            imagem.addEventListener('change', ()=>{
+                    const iconeImagem = document.createElement("img");
+                    imagemEnviada = imagem.files[0];
+                
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        imagemsrc = event.target.result; 
+                
+                        iconeImagem.setAttribute('src', imagemsrc);
+                        iconeImagem.setAttribute('class', 'imagem-capa');
+                        iconeImagem.setAttribute('id', 'capaImagem-'+opcao.id.replace('formulario',''));
+                        const newdiv = document.createElement("div");
+                        newdiv.setAttribute('class', 'container-imagem-capa');
+                        newdiv.setAttribute('id', 'capaImagemContainer-'+opcao.id.replace('formulario',''));
+                        const imagemAnterior = document.getElementById('capaImagem-'+opcao.id.replace('formulario',''));
+                        const containerImagem = document.getElementById('capaImagemContainer-'+opcao.id.replace('formulario',''));
+
+                        if(imagemAnterior != null){
+                            document.getElementById('containerRequisitos'+opcao.id.replace('formulario','')).removeChild(containerImagem);
+                         }
+                        document.getElementById('containerRequisitos'+opcao.id.replace('formulario','')).appendChild(newdiv);
+                       console.log('containerRequisitos'+opcao.id.replace('formulario',''));
+                        newdiv.appendChild(iconeImagem);
+                    };     
+                    reader.readAsDataURL(imagemEnviada); 
+            })
+        })
 
 
     adicionarRequisitoF.addEventListener("click", function(){

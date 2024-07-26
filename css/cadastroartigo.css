@@ -184,6 +184,7 @@ input, button, textarea{
 }
 
 .container_requisitos{
+    align-items: center;
     margin-bottom: 1rem;
     width: 100%;
     display: flex;
@@ -224,4 +225,26 @@ input, button, textarea{
 .content_button_alinhamento{
     display: flex;
     flex-direction: row-reverse;
+}
+.container-imagem-capa{
+    background-color: var(--escuro2);
+    height: 60px;
+    width: 100px;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--escuro4);
+}
+.container-imagem-capa:hover{
+    background-color: var(--escuro3);
+    cursor: pointer;
+}
+.container-imagem-capa:active{
+    filter: brightness(1.2);
+}
+.imagem-capa{
+    height: 60px;
+    width: 100px;
 }
