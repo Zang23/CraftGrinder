@@ -141,12 +141,16 @@
     width: 75%;
 }
 
-.inputIdFarm, .inputIdItem, .inputIdMaquina, .inputIdGuia{
+.inputIdFarm, .inputIdItem, .inputIdMaquina, .inputIdGuia, .inputIdAtualizacao{
     background-color: var(--claro) !important;
-    margin-right: 100% !important;
+    align-self: center;
+    margin-left: 250px !important;
+    align-self: center !important;
+    width: 400px !important;
+    height: 300px !important;
 }
 
-.inputIdFarm:hover, .inputIdItem:hover, .inputIdMaquina:hover, .inputIdGuia:hover{
+.inputIdFarm:hover, .inputIdItem:hover, .inputIdMaquina:hover, .inputIdGuia:hover, .inputIdAtualizacao:hover{
     background-color: var(--navbarHover) !important;
 }
 .selector:hover{
@@ -244,6 +248,9 @@ input, button, textarea{
     padding: 10px 20px;
     margin: 5px;
     border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container-imagem-capa:hover{
     background-color: var(--escuro2);
@@ -253,6 +260,5 @@ input, button, textarea{
     filter: brightness(1.2);
 }
 .imagem-capa{
-    height: 60px;
-    width: 100px;
+    height: 80%;
 }
