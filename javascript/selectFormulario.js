@@ -47,44 +47,80 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(contador);
             }
         });
-        removerTudo.addEventListener("click", ()=>{
+        removerTudo.addEventListener("click", () => {
             container.innerHTML = '';
         })
     });
 
-    const opcoes = document.getElementsByClassName("opcao_content");
+   // Obtém todos os elementos com a classe "opcao_content"
+const opcoes = document.getElementsByClassName("opcao_content");
 
-    Array.from(opcoes).forEach((opcao) => {
-        const imagemId = 'inputId' + opcao.id.replace('formulario', '');
-        const imagem = document.getElementById(imagemId);
-        imagem.addEventListener('change', () => {
-            const iconeImagem = document.createElement("img");
-            imagemEnviada = imagem.files[0];
+Array.from(opcoes).forEach((opcao) => {
+    const idatual = opcao.id.replace('formulario', '');
 
+    // Adiciona o listener para o input de imagem de capa
+    const imagemIdCapa = 'inputId' + idatual;
+    const imagemCapa = document.getElementById(imagemIdCapa);
+    if (imagemCapa) {
+        imagemCapa.addEventListener('change', () => {
+            simboloImagem(imagemCapa, idatual, imagemIdCapa);
+        });
+    }
+
+    // Adiciona o listener para o input de imagens do artigo
+    const imagensIdArtigo = 'inputImagens' + idatual;
+    const imagensArtigo = document.getElementById(imagensIdArtigo);
+    if (imagensArtigo) {
+        imagensArtigo.addEventListener('change', () => {
+            simboloImagem(imagensArtigo, idatual, imagensIdArtigo);
+        });
+    }
+});
+
+function simboloImagem(arquivo, opcao, idNew) {
+    const imagemEnviada = arquivo.files;
+    const quantidade = imagemEnviada.length;
+
+    // Verifica se a quantidade de arquivos é maior que zero
+    if (quantidade > 0) {
+        // Itera sobre todos os arquivos enviados
+        for (let i = 0; i < quantidade; i++) {
             const reader = new FileReader();
+            
             reader.onload = function (event) {
-                imagemsrc = event.target.result;
+                const imagemsrc = event.target.result;
 
+                // Cria novos elementos para cada imagem
+                const iconeImagem = document.createElement("img");
                 iconeImagem.setAttribute('src', imagemsrc);
                 iconeImagem.setAttribute('class', 'imagem-capa');
-                iconeImagem.setAttribute('id', 'capaImagem-' + opcao.id.replace('formulario', ''));
+                iconeImagem.setAttribute('id', idNew + opcao + i);
+
                 const newdiv = document.createElement("div");
-                newdiv.setAttribute('class', 'container-imagem-capa');
-                newdiv.setAttribute('id', 'capaImagemContainer-' + opcao.id.replace('formulario', ''));
-                const imagemAnterior = document.getElementById('capaImagem-' + opcao.id.replace('formulario', ''));
-                const containerImagem = document.getElementById('capaImagemContainer-' + opcao.id.replace('formulario', ''));
+                newdiv.setAttribute('class', idNew+' container-imagem-capa');
+                newdiv.setAttribute('id', idNew+'Container-' + opcao + i);
 
-                if (imagemAnterior != null) {
-                    document.getElementById('containerRequisitos' + opcao.id.replace('formulario', '')).removeChild(containerImagem);
+                // Obtém o container onde a nova imagem será adicionada
+                const containerRequisitos = document.getElementById('containerRequisitos' + opcao);
+
+                if (containerRequisitos) {
+                    // Remove o container de imagem antiga, se existir
+                    const imagemAnterior = document.getElementById(idNew + opcao + i);
+                    const containerImagem = document.getElementById(idNew+'Container-' + opcao + i);
+                    if (containerImagem && imagemAnterior) {
+                        containerRequisitos.removeChild(containerImagem);
+                    }
+
+                    // Adiciona o novo container e imagem
+                    containerRequisitos.appendChild(newdiv);
+                    newdiv.appendChild(iconeImagem);
                 }
-                console.log('containerRequisitos' + opcao.id.replace('formulario', ''));
-                document.getElementById('containerRequisitos' + opcao.id.replace('formulario', '')).appendChild(newdiv);
-
-                newdiv.appendChild(iconeImagem);
             };
-            reader.readAsDataURL(imagemEnviada);
-        })
-    })
+
+            // Lê o arquivo como URL de dados
+            reader.readAsDataURL(imagemEnviada[i]);
+        }
+    }
+}
 
 })
- 

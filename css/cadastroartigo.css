@@ -141,6 +141,17 @@
     width: 75%;
 }
 
+.inputIdFarm, .inputIdItem, .inputIdMaquina, .inputIdGuia{
+    background-color: var(--claro) !important;
+    margin-right: 100% !important;
+}
+
+.inputIdFarm:hover, .inputIdItem:hover, .inputIdMaquina:hover, .inputIdGuia:hover{
+    background-color: var(--navbarHover) !important;
+}
+.selector:hover{
+    cursor: pointer;
+}
 input, button, textarea{
     border: none;
     border-radius: 12px;
