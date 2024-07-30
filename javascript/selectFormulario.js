@@ -94,19 +94,19 @@ function simboloImagem(arquivo, opcao, idNew) {
                 const iconeImagem = document.createElement("img");
                 iconeImagem.setAttribute('src', imagemsrc);
                 iconeImagem.setAttribute('class', 'imagem-capa');
-                iconeImagem.setAttribute('id', idNew + opcao + i);
+                iconeImagem.setAttribute('id', idNew  + i);
 
                 const newdiv = document.createElement("div");
                 newdiv.setAttribute('class', idNew+' container-imagem-capa');
-                newdiv.setAttribute('id', idNew+'Container-' + opcao + i);
+                newdiv.setAttribute('id', idNew+'Container-' + i);
 
                 // Obtém o container onde a nova imagem será adicionada
                 const containerRequisitos = document.getElementById('containerRequisitos' + opcao);
 
                 if (containerRequisitos) {
                     // Remove o container de imagem antiga, se existir
-                    const imagemAnterior = document.getElementById(idNew + opcao + i);
-                    const containerImagem = document.getElementById(idNew+'Container-' + opcao + i);
+                    const imagemAnterior = document.getElementById(idNew + i);
+                    const containerImagem = document.getElementById(idNew+'Container-' + i);
                     if (containerImagem && imagemAnterior) {
                         containerRequisitos.removeChild(containerImagem);
                     }
